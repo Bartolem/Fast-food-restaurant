@@ -2,6 +2,8 @@ package org.fast_food.product.burger;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.List;
+
 import static org.fast_food.product.burger.ClassicBurger.*;
 import static org.fast_food.product.burger.GourmetBurger.*;
 import static org.junit.jupiter.api.Assertions.*;
@@ -36,7 +38,15 @@ class GourmetBurgerTest {
 
     @Test
     void getDescription() {
-
+        assertTrue(BLUE_CHEESE_BURGER.getIngredients().containsAll(List.of("Beef patty", "Blue cheese", "Lettuce", "Tomato", "Onion")));
+        assertTrue(AVOCADO_RANCH_BURGER.getIngredients().containsAll(List.of("Beef patty", "Avocado", "Ranch dressing", "Lettuce", "Tomato")));
+        assertTrue(TRUFFLE_MUSHROOM_BURGER.getIngredients().containsAll(List.of("Beef patty", "Truffle oil", "Swiss cheese", "Sauteed mushrooms", "Lettuce")));
+        assertTrue(GUACAMOLE_BACON_BURGER.getIngredients().containsAll(List.of("Beef patty", "Guacamole", "Bacon", "Lettuce", "Tomato")));
+        assertTrue(BBQ_RANCH_BACON_BURGER.getIngredients().containsAll(List.of("Beef patty", "BBQ sauce", "Ranch dressing", "Bacon", "Lettuce")));
+        assertTrue(CAJUN_SPICED_BURGER.getIngredients().containsAll(List.of("Beef patty", "Cajun spice blend", "Pepper jack cheese", "Lettuce", "Tomato")));
+        assertTrue(PESTO_TURKEY_BURGER.getIngredients().containsAll(List.of("Turkey patty", "Pesto sauce", "Mozzarella cheese", "Arugula", "Tomato")));
+        assertTrue(PHILLY_CHEESE_STEAK_BURGER.getIngredients().containsAll(List.of("Beef patty", "Sliced steak", "Provolone cheese", "Grilled peppers and onions")));
+        assertTrue(MEDITERRANEAN_LAMB_BURGER.getIngredients().containsAll( List.of("Lamb patty", "Feta cheese", "Tzatziki sauce", "Lettuce", "Tomato")));
     }
 
     @Test

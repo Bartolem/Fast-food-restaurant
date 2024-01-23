@@ -24,7 +24,19 @@ class ClassicBurgerTest {
 
     @Test
     void getPrice() {
-
+        assertEquals(ClassicBurger.CLASSIC_BURGER.getPrice(), 4.99);
+        assertEquals(ClassicBurger.CLASSIC_CHEESEBURGER.getPrice(), 5.19);
+        assertEquals(ClassicBurger.BACON_BURGER.getPrice(), 5.49);
+        assertEquals(ClassicBurger.VEGGIE_BURGER.getPrice(), 4.79);
+        assertEquals(ClassicBurger.CHICKEN_BURGER.getPrice(), 5.29);
+        assertEquals(ClassicBurger.TURKEY_BURGER.getPrice(), 5.49);
+        assertEquals(ClassicBurger.BBQ_BURGER.getPrice(), 5.99);
+        assertEquals(ClassicBurger.JALAPENO_BURGER.getPrice(), 5.59);
+        assertEquals(ClassicBurger.TERIYAKI_BURGER.getPrice(), 5.89);
+        assertEquals(ClassicBurger.DOUBLE_BURGER.getPrice(), 6.29);
+        assertEquals(ClassicBurger.DOUBLE_CHEESEBURGER.getPrice(), 6.49);
+        assertEquals(ClassicBurger.DOUBLE_BACON_BURGER.getPrice(), 6.99);
+        assertEquals(ClassicBurger.DOUBLE_BACON_CHEESEBURGER.getPrice(), 7.19);
     }
 
     @Test

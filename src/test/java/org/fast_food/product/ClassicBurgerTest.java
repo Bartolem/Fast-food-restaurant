@@ -78,7 +78,19 @@ class ClassicBurgerTest {
 
     @Test
     void getSpicinessLevel() {
-
+        assertEquals(ClassicBurger.CLASSIC_BURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.CLASSIC_CHEESEBURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.BACON_BURGER.getSpicinessLevel(), 2);
+        assertEquals(ClassicBurger.VEGGIE_BURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.CHICKEN_BURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.TURKEY_BURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.BBQ_BURGER.getSpicinessLevel(), 1.5);
+        assertEquals(ClassicBurger.JALAPENO_BURGER.getSpicinessLevel(), 3);
+        assertEquals(ClassicBurger.TERIYAKI_BURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.DOUBLE_BURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.DOUBLE_CHEESEBURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.DOUBLE_BACON_BURGER.getSpicinessLevel(), 2);
+        assertEquals(ClassicBurger.DOUBLE_BACON_CHEESEBURGER.getSpicinessLevel(), 2);
     }
 
     @Test

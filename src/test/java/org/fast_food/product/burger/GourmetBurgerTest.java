@@ -101,10 +101,20 @@ class GourmetBurgerTest {
     }
 
     @Test
-    void values() {
+    void testGourmetBurgerContainsAllValues() {
+        assertTrue(List.of(BLUE_CHEESE_BURGER, AVOCADO_RANCH_BURGER, TRUFFLE_MUSHROOM_BURGER, GUACAMOLE_BACON_BURGER, BBQ_RANCH_BACON_BURGER, CAJUN_SPICED_BURGER, PESTO_TURKEY_BURGER, PHILLY_CHEESE_STEAK_BURGER, MEDITERRANEAN_LAMB_BURGER).containsAll(List.of(GourmetBurger.values())));
     }
 
     @Test
-    void valueOf() {
+    void testValueOfDifferentBurgerTypes() {
+        assertEquals(BLUE_CHEESE_BURGER, GourmetBurger.valueOf("BLUE_CHEESE_BURGER"));
+        assertEquals(AVOCADO_RANCH_BURGER, GourmetBurger.valueOf("AVOCADO_RANCH_BURGER"));
+        assertEquals(TRUFFLE_MUSHROOM_BURGER, GourmetBurger.valueOf("TRUFFLE_MUSHROOM_BURGER"));
+        assertEquals(GUACAMOLE_BACON_BURGER, GourmetBurger.valueOf("GUACAMOLE_BACON_BURGER"));
+        assertEquals(BBQ_RANCH_BACON_BURGER, GourmetBurger.valueOf("BBQ_RANCH_BACON_BURGER"));
+        assertEquals(CAJUN_SPICED_BURGER, GourmetBurger.valueOf("CAJUN_SPICED_BURGER"));
+        assertEquals(PESTO_TURKEY_BURGER, GourmetBurger.valueOf("PESTO_TURKEY_BURGER"));
+        assertEquals(PHILLY_CHEESE_STEAK_BURGER, GourmetBurger.valueOf("PHILLY_CHEESE_STEAK_BURGER"));
+        assertEquals(MEDITERRANEAN_LAMB_BURGER, GourmetBurger.valueOf("MEDITERRANEAN_LAMB_BURGER"));
     }
 }

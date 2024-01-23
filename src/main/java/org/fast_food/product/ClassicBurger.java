@@ -15,7 +15,7 @@ public enum ClassicBurger implements Burger {
     DOUBLE_BURGER("Double Burger", 6.29, List.of("Two beef patties", "Lettuce", "Tomato", "Pickles", "Onions"), "A hearty and indulgent burger for the ultimate burger enthusiast. This Double Burger features not one, but two succulent beef patties. Complemented by fresh lettuce, ripe tomatoes, pickles, and onions.", 950, 1, 4.4),
     DOUBLE_CHEESEBURGER("Double Cheeseburger", 6.49,  List.of("Two beef patties", "Double cheese", "Lettuce", "Tomato", "Pickles", "Onions"), "A hearty and indulgent burger for the ultimate cheese enthusiast. This Double Cheeseburger features not one, but two succulent beef patties and topped with double cheese. Complemented by fresh lettuce, ripe tomatoes, pickles, and onions.", 1000, 1, 4.4),
     DOUBLE_BACON_BURGER("Double Bacon Burger", 6.99, List.of("Two beef patties", "Bacon", "Cheese", "Lettuce", "Tomato", "Pickles", "Onions"), "For the ultimate bacon lover – double beef and crispy bacon.", 1120, 2, 4.6),
-    DOUBLE_BACON_CHEESEBURGER("Double Bacon Cheeseburger", 7.19, List.of("Two beef patties", "Bacon", "Double cheese", "Lettuce", "Tomato", "Pickles", "Onions"), " For the ultimate bacon and cheese lover – double beef, double cheese, and crispy bacon.", 1280, 2, 4.5);
+    DOUBLE_BACON_CHEESEBURGER("Double Bacon Cheeseburger", 7.19, List.of("Two beef patties", "Bacon", "Double cheese", "Lettuce", "Tomato", "Pickles", "Onions"), "For the ultimate bacon and cheese lover – double beef, double cheese, and crispy bacon.", 1280, 2, 4.5);
 
     private final String name;
     private final double price;

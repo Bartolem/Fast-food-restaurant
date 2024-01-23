@@ -95,10 +95,36 @@ class ClassicBurgerTest {
 
     @Test
     void getPopularityRating() {
+        assertEquals(ClassicBurger.CLASSIC_BURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.CLASSIC_CHEESEBURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.BACON_BURGER.getSpicinessLevel(), 2);
+        assertEquals(ClassicBurger.VEGGIE_BURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.CHICKEN_BURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.TURKEY_BURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.BBQ_BURGER.getSpicinessLevel(), 1.5);
+        assertEquals(ClassicBurger.JALAPENO_BURGER.getSpicinessLevel(), 3);
+        assertEquals(ClassicBurger.TERIYAKI_BURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.DOUBLE_BURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.DOUBLE_CHEESEBURGER.getSpicinessLevel(), 1);
+        assertEquals(ClassicBurger.DOUBLE_BACON_BURGER.getSpicinessLevel(), 2);
+        assertEquals(ClassicBurger.DOUBLE_BACON_CHEESEBURGER.getSpicinessLevel(), 2);
     }
 
     @Test
     void getDescription() {
+        assertEquals(ClassicBurger.CLASSIC_BURGER.getDescription(), "The classic cheeseburger with a juicy beef patty, melted cheese, and fresh vegetables.");
+        assertEquals(ClassicBurger.CLASSIC_CHEESEBURGER.getDescription(), "The classic burger with a juicy beef patty and fresh vegetables.");
+        assertEquals(ClassicBurger.BACON_BURGER.getDescription(), "A mouthwatering burger featuring crispy bacon on top of a delicious beef patty.");
+        assertEquals(ClassicBurger.VEGGIE_BURGER.getDescription(), "A meat-free option loaded with fresh vegetables and a tasty vegetarian patty.");
+        assertEquals(ClassicBurger.CHICKEN_BURGER.getDescription(), "A grilled chicken burger with crisp veggies and mayo for a delightful flavor.");
+        assertEquals(ClassicBurger.TURKEY_BURGER.getDescription(), "A healthier option with a turkey patty and a touch of sweet cranberry sauce.");
+        assertEquals(ClassicBurger.BBQ_BURGER.getDescription(), "A savory BBQ-infused burger with melted cheddar and crispy onion rings.");
+        assertEquals(ClassicBurger.JALAPENO_BURGER.getDescription(), "A spicy delight with pepper jack cheese and a kick of jalapeños.");
+        assertEquals(ClassicBurger.TERIYAKI_BURGER.getDescription(), "A flavorful burger with a sweet and tangy teriyaki glaze and a hint of pineapple.");
+        assertEquals(ClassicBurger.DOUBLE_BURGER.getDescription(), "A hearty and indulgent burger for the ultimate burger enthusiast. This Double Burger features not one, but two succulent beef patties. Complemented by fresh lettuce, ripe tomatoes, pickles, and onions.");
+        assertEquals(ClassicBurger.DOUBLE_CHEESEBURGER.getDescription(), "A hearty and indulgent burger for the ultimate cheese enthusiast. This Double Cheeseburger features not one, but two succulent beef patties and topped with double cheese. Complemented by fresh lettuce, ripe tomatoes, pickles, and onions.");
+        assertEquals(ClassicBurger.DOUBLE_BACON_BURGER.getDescription(), "For the ultimate bacon lover – double beef and crispy bacon.");
+        assertEquals(ClassicBurger.DOUBLE_BACON_CHEESEBURGER.getDescription(), "For the ultimate bacon and cheese lover – double beef, double cheese, and crispy bacon.");
     }
 
     @Test

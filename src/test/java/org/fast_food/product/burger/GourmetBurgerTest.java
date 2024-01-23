@@ -4,7 +4,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.fast_food.product.burger.ClassicBurger.*;
 import static org.fast_food.product.burger.GourmetBurger.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -37,7 +36,7 @@ class GourmetBurgerTest {
     }
 
     @Test
-    void getDescription() {
+    void getIngredients() {
         assertTrue(BLUE_CHEESE_BURGER.getIngredients().containsAll(List.of("Beef patty", "Blue cheese", "Lettuce", "Tomato", "Onion")));
         assertTrue(AVOCADO_RANCH_BURGER.getIngredients().containsAll(List.of("Beef patty", "Avocado", "Ranch dressing", "Lettuce", "Tomato")));
         assertTrue(TRUFFLE_MUSHROOM_BURGER.getIngredients().containsAll(List.of("Beef patty", "Truffle oil", "Swiss cheese", "Sauteed mushrooms", "Lettuce")));
@@ -51,10 +50,20 @@ class GourmetBurgerTest {
 
     @Test
     void getCalories() {
+        assertEquals(BLUE_CHEESE_BURGER.getCalories(), 680);
+        assertEquals(AVOCADO_RANCH_BURGER.getCalories(), 720);
+        assertEquals(TRUFFLE_MUSHROOM_BURGER.getCalories(), 780);
+        assertEquals(GUACAMOLE_BACON_BURGER.getCalories(), 800);
+        assertEquals(BBQ_RANCH_BACON_BURGER.getCalories(), 830);
+        assertEquals(CAJUN_SPICED_BURGER.getCalories(), 690);
+        assertEquals(PESTO_TURKEY_BURGER.getCalories(), 660);
+        assertEquals(PHILLY_CHEESE_STEAK_BURGER.getCalories(), 820);
+        assertEquals(MEDITERRANEAN_LAMB_BURGER.getCalories(), 900);
     }
 
     @Test
-    void getIngredients() {
+    void getDescription() {
+
     }
 
     @Test

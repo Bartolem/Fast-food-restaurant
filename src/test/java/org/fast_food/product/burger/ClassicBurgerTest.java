@@ -9,7 +9,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class ClassicBurgerTest {
     @Test
-    void getName() {
+    void testGetNameForDifferentBurgerTypes() {
         assertEquals(CLASSIC_BURGER.getName(), "Classic Burger");
         assertEquals(CLASSIC_CHEESEBURGER.getName(), "Classic Cheeseburger");
         assertEquals(BACON_BURGER.getName(), "Bacon Burger");
@@ -26,7 +26,7 @@ class ClassicBurgerTest {
     }
 
     @Test
-    void getPrice() {
+    void testGetPriceForDifferentBurgerTypes() {
         assertEquals(CLASSIC_BURGER.getPrice(), 4.99);
         assertEquals(CLASSIC_CHEESEBURGER.getPrice(), 5.19);
         assertEquals(BACON_BURGER.getPrice(), 5.49);
@@ -42,7 +42,7 @@ class ClassicBurgerTest {
         assertEquals(DOUBLE_BACON_CHEESEBURGER.getPrice(), 7.19);
     }
     @Test
-    void getIngredients() {
+    void testGetIngredientsForDifferentBurgerTypes() {
         assertTrue(CLASSIC_BURGER.getIngredients().containsAll(List.of("Beef patty", "Lettuce", "Tomato", "Pickles", "Onions")));
         assertTrue(CLASSIC_CHEESEBURGER.getIngredients().containsAll(List.of("Beef patty", "Cheese", "Lettuce", "Tomato", "Pickles", "Onions")));
         assertTrue(BACON_BURGER.getIngredients().containsAll(List.of("Beef patty", "Bacon", "Cheese", "Lettuce", "Tomato", "Pickles", "Onions")));
@@ -60,7 +60,7 @@ class ClassicBurgerTest {
     }
 
     @Test
-    void getCalories() {
+    void testGetCaloriesForDifferentBurgerTypes() {
         assertEquals(CLASSIC_BURGER.getCalories(), 570);
         assertEquals(CLASSIC_CHEESEBURGER.getCalories(), 650);
         assertEquals(BACON_BURGER.getCalories(), 800);
@@ -77,7 +77,7 @@ class ClassicBurgerTest {
     }
 
     @Test
-    void getSpicinessLevel() {
+    void testGetSpicinessLevelForDifferentBurgerTypes() {
         assertEquals(CLASSIC_BURGER.getSpicinessLevel(), 1);
         assertEquals(CLASSIC_CHEESEBURGER.getSpicinessLevel(), 1);
         assertEquals(BACON_BURGER.getSpicinessLevel(), 2);
@@ -94,7 +94,7 @@ class ClassicBurgerTest {
     }
 
     @Test
-    void getPopularityRating() {
+    void testGetPopularityRatingForDifferentBurgerTypes() {
         assertEquals(CLASSIC_BURGER.getPopularityRating(), 4.7);
         assertEquals(CLASSIC_CHEESEBURGER.getPopularityRating(), 4.5);
         assertEquals(BACON_BURGER.getPopularityRating(), 4.8);
@@ -111,7 +111,7 @@ class ClassicBurgerTest {
     }
 
     @Test
-    void getDescription() {
+    void testGetDescriptionForDifferentBurgerTypes() {
         assertEquals(CLASSIC_BURGER.getDescription(), "The classic cheeseburger with a juicy beef patty, melted cheese, and fresh vegetables.");
         assertEquals(CLASSIC_CHEESEBURGER.getDescription(), "The classic burger with a juicy beef patty and fresh vegetables.");
         assertEquals(BACON_BURGER.getDescription(), "A mouthwatering burger featuring crispy bacon on top of a delicious beef patty.");
@@ -128,12 +128,12 @@ class ClassicBurgerTest {
     }
 
     @Test
-    void values() {
+    void testClassicBurgerContainsAllValues() {
         assertTrue(List.of(ClassicBurger.values()).containsAll(List.of(CLASSIC_BURGER, CLASSIC_CHEESEBURGER, BACON_BURGER, VEGGIE_BURGER, CHICKEN_BURGER, TURKEY_BURGER, BBQ_BURGER, JALAPENO_BURGER, TERIYAKI_BURGER, DOUBLE_BURGER, DOUBLE_CHEESEBURGER, DOUBLE_BACON_BURGER, DOUBLE_BACON_CHEESEBURGER)));
     }
 
     @Test
-    void valueOf() {
+    void testValueOfDifferentBurgerTypes() {
         assertEquals(CLASSIC_BURGER, ClassicBurger.valueOf("CLASSIC_BURGER"));
         assertEquals(CLASSIC_CHEESEBURGER, ClassicBurger.valueOf("CLASSIC_CHEESEBURGER"));
         assertEquals(BACON_BURGER, ClassicBurger.valueOf("BACON_BURGER"));

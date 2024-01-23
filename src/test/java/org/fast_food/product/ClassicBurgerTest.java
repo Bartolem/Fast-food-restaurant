@@ -96,19 +96,19 @@ class ClassicBurgerTest {
 
     @Test
     void getPopularityRating() {
-        assertEquals(CLASSIC_BURGER.getSpicinessLevel(), 1);
-        assertEquals(ClassicBurger.CLASSIC_CHEESEBURGER.getSpicinessLevel(), 1);
-        assertEquals(ClassicBurger.BACON_BURGER.getSpicinessLevel(), 2);
-        assertEquals(ClassicBurger.VEGGIE_BURGER.getSpicinessLevel(), 1);
-        assertEquals(ClassicBurger.CHICKEN_BURGER.getSpicinessLevel(), 1);
-        assertEquals(ClassicBurger.TURKEY_BURGER.getSpicinessLevel(), 1);
-        assertEquals(ClassicBurger.BBQ_BURGER.getSpicinessLevel(), 1.5);
-        assertEquals(ClassicBurger.JALAPENO_BURGER.getSpicinessLevel(), 3);
-        assertEquals(ClassicBurger.TERIYAKI_BURGER.getSpicinessLevel(), 1);
-        assertEquals(ClassicBurger.DOUBLE_BURGER.getSpicinessLevel(), 1);
-        assertEquals(ClassicBurger.DOUBLE_CHEESEBURGER.getSpicinessLevel(), 1);
-        assertEquals(ClassicBurger.DOUBLE_BACON_BURGER.getSpicinessLevel(), 2);
-        assertEquals(ClassicBurger.DOUBLE_BACON_CHEESEBURGER.getSpicinessLevel(), 2);
+        assertEquals(CLASSIC_BURGER.getPopularityRating(), 4.7);
+        assertEquals(ClassicBurger.CLASSIC_CHEESEBURGER.getPopularityRating(), 4.5);
+        assertEquals(ClassicBurger.BACON_BURGER.getPopularityRating(), 4.8);
+        assertEquals(ClassicBurger.VEGGIE_BURGER.getPopularityRating(), 4.1);
+        assertEquals(ClassicBurger.CHICKEN_BURGER.getPopularityRating(), 4.3);
+        assertEquals(ClassicBurger.TURKEY_BURGER.getPopularityRating(), 4.0);
+        assertEquals(ClassicBurger.BBQ_BURGER.getPopularityRating(), 4.3);
+        assertEquals(ClassicBurger.JALAPENO_BURGER.getPopularityRating(), 3.8);
+        assertEquals(ClassicBurger.TERIYAKI_BURGER.getPopularityRating(), 4.2);
+        assertEquals(ClassicBurger.DOUBLE_BURGER.getPopularityRating(), 4.4);
+        assertEquals(ClassicBurger.DOUBLE_CHEESEBURGER.getPopularityRating(), 4.4);
+        assertEquals(ClassicBurger.DOUBLE_BACON_BURGER.getPopularityRating(), 4.6);
+        assertEquals(ClassicBurger.DOUBLE_BACON_CHEESEBURGER.getPopularityRating(), 4.5);
     }
 
     @Test
@@ -135,6 +135,18 @@ class ClassicBurgerTest {
 
     @Test
     void valueOf() {
-
+        assertEquals(CLASSIC_BURGER, ClassicBurger.valueOf("CLASSIC_BURGER"));
+        assertEquals(CLASSIC_CHEESEBURGER, ClassicBurger.valueOf("CLASSIC_CHEESEBURGER"));
+        assertEquals(BACON_BURGER, ClassicBurger.valueOf("BACON_BURGER"));
+        assertEquals(VEGGIE_BURGER, ClassicBurger.valueOf("VEGGIE_BURGER"));
+        assertEquals(CHICKEN_BURGER, ClassicBurger.valueOf("CHICKEN_BURGER"));
+        assertEquals(TURKEY_BURGER, ClassicBurger.valueOf("TURKEY_BURGER"));
+        assertEquals(BBQ_BURGER, ClassicBurger.valueOf("BBQ_BURGER"));
+        assertEquals(JALAPENO_BURGER, ClassicBurger.valueOf("JALAPENO_BURGER"));
+        assertEquals(TERIYAKI_BURGER, ClassicBurger.valueOf("TERIYAKI_BURGER"));
+        assertEquals(DOUBLE_BURGER, ClassicBurger.valueOf("DOUBLE_BURGER"));
+        assertEquals(DOUBLE_CHEESEBURGER, ClassicBurger.valueOf("DOUBLE_CHEESEBURGER"));
+        assertEquals(DOUBLE_BACON_BURGER, ClassicBurger.valueOf("DOUBLE_BACON_BURGER"));
+        assertEquals(DOUBLE_BACON_CHEESEBURGER, ClassicBurger.valueOf("DOUBLE_BACON_CHEESEBURGER"));
     }
 }

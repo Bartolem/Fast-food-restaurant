@@ -68,6 +68,15 @@ class GourmetBurgerTest {
 
     @Test
     void getSpicinessLevel() {
+        assertEquals(BLUE_CHEESE_BURGER.getSpicinessLevel(), 1);
+        assertEquals(AVOCADO_RANCH_BURGER.getSpicinessLevel(), 1);
+        assertEquals(TRUFFLE_MUSHROOM_BURGER.getSpicinessLevel(), 1);
+        assertEquals(GUACAMOLE_BACON_BURGER.getSpicinessLevel(), 1);
+        assertEquals(BBQ_RANCH_BACON_BURGER.getSpicinessLevel(), 1);
+        assertEquals(CAJUN_SPICED_BURGER.getSpicinessLevel(), 3.5);
+        assertEquals(PESTO_TURKEY_BURGER.getSpicinessLevel(), 1);
+        assertEquals(PHILLY_CHEESE_STEAK_BURGER.getSpicinessLevel(), 1);
+        assertEquals(MEDITERRANEAN_LAMB_BURGER.getSpicinessLevel(), 1);
     }
 
     @Test

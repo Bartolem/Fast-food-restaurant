@@ -81,6 +81,15 @@ class GourmetBurgerTest {
 
     @Test
     void getPopularityRating() {
+        assertEquals(BLUE_CHEESE_BURGER.getPopularityRating(), 3.3);
+        assertEquals(AVOCADO_RANCH_BURGER.getPopularityRating(), 3.5);
+        assertEquals(TRUFFLE_MUSHROOM_BURGER.getPopularityRating(), 3.8);
+        assertEquals(GUACAMOLE_BACON_BURGER.getPopularityRating(), 3.6);
+        assertEquals(BBQ_RANCH_BACON_BURGER.getPopularityRating(), 4.2);
+        assertEquals(CAJUN_SPICED_BURGER.getPopularityRating(), 4.1);
+        assertEquals(PESTO_TURKEY_BURGER.getPopularityRating(), 3.7);
+        assertEquals(PHILLY_CHEESE_STEAK_BURGER.getPopularityRating(), 3.9);
+        assertEquals(MEDITERRANEAN_LAMB_BURGER.getPopularityRating(), 3.6);
     }
 
     @Test

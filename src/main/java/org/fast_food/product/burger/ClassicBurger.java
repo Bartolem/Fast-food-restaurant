@@ -1,4 +1,4 @@
-package org.fast_food.product;
+package org.fast_food.product.burger;
 
 import java.util.List;
 

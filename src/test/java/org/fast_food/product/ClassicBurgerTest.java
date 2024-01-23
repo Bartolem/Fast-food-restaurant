@@ -1,10 +1,11 @@
 package org.fast_food.product;
 
+import org.fast_food.product.burger.ClassicBurger;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static org.fast_food.product.ClassicBurger.*;
+import static org.fast_food.product.burger.ClassicBurger.*;
 import static org.junit.jupiter.api.Assertions.*;
 
 class ClassicBurgerTest {

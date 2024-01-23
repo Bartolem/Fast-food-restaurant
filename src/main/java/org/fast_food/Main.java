@@ -1,6 +1,6 @@
 package org.fast_food;
 
-import org.fast_food.product.ClassicBurger;
+import org.fast_food.product.burger.ClassicBurger;
 
 public class Main {
     public static void main(String[] args) {

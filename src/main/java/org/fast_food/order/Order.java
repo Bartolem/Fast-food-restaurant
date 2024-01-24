@@ -1,0 +1,63 @@
+package org.fast_food.order;
+
+import org.fast_food.product.Product;
+
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+
+public class Order {
+    private final String id;
+    private OrderStatus status;
+    private final LocalDateTime date;
+    private final List<Product> content;
+
+    public Order(String id) {
+        this.id = id;
+        this.status = OrderStatus.NEW;
+        this.date = LocalDateTime.now();
+        this.content = new ArrayList<>();
+    }
+
+    public String getId() {
+        return id;
+    }
+
+    public OrderStatus getStatus() {
+        return status;
+    }
+
+    public void process() {
+        if (status == OrderStatus.NEW) {
+            this.status = OrderStatus.PROCESSING;
+        }
+    }
+
+    public void complete() {
+        if (status == OrderStatus.PROCESSING) {
+            this.status = OrderStatus.COMPLETED;
+        }
+    }
+
+    public void cancel() {
+        if (status != OrderStatus.COMPLETED) {
+            this.status = OrderStatus.CANCELED;
+        }
+    }
+
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public List<Product> getContent() {
+        return content;
+    }
+
+    public void addProduct(Product product) {
+        content.add(product);
+    }
+
+    public void removeProduct(Product product) {
+        content.remove(product);
+    }
+}

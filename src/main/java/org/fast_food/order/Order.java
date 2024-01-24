@@ -7,14 +7,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Order {
-    private String id;
+    private final String id;
     private OrderStatus status;
-    private LocalDateTime date;
-    private List<Product> content;
+    private final LocalDateTime date;
+    private final List<Product> content;
 
-    public Order(String id, OrderStatus status) {
+    public Order(String id) {
         this.id = id;
-        this.status = status;
+        this.status = OrderStatus.NEW;
         this.date = LocalDateTime.now();
         this.content = new ArrayList<>();
     }
@@ -25,6 +25,24 @@ public class Order {
 
     public OrderStatus getStatus() {
         return status;
+    }
+
+    public void process() {
+        if (status == OrderStatus.NEW) {
+            this.status = OrderStatus.PROCESSING;
+        }
+    }
+
+    public void complete() {
+        if (status == OrderStatus.PROCESSING) {
+            this.status = OrderStatus.COMPLETED;
+        }
+    }
+
+    public void cancel() {
+        if (status != OrderStatus.COMPLETED) {
+            this.status = OrderStatus.CANCELED;
+        }
     }
 
     public LocalDateTime getDate() {

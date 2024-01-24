@@ -29,7 +29,9 @@ public class Customer {
     }
 
     public void setName(String name) {
-        this.name = name;
+        if (!name.isEmpty()) {
+            this.name = name;
+        }
     }
 
     public String getEmail() {
@@ -37,7 +39,9 @@ public class Customer {
     }
 
     public void setEmail(String email) {
-        this.email = email;
+        if (!email.isEmpty()) {
+            this.email = email;
+        }
     }
 
     public String getPhoneNumber() {
@@ -45,7 +49,9 @@ public class Customer {
     }
 
     public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
+        if (!phoneNumber.isEmpty()) {
+            this.phoneNumber = phoneNumber;
+        }
     }
 
     public int getPoints() {

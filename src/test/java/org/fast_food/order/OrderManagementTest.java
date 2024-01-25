@@ -5,16 +5,41 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OrderManagementTest {
+    Order order = new Order();
 
     @Test
-    void processOrder() {
+    void testGetOrders() {
+        assertNotNull(OrderManagement.getOrders());
     }
 
     @Test
-    void completeOrder() {
+    void testAddOrder() {
+        OrderManagement.addOrder(order);
+        assertTrue(OrderManagement.getOrders().contains(order));
     }
 
     @Test
-    void cancelOrder() {
+    void testRemoveOrder() {
+        OrderManagement.removeOrder(order);
+        assertFalse(OrderManagement.getOrders().contains(order));
+    }
+
+    @Test
+    void testProcessOrder() {
+        OrderManagement.processOrder(order);
+        assertEquals(order.getStatus(), OrderStatus.PROCESSING);
+    }
+
+    @Test
+    void testCompleteOrder() {
+        OrderManagement.processOrder(order);
+        OrderManagement.completeOrder(order);
+        assertEquals(order.getStatus(), OrderStatus.COMPLETED);
+    }
+
+    @Test
+    void testCancelOrder() {
+        OrderManagement.cancelOrder(order);
+        assertEquals(order.getStatus(), OrderStatus.CANCELED);
     }
 }

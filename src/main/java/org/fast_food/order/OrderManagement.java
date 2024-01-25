@@ -1,21 +1,15 @@
 package org.fast_food.order;
 
 public class OrderManagement {
-    private final Order order;
-
-    public OrderManagement(Order order) {
-        this.order = order;
-    }
-
-    public void processOrder() {
+    public static void processOrder(Order order) {
         order.process();
     }
 
-    public void completeOrder() {
+    public static void completeOrder(Order order) {
         order.complete();
     }
 
-    public void cancelOrder() {
+    public static void cancelOrder(Order order) {
         order.cancel();
     }
 

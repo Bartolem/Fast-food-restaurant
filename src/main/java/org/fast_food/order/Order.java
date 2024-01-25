@@ -5,6 +5,7 @@ import org.fast_food.product.Product;
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.UUID;
 
 public class Order {
     private final String id;
@@ -12,8 +13,8 @@ public class Order {
     private final LocalDateTime date;
     private final List<Product> content;
 
-    public Order(String id) {
-        this.id = id;
+    public Order() {
+        this.id = generateUniqueId();
         this.status = OrderStatus.NEW;
         this.date = LocalDateTime.now();
         this.content = new ArrayList<>();
@@ -59,5 +60,9 @@ public class Order {
 
     public void removeProduct(Product product) {
         content.remove(product);
+    }
+
+    private String generateUniqueId() {
+        return String.valueOf(UUID.randomUUID());
     }
 }

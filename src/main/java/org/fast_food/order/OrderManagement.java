@@ -1,21 +1,33 @@
 package org.fast_food.order;
 
-public class OrderManagement {
-    private final Order order;
+import org.fast_food.product.Product;
 
-    public OrderManagement(Order order) {
-        this.order = order;
+import java.util.ArrayList;
+import java.util.List;
+
+public class OrderManagement {
+    private final static List<Order> orders = new ArrayList<>();
+
+    public static List<Order> getOrders() {
+        return orders;
     }
 
-    public void processOrder() {
+    public static void addOrder(Order order) {
+        orders.add(order);
+    }
+
+    public static void removeOrder(Order order) {
+        orders.remove(order);
+    }
+    public static void processOrder(Order order) {
         order.process();
     }
 
-    public void completeOrder() {
+    public static void completeOrder(Order order) {
         order.complete();
     }
 
-    public void cancelOrder() {
+    public static void cancelOrder(Order order) {
         order.cancel();
     }
 

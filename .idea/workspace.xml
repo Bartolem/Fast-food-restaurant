@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/libraries/MigLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/StartPage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/UserInterface.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/classic/bacon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/classic/bbq.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/classic/cheeseburger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/classic/chicken.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/classic/classic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/classic/double bacon cheeseburger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/classic/double bacon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/classic/double cheeseburger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/classic/double classic.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/classic/jalapeno.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/classic/teriyaki.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/classic/turkey.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/classic/veggie.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/gourmet/avocado ranch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/gourmet/bbq bacon ranch.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/gourmet/blue cheeseburger.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/gourmet/cajun spiced.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/gourmet/guacamole bacon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/gourmet/mediterranean lamb.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/gourmet/pesto.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/gourmet/steak.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/images/gourmet/truffle.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/Fast food ordering.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/Fast food ordering.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/Main.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+        <option value="Enum" />
+        <option value="JUnit5 Test Class" />
+        <option value="JavaFXApplication" />
+        <option value="module-info" />
+        <option value="FxmlFile" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="f513a163-c3bc-4ad3-9586-dfe8ceba46e3" />
+        <option name="url" value="https://github.com/Bartolem/Fast-food-restaurant.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 8
+}</component>
+  <component name="ProjectId" id="2bKKiaAPTmazWAHPYAeE4Ad0uQM" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.GUI.executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.org.fast_food.Main.executor": "Run",
+    "Application.org.fast_food.user_interface.Main.executor": "Run",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.ClassicBurgerTest.executor": "Run",
+    "JUnit.ClassicBurgerTest.getCalories.executor": "Run",
+    "JUnit.ClassicBurgerTest.getDescription.executor": "Run",
+    "JUnit.ClassicBurgerTest.getIngredients.executor": "Run",
+    "JUnit.ClassicBurgerTest.getName.executor": "Run",
+    "JUnit.ClassicBurgerTest.getPopularityRating.executor": "Run",
+    "JUnit.ClassicBurgerTest.getPrice.executor": "Run",
+    "JUnit.ClassicBurgerTest.getSpicinessLevel.executor": "Run",
+    "JUnit.ClassicBurgerTest.testClassicBurgerContainsAllValues.executor": "Run",
+    "JUnit.ClassicBurgerTest.valueOf.executor": "Run",
+    "JUnit.ClassicBurgerTest.values.executor": "Run",
+    "JUnit.CustomerCreationTest.executor": "Run",
+    "JUnit.CustomerManagementTest.testAddCustomer.executor": "Run",
+    "JUnit.CustomerManagementTest.testGetCustomer.executor": "Run",
+    "JUnit.CustomerManagementTest.testGetCustomerFakeId.executor": "Run",
+    "JUnit.CustomerManagementTest.testGetCustomers.executor": "Run",
+    "JUnit.CustomerManagementTest.testGetCustomersNotNull.executor": "Run",
+    "JUnit.CustomerManagementTest.testRemoveCustomer.executor": "Run",
+    "JUnit.CustomerTest.executor": "Run",
+    "JUnit.CustomerTest.testAddPoints.executor": "Debug",
+    "JUnit.CustomerTest.testGetPointsIsPositiveNumber.executor": "Run",
+    "JUnit.CustomerTest.testRemovePointsIsPositiveNumber.executor": "Run",
+    "JUnit.CustomerTest.testSetNameWithEmptyString.executor": "Run",
+    "JUnit.GourmetBurgerTest.executor": "Run",
+    "JUnit.GourmetBurgerTest.getCalories.executor": "Run",
+    "JUnit.GourmetBurgerTest.getDescription.executor": "Run",
+    "JUnit.GourmetBurgerTest.getIngredients.executor": "Run",
+    "JUnit.GourmetBurgerTest.getName.executor": "Run",
+    "JUnit.GourmetBurgerTest.getPopularityRating.executor": "Run",
+    "JUnit.GourmetBurgerTest.getPrice.executor": "Run",
+    "JUnit.GourmetBurgerTest.getSpicinessLevel.executor": "Run",
+    "JUnit.GourmetBurgerTest.testGourmetBurgerContainsAllValues.executor": "Run",
+    "JUnit.GourmetBurgerTest.testValueOfDifferentBurgerTypes.executor": "Run",
+    "JUnit.OrderCreationTest.testCreateOrder.executor": "Run",
+    "JUnit.OrderManagementTest.executor": "Run",
+    "JUnit.OrderManagementTest.testAddProductToOrder.executor": "Run",
+    "JUnit.OrderManagementTest.testGetOrders.executor": "Run",
+    "JUnit.OrderManagementTest.testRemoveOrder.executor": "Run",
+    "JUnit.OrderManagementTest.testRemoveProductFromOrder.executor": "Run",
+    "JUnit.OrderTest.addProduct.executor": "Run",
+    "JUnit.OrderTest.executor": "Run",
+    "JUnit.OrderTest.getContent.executor": "Run",
+    "JUnit.OrderTest.removeProduct.executor": "Run",
+    "JUnit.OrderTest.testCompleteOrder.executor": "Run",
+    "JUnit.OrderTest.testGetContentEmpty.executor": "Run",
+    "JUnit.OrderTest.testGetContentNotEmpty.executor": "Run",
+    "JUnit.java in Fast-food-restaurant.executor": "Run",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "253",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "jdk.selected.JAVA_MODULE": "temurin-21",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "D:/Projekty/Java Projects/Fast food ordering/src/main/resources",
+    "onboarding.tips.debug.path": "D:/Projekty/Java Projects/Fast food ordering/untitled/src/Main.java",
+    "project.structure.last.edited": "Libraries",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.5264368",
+    "settings.editor.selected.configurable": "preferences.pluginManager"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources" />
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images" />
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\java\org\fast_food\user_interface" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images" />
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources" />
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\java\org\fast_food\user_interface" />
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\java\org\fast_food" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="org.fast_food" />
+      <recent name="org.fast_food.product.burger" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.fast_food.order" />
+      <recent name="org.fast_food.customer" />
+      <recent name="org.fast_food.product.burger" />
+      <recent name="org.fast_food.product" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.org.fast_food.Main">
+    <configuration name="org.fast_food.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.Main" />
+      <module name="Fast-food-restaurant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderManagementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.order.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.fast_food.order" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.order.OrderManagementTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="java in Fast-food-restaurant" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="JetRunConfigurationType">
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="KotlinStandaloneScriptRunConfigurationType">
+      <option name="filePath" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.org.fast_food.Main" />
+      <item itemvalue="JUnit.java in Fast-food-restaurant" />
+      <item itemvalue="JUnit.OrderManagementTest" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.org.fast_food.Main" />
+        <item itemvalue="JUnit.java in Fast-food-restaurant" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="jdk-21.0.2-temurin-21.0.2-4caba194b151-7da56cdf" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="" />
+      <created>1705958460759</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1705958460759</updated>
+    </task>
+    <servers />
+  </component>
+</project>

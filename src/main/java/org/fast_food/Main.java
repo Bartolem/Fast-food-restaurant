@@ -1,10 +1,16 @@
 package org.fast_food;
 
-import org.fast_food.product.burger.ClassicBurger;
+import org.fast_food.user_interface.UserInterface;
+import java.awt.*;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("Welcome to Bartolos fastfood!");
-        System.out.println(ClassicBurger.valueOf("BBQ_BURGER"));
+        // Run this program on the Event Dispatch Thread (EDT)
+        EventQueue.invokeLater(new Runnable() {
+            @Override
+            public void run() {
+                new UserInterface();
+            }
+        });
     }
 }

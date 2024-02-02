@@ -16,6 +16,8 @@ public class UserInterface {
     protected static JButton createButton(String text) {
         JButton button = new JButton(text);
         button.setFont(new Font("Verdana",Font.PLAIN, 14));
+        button.setForeground(new Color(0, 0, 0));
+        button.setBackground(new Color(121, 186, 253));
         button.setFocusable(false);
         return button;
     }

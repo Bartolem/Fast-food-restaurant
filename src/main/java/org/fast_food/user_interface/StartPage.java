@@ -5,12 +5,14 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
 import static org.fast_food.user_interface.UserInterface.*;
 
 public class StartPage {
-    private static final String title = "Start page";
     private JFrame frame;
+    private OrderPage orderPage;
 
     public StartPage() {
         initialize();
@@ -21,9 +23,8 @@ public class StartPage {
         JPanel upperPanel = createUpperPanel();
         JPanel bottomPanel = createBottomPanel();
 
-        frame.setTitle(title);
-        ImageIcon icon = new ImageIcon("src/main/resources/icon.png");
-        frame.setIconImage(icon.getImage());
+        frame.setTitle(TITLE);
+        frame.setIconImage(ICON.getImage());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
@@ -35,27 +36,6 @@ public class StartPage {
 
     public void show() {
         frame.setVisible(true);
-    }
-
-    private JPanel createBottomPanel() {
-        JPanel panel = new JPanel(new MigLayout());
-        JLabel loginLabel = createLabel("Login", "Verdana",Font.PLAIN, 28);
-        JPasswordField passwordField = new JPasswordField(20);
-
-        panel.setBackground(new Color(255, 194, 150));
-        loginLabel.setHorizontalAlignment(SwingConstants.CENTER);
-        loginLabel.setForeground(new Color(0, 0, 0));
-        passwordField.setForeground(new Color(0, 0, 0));
-
-        panel.add(loginLabel, "span, wrap, growx");
-        panel.add(createLabel("E-mail", "Verdana",Font.PLAIN, 14), "pushx");
-        panel.add(createTextField(), "wrap, pushx, growx");
-        panel.add(createLabel("Password", "Verdana",Font.PLAIN, 14), "pushx");
-        panel.add(passwordField, "wrap, pushx, growx");
-        panel.add(createButton("Login"), "skip, split2, growx");
-        panel.add(createButton("Register"), "wrap, growx");
-        panel.add(createButton("Continue without account"), "skip, growx");
-        return panel;
     }
 
     private JPanel createUpperPanel() {
@@ -73,6 +53,39 @@ public class StartPage {
         panel.add(labelImage, BorderLayout.CENTER);
         panel.setBackground(new Color(255, 89, 60));
         panel.add(label, BorderLayout.SOUTH);
+        return panel;
+    }
+
+    private JPanel createBottomPanel() {
+        JPanel panel = new JPanel(new MigLayout());
+        JLabel loginLabel = createLabel("Login", "Verdana",Font.PLAIN, 28);
+        JPasswordField passwordField = new JPasswordField(20);
+        JButton continueButton = createButton("Continue without account", 14);
+
+        continueButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                if (e.getSource() == continueButton) {
+                    frame.dispose();
+                    orderPage = new OrderPage();
+                    orderPage.show();
+                }
+            }
+        });
+
+        panel.setBackground(new Color(255, 194, 150));
+        loginLabel.setHorizontalAlignment(SwingConstants.CENTER);
+        loginLabel.setForeground(new Color(0, 0, 0));
+        passwordField.setForeground(new Color(0, 0, 0));
+
+        panel.add(loginLabel, "span, wrap, growx");
+        panel.add(createLabel("E-mail", "Verdana",Font.PLAIN, 14), "pushx");
+        panel.add(createTextField(), "wrap, pushx, growx");
+        panel.add(createLabel("Password", "Verdana",Font.PLAIN, 14), "pushx");
+        panel.add(passwordField, "wrap, pushx, growx");
+        panel.add(createButton("Login", 14), "skip, split2, growx");
+        panel.add(createButton("Register", 14), "wrap, growx");
+        panel.add(continueButton, "skip, growx");
         return panel;
     }
 }

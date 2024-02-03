@@ -89,7 +89,13 @@ public class OrderPage {
         vector.add(quantity);
 
         if (order.getContent().contains(product)) {
-            defaultTableModel.setValueAt(((Integer) defaultTableModel.getValueAt(order.getContent().indexOf(product), 2) + quantity), order.getContent().indexOf(product), 2);
+            int indexOfProduct = order.getContent().indexOf(product);
+            Integer currentProductQuantity = (Integer) defaultTableModel.getValueAt(indexOfProduct, 2);
+
+            if (currentProductQuantity < order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE) {
+                defaultTableModel.setValueAt(
+                        Math.min(currentProductQuantity + quantity, order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE), indexOfProduct, 2);
+            }
         } else {
             defaultTableModel.addRow(vector);
             order.addProduct(product);

@@ -8,6 +8,7 @@ import java.util.List;
 import java.util.UUID;
 
 public class Order {
+    public final int MAX_QUANTITY_OF_PRODUCT_SAME_TYPE = 10;
     private final String id;
     private OrderStatus status;
     private final LocalDateTime date;

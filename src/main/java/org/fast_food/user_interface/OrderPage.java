@@ -82,19 +82,24 @@ public class OrderPage {
         return panel;
     }
 
-    private void addItemToTable(Product product, int quantity) {
+    private void addItemToTable(Product product, int quantity, int buttonIndex) {
         Vector<Object> vector = new Vector<>();
         vector.add(product.getName());
         vector.add(product.getPrice());
         vector.add(quantity);
 
+        // Increase quantity value in the row without adding new one
         if (order.getContent().contains(product)) {
-            int indexOfProduct = order.getContent().indexOf(product);
-            Integer currentProductQuantity = (Integer) defaultTableModel.getValueAt(indexOfProduct, 2);
+            int productIndex = order.getContent().indexOf(product);
+            Integer currentProductQuantity = (Integer) defaultTableModel.getValueAt(productIndex, 2);
 
             if (currentProductQuantity < order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE) {
                 defaultTableModel.setValueAt(
-                        Math.min(currentProductQuantity + quantity, order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE), indexOfProduct, 2);
+                        Math.min(currentProductQuantity + quantity, order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE), productIndex, 2);
+            } else {
+                // Disable button when product reach max quantity allowed
+                buttonList.get(buttonIndex).setEnabled(false);
+                buttonList.get(buttonIndex).setBackground(Color.LIGHT_GRAY);
             }
         } else {
             defaultTableModel.addRow(vector);
@@ -127,8 +132,9 @@ public class OrderPage {
         addProductButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                Burger burger = Menu.getClassicBurgerList().get(buttonList.indexOf(addProductButton));
-                addItemToTable(burger, (Integer) spinner.getValue());
+                int buttonIndex = buttonList.indexOf(addProductButton);
+                Burger burger = Menu.getClassicBurgerList().get(buttonIndex);
+                addItemToTable(burger, (Integer) spinner.getValue(), buttonIndex);
             }
         });
 

@@ -93,29 +93,34 @@ public class OrderPage {
         // Increase quantity value in the row without adding new one
         if (order.getContent().contains(product)) {
             // Enable remove button because order list contains at least one item of this type
-            enableButton(removeButtonsList.get(buttonIndex));
+            enableRemoveButton(removeButtonsList.get(buttonIndex));
 
             int productIndex = order.getContent().indexOf(product);
             Integer currentProductQuantity = (Integer) defaultTableModel.getValueAt(productIndex, 2);
 
-            if (currentProductQuantity < order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE) {
-                defaultTableModel.setValueAt(
-                        Math.min(currentProductQuantity + quantity, order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE), productIndex, 2);
+            if (currentProductQuantity + quantity < order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE) {
+                defaultTableModel.setValueAt(currentProductQuantity + quantity, productIndex, 2);
             } else {
                 // Disable button when product reach max quantity allowed
                 disableButton(addButtonsList.get(buttonIndex));
+                defaultTableModel.setValueAt(order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE, productIndex, 2);
             }
         } else {
             defaultTableModel.addRow(vector);
             order.addProduct(product);
             // Enable remove button because order list contains at least one item of this type
-            enableButton(removeButtonsList.get(buttonIndex));
+            enableRemoveButton(removeButtonsList.get(buttonIndex));
         }
     }
 
-    private void enableButton(JButton button) {
+    private void enableRemoveButton(JButton button) {
         button.setEnabled(true);
         button.setBackground(new Color(250, 64, 64));
+    }
+
+    private void enableAddButton(JButton button) {
+        button.setEnabled(true);
+        button.setBackground(new Color(54, 208, 54));
     }
 
     private void disableButton(JButton button) {
@@ -129,11 +134,13 @@ public class OrderPage {
             Integer currentProductQuantity = (Integer) defaultTableModel.getValueAt(productIndex, 2);
 
             if (currentProductQuantity > 1 && currentProductQuantity - quantity > 0) {
+                enableAddButton(addButtonsList.get(buttonIndex));
                 defaultTableModel.setValueAt(currentProductQuantity - quantity, productIndex, 2);
             } else {
                 defaultTableModel.removeRow(productIndex);
                 order.removeProduct(product);
                 disableButton(removeButtonsList.get(buttonIndex));
+                enableAddButton(addButtonsList.get(buttonIndex));
             }
         }
     }

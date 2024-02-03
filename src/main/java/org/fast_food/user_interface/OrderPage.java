@@ -23,7 +23,8 @@ public class OrderPage {
     private JFrame frame;
     private DefaultTableModel defaultTableModel;
     private Order order;
-    private List<JButton> buttonList;
+    private List<JButton> addButtonsList;
+    private List<JButton> removeButtonsList;
 
     public OrderPage() {
         initialize();
@@ -32,7 +33,8 @@ public class OrderPage {
     private void initialize() {
         this.frame = new JFrame();
         this.order = new Order();
-        this.buttonList = new ArrayList<>();
+        this.addButtonsList = new ArrayList<>();
+        this.removeButtonsList = new ArrayList<>();
 
         frame.setLayout(new BorderLayout());
         frame.setSize(1150, 650);
@@ -90,6 +92,9 @@ public class OrderPage {
 
         // Increase quantity value in the row without adding new one
         if (order.getContent().contains(product)) {
+            // Enable remove button because order list contains at least one item of this type
+            enableButton(removeButtonsList.get(buttonIndex));
+
             int productIndex = order.getContent().indexOf(product);
             Integer currentProductQuantity = (Integer) defaultTableModel.getValueAt(productIndex, 2);
 
@@ -98,12 +103,38 @@ public class OrderPage {
                         Math.min(currentProductQuantity + quantity, order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE), productIndex, 2);
             } else {
                 // Disable button when product reach max quantity allowed
-                buttonList.get(buttonIndex).setEnabled(false);
-                buttonList.get(buttonIndex).setBackground(Color.LIGHT_GRAY);
+                disableButton(addButtonsList.get(buttonIndex));
             }
         } else {
             defaultTableModel.addRow(vector);
             order.addProduct(product);
+            // Enable remove button because order list contains at least one item of this type
+            enableButton(removeButtonsList.get(buttonIndex));
+        }
+    }
+
+    private void enableButton(JButton button) {
+        button.setEnabled(true);
+        button.setBackground(new Color(250, 64, 64));
+    }
+
+    private void disableButton(JButton button) {
+        button.setEnabled(false);
+        button.setBackground(Color.LIGHT_GRAY);
+    }
+
+    private void removeItemFromTable(Product product, int quantity, int buttonIndex) {
+        if (order.getContent().contains(product)) {
+            int productIndex = order.getContent().indexOf(product);
+            Integer currentProductQuantity = (Integer) defaultTableModel.getValueAt(productIndex, 2);
+
+            if (currentProductQuantity > 1 && currentProductQuantity - quantity > 0) {
+                defaultTableModel.setValueAt(currentProductQuantity - quantity, productIndex, 2);
+            } else {
+                defaultTableModel.removeRow(productIndex);
+                order.removeProduct(product);
+                disableButton(removeButtonsList.get(buttonIndex));
+            }
         }
     }
 
@@ -127,20 +158,31 @@ public class OrderPage {
         addProductButton.setBackground(new Color(54, 208, 54));
         addProductButton.setFocusable(false);
 
-        buttonList.add(addProductButton);
+        addButtonsList.add(addProductButton);
 
         addProductButton.addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent e) {
-                int buttonIndex = buttonList.indexOf(addProductButton);
+                int buttonIndex = addButtonsList.indexOf(addProductButton);
                 Burger burger = Menu.getClassicBurgerList().get(buttonIndex);
                 addItemToTable(burger, (Integer) spinner.getValue(), buttonIndex);
             }
         });
 
         JButton removeProductButton = new JButton(IconFontSwing.buildIcon(FontAwesome.MINUS, 22));
-        removeProductButton.setBackground(new Color(250, 64, 64));
+        disableButton(removeProductButton);
         removeProductButton.setFocusable(false);
+
+        removeButtonsList.add(removeProductButton);
+
+        removeProductButton.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                int buttonIndex = removeButtonsList.indexOf(removeProductButton);
+                Burger burger = Menu.getClassicBurgerList().get(buttonIndex);
+                removeItemFromTable(burger, (Integer) spinner.getValue(), buttonIndex);
+            }
+        });
 
         burgerName.setHorizontalAlignment(SwingConstants.CENTER);
 

@@ -25,6 +25,7 @@ public class OrderPage {
     private Order order;
     private List<JButton> addButtonsList;
     private List<JButton> removeButtonsList;
+    private JLabel totalOrderPrice;
 
     public OrderPage() {
         initialize();
@@ -87,13 +88,14 @@ public class OrderPage {
         JPanel panel = new JPanel(new BorderLayout());
         String[] column = {"Name","Price","Quantity"};
         this.defaultTableModel = new DefaultTableModel(column, 0);
+        this.totalOrderPrice = new JLabel("Total cost: $" + order.getTotalPrice());
         JTable table = new JTable(defaultTableModel);
         table.getColumnModel().getColumn(0).setPreferredWidth(220);
         table.setFocusable(false);
         JScrollPane scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         panel.setPreferredSize(new Dimension(350, 350));
         panel.add(scrollPane, BorderLayout.NORTH);
-        panel.add(new JLabel("Total cost: "));
+        panel.add(totalOrderPrice);
         return panel;
     }
 
@@ -108,10 +110,12 @@ public class OrderPage {
             // Enable remove button because order list contains at least one item of this type
             enableRemoveButton(removeButtonsList.get(buttonIndex));
 
-            int productIndex = order.getContent().indexOf(product);
+            int productIndex = order.getContent().stream().toList().indexOf(product);
             Integer currentProductQuantity = (Integer) defaultTableModel.getValueAt(productIndex, 2);
 
             if (currentProductQuantity + quantity < order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE) {
+                order.addProduct(product, quantity);
+                totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
                 defaultTableModel.setValueAt(currentProductQuantity + quantity, productIndex, 2);
             } else {
                 // Disable button when product reach max quantity allowed
@@ -120,7 +124,8 @@ public class OrderPage {
             }
         } else {
             defaultTableModel.addRow(vector);
-            order.addProduct(product);
+            order.addProduct(product, quantity);
+            totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
             // Enable remove button because order list contains at least one item of this type
             enableRemoveButton(removeButtonsList.get(buttonIndex));
         }
@@ -143,15 +148,18 @@ public class OrderPage {
 
     private void removeItemFromTable(Product product, int quantity, int buttonIndex) {
         if (order.getContent().contains(product)) {
-            int productIndex = order.getContent().indexOf(product);
+            int productIndex = order.getContent().stream().toList().indexOf(product);
             Integer currentProductQuantity = (Integer) defaultTableModel.getValueAt(productIndex, 2);
 
             if (currentProductQuantity > 1 && currentProductQuantity - quantity > 0) {
+                order.removeProduct(product, quantity);
+                totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
                 enableAddButton(addButtonsList.get(buttonIndex));
                 defaultTableModel.setValueAt(currentProductQuantity - quantity, productIndex, 2);
             } else {
                 defaultTableModel.removeRow(productIndex);
                 order.removeProduct(product);
+                totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
                 disableButton(removeButtonsList.get(buttonIndex));
                 enableAddButton(addButtonsList.get(buttonIndex));
             }
@@ -180,12 +188,9 @@ public class OrderPage {
 
         addButtonsList.add(addProductButton);
 
-        addProductButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int buttonIndex = addButtonsList.indexOf(addProductButton);
-                addItemToTable(product, (Integer) spinner.getValue(), buttonIndex);
-            }
+        addProductButton.addActionListener(e -> {
+            int buttonIndex = addButtonsList.indexOf(addProductButton);
+            addItemToTable(product, (Integer) spinner.getValue(), buttonIndex);
         });
 
         JButton removeProductButton = new JButton(IconFontSwing.buildIcon(FontAwesome.MINUS, 22));
@@ -194,12 +199,9 @@ public class OrderPage {
 
         removeButtonsList.add(removeProductButton);
 
-        removeProductButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                int buttonIndex = removeButtonsList.indexOf(removeProductButton);
-                removeItemFromTable(product, (Integer) spinner.getValue(), buttonIndex);
-            }
+        removeProductButton.addActionListener(e -> {
+            int buttonIndex = removeButtonsList.indexOf(removeProductButton);
+            removeItemFromTable(product, (Integer) spinner.getValue(), buttonIndex);
         });
 
         burgerName.setHorizontalAlignment(SwingConstants.CENTER);

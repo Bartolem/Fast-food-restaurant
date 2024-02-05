@@ -68,14 +68,18 @@ public class Order {
         totalPrice += product.getPrice() * quantity;
     }
 
-    public void removeProduct(Product product) {
-        content.remove(product);
-        totalPrice -= product.getPrice();
-    }
-
     public void removeProduct(Product product, int quantity) {
-        content.replace(product, content.get(product) - quantity);
-        totalPrice -= product.getPrice();
+        if (content.get(product) - quantity > 0) {
+            content.replace(product, content.get(product) - quantity);
+        } else {
+            content.remove(product);
+        }
+
+        if (totalPrice < product.getPrice() * quantity) {
+            totalPrice = 0.0;
+        } else {
+            totalPrice -= product.getPrice() * quantity;
+        }
     }
 
     private String generateUniqueId() {

@@ -118,6 +118,8 @@ public class OrderPage {
                 totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
                 defaultTableModel.setValueAt(currentProductQuantity + quantity, productIndex, 2);
             } else {
+                order.addProduct(product, order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE - currentProductQuantity);
+                totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
                 // Disable button when product reach max quantity allowed
                 disableButton(addButtonsList.get(buttonIndex));
                 defaultTableModel.setValueAt(order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE, productIndex, 2);
@@ -157,8 +159,8 @@ public class OrderPage {
                 enableAddButton(addButtonsList.get(buttonIndex));
                 defaultTableModel.setValueAt(currentProductQuantity - quantity, productIndex, 2);
             } else {
+                order.removeProduct(product, quantity);
                 defaultTableModel.removeRow(productIndex);
-                order.removeProduct(product);
                 totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
                 disableButton(removeButtonsList.get(buttonIndex));
                 enableAddButton(addButtonsList.get(buttonIndex));

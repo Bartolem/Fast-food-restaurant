@@ -54,16 +54,21 @@ public class OrderPage {
     }
 
     private JPanel createMenuPanel() {
-        int rows = Menu.getClassicBurgerList().size();
-        int columns = 3;
+        final int columns = 2;
+        final int rows = Menu.getClassicBurgerList().size();
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
         JPanel panel = new JPanel(new GridBagLayout());
         panel.setBackground(new Color(255, 89, 60));
 
-        for (int i = 0; i < rows; i++) {
+        for (int i = 0; i < rows / columns; i++) {
             for (int j = 0; j < columns; j++) {
                 gridBagConstraints.gridx = j;
                 gridBagConstraints.gridy = i;
+
+                // Adds last element if the number of rows is odd
+                if (i == rows / columns -1 && rows % columns != 0) {
+                    gridBagConstraints.gridx = 0;
+                }
                 // Set border for item containers
                 gridBagConstraints.insets = new Insets(10,10,10,10);
                 panel.add(createItemContainer(), gridBagConstraints);
@@ -77,7 +82,7 @@ public class OrderPage {
         String[] column = {"Name","Price","Quantity"};
         this.defaultTableModel = new DefaultTableModel(column, 0);
         JTable table = new JTable(defaultTableModel);
-        
+        table.setFocusable(false);
         JScrollPane scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         panel.add(scrollPane, BorderLayout.NORTH);

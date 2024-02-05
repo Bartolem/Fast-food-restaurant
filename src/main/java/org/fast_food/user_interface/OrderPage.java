@@ -67,14 +67,17 @@ public class OrderPage {
             for (int j = 0; j < columns; j++) {
                 gridBagConstraints.gridx = j;
                 gridBagConstraints.gridy = i;
-
-                // Adds last element if the number of rows is odd
-                if (i == rows / columns -1 && rows % columns != 0) {
-                    gridBagConstraints.gridx = 0;
-                }
-                System.out.println(index);
                 panel.add(createItemContainer(productList.get(index), productImages.get(index)), gridBagConstraints);
                 index++;
+
+                // Adds last element if the number of rows is odd
+                if (index == productList.size() - 1) {
+                    if (rows % columns != 0) {
+                        gridBagConstraints.gridx = 0;
+                        gridBagConstraints.gridy = index;
+                    }
+                    panel.add(createItemContainer(productList.get(index), productImages.get(index)), gridBagConstraints);
+                }
             }
         }
         return panel;

@@ -6,34 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/classic/bacon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/classic/classic_3.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/classic/bbq.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/classic/classic_7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/classic/cheeseburger.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/classic/classic_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/classic/chicken.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/classic/classic_5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/classic/classic.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/classic/classic_1.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/classic/double bacon cheeseburger.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/classic/classic_13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/classic/double bacon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/classic/classic_12.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/classic/double cheeseburger.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/classic/classic_11.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/classic/double classic.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/classic/classic_10.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/classic/jalapeno.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/classic/classic_8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/classic/teriyaki.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/classic/classic_9.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/classic/turkey.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/classic/classic_6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/classic/veggie.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/classic/classic_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/classic/bacon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/classic/bbq.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/classic/cheeseburger.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/classic/chicken.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/classic/classic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/classic/double bacon cheeseburger.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/classic/double bacon.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/classic/double cheeseburger.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/classic/double classic.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/classic/jalapeno.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/classic/teriyaki.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/classic/turkey.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/classic/veggie.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

@@ -5,7 +5,6 @@ import jiconfont.swing.IconFontSwing;
 import net.miginfocom.swing.MigLayout;
 import org.fast_food.order.Order;
 import org.fast_food.product.Product;
-import org.fast_food.product.burger.Burger;
 import org.fast_food.menu.Menu;
 
 import javax.swing.*;
@@ -13,6 +12,7 @@ import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
 import java.util.ArrayList;
 import java.util.Vector;
 import java.util.List;
@@ -44,7 +44,7 @@ public class OrderPage {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
-        JPanel menuPanel = createMenuPanel();
+        JPanel menuPanel = createMenuPanel(Menu.getClassicBurgerList(), Menu.getClassicBurgerImages());
         JPanel orderListPanel = createOrderListPanel();
         JScrollPane jScrollPane = new JScrollPane(menuPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
@@ -53,12 +53,15 @@ public class OrderPage {
         frame.setLocationByPlatform(true);
     }
 
-    private JPanel createMenuPanel() {
+    private JPanel createMenuPanel(List<Product> productList, List<File> productImages) {
         final int columns = 2;
-        final int rows = Menu.getClassicBurgerList().size();
+        final int rows = productList.size();
+        int index = 0;
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
         JPanel panel = new JPanel(new GridBagLayout());
         panel.setBackground(new Color(255, 89, 60));
+        // Set border for item containers
+        gridBagConstraints.insets = new Insets(10,10,10,10);
 
         for (int i = 0; i < rows / columns; i++) {
             for (int j = 0; j < columns; j++) {
@@ -69,9 +72,9 @@ public class OrderPage {
                 if (i == rows / columns -1 && rows % columns != 0) {
                     gridBagConstraints.gridx = 0;
                 }
-                // Set border for item containers
-                gridBagConstraints.insets = new Insets(10,10,10,10);
-                panel.add(createItemContainer(), gridBagConstraints);
+                System.out.println(index);
+                panel.add(createItemContainer(productList.get(index), productImages.get(index)), gridBagConstraints);
+                index++;
             }
         }
         return panel;
@@ -150,10 +153,10 @@ public class OrderPage {
         }
     }
 
-    private JPanel createItemContainer() {
+    private JPanel createItemContainer(Product product, File image) {
         JPanel panel = new JPanel(new MigLayout("debug"));
-        JLabel burgerName = createLabel("Burger bla bla mniam", "Verdana", Font.PLAIN, 22);
-        JLabel burgerCost = createLabel("$ 4.59", "Verdana", Font.PLAIN, 22);
+        JLabel burgerName = createLabel(product.getName(), "Verdana", Font.PLAIN, 22);
+        JLabel burgerCost = createLabel("$" + product.getPrice(), "Verdana", Font.PLAIN, 22);
         JSpinner spinner = new JSpinner(new SpinnerNumberModel(1, 1, 10, 1));
         JSpinner.DefaultEditor editor = (JSpinner.DefaultEditor) spinner.getEditor();
         JFormattedTextField textField = editor.getTextField();
@@ -176,8 +179,8 @@ public class OrderPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int buttonIndex = addButtonsList.indexOf(addProductButton);
-                Burger burger = Menu.getClassicBurgerList().get(buttonIndex);
-                addItemToTable(burger, (Integer) spinner.getValue(), buttonIndex);
+//                Burger burger = Menu.getClassicBurgerList().get(buttonIndex);
+                addItemToTable(product, (Integer) spinner.getValue(), buttonIndex);
             }
         });
 
@@ -191,15 +194,15 @@ public class OrderPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int buttonIndex = removeButtonsList.indexOf(removeProductButton);
-                Burger burger = Menu.getClassicBurgerList().get(buttonIndex);
-                removeItemFromTable(burger, (Integer) spinner.getValue(), buttonIndex);
+//                Burger burger = Menu.getClassicBurgerList().get(buttonIndex);
+                removeItemFromTable(product, (Integer) spinner.getValue(), buttonIndex);
             }
         });
 
         burgerName.setHorizontalAlignment(SwingConstants.CENTER);
 
         panel.add(burgerName, "span, wrap, growx");
-        panel.add(createImageLabel("src/main/resources/images/classic/bacon.png", 250, 200), "wrap");
+        panel.add(createImageLabel(image.getPath(), 250, 200), "wrap");
         panel.add(spinner, "split4");
         panel.add(addProductButton);
         panel.add(removeProductButton);

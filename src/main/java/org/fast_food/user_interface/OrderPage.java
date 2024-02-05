@@ -88,10 +88,12 @@ public class OrderPage {
         String[] column = {"Name","Price","Quantity"};
         this.defaultTableModel = new DefaultTableModel(column, 0);
         JTable table = new JTable(defaultTableModel);
+        table.getColumnModel().getColumn(0).setPreferredWidth(220);
         table.setFocusable(false);
         JScrollPane scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-
+        panel.setPreferredSize(new Dimension(350, 350));
         panel.add(scrollPane, BorderLayout.NORTH);
+        panel.add(new JLabel("Total cost: "));
         return panel;
     }
 
@@ -157,9 +159,9 @@ public class OrderPage {
     }
 
     private JPanel createItemContainer(Product product, File image) {
-        JPanel panel = new JPanel(new MigLayout("debug"));
-        JLabel burgerName = createLabel(product.getName(), "Verdana", Font.PLAIN, 22);
-        JLabel burgerCost = createLabel("$" + product.getPrice(), "Verdana", Font.PLAIN, 22);
+        JPanel panel = new JPanel(new MigLayout());
+        JLabel burgerName = createLabel(product.getName(), "Verdana", Font.PLAIN, 18);
+        JLabel burgerCost = createLabel("$" + product.getPrice(), "Verdana", Font.PLAIN, 20);
         JSpinner spinner = new JSpinner(new SpinnerNumberModel(1, 1, 10, 1));
         JSpinner.DefaultEditor editor = (JSpinner.DefaultEditor) spinner.getEditor();
         JFormattedTextField textField = editor.getTextField();
@@ -182,7 +184,6 @@ public class OrderPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int buttonIndex = addButtonsList.indexOf(addProductButton);
-//                Burger burger = Menu.getClassicBurgerList().get(buttonIndex);
                 addItemToTable(product, (Integer) spinner.getValue(), buttonIndex);
             }
         });
@@ -197,7 +198,6 @@ public class OrderPage {
             @Override
             public void actionPerformed(ActionEvent e) {
                 int buttonIndex = removeButtonsList.indexOf(removeProductButton);
-//                Burger burger = Menu.getClassicBurgerList().get(buttonIndex);
                 removeItemFromTable(product, (Integer) spinner.getValue(), buttonIndex);
             }
         });

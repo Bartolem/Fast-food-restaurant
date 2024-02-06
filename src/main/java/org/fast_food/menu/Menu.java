@@ -2,6 +2,7 @@ package org.fast_food.menu;
 
 import org.fast_food.product.Product;
 import org.fast_food.product.burger.ClassicBurger;
+import org.fast_food.product.burger.GourmetBurger;
 
 import java.io.File;
 import java.util.Arrays;
@@ -11,13 +12,24 @@ import java.util.Objects;
 
 public class Menu {
     private static final List<Product> CLASSIC_BURGER_LIST = List.of(ClassicBurger.values());
+    private static final List<Product> GOURMET_BURGER_LIST = List.of(GourmetBurger.values());
 
     public static List<Product> getClassicBurgerList() {
         return CLASSIC_BURGER_LIST;
     }
 
+    public static List<Product> getGourmetBurgerList() {
+        return GOURMET_BURGER_LIST;
+    }
+
     public  static  List<File> getClassicBurgerImages() {
         File[] images = new File("src/main/resources/images/classic").listFiles();
+        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
+        return List.of(images);
+    }
+
+    public  static  List<File> getGourmetBurgerImages() {
+        File[] images = new File("src/main/resources/images/gourmet").listFiles();
         Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
         return List.of(images);
     }

@@ -24,6 +24,8 @@ public class OrderPage {
     private List<JButton> addButtonsList;
     private List<JButton> removeButtonsList;
     private JLabel totalOrderPrice;
+    private CardLayout cardLayout;
+    private JPanel menuPanel;
 
     public OrderPage() {
         initialize();
@@ -34,6 +36,8 @@ public class OrderPage {
         this.order = new Order();
         this.addButtonsList = new ArrayList<>();
         this.removeButtonsList = new ArrayList<>();
+        this.cardLayout = new CardLayout();
+        this.menuPanel = new JPanel(cardLayout);
 
         frame.setLayout(new BorderLayout());
         frame.setSize(1150, 650);
@@ -44,12 +48,15 @@ public class OrderPage {
         frame.setLocationRelativeTo(null);
 
         JPanel categoryPanel = createCategoryPanel();
-        JPanel menuPanel = createMenuPanel(Menu.getClassicBurgerList(), Menu.getClassicBurgerImages());
         JPanel orderListPanel = createOrderListPanel();
-        JScrollPane jScrollPane = new JScrollPane(menuPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
+        JScrollPane classicBurgerPanel = new JScrollPane(createMenuPanel(Menu.getClassicBurgerList(), Menu.getClassicBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane gourmetBurgerPanel = new JScrollPane(createMenuPanel(Menu.getGourmetBurgerList(), Menu.getGourmetBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        menuPanel.add(classicBurgerPanel, "classicBurgerPanel");
+        menuPanel.add(gourmetBurgerPanel, "gourmetBurgerPanel");
 
         frame.add(categoryPanel, BorderLayout.WEST);
-        frame.add(jScrollPane, BorderLayout.CENTER);
+        frame.add(menuPanel, BorderLayout.CENTER);
         frame.add(orderListPanel, BorderLayout.EAST);
         frame.setLocationByPlatform(true);
     }
@@ -67,6 +74,7 @@ public class OrderPage {
         JButton comboMealsButton = createButton("Combo Meals", 12);
         JButton sideDishesButton = createButton("Side Dishes",12);
         JButton dessertsButton = createButton("Desserts",12);
+
         panel.add(classicBurgerButton);
         panel.add(gourmetBurgerButton);
         panel.add(spicyBurgersButton);
@@ -77,6 +85,15 @@ public class OrderPage {
         panel.add(comboMealsButton);
         panel.add(sideDishesButton);
         panel.add(dessertsButton);
+
+        classicBurgerButton.addActionListener(e -> {
+            cardLayout.show(menuPanel, "classicBurgerPanel");
+        });
+
+        gourmetBurgerButton.addActionListener(e -> {
+            cardLayout.show(menuPanel, "gourmetBurgerPanel");
+        });
+
         return panel;
     }
 
@@ -111,17 +128,29 @@ public class OrderPage {
     }
 
     private JPanel createOrderListPanel() {
-        JPanel panel = new JPanel(new BorderLayout());
+        JPanel panel = new JPanel(new MigLayout());
         String[] column = {"Name","Price","Quantity"};
-        this.defaultTableModel = new DefaultTableModel(column, 0);
-        this.totalOrderPrice = new JLabel("Total cost: $" + order.getTotalPrice());
+        JLabel totalCost = createLabel("Total cost: $", "Verdana", Font.PLAIN, 20);
+        JButton cancelButton = createButton("Cancel", 16);
+        JButton makeOrderButton = createButton("Pay", 16);
+        this.defaultTableModel = new DefaultTableModel(column, 0) {
+            //This causes all cells to be not editable
+            @Override
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
+        this.totalOrderPrice = createLabel(String.valueOf(order.getTotalPrice()), "Verdana", Font.PLAIN, 20);
         JTable table = new JTable(defaultTableModel);
         table.getColumnModel().getColumn(0).setPreferredWidth(220);
         table.setFocusable(false);
         JScrollPane scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         panel.setPreferredSize(new Dimension(350, 350));
-        panel.add(scrollPane, BorderLayout.NORTH);
-        panel.add(totalOrderPrice);
+        panel.add(scrollPane, "wrap, growx, pushx");
+        panel.add(totalCost, "split2");
+        panel.add(totalOrderPrice, "wrap");
+        panel.add(makeOrderButton, "split2, pushx, growx");
+        panel.add(cancelButton, "pushx, growx");
         return panel;
     }
 

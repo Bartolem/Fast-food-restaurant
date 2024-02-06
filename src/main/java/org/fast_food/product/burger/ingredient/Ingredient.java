@@ -23,7 +23,8 @@ public enum Ingredient implements IngredientI {
     SHRIMP_PATTY("Shrimp patty"),
     CUCUMBER("Cucumber slices"),
     BANANA_PEPPERS("Banana peppers"),
-    JALAPENO_POPPER_FILLING("Jalapeño popper filling")
+    JALAPENO_POPPER_FILLING("Jalapeño popper filling"),
+    CAJUN("Cajun spice blend")
     ;
 
     private final String name;

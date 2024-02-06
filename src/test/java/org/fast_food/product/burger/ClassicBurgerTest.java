@@ -1,5 +1,8 @@
 package org.fast_food.product.burger;
 
+import org.fast_food.product.burger.ingredient.Cheese;
+import org.fast_food.product.burger.ingredient.Ingredient;
+import org.fast_food.product.burger.ingredient.Sauce;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -43,19 +46,19 @@ class ClassicBurgerTest {
     }
     @Test
     void testGetIngredientsForDifferentBurgerTypes() {
-        assertTrue(CLASSIC_BURGER.getIngredients().containsAll(List.of("Beef patty", "Lettuce", "Tomato", "Pickles", "Onions")));
-        assertTrue(CLASSIC_CHEESEBURGER.getIngredients().containsAll(List.of("Beef patty", "Cheese", "Lettuce", "Tomato", "Pickles", "Onions")));
-        assertTrue(BACON_BURGER.getIngredients().containsAll(List.of("Beef patty", "Bacon", "Cheese", "Lettuce", "Tomato", "Pickles", "Onions")));
-        assertTrue(VEGGIE_BURGER.getIngredients().containsAll(List.of("Vegetarian patty", "Lettuce", "Tomato", "Pickles", "Onions", "Mayonnaise")));
-        assertTrue(CHICKEN_BURGER.getIngredients().containsAll(List.of("Grilled chicken breast", "Lettuce", "Tomato", "Pickles", "Onions", " Mayonnaise")));
-        assertTrue(TURKEY_BURGER.getIngredients().containsAll(List.of("Turkey patty", "Lettuce", "Tomato", "Onions", "Cranberry sauce")));
-        assertTrue(BBQ_BURGER.getIngredients().containsAll(List.of("Beef patty", "BBQ sauce", "Onion rings", "Lettuce")));
-        assertTrue(JALAPENO_BURGER.getIngredients().containsAll(List.of("Beef patty", "Pepper jack cheese", "Jalapeños", "Lettuce", "Tomato")));
-        assertTrue(TERIYAKI_BURGER.getIngredients().containsAll(List.of("Beef patty", "Teriyaki sauce", "Pineapple", "Lettuce", "Tomato")));
-        assertTrue(DOUBLE_BURGER.getIngredients().containsAll(List.of("Two beef patties", "Lettuce", "Tomato", "Pickles", "Onions")));
-        assertTrue(DOUBLE_CHEESEBURGER.getIngredients().containsAll(List.of("Two beef patties", "Double cheese", "Lettuce", "Tomato", "Pickles", "Onions")));
-        assertTrue(DOUBLE_BACON_BURGER.getIngredients().containsAll(List.of("Two beef patties", "Bacon", "Cheese","Lettuce", "Tomato", "Pickles", "Onions")));
-        assertTrue(DOUBLE_BACON_CHEESEBURGER.getIngredients().containsAll(List.of("Two beef patties", "Bacon", "Double cheese", "Lettuce", "Tomato", "Pickles", "Onions")));
+        assertTrue(CLASSIC_BURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Ingredient.LETTUCE, Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION)));
+        assertTrue(CLASSIC_CHEESEBURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION)));
+        assertTrue(BACON_BURGER.getIngredients().containsAll( List.of(Ingredient.BEEF_PATTY, Ingredient.BACON, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION)));
+        assertTrue(VEGGIE_BURGER.getIngredients().containsAll(List.of(Ingredient.VEGGIE_PATTY, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Sauce.MAYO)));
+        assertTrue(CHICKEN_BURGER.getIngredients().containsAll(List.of(Ingredient.CHICKEN, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Sauce.MAYO)));
+        assertTrue(TURKEY_BURGER.getIngredients().containsAll(List.of(Ingredient.TURKEY, Ingredient.LETTUCE, Ingredient.TOMATO, Ingredient.ONION, Sauce.CRANBERRY_SAUCE)));
+        assertTrue(BBQ_BURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Sauce.BBQ_SAUCE, Ingredient.ONION_RINGS, Ingredient.LETTUCE)));
+        assertTrue(JALAPENO_BURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Cheese.PEPPER_JACK_CHEESE, Ingredient.JALAPENOS, Ingredient.LETTUCE, Ingredient.TOMATO)));
+        assertTrue(TERIYAKI_BURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Sauce.TERIYAKI_SAUCE, Ingredient.TOMATO, Ingredient.LETTUCE, Ingredient.TOMATO)));
+        assertTrue(DOUBLE_BURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Ingredient.BEEF_PATTY, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION)));
+        assertTrue(DOUBLE_CHEESEBURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Ingredient.BEEF_PATTY, Cheese.CHEESE, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION)));
+        assertTrue(DOUBLE_BACON_BURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Ingredient.BEEF_PATTY, Ingredient.BACON, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION)));
+        assertTrue(DOUBLE_BACON_CHEESEBURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Ingredient.BEEF_PATTY, Ingredient.BACON, Cheese.CHEESE, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION)));
 
     }
 

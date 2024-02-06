@@ -48,7 +48,7 @@ public enum SpicyBurger implements Burger {
     }
 
     @Override
-    public List<String> getIngredients() {
+    public List<IngredientI> getIngredients() {
         return null;
     }
 

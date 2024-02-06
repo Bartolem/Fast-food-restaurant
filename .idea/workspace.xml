@@ -6,6 +6,13 @@
   <component name="ChangeListManager">
     <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/Burger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/Burger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ClassicBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ClassicBurger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/GourmetBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/GourmetBurger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/SpicyBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/SpicyBurger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/fast_food/product/burger/ClassicBurgerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/fast_food/product/burger/ClassicBurgerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/fast_food/product/burger/GourmetBurgerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/fast_food/product/burger/GourmetBurgerTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -67,6 +74,7 @@
     "JUnit.ClassicBurgerTest.getPrice.executor": "Run",
     "JUnit.ClassicBurgerTest.getSpicinessLevel.executor": "Run",
     "JUnit.ClassicBurgerTest.testClassicBurgerContainsAllValues.executor": "Run",
+    "JUnit.ClassicBurgerTest.testGetIngredientsForDifferentBurgerTypes.executor": "Run",
     "JUnit.ClassicBurgerTest.valueOf.executor": "Run",
     "JUnit.ClassicBurgerTest.values.executor": "Run",
     "JUnit.CustomerCreationTest.executor": "Run",
@@ -89,6 +97,7 @@
     "JUnit.GourmetBurgerTest.getPopularityRating.executor": "Run",
     "JUnit.GourmetBurgerTest.getPrice.executor": "Run",
     "JUnit.GourmetBurgerTest.getSpicinessLevel.executor": "Run",
+    "JUnit.GourmetBurgerTest.testGetIngredientsForDifferentBurgerTypes.executor": "Run",
     "JUnit.GourmetBurgerTest.testGourmetBurgerContainsAllValues.executor": "Run",
     "JUnit.GourmetBurgerTest.testValueOfDifferentBurgerTypes.executor": "Run",
     "JUnit.OrderCreationTest.testCreateOrder.executor": "Run",
@@ -153,7 +162,7 @@
       <recent name="org.fast_food.product" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.org.fast_food.Main">
+  <component name="RunManager" selected="JUnit.ClassicBurgerTest">
     <configuration name="org.fast_food.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.fast_food.Main" />
       <module name="Fast-food-restaurant" />
@@ -167,56 +176,64 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderManagementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClassicBurgerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.fast_food.order.*" />
+          <option name="PATTERN" value="org.fast_food.product.burger.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.order" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.order.OrderManagementTest" />
+      <option name="PACKAGE_NAME" value="org.fast_food.product.burger" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.burger.ClassicBurgerTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="OrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ClassicBurgerTest.testGetIngredientsForDifferentBurgerTypes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.fast_food.order.*" />
+          <option name="PATTERN" value="org.fast_food.product.burger.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.order" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.order.OrderTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="OrderTest.addProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Fast-food-restaurant" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.fast_food.order.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.order" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.order.OrderTest" />
-      <option name="METHOD_NAME" value="addProduct" />
+      <option name="PACKAGE_NAME" value="org.fast_food.product.burger" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.burger.ClassicBurgerTest" />
+      <option name="METHOD_NAME" value="testGetIngredientsForDifferentBurgerTypes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="java in Fast-food-restaurant" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="GourmetBurgerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.product.burger.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.fast_food.product.burger" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.burger.GourmetBurgerTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GourmetBurgerTest.testGetIngredientsForDifferentBurgerTypes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.product.burger.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.fast_food.product.burger" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.burger.GourmetBurgerTest" />
+      <option name="METHOD_NAME" value="testGetIngredientsForDifferentBurgerTypes" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -234,17 +251,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.org.fast_food.Main" />
-      <item itemvalue="JUnit.OrderTest" />
-      <item itemvalue="JUnit.OrderTest.addProduct" />
-      <item itemvalue="JUnit.java in Fast-food-restaurant" />
-      <item itemvalue="JUnit.OrderManagementTest" />
+      <item itemvalue="JUnit.ClassicBurgerTest" />
+      <item itemvalue="JUnit.ClassicBurgerTest.testGetIngredientsForDifferentBurgerTypes" />
+      <item itemvalue="JUnit.GourmetBurgerTest" />
+      <item itemvalue="JUnit.GourmetBurgerTest.testGetIngredientsForDifferentBurgerTypes" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ClassicBurgerTest" />
+        <item itemvalue="JUnit.ClassicBurgerTest.testGetIngredientsForDifferentBurgerTypes" />
+        <item itemvalue="JUnit.GourmetBurgerTest" />
+        <item itemvalue="JUnit.GourmetBurgerTest.testGetIngredientsForDifferentBurgerTypes" />
         <item itemvalue="Application.org.fast_food.Main" />
-        <item itemvalue="JUnit.OrderTest" />
-        <item itemvalue="JUnit.OrderTest.addProduct" />
-        <item itemvalue="JUnit.java in Fast-food-restaurant" />
       </list>
     </recent_temporary>
   </component>

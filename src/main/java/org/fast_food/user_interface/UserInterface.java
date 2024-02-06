@@ -1,21 +1,21 @@
 package org.fast_food.user_interface;
 
-import net.miginfocom.swing.MigLayout;
-
 import javax.swing.*;
 import java.awt.*;
 
 public class UserInterface {
-    private StartPage startPage;
+    public static String TITLE = "Bartolo's Burger";
+    public static ImageIcon ICON = new ImageIcon("src/main/resources/icon.png");
+    private final StartPage startPage;
 
     public UserInterface() {
         this.startPage = new StartPage();
         startPage.show();
     }
 
-    protected static JButton createButton(String text) {
+    protected static JButton createButton(String text, int size) {
         JButton button = new JButton(text);
-        button.setFont(new Font("Verdana",Font.PLAIN, 14));
+        button.setFont(new Font("Verdana",Font.PLAIN, size));
         button.setForeground(new Color(0, 0, 0));
         button.setBackground(new Color(121, 186, 253));
         button.setFocusable(false);

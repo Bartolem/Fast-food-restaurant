@@ -3,21 +3,22 @@ package org.fast_food.order;
 import org.fast_food.product.Product;
 
 import java.time.LocalDateTime;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
+import java.util.*;
 
 public class Order {
+    public final int MAX_QUANTITY_OF_PRODUCT_SAME_TYPE = 10;
     private final String id;
     private OrderStatus status;
     private final LocalDateTime date;
-    private final List<Product> content;
+    private final Map<Product, Integer> content;
+    private double totalPrice;
 
     public Order() {
         this.id = generateUniqueId();
         this.status = OrderStatus.NEW;
         this.date = LocalDateTime.now();
-        this.content = new ArrayList<>();
+        this.content = new HashMap<>();
+        this.totalPrice = 0;
     }
 
     public String getId() {
@@ -50,16 +51,35 @@ public class Order {
         return date;
     }
 
-    public List<Product> getContent() {
-        return content;
+    public Set<Product> getContent() {
+        return content.keySet();
     }
 
-    public void addProduct(Product product) {
-        content.add(product);
+    public double getTotalPrice() {
+        return totalPrice;
     }
 
-    public void removeProduct(Product product) {
-        content.remove(product);
+    public void addProduct(Product product, int quantity) {
+        if (content.containsKey(product)) {
+            content.replace(product, content.get(product) + 1);
+        } else {
+            content.putIfAbsent(product, quantity);
+        }
+        totalPrice += product.getPrice() * quantity;
+    }
+
+    public void removeProduct(Product product, int quantity) {
+        if (content.get(product) - quantity > 0) {
+            content.replace(product, content.get(product) - quantity);
+        } else {
+            content.remove(product);
+        }
+
+        if (totalPrice < product.getPrice() * quantity) {
+            totalPrice = 0.0;
+        } else {
+            totalPrice -= product.getPrice() * quantity;
+        }
     }
 
     private String generateUniqueId() {

@@ -10,8 +10,6 @@ import org.fast_food.menu.Menu;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Vector;
@@ -45,13 +43,41 @@ public class OrderPage {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
 
+        JPanel categoryPanel = createCategoryPanel();
         JPanel menuPanel = createMenuPanel(Menu.getClassicBurgerList(), Menu.getClassicBurgerImages());
         JPanel orderListPanel = createOrderListPanel();
         JScrollPane jScrollPane = new JScrollPane(menuPanel, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
+        frame.add(categoryPanel, BorderLayout.WEST);
         frame.add(jScrollPane, BorderLayout.CENTER);
         frame.add(orderListPanel, BorderLayout.EAST);
         frame.setLocationByPlatform(true);
+    }
+
+    private JPanel createCategoryPanel() {
+        JPanel panel = new JPanel(new GridLayout(0, 1));
+        panel.setBackground(new Color(255, 89, 60));
+        JButton classicBurgerButton = createButton("Classic Burgers", 12);
+        JButton gourmetBurgerButton = createButton("Gourmet Burgers",12);
+        JButton spicyBurgersButton = createButton("Spicy Burgers",12);
+        JButton uniqueBurgerButton = createButton("Unique Flavour Burgers",12);
+        JButton frenchFriesButton = createButton("French Fries",12);
+        JButton coldDrinksButton = createButton("Cold Drinks",12);
+        JButton hotDrinksButton = createButton("Hot drinks",12);
+        JButton comboMealsButton = createButton("Combo Meals", 12);
+        JButton sideDishesButton = createButton("Side Dishes",12);
+        JButton dessertsButton = createButton("Desserts",12);
+        panel.add(classicBurgerButton);
+        panel.add(gourmetBurgerButton);
+        panel.add(spicyBurgersButton);
+        panel.add(uniqueBurgerButton);
+        panel.add(frenchFriesButton);
+        panel.add(coldDrinksButton);
+        panel.add(hotDrinksButton);
+        panel.add(comboMealsButton);
+        panel.add(sideDishesButton);
+        panel.add(dessertsButton);
+        return panel;
     }
 
     private JPanel createMenuPanel(List<Product> productList, List<File> productImages) {

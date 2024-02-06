@@ -6,8 +6,28 @@
   <component name="ChangeListManager">
     <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/order/Order.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/classic/classic_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/spicy/spicy_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/gourmet/avocado ranch.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/gourmet/gourmet_2.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/gourmet/bbq bacon ranch.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/gourmet/gourmet_5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/gourmet/blue cheeseburger.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/gourmet/gourmet_1.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/gourmet/cajun spiced.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/gourmet/gourmet_6.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/gourmet/guacamole bacon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/gourmet/gourmet_4.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/gourmet/mediterranean lamb.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/gourmet/gourmet_9.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/gourmet/pesto.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/gourmet/gourmet_7.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/gourmet/steak.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/gourmet/gourmet_8.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/gourmet/truffle.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/gourmet/gourmet_3.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/fast_food/order/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/fast_food/order/OrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/classic/classic_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/classic/classic_5.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/gourmet/avocado ranch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/gourmet/bbq bacon ranch.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/gourmet/blue cheeseburger.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/gourmet/cajun spiced.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/gourmet/guacamole bacon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/gourmet/mediterranean lamb.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/gourmet/pesto.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/gourmet/steak.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/images/gourmet/truffle.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +140,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "temurin-21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Projekty/Java Projects/Fast food ordering/src/main/resources",
+    "last_opened_file_path": "D:/Projekty/Java Projects/Fast food ordering/src/main/resources/images",
     "onboarding.tips.debug.path": "D:/Projekty/Java Projects/Fast food ordering/untitled/src/Main.java",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -130,18 +150,19 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images" />
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\java\org\fast_food\user_interface" />
     </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources" />
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\unique" />
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\classic" />
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\spicy" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images" />
-      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\java\org\fast_food\user_interface" />
-      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\java\org\fast_food" />
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.fast_food" />
@@ -183,6 +204,37 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="OrderTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.order.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.fast_food.order" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.order.OrderTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="OrderTest.addProduct" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.order.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.fast_food.order" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.order.OrderTest" />
+      <option name="METHOD_NAME" value="addProduct" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="java in Fast-food-restaurant" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <option name="TEST_OBJECT" value="directory" />
@@ -204,12 +256,16 @@
     </configuration>
     <list>
       <item itemvalue="Application.org.fast_food.Main" />
+      <item itemvalue="JUnit.OrderTest" />
+      <item itemvalue="JUnit.OrderTest.addProduct" />
       <item itemvalue="JUnit.java in Fast-food-restaurant" />
       <item itemvalue="JUnit.OrderManagementTest" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.org.fast_food.Main" />
+        <item itemvalue="JUnit.OrderTest" />
+        <item itemvalue="JUnit.OrderTest.addProduct" />
         <item itemvalue="JUnit.java in Fast-food-restaurant" />
       </list>
     </recent_temporary>

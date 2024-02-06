@@ -49,18 +49,18 @@ class OrderTest {
 
     @Test
     void addProduct() {
-        order.addProduct(ClassicBurger.BACON_BURGER);
+        order.addProduct(ClassicBurger.BACON_BURGER, 1);
         assertFalse(order.getContent().isEmpty());
         assertTrue(order.getContent().contains(ClassicBurger.BACON_BURGER));
     }
 
     @Test
     void removeProduct() {
-        order.addProduct(ClassicBurger.BACON_BURGER);
+        order.addProduct(ClassicBurger.BACON_BURGER, 1);
         assertFalse(order.getContent().isEmpty());
         assertTrue(order.getContent().contains(ClassicBurger.BACON_BURGER));
 
-        order.removeProduct(ClassicBurger.BACON_BURGER);
+        order.removeProduct(ClassicBurger.BACON_BURGER, 1);
         assertTrue(order.getContent().isEmpty());
         assertFalse(order.getContent().contains(ClassicBurger.BACON_BURGER));
     }

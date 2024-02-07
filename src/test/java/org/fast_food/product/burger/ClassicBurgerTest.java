@@ -54,7 +54,7 @@ class ClassicBurgerTest {
         assertTrue(TURKEY_BURGER.getIngredients().containsAll(List.of(Ingredient.TURKEY, Ingredient.LETTUCE, Ingredient.TOMATO, Ingredient.ONION, Sauce.CRANBERRY_SAUCE)));
         assertTrue(BBQ_BURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Sauce.BBQ_SAUCE, Ingredient.ONION_RINGS, Ingredient.LETTUCE)));
         assertTrue(JALAPENO_BURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Cheese.PEPPER_JACK_CHEESE, Ingredient.JALAPENOS, Ingredient.LETTUCE, Ingredient.TOMATO)));
-        assertTrue(TERIYAKI_BURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Sauce.TERIYAKI_SAUCE, Ingredient.TOMATO, Ingredient.LETTUCE, Ingredient.TOMATO)));
+        assertTrue(TERIYAKI_BURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Sauce.TERIYAKI_SAUCE, Ingredient.TOMATO, Ingredient.LETTUCE, Ingredient.PINEAPPLE, Ingredient.TOMATO)));
         assertTrue(DOUBLE_BURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Ingredient.BEEF_PATTY, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION)));
         assertTrue(DOUBLE_CHEESEBURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Ingredient.BEEF_PATTY, Cheese.CHEESE, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION)));
         assertTrue(DOUBLE_BACON_BURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Ingredient.BEEF_PATTY, Ingredient.BACON, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION)));

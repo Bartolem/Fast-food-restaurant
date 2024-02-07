@@ -48,7 +48,7 @@ class GourmetBurgerTest {
         assertTrue(CAJUN_SPICED_BURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Ingredient.CAJUN, Cheese.PEPPER_JACK_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO)));
         assertTrue(PESTO_TURKEY_BURGER.getIngredients().containsAll(List.of(Ingredient.TURKEY, Sauce.PESTO, Cheese.MOZZARELLA, Ingredient.ARUGULA, Ingredient.TOMATO)));
         assertTrue(PHILLY_CHEESE_STEAK_BURGER.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Ingredient.STEAK, Cheese.PROVOLONE_CHEESE, Ingredient.GRILLED_PEPPERS, Ingredient.ONION)));
-        assertTrue(MEDITERRANEAN_LAMB_BURGER.getIngredients().containsAll(List.of(Ingredient.LAMB_PATTY, Cheese.FETA_CHEESE, Sauce.TERIYAKI_SAUCE, Ingredient.LETTUCE, Ingredient.TOMATO)));
+        assertTrue(MEDITERRANEAN_LAMB_BURGER.getIngredients().containsAll(List.of(Ingredient.LAMB_PATTY, Cheese.FETA_CHEESE, Sauce.TZATZIKI, Ingredient.LETTUCE, Ingredient.TOMATO)));
     }
 
     @Test

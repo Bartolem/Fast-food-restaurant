@@ -41,36 +41,36 @@ public enum SpicyBurger implements Burger {
 
     @Override
     public String getName() {
-        return null;
+        return name;
     }
 
     @Override
     public double getPrice() {
-        return 0;
+        return price;
     }
 
     @Override
     public String getDescription() {
-        return null;
+        return description;
     }
 
     @Override
     public int getCalories() {
-        return 0;
+        return calories;
     }
 
     @Override
     public List<IngredientI> getIngredients() {
-        return null;
+        return ingredients;
     }
 
     @Override
     public double getSpicinessLevel() {
-        return 0;
+        return spicinessLevel;
     }
 
     @Override
     public double getPopularityRating() {
-        return 0;
+        return popularityRating;
     }
 }

@@ -37,7 +37,7 @@ public class OrderPage {
         this.addButtonsList = new ArrayList<>();
         this.removeButtonsList = new ArrayList<>();
         this.cardLayout = new CardLayout();
-        this.menuPanel = new JPanel(cardLayout);
+        this.menuPanel = createMenuPanel();
 
         frame.setLayout(new BorderLayout());
         frame.setSize(1150, 650);
@@ -46,19 +46,24 @@ public class OrderPage {
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
-
-        JPanel categoryPanel = createCategoryPanel();
-        JPanel orderListPanel = createOrderListPanel();
-
-        JScrollPane classicBurgerPanel = new JScrollPane(createMenuPanel(Menu.getClassicBurgerList(), Menu.getClassicBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        JScrollPane gourmetBurgerPanel = new JScrollPane(createMenuPanel(Menu.getGourmetBurgerList(), Menu.getGourmetBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        menuPanel.add(classicBurgerPanel, "classicBurgerPanel");
-        menuPanel.add(gourmetBurgerPanel, "gourmetBurgerPanel");
-
-        frame.add(categoryPanel, BorderLayout.WEST);
+        frame.add(createCategoryPanel(), BorderLayout.WEST);
         frame.add(menuPanel, BorderLayout.CENTER);
-        frame.add(orderListPanel, BorderLayout.EAST);
+        frame.add(createOrderListPanel(), BorderLayout.EAST);
         frame.setLocationByPlatform(true);
+    }
+
+    private JPanel createMenuPanel() {
+        JPanel panel = new JPanel(cardLayout);
+        JScrollPane classicBurgerPanel = new JScrollPane(createItemsPanel(Menu.getClassicBurgerList(), Menu.getClassicBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane gourmetBurgerPanel = new JScrollPane(createItemsPanel(Menu.getGourmetBurgerList(), Menu.getGourmetBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane spicyBurgerPanel = new JScrollPane(createItemsPanel(Menu.getSpicyBurgerList(), Menu.getSpicyBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane uniqueBurgerPanel = new JScrollPane(createItemsPanel(Menu.getUniqueFlavorBurgerList(), Menu.getUniqueFlavorBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+
+        panel.add(classicBurgerPanel, "classicBurgerPanel");
+        panel.add(gourmetBurgerPanel, "gourmetBurgerPanel");
+        panel.add(spicyBurgerPanel, "spicyBurgerPanel");
+        panel.add(uniqueBurgerPanel, "uniqueBurgerPanel");
+        return panel;
     }
 
     private JPanel createCategoryPanel() {
@@ -94,10 +99,18 @@ public class OrderPage {
             cardLayout.show(menuPanel, "gourmetBurgerPanel");
         });
 
+        spicyBurgersButton.addActionListener(e -> {
+            cardLayout.show(menuPanel, "spicyBurgerPanel");
+        });
+
+        uniqueBurgerButton.addActionListener(e -> {
+            cardLayout.show(menuPanel, "uniqueBurgerPanel");
+        });
+
         return panel;
     }
 
-    private JPanel createMenuPanel(List<Product> productList, List<File> productImages) {
+    private JPanel createItemsPanel(List<Product> productList, List<File> productImages) {
         final int columns = 2;
         final int rows = productList.size();
         int index = 0;

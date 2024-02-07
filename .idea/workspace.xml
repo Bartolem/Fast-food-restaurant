@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/SpicyBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/SpicyBurger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ClassicBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ClassicBurger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -111,6 +111,7 @@
     "JUnit.SpicyBurgerTest.testGetNameForDifferentBurgerTypes.executor": "Run",
     "JUnit.SpicyBurgerTest.testGetSpicinessLevelForDifferentBurgerTypes.executor": "Run",
     "JUnit.SpicyBurgerTest.testValueOfDifferentBurgerTypes.executor": "Run",
+    "JUnit.burger in Fast-food-restaurant.executor": "Run",
     "JUnit.java in Fast-food-restaurant.executor": "Run",
     "Repository.Attach.Annotations": "false",
     "Repository.Attach.JavaDocs": "false",
@@ -160,20 +161,7 @@
       <recent name="org.fast_food.product" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.SpicyBurgerTest">
-    <configuration name="org.fast_food.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.Main" />
-      <module name="Fast-food-restaurant" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.fast_food.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.burger in Fast-food-restaurant">
     <configuration name="SpicyBurgerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
@@ -237,6 +225,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="burger in Fast-food-restaurant" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/org/fast_food/product/burger" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -249,19 +245,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.org.fast_food.Main" />
       <item itemvalue="JUnit.SpicyBurgerTest" />
       <item itemvalue="JUnit.SpicyBurgerTest.testGetNameForDifferentBurgerTypes" />
       <item itemvalue="JUnit.SpicyBurgerTest.testGetSpicinessLevelForDifferentBurgerTypes" />
       <item itemvalue="JUnit.SpicyBurgerTest.testValueOfDifferentBurgerTypes" />
+      <item itemvalue="JUnit.burger in Fast-food-restaurant" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.burger in Fast-food-restaurant" />
         <item itemvalue="JUnit.SpicyBurgerTest" />
         <item itemvalue="JUnit.SpicyBurgerTest.testGetSpicinessLevelForDifferentBurgerTypes" />
         <item itemvalue="JUnit.SpicyBurgerTest.testValueOfDifferentBurgerTypes" />
         <item itemvalue="JUnit.SpicyBurgerTest.testGetNameForDifferentBurgerTypes" />
-        <item itemvalue="Application.org.fast_food.Main" />
       </list>
     </recent_temporary>
   </component>

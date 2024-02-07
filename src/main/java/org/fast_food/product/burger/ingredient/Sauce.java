@@ -5,7 +5,6 @@ public enum Sauce implements IngredientI {
     CRANBERRY_SAUCE("Cranberry sauce"),
     BBQ_SAUCE("BBQ sauce"),
     TERIYAKI_SAUCE("Teriyaki sauce"),
-    CAJUN_BLEND("Cajun spice blend"),
     TZATZIKI("Tzatziki sauce"),
     PESTO("Pesto sauce"),
     TRUFFLE_OIL("Truffle oil"),

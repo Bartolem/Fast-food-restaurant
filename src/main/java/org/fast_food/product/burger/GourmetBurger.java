@@ -16,7 +16,7 @@ public enum GourmetBurger implements Burger {
     CAJUN_SPICED_BURGER("Cajun Spiced Burger", 6.89, List.of(Ingredient.BEEF_PATTY, Ingredient.CAJUN, Cheese.PEPPER_JACK_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO), "A spicy kick with Cajun seasoning and melted pepper jack cheese for a flavor-packed burger.", 690, 3.5, 4.1),
     PESTO_TURKEY_BURGER("Pesto Turkey Burger", 7.19, List.of(Ingredient.TURKEY, Sauce.PESTO, Cheese.MOZZARELLA, Ingredient.ARUGULA, Ingredient.TOMATO), "A lighter option with a turkey patty, topped with fresh pesto, melted mozzarella, arugula, and tomato.", 660, 1, 3.7),
     PHILLY_CHEESE_STEAK_BURGER("Philly Cheese Steak Burger", 8.29, List.of(Ingredient.BEEF_PATTY, Ingredient.STEAK, Cheese.PROVOLONE_CHEESE, Ingredient.GRILLED_PEPPERS, Ingredient.ONION), "A burger inspired by the classic Philly cheese steak, featuring sliced steak, provolone cheese, and grilled peppers and onions.", 820, 1, 3.9),
-    MEDITERRANEAN_LAMB_BURGER("Mediterranean Lamb Burger", 8.49, List.of(Ingredient.LAMB_PATTY, Cheese.FETA_CHEESE, Sauce.TERIYAKI_SAUCE, Ingredient.LETTUCE, Ingredient.TOMATO), "A flavorful lamb burger topped with crumbled feta, cool tzatziki sauce, and fresh lettuce and tomato.", 900, 1, 3.6);
+    MEDITERRANEAN_LAMB_BURGER("Mediterranean Lamb Burger", 8.49, List.of(Ingredient.LAMB_PATTY, Cheese.FETA_CHEESE, Sauce.TZATZIKI, Ingredient.LETTUCE, Ingredient.TOMATO), "A flavorful lamb burger topped with crumbled feta, cool tzatziki sauce, and fresh lettuce and tomato.", 900, 1, 3.6);
 
     private final String name;
     private final double price;

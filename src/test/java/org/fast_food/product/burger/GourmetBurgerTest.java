@@ -2,6 +2,7 @@ package org.fast_food.product.burger;
 
 import org.fast_food.product.burger.ingredient.Cheese;
 import org.fast_food.product.burger.ingredient.Ingredient;
+import org.fast_food.product.burger.ingredient.Patty;
 import org.fast_food.product.burger.ingredient.Sauce;
 import org.junit.jupiter.api.Test;
 
@@ -40,15 +41,15 @@ class GourmetBurgerTest {
 
     @Test
     void testGetIngredientsForDifferentBurgerTypes() {
-        assertTrue(BLUE_CHEESE.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Cheese.BLUE_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO, Ingredient.ONION)));
-        assertTrue(AVOCADO_RANCH.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Ingredient.AVOCADO, Sauce.RANCH_DRESSING, Ingredient.TOMATO, Ingredient.ONION)));
-        assertTrue(TRUFFLE_MUSHROOM.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Sauce.TRUFFLE_OIL, Cheese.SWISS_CHEESE, Ingredient.SAUTEED_MUSHROOMS, Ingredient.LETTUCE)));
-        assertTrue(GUACAMOLE_BACON.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Ingredient.GUACAMOLE, Ingredient.BACON,Ingredient.LETTUCE, Ingredient.TOMATO)));
-        assertTrue(BBQ_RANCH_BACON.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Sauce.BBQ_SAUCE, Sauce.RANCH_DRESSING, Ingredient.BACON, Ingredient.TOMATO)));
-        assertTrue(CAJUN_SPICED.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Ingredient.CAJUN, Cheese.PEPPER_JACK_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO)));
-        assertTrue(PESTO_TURKEY.getIngredients().containsAll(List.of(Ingredient.TURKEY, Sauce.PESTO, Cheese.MOZZARELLA, Ingredient.ARUGULA, Ingredient.TOMATO)));
-        assertTrue(PHILLY_CHEESE_STEAK.getIngredients().containsAll(List.of(Ingredient.BEEF_PATTY, Ingredient.STEAK, Cheese.PROVOLONE_CHEESE, Ingredient.GRILLED_PEPPERS, Ingredient.ONION)));
-        assertTrue(MEDITERRANEAN_LAMB.getIngredients().containsAll(List.of(Ingredient.LAMB_PATTY, Cheese.FETA_CHEESE, Sauce.TZATZIKI, Ingredient.LETTUCE, Ingredient.TOMATO)));
+        assertTrue(BLUE_CHEESE.getIngredients().containsAll(List.of(Patty.BEEF, Cheese.BLUE_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO, Ingredient.ONION)));
+        assertTrue(AVOCADO_RANCH.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.AVOCADO, Sauce.RANCH_DRESSING, Ingredient.TOMATO, Ingredient.ONION)));
+        assertTrue(TRUFFLE_MUSHROOM.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.TRUFFLE_OIL, Cheese.SWISS_CHEESE, Ingredient.SAUTEED_MUSHROOMS, Ingredient.LETTUCE)));
+        assertTrue(GUACAMOLE_BACON.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.GUACAMOLE, Ingredient.BACON,Ingredient.LETTUCE, Ingredient.TOMATO)));
+        assertTrue(BBQ_RANCH_BACON.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.BBQ_SAUCE, Sauce.RANCH_DRESSING, Ingredient.BACON, Ingredient.TOMATO)));
+        assertTrue(CAJUN_SPICED.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.CAJUN, Cheese.PEPPER_JACK_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO)));
+        assertTrue(PESTO_TURKEY.getIngredients().containsAll(List.of(Patty.TURKEY, Sauce.PESTO, Cheese.MOZZARELLA, Ingredient.ARUGULA, Ingredient.TOMATO)));
+        assertTrue(PHILLY_CHEESE_STEAK.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.STEAK, Cheese.PROVOLONE_CHEESE, Ingredient.GRILLED_PEPPERS, Ingredient.ONION)));
+        assertTrue(MEDITERRANEAN_LAMB.getIngredients().containsAll(List.of(Patty.LAMB, Cheese.FETA_CHEESE, Sauce.TZATZIKI, Ingredient.LETTUCE, Ingredient.TOMATO)));
     }
 
     @Test
@@ -110,14 +111,14 @@ class GourmetBurgerTest {
 
     @Test
     void testValueOfDifferentBurgerTypes() {
-        assertEquals(BLUE_CHEESE, GourmetBurger.valueOf("BLUE_CHEESE_BURGER"));
-        assertEquals(AVOCADO_RANCH, GourmetBurger.valueOf("AVOCADO_RANCH_BURGER"));
-        assertEquals(TRUFFLE_MUSHROOM, GourmetBurger.valueOf("TRUFFLE_MUSHROOM_BURGER"));
-        assertEquals(GUACAMOLE_BACON, GourmetBurger.valueOf("GUACAMOLE_BACON_BURGER"));
-        assertEquals(BBQ_RANCH_BACON, GourmetBurger.valueOf("BBQ_RANCH_BACON_BURGER"));
-        assertEquals(CAJUN_SPICED, GourmetBurger.valueOf("CAJUN_SPICED_BURGER"));
-        assertEquals(PESTO_TURKEY, GourmetBurger.valueOf("PESTO_TURKEY_BURGER"));
-        assertEquals(PHILLY_CHEESE_STEAK, GourmetBurger.valueOf("PHILLY_CHEESE_STEAK_BURGER"));
-        assertEquals(MEDITERRANEAN_LAMB, GourmetBurger.valueOf("MEDITERRANEAN_LAMB_BURGER"));
+        assertEquals(BLUE_CHEESE, GourmetBurger.valueOf("BLUE_CHEESE"));
+        assertEquals(AVOCADO_RANCH, GourmetBurger.valueOf("AVOCADO_RANCH"));
+        assertEquals(TRUFFLE_MUSHROOM, GourmetBurger.valueOf("TRUFFLE_MUSHROOM"));
+        assertEquals(GUACAMOLE_BACON, GourmetBurger.valueOf("GUACAMOLE_BACON"));
+        assertEquals(BBQ_RANCH_BACON, GourmetBurger.valueOf("BBQ_RANCH_BACON"));
+        assertEquals(CAJUN_SPICED, GourmetBurger.valueOf("CAJUN_SPICED"));
+        assertEquals(PESTO_TURKEY, GourmetBurger.valueOf("PESTO_TURKEY"));
+        assertEquals(PHILLY_CHEESE_STEAK, GourmetBurger.valueOf("PHILLY_CHEESE_STEAK"));
+        assertEquals(MEDITERRANEAN_LAMB, GourmetBurger.valueOf("MEDITERRANEAN_LAMB"));
     }
 }

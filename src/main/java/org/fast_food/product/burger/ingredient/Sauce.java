@@ -18,7 +18,12 @@ public enum Sauce implements IngredientI {
     PEANUT_SAUCE("Peanut sauce"),
     THAI_CHILI_SAUCE("Thai chili sauce"),
     INFERNO_SAUCE("Inferno sauce"),
-    SRIRACHA_SAUCE("Sriracha sauce");
+    SRIRACHA_SAUCE("Sriracha sauce"),
+    MARINARA("Marinara sauce"),
+    BLUEBERRY_BBQ("Blueberry BBQ sauce"),
+    DILL("Dill sauce"),
+    PEANUT_BUTTER("Creamy peanut butter"),
+    HONEY("Honey");
 
     private final String name;
 

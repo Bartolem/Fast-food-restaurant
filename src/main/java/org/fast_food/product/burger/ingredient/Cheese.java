@@ -9,7 +9,9 @@ public enum Cheese implements IngredientI {
     FETA_CHEESE("Feta cheese"),
     PEPPER_JACK_CHEESE("Pepper jack cheese"),
     CREAM_CHEESE("Cream cheese"),
-    GHOST_PAPER_CHEESE("Ghost pepper cheese");
+    GHOST_PAPER_CHEESE("Ghost pepper cheese"),
+    GOAT_CHEESE("Goat cheese"),
+    CHEDDAR("Cheddar");
 
     private final String name;
 

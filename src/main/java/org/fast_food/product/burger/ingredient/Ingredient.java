@@ -1,15 +1,11 @@
 package org.fast_food.product.burger.ingredient;
 
 public enum Ingredient implements IngredientI {
-    BEEF_PATTY("Beef patty"),
     BACON("Bacon"),
     LETTUCE("Lettuce"),
     TOMATO("Tomato"),
     ONION("Onion"),
     PICKLES("Pickles"),
-    VEGGIE_PATTY("Vegetarian patty"),
-    CHICKEN("Grilled chicken breast"),
-    TURKEY("Turkey patty"),
     ONION_RINGS("Onion rings"),
     JALAPENOS("Jalapeños"),
     PINEAPPLE("Pineapple"),
@@ -19,14 +15,15 @@ public enum Ingredient implements IngredientI {
     ARUGULA("Arugula"),
     STEAK("Sliced steak"),
     GRILLED_PEPPERS("Grilled peppers"),
-    LAMB_PATTY("Lamb patty"),
-    SHRIMP_PATTY("Shrimp patty"),
     CUCUMBER("Cucumber slices"),
     BANANA_PEPPERS("Banana peppers"),
     JALAPENO_POPPER_FILLING("Jalapeño popper filling"),
     CAJUN("Cajun spice blend"),
-    BLACK_BEAN_PATTY("Black bean patty")
-    ;
+    FRIED_EGG("Fried Egg"),
+    CARAMELIZED_ONIONS("Caramelized onions"),
+    BLUEBERRY("Blueberry"),
+    BANANA("Banana"),
+    ENGLISH_MUFFIN("English muffins"),;
 
     private final String name;
 

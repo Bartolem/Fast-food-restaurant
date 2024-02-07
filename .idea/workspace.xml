@@ -6,6 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/Cheese.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/Cheese.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/Ingredient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/Sauce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/Sauce.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +23,8 @@
         <option value="JavaFXApplication" />
         <option value="module-info" />
         <option value="FxmlFile" />
-        <option value="Enum" />
         <option value="Class" />
+        <option value="Enum" />
       </list>
     </option>
   </component>

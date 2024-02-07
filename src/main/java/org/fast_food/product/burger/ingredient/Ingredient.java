@@ -24,7 +24,8 @@ public enum Ingredient implements IngredientI {
     CUCUMBER("Cucumber slices"),
     BANANA_PEPPERS("Banana peppers"),
     JALAPENO_POPPER_FILLING("Jalapeño popper filling"),
-    CAJUN("Cajun spice blend")
+    CAJUN("Cajun spice blend"),
+    BLACK_BEAN_PATTY("Black bean patty")
     ;
 
     private final String name;

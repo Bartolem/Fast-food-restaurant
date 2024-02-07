@@ -3,6 +3,8 @@ package org.fast_food.menu;
 import org.fast_food.product.Product;
 import org.fast_food.product.burger.ClassicBurger;
 import org.fast_food.product.burger.GourmetBurger;
+import org.fast_food.product.burger.SpicyBurger;
+import org.fast_food.product.burger.UniqueFlavorBurger;
 
 import java.io.File;
 import java.util.Arrays;
@@ -13,6 +15,8 @@ import java.util.Objects;
 public class Menu {
     private static final List<Product> CLASSIC_BURGER_LIST = List.of(ClassicBurger.values());
     private static final List<Product> GOURMET_BURGER_LIST = List.of(GourmetBurger.values());
+    private static final List<Product> SPICY_BURGER_LIST = List.of(SpicyBurger.values());
+    private static final List<Product> UNIQUE_FLAVOR_BURGER_LIST = List.of(UniqueFlavorBurger.values());
 
     public static List<Product> getClassicBurgerList() {
         return CLASSIC_BURGER_LIST;
@@ -22,14 +26,34 @@ public class Menu {
         return GOURMET_BURGER_LIST;
     }
 
-    public  static  List<File> getClassicBurgerImages() {
+    public static List<Product> getSpicyBurgerList() {
+        return SPICY_BURGER_LIST;
+    }
+
+    public static List<Product> getUniqueFlavorBurgerList() {
+        return UNIQUE_FLAVOR_BURGER_LIST;
+    }
+
+    public static List<File> getClassicBurgerImages() {
         File[] images = new File("src/main/resources/images/classic").listFiles();
         Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
         return List.of(images);
     }
 
-    public  static  List<File> getGourmetBurgerImages() {
+    public static List<File> getGourmetBurgerImages() {
         File[] images = new File("src/main/resources/images/gourmet").listFiles();
+        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
+        return List.of(images);
+    }
+
+    public static List<File> getSpicyBurgerImages() {
+        File[] images = new File("src/main/resources/images/spicy").listFiles();
+        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
+        return List.of(images);
+    }
+
+    public static List<File> getUniqueFlavorBurgerImages() {
+        File[] images = new File("src/main/resources/images/unique").listFiles();
         Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
         return List.of(images);
     }

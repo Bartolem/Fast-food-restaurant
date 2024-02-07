@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/FrenchFries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/FrenchFries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/fast_food/product/FrenchFriesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/fast_food/product/FrenchFriesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,11 +83,15 @@
     "JUnit.CustomerTest.testGetPointsIsPositiveNumber.executor": "Run",
     "JUnit.CustomerTest.testRemovePointsIsPositiveNumber.executor": "Run",
     "JUnit.CustomerTest.testSetNameWithEmptyString.executor": "Run",
+    "JUnit.FrenchFriesTest.executor": "Run",
     "JUnit.FrenchFriesTest.getCalories.executor": "Run",
     "JUnit.FrenchFriesTest.getDescription.executor": "Run",
     "JUnit.FrenchFriesTest.testFrenchFriesContainsAllValues.executor": "Run",
+    "JUnit.FrenchFriesTest.testGetCaloriesForDifferentFriesTypes.executor": "Run",
+    "JUnit.FrenchFriesTest.testGetDescriptionForDifferentFriesTypes.executor": "Run",
     "JUnit.FrenchFriesTest.testGetNameForDifferentFriesTypes.executor": "Run",
     "JUnit.FrenchFriesTest.testGetPriceForDifferentFriesTypes.executor": "Run",
+    "JUnit.FrenchFriesTest.testValueOfDifferentBurgerTypes.executor": "Run",
     "JUnit.GourmetBurgerTest.executor": "Run",
     "JUnit.GourmetBurgerTest.getCalories.executor": "Run",
     "JUnit.GourmetBurgerTest.getDescription.executor": "Run",
@@ -171,7 +174,20 @@
       <recent name="org.fast_food.product.burger" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.FrenchFriesTest">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.Main" />
+      <module name="Fast-food-restaurant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="FrenchFriesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
@@ -183,22 +199,6 @@
       <option name="PACKAGE_NAME" value="org.fast_food.product" />
       <option name="MAIN_CLASS_NAME" value="org.fast_food.product.FrenchFriesTest" />
       <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="FrenchFriesTest.testFrenchFriesContainsAllValues" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Fast-food-restaurant" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.fast_food.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.product" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.FrenchFriesTest" />
-      <option name="METHOD_NAME" value="testFrenchFriesContainsAllValues" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -263,19 +263,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.FrenchFriesTest" />
-      <item itemvalue="JUnit.FrenchFriesTest.testFrenchFriesContainsAllValues" />
       <item itemvalue="JUnit.FrenchFriesTest.testGetCaloriesForDifferentFriesTypes" />
       <item itemvalue="JUnit.FrenchFriesTest.testGetDescriptionForDifferentFriesTypes" />
       <item itemvalue="JUnit.FrenchFriesTest.testValueOfDifferentBurgerTypes" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.FrenchFriesTest" />
         <item itemvalue="JUnit.FrenchFriesTest.testValueOfDifferentBurgerTypes" />
         <item itemvalue="JUnit.FrenchFriesTest.testGetDescriptionForDifferentFriesTypes" />
         <item itemvalue="JUnit.FrenchFriesTest.testGetCaloriesForDifferentFriesTypes" />
-        <item itemvalue="JUnit.FrenchFriesTest.testFrenchFriesContainsAllValues" />
       </list>
     </recent_temporary>
   </component>

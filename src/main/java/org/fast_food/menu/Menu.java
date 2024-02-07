@@ -1,5 +1,6 @@
 package org.fast_food.menu;
 
+import org.fast_food.product.FrenchFries;
 import org.fast_food.product.Product;
 import org.fast_food.product.burger.ClassicBurger;
 import org.fast_food.product.burger.GourmetBurger;
@@ -17,6 +18,7 @@ public class Menu {
     private static final List<Product> GOURMET_BURGER_LIST = List.of(GourmetBurger.values());
     private static final List<Product> SPICY_BURGER_LIST = List.of(SpicyBurger.values());
     private static final List<Product> UNIQUE_FLAVOR_BURGER_LIST = List.of(UniqueFlavorBurger.values());
+    private static final List<Product> FRENCH_FRIES_LIST = List.of(FrenchFries.values());
 
     public static List<Product> getClassicBurgerList() {
         return CLASSIC_BURGER_LIST;
@@ -32,6 +34,10 @@ public class Menu {
 
     public static List<Product> getUniqueFlavorBurgerList() {
         return UNIQUE_FLAVOR_BURGER_LIST;
+    }
+
+    public static List<Product> getFrenchFriesList() {
+        return FRENCH_FRIES_LIST;
     }
 
     public static List<File> getClassicBurgerImages() {
@@ -54,6 +60,12 @@ public class Menu {
 
     public static List<File> getUniqueFlavorBurgerImages() {
         File[] images = new File("src/main/resources/images/unique").listFiles();
+        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
+        return List.of(images);
+    }
+
+    public static List<File> getFrenchFriesImages() {
+        File[] images = new File("src/main/resources/images/fries").listFiles();
         Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
         return List.of(images);
     }

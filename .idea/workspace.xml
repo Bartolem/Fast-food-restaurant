@@ -4,7 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="" />
+    <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,12 +17,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Interface" />
-        <option value="JUnit5 Test Class" />
         <option value="JavaFXApplication" />
         <option value="module-info" />
         <option value="FxmlFile" />
         <option value="Enum" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -80,6 +83,15 @@
     "JUnit.CustomerTest.testGetPointsIsPositiveNumber.executor": "Run",
     "JUnit.CustomerTest.testRemovePointsIsPositiveNumber.executor": "Run",
     "JUnit.CustomerTest.testSetNameWithEmptyString.executor": "Run",
+    "JUnit.FrenchFriesTest.executor": "Run",
+    "JUnit.FrenchFriesTest.getCalories.executor": "Run",
+    "JUnit.FrenchFriesTest.getDescription.executor": "Run",
+    "JUnit.FrenchFriesTest.testFrenchFriesContainsAllValues.executor": "Run",
+    "JUnit.FrenchFriesTest.testGetCaloriesForDifferentFriesTypes.executor": "Run",
+    "JUnit.FrenchFriesTest.testGetDescriptionForDifferentFriesTypes.executor": "Run",
+    "JUnit.FrenchFriesTest.testGetNameForDifferentFriesTypes.executor": "Run",
+    "JUnit.FrenchFriesTest.testGetPriceForDifferentFriesTypes.executor": "Run",
+    "JUnit.FrenchFriesTest.testValueOfDifferentBurgerTypes.executor": "Run",
     "JUnit.GourmetBurgerTest.executor": "Run",
     "JUnit.GourmetBurgerTest.getCalories.executor": "Run",
     "JUnit.GourmetBurgerTest.getDescription.executor": "Run",
@@ -123,7 +135,7 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "253",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "add-user-interface",
+    "git-widget-placeholder": "add-fries",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "temurin-21",
     "kotlin-language-version-configured": "true",
@@ -145,21 +157,21 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\fries" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\unique" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\classic" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\spicy" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images" />
-      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="org.fast_food.product.burger" />
       <recent name="org.fast_food" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.fast_food.product" />
       <recent name="org.fast_food.order" />
       <recent name="org.fast_food.customer" />
       <recent name="org.fast_food.product.burger" />
-      <recent name="org.fast_food.product" />
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
@@ -176,65 +188,64 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClassicBurgerTest.testGetIngredientsForDifferentBurgerTypes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FrenchFriesTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.fast_food.product.burger.*" />
+          <option name="PATTERN" value="org.fast_food.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.product.burger" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.burger.ClassicBurgerTest" />
-      <option name="METHOD_NAME" value="testGetIngredientsForDifferentBurgerTypes" />
+      <option name="PACKAGE_NAME" value="org.fast_food.product" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.FrenchFriesTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="FrenchFriesTest.testGetCaloriesForDifferentFriesTypes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.fast_food.product" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.FrenchFriesTest" />
+      <option name="METHOD_NAME" value="testGetCaloriesForDifferentFriesTypes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="GourmetBurgerTest.testGetIngredientsForDifferentBurgerTypes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FrenchFriesTest.testGetDescriptionForDifferentFriesTypes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.fast_food.product.burger.*" />
+          <option name="PATTERN" value="org.fast_food.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.product.burger" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.burger.GourmetBurgerTest" />
-      <option name="METHOD_NAME" value="testGetIngredientsForDifferentBurgerTypes" />
+      <option name="PACKAGE_NAME" value="org.fast_food.product" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.FrenchFriesTest" />
+      <option name="METHOD_NAME" value="testGetDescriptionForDifferentFriesTypes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpicyBurgerTest.testGetIngredientsForDifferentBurgerTypes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="FrenchFriesTest.testValueOfDifferentBurgerTypes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.fast_food.product.burger.*" />
+          <option name="PATTERN" value="org.fast_food.product.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.product.burger" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.burger.SpicyBurgerTest" />
-      <option name="METHOD_NAME" value="testGetIngredientsForDifferentBurgerTypes" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UniqueFlavorBurgerTest.testGetIngredientsForDifferentBurgerTypes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Fast-food-restaurant" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.fast_food.product.burger.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.product.burger" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.burger.UniqueFlavorBurgerTest" />
-      <option name="METHOD_NAME" value="testGetIngredientsForDifferentBurgerTypes" />
+      <option name="PACKAGE_NAME" value="org.fast_food.product" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.FrenchFriesTest" />
+      <option name="METHOD_NAME" value="testValueOfDifferentBurgerTypes" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -253,18 +264,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.SpicyBurgerTest.testGetIngredientsForDifferentBurgerTypes" />
-      <item itemvalue="JUnit.UniqueFlavorBurgerTest.testGetIngredientsForDifferentBurgerTypes" />
-      <item itemvalue="JUnit.ClassicBurgerTest.testGetIngredientsForDifferentBurgerTypes" />
-      <item itemvalue="JUnit.GourmetBurgerTest.testGetIngredientsForDifferentBurgerTypes" />
+      <item itemvalue="JUnit.FrenchFriesTest" />
+      <item itemvalue="JUnit.FrenchFriesTest.testGetCaloriesForDifferentFriesTypes" />
+      <item itemvalue="JUnit.FrenchFriesTest.testGetDescriptionForDifferentFriesTypes" />
+      <item itemvalue="JUnit.FrenchFriesTest.testValueOfDifferentBurgerTypes" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.UniqueFlavorBurgerTest.testGetIngredientsForDifferentBurgerTypes" />
-        <item itemvalue="JUnit.SpicyBurgerTest.testGetIngredientsForDifferentBurgerTypes" />
-        <item itemvalue="JUnit.GourmetBurgerTest.testGetIngredientsForDifferentBurgerTypes" />
-        <item itemvalue="JUnit.ClassicBurgerTest.testGetIngredientsForDifferentBurgerTypes" />
+        <item itemvalue="JUnit.FrenchFriesTest" />
+        <item itemvalue="JUnit.FrenchFriesTest.testValueOfDifferentBurgerTypes" />
+        <item itemvalue="JUnit.FrenchFriesTest.testGetDescriptionForDifferentFriesTypes" />
+        <item itemvalue="JUnit.FrenchFriesTest.testGetCaloriesForDifferentFriesTypes" />
       </list>
     </recent_temporary>
   </component>

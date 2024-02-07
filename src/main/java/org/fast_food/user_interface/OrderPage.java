@@ -58,11 +58,13 @@ public class OrderPage {
         JScrollPane gourmetBurgerPanel = new JScrollPane(createItemsPanel(Menu.getGourmetBurgerList(), Menu.getGourmetBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JScrollPane spicyBurgerPanel = new JScrollPane(createItemsPanel(Menu.getSpicyBurgerList(), Menu.getSpicyBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JScrollPane uniqueBurgerPanel = new JScrollPane(createItemsPanel(Menu.getUniqueFlavorBurgerList(), Menu.getUniqueFlavorBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane frenchFries = new JScrollPane(createItemsPanel(Menu.getFrenchFriesList(), Menu.getFrenchFriesImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         panel.add(classicBurgerPanel, "classicBurgerPanel");
         panel.add(gourmetBurgerPanel, "gourmetBurgerPanel");
         panel.add(spicyBurgerPanel, "spicyBurgerPanel");
         panel.add(uniqueBurgerPanel, "uniqueBurgerPanel");
+        panel.add(frenchFries, "frenchFries");
         return panel;
     }
 
@@ -105,6 +107,10 @@ public class OrderPage {
 
         uniqueBurgerButton.addActionListener(e -> {
             cardLayout.show(menuPanel, "uniqueBurgerPanel");
+        });
+
+        frenchFriesButton.addActionListener(e -> {
+            cardLayout.show(menuPanel, "frenchFries");
         });
 
         return panel;

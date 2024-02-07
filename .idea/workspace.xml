@@ -7,10 +7,8 @@
     <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ClassicBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ClassicBurger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/UniqueFlavorBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/UniqueFlavorBurger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/fast_food/product/burger/ClassicBurgerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/fast_food/product/burger/ClassicBurgerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/fast_food/product/burger/GourmetBurgerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/fast_food/product/burger/GourmetBurgerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/fast_food/product/burger/SpicyBurgerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/fast_food/product/burger/SpicyBurgerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/GourmetBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/GourmetBurger.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/SpicyBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/SpicyBurger.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -166,7 +164,7 @@
       <recent name="org.fast_food.product" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.UniqueFlavorBurgerTest">
+  <component name="RunManager" selected="JUnit.fast_food in Fast-food-restaurant">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.fast_food.Main" />
       <module name="Fast-food-restaurant" />
@@ -195,21 +193,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SpicyBurgerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Fast-food-restaurant" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.fast_food.product.burger.ClassicBurger" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.product.burger" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.burger.SpicyBurgerTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="UniqueFlavorBurgerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
@@ -233,6 +216,14 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="fast_food in Fast-food-restaurant" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java/org/fast_food" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -246,18 +237,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.SpicyBurgerTest" />
       <item itemvalue="JUnit.UniqueFlavorBurgerTest" />
       <item itemvalue="JUnit.burger in Fast-food-restaurant" />
+      <item itemvalue="JUnit.fast_food in Fast-food-restaurant" />
       <item itemvalue="JUnit.GourmetBurgerTest" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.fast_food in Fast-food-restaurant" />
         <item itemvalue="JUnit.UniqueFlavorBurgerTest" />
         <item itemvalue="JUnit.burger in Fast-food-restaurant" />
         <item itemvalue="JUnit.GourmetBurgerTest" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.SpicyBurgerTest" />
       </list>
     </recent_temporary>
   </component>

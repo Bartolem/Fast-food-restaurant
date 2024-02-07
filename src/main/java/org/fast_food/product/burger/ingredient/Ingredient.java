@@ -23,7 +23,7 @@ public enum Ingredient implements IngredientI {
     CARAMELIZED_ONIONS("Caramelized onions"),
     BLUEBERRY("Blueberry"),
     BANANA("Banana"),
-    ENGLISH_MUFFIN("English muffins"),;
+    ;
 
     private final String name;
 

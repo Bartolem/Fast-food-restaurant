@@ -40,7 +40,7 @@ public class UniqueFlavorBurgerTest {
         assertTrue(BLUEBERRY_BBQ_BACON.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.BACON, Ingredient.CARAMELIZED_ONIONS, Cheese.CHEDDAR, Ingredient.BLUEBERRY, Sauce.BLUEBERRY_BBQ)));
         assertTrue(SWEAT_POTATO.getIngredients().containsAll(List.of(Patty.SWEAT_POTATO, Ingredient.AVOCADO, Ingredient.LETTUCE, Sauce.CHIPOTLE_MAYO, Bun.WHOLE_GRAIN)));
         assertTrue(SMOKED_SALMON.getIngredients().containsAll(List.of(Patty.SMOKED_SALMON, Sauce.DILL, Ingredient.CUCUMBER, Ingredient.ARUGULA, Bun.BRIOCHE)));
-        assertTrue(PEANUT_BANANA.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.PEANUT_BUTTER, Ingredient.BANANA, Ingredient.BACON, Sauce.HONEY, Ingredient.ENGLISH_MUFFIN)));
+        assertTrue(PEANUT_BANANA.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.PEANUT_BUTTER, Ingredient.BANANA, Ingredient.BACON, Sauce.HONEY, Bun.ENGLISH_MUFFIN)));
         assertTrue(ONION_RINGS.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.ONION_RINGS, Sauce.BBQ_SAUCE, Cheese.CHEDDAR, Ingredient.LETTUCE, Bun.PRETZEL)));
     }
 

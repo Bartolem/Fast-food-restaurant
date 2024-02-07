@@ -7,6 +7,7 @@ public enum Bun implements IngredientI {
     SESAME("Sesame Seed Bun"),
     POTATO("Potato Bun"),
     WHOLE_GRAIN("Whole grain bun"),
+    ENGLISH_MUFFIN("English muffins")
     ;
 
     private final String name;

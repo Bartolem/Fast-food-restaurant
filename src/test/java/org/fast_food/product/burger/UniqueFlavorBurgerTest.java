@@ -34,10 +34,10 @@ public class UniqueFlavorBurgerTest {
     }
     @Test
     void testGetIngredientsForDifferentBurgerTypes() {
-        assertTrue(BREAKFAST.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.BACON, Ingredient.FRIED_EGG, Ingredient.LETTUCE, Ingredient.TOMATO)));
-        assertTrue(MOZZARELLA.getIngredients().containsAll(List.of(Patty.BEEF, Cheese.MOZZARELLA, Sauce.MARINARA, Ingredient.LETTUCE, Ingredient.TOMATO)));
+        assertTrue(BREAKFAST.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.BACON, Ingredient.FRIED_EGG, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.PRETZEL)));
+        assertTrue(MOZZARELLA.getIngredients().containsAll(List.of(Patty.BEEF, Cheese.MOZZARELLA, Sauce.MARINARA, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.POTATO)));
         assertTrue(SPINACH.getIngredients().containsAll(List.of(Patty.SPINACH_ARTICHOKE, Cheese.GOAT_CHEESE, Ingredient.GRILLED_PEPPERS, Ingredient.ARUGULA, Bun.WHOLE_GRAIN)));
-        assertTrue(BLUEBERRY_BBQ_BACON.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.BACON, Ingredient.CARAMELIZED_ONIONS, Cheese.CHEDDAR, Ingredient.BLUEBERRY, Sauce.BLUEBERRY_BBQ)));
+        assertTrue(BLUEBERRY_BBQ_BACON.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.BACON, Ingredient.CARAMELIZED_ONIONS, Cheese.CHEDDAR, Ingredient.BLUEBERRY, Sauce.BLUEBERRY_BBQ, Bun.POTATO)));
         assertTrue(SWEAT_POTATO.getIngredients().containsAll(List.of(Patty.SWEAT_POTATO, Ingredient.AVOCADO, Ingredient.LETTUCE, Sauce.CHIPOTLE_MAYO, Bun.WHOLE_GRAIN)));
         assertTrue(SMOKED_SALMON.getIngredients().containsAll(List.of(Patty.SMOKED_SALMON, Sauce.DILL, Ingredient.CUCUMBER, Ingredient.ARUGULA, Bun.BRIOCHE)));
         assertTrue(PEANUT_BANANA.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.PEANUT_BUTTER, Ingredient.BANANA, Ingredient.BACON, Sauce.HONEY, Bun.ENGLISH_MUFFIN)));

@@ -1,9 +1,6 @@
 package org.fast_food.product.burger;
 
-import org.fast_food.product.burger.ingredient.Cheese;
-import org.fast_food.product.burger.ingredient.Ingredient;
-import org.fast_food.product.burger.ingredient.Patty;
-import org.fast_food.product.burger.ingredient.Sauce;
+import org.fast_food.product.burger.ingredient.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -41,16 +38,16 @@ public class SpicyBurgerTest {
     }
     @Test
     void testGetIngredientsForDifferentBurgerTypes() {
-        assertTrue(SPICY_SRIRACHA.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.SRIRACHA_SAUCE, Cheese.PEPPER_JACK_CHEESE, Ingredient.TOMATO, Ingredient.LETTUCE)));
-        assertTrue(JALAPENO_POPPER.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.JALAPENO_POPPER_FILLING, Cheese.CREAM_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO)));
-        assertTrue(BUFFALO_CHICKEN.getIngredients().containsAll( List.of(Patty.CHICKEN, Sauce.BUFFALO_SAUCE, Sauce.BLUE_CHEESE_DRESSING, Ingredient.LETTUCE, Ingredient.TOMATO)));
-        assertTrue(CHIPOTLE_BLACK_BEAN.getIngredients().containsAll(List.of(Patty.BLACK_BEAN, Sauce.CHIPOTLE_MAYO, Cheese.PEPPER_JACK_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO)));
-        assertTrue(CAJUN_SHRIMP.getIngredients().containsAll(List.of(Patty.SHRIMP, Ingredient.CAJUN, Sauce.REMOULADE, Ingredient.LETTUCE, Ingredient.TOMATO)));
-        assertTrue(GHOST_PEPPER.getIngredients().containsAll(List.of(Patty.BEEF, Cheese.GHOST_PAPER_CHEESE, Sauce.GHOST_PEPPER_SAUCE, Ingredient.LETTUCE, Ingredient.TOMATO)));
-        assertTrue(HOT_PEPPER_JACK.getIngredients().containsAll(List.of(Patty.BEEF, Cheese.PEPPER_JACK_CHEESE, Ingredient.JALAPENOS, Ingredient.LETTUCE, Ingredient.TOMATO)));
-        assertTrue(FIERY_HABANERO.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.HABANERO_SAUCE, Cheese.PEPPER_JACK_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO)));
-        assertTrue(SPICY_THAI.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.THAI_CHILI_SAUCE, Sauce.PEANUT_SAUCE, Ingredient.CUCUMBER, Ingredient.LETTUCE)));
-        assertTrue(INFERNO.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.JALAPENOS, Ingredient.BANANA_PEPPERS, Cheese.GHOST_PAPER_CHEESE, Sauce.INFERNO_SAUCE, Ingredient.LETTUCE, Ingredient.TOMATO)));
+        assertTrue(SPICY_SRIRACHA.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.SRIRACHA_SAUCE, Cheese.PEPPER_JACK_CHEESE, Ingredient.TOMATO, Ingredient.LETTUCE, Bun.POTATO)));
+        assertTrue(JALAPENO_POPPER.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.JALAPENO_POPPER_FILLING, Cheese.CREAM_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.POTATO)));
+        assertTrue(BUFFALO_CHICKEN.getIngredients().containsAll( List.of(Patty.CHICKEN, Sauce.BUFFALO_SAUCE, Sauce.BLUE_CHEESE_DRESSING, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.SESAME)));
+        assertTrue(CHIPOTLE_BLACK_BEAN.getIngredients().containsAll(List.of(Patty.BLACK_BEAN, Sauce.CHIPOTLE_MAYO, Cheese.PEPPER_JACK_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.SESAME)));
+        assertTrue(CAJUN_SHRIMP.getIngredients().containsAll(List.of(Patty.SHRIMP, Ingredient.CAJUN, Sauce.REMOULADE, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.WHOLE_WHEAT)));
+        assertTrue(GHOST_PEPPER.getIngredients().containsAll(List.of(Patty.BEEF, Cheese.GHOST_PAPER_CHEESE, Sauce.GHOST_PEPPER_SAUCE, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.SESAME)));
+        assertTrue(HOT_PEPPER_JACK.getIngredients().containsAll(List.of(Patty.BEEF, Cheese.PEPPER_JACK_CHEESE, Ingredient.JALAPENOS, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.PRETZEL)));
+        assertTrue(FIERY_HABANERO.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.HABANERO_SAUCE, Cheese.PEPPER_JACK_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.BRIOCHE)));
+        assertTrue(SPICY_THAI.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.THAI_CHILI_SAUCE, Sauce.PEANUT_SAUCE, Ingredient.CUCUMBER, Ingredient.LETTUCE, Bun.BRIOCHE)));
+        assertTrue(INFERNO.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.JALAPENOS, Ingredient.BANANA_PEPPERS, Cheese.GHOST_PAPER_CHEESE, Sauce.INFERNO_SAUCE, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.POTATO)));
     }
 
     @Test

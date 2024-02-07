@@ -1,9 +1,6 @@
 package org.fast_food.product.burger;
 
-import org.fast_food.product.burger.ingredient.Cheese;
-import org.fast_food.product.burger.ingredient.Ingredient;
-import org.fast_food.product.burger.ingredient.Patty;
-import org.fast_food.product.burger.ingredient.Sauce;
+import org.fast_food.product.burger.ingredient.*;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -41,15 +38,15 @@ class GourmetBurgerTest {
 
     @Test
     void testGetIngredientsForDifferentBurgerTypes() {
-        assertTrue(BLUE_CHEESE.getIngredients().containsAll(List.of(Patty.BEEF, Cheese.BLUE_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO, Ingredient.ONION)));
-        assertTrue(AVOCADO_RANCH.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.AVOCADO, Sauce.RANCH_DRESSING, Ingredient.TOMATO, Ingredient.ONION)));
-        assertTrue(TRUFFLE_MUSHROOM.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.TRUFFLE_OIL, Cheese.SWISS_CHEESE, Ingredient.SAUTEED_MUSHROOMS, Ingredient.LETTUCE)));
-        assertTrue(GUACAMOLE_BACON.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.GUACAMOLE, Ingredient.BACON,Ingredient.LETTUCE, Ingredient.TOMATO)));
-        assertTrue(BBQ_RANCH_BACON.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.BBQ_SAUCE, Sauce.RANCH_DRESSING, Ingredient.BACON, Ingredient.TOMATO)));
-        assertTrue(CAJUN_SPICED.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.CAJUN, Cheese.PEPPER_JACK_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO)));
-        assertTrue(PESTO_TURKEY.getIngredients().containsAll(List.of(Patty.TURKEY, Sauce.PESTO, Cheese.MOZZARELLA, Ingredient.ARUGULA, Ingredient.TOMATO)));
-        assertTrue(PHILLY_CHEESE_STEAK.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.STEAK, Cheese.PROVOLONE_CHEESE, Ingredient.GRILLED_PEPPERS, Ingredient.ONION)));
-        assertTrue(MEDITERRANEAN_LAMB.getIngredients().containsAll(List.of(Patty.LAMB, Cheese.FETA_CHEESE, Sauce.TZATZIKI, Ingredient.LETTUCE, Ingredient.TOMATO)));
+        assertTrue(BLUE_CHEESE.getIngredients().containsAll(List.of(Patty.BEEF, Cheese.BLUE_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO, Ingredient.ONION, Bun.POTATO)));
+        assertTrue(AVOCADO_RANCH.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.AVOCADO, Sauce.RANCH_DRESSING, Ingredient.TOMATO, Ingredient.ONION, Bun.WHOLE_GRAIN)));
+        assertTrue(TRUFFLE_MUSHROOM.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.TRUFFLE_OIL, Cheese.SWISS_CHEESE, Ingredient.SAUTEED_MUSHROOMS, Ingredient.LETTUCE, Bun.WHOLE_GRAIN)));
+        assertTrue(GUACAMOLE_BACON.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.GUACAMOLE, Ingredient.BACON,Ingredient.LETTUCE, Ingredient.TOMATO, Bun.SESAME)));
+        assertTrue(BBQ_RANCH_BACON.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.BBQ_SAUCE, Sauce.RANCH_DRESSING, Ingredient.BACON, Ingredient.TOMATO, Bun.BRIOCHE)));
+        assertTrue(CAJUN_SPICED.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.CAJUN, Cheese.PEPPER_JACK_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.POTATO)));
+        assertTrue(PESTO_TURKEY.getIngredients().containsAll(List.of(Patty.TURKEY, Sauce.PESTO, Cheese.MOZZARELLA, Ingredient.ARUGULA, Ingredient.TOMATO, Bun.SESAME)));
+        assertTrue(PHILLY_CHEESE_STEAK.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.STEAK, Cheese.PROVOLONE_CHEESE, Ingredient.GRILLED_PEPPERS, Ingredient.ONION, Bun.PRETZEL)));
+        assertTrue(MEDITERRANEAN_LAMB.getIngredients().containsAll(List.of(Patty.LAMB, Cheese.FETA_CHEESE, Sauce.TZATZIKI, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.WHOLE_GRAIN)));
     }
 
     @Test

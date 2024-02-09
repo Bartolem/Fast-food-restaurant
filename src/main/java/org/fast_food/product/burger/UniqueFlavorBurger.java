@@ -1,5 +1,6 @@
 package org.fast_food.product.burger;
 
+import org.fast_food.product.Type;
 import org.fast_food.product.burger.ingredient.*;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public enum UniqueFlavorBurger implements Burger {
     ONION_RINGS("Onion Rings Burger", 11.49, List.of(Patty.BEEF, Ingredient.ONION_RINGS, Sauce.BBQ_SAUCE, Cheese.CHEDDAR, Ingredient.LETTUCE, Bun.PRETZEL), "Indulge in crunchy perfection with this mouthwatering burger featuring a juicy beef patty topped with crispy beer-battered onion rings, tangy BBQ sauce, melted cheddar cheese, and crisp lettuce, all served on a toasted pretzel bun for a satisfying crunch.", 780, 1, 4.2)
     ;
 
+    public static final Type TYPE = Type.BURGER;
     private final String name;
     private final double price;
     private final List<IngredientI> ingredients;
@@ -31,6 +33,11 @@ public enum UniqueFlavorBurger implements Burger {
         this.calories = calories;
         this.spicinessLevel = spicinessLevel;
         this.popularityRating = popularityRating;
+    }
+
+    @Override
+    public Type getType() {
+        return TYPE;
     }
 
     @Override

@@ -5,4 +5,5 @@ public interface Product {
     double getPrice();
     String getDescription();
     int getCalories();
+    Type getType();
 }

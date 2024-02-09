@@ -6,6 +6,9 @@ import net.miginfocom.swing.MigLayout;
 import org.fast_food.order.Order;
 import org.fast_food.product.Product;
 import org.fast_food.menu.Menu;
+import org.fast_food.product.Type;
+import org.fast_food.product.burger.ClassicBurger;
+import org.fast_food.product.burger.UniqueFlavorBurger;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -40,7 +43,7 @@ public class OrderPage {
         this.menuPanel = createMenuPanel();
 
         frame.setLayout(new BorderLayout());
-        frame.setSize(1150, 650);
+        frame.setSize(1200, 650);
         frame.setTitle(TITLE);
         frame.setIconImage(ICON.getImage());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -59,12 +62,14 @@ public class OrderPage {
         JScrollPane spicyBurgerPanel = new JScrollPane(createItemsPanel(Menu.getSpicyBurgerList(), Menu.getSpicyBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JScrollPane uniqueBurgerPanel = new JScrollPane(createItemsPanel(Menu.getUniqueFlavorBurgerList(), Menu.getUniqueFlavorBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JScrollPane frenchFries = new JScrollPane(createItemsPanel(Menu.getFrenchFriesList(), Menu.getFrenchFriesImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane coldDrinks = new JScrollPane(createItemsPanel(Menu.getColdDrinkList(), Menu.getColdDrinksImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         panel.add(classicBurgerPanel, "classicBurgerPanel");
         panel.add(gourmetBurgerPanel, "gourmetBurgerPanel");
         panel.add(spicyBurgerPanel, "spicyBurgerPanel");
         panel.add(uniqueBurgerPanel, "uniqueBurgerPanel");
         panel.add(frenchFries, "frenchFries");
+        panel.add(coldDrinks, "coldDrinks");
         return panel;
     }
 
@@ -111,6 +116,10 @@ public class OrderPage {
 
         frenchFriesButton.addActionListener(e -> {
             cardLayout.show(menuPanel, "frenchFries");
+        });
+
+        coldDrinksButton.addActionListener(e -> {
+            cardLayout.show(menuPanel, "coldDrinks");
         });
 
         return panel;
@@ -281,15 +290,21 @@ public class OrderPage {
         });
 
         burgerName.setHorizontalAlignment(SwingConstants.CENTER);
+        panel.setPreferredSize(new Dimension(280, 300));
+        panel.setBackground(new Color(255, 194, 150));
+        panel.add(burgerName, "span, pushx, wrap, growx");
 
-        panel.add(burgerName, "span, wrap, growx");
-        panel.add(createImageLabel(image.getPath(), 250, 200), "wrap");
-        panel.add(spinner, "split4");
+        int imageWidth = 180;
+        int imageHeight = 200;
+        if (product.getType().equals(Type.BURGER)) {
+            imageWidth = 250;
+        }
+
+        panel.add(createImageLabel(image.getPath(), imageWidth, imageHeight), "wrap, pushx, growx");
+        panel.add(spinner, "split4, pushx");
         panel.add(addProductButton);
         panel.add(removeProductButton);
         panel.add(burgerCost);
-        panel.setSize(200, 200);
-        panel.setBackground(new Color(255, 194, 150));
         return panel;
     }
 

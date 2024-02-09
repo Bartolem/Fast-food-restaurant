@@ -1,5 +1,6 @@
 package org.fast_food.product.burger;
 
+import org.fast_food.product.Type;
 import org.fast_food.product.burger.ingredient.*;
 
 import java.util.List;
@@ -17,6 +18,7 @@ public enum SpicyBurger implements Burger {
     INFERNO("Inferno Triple Pepper Burger", 9.49, List.of(Patty.BEEF, Ingredient.JALAPENOS, Ingredient.BANANA_PEPPERS, Cheese.GHOST_PAPER_CHEESE, Sauce.INFERNO_SAUCE, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.POTATO), "A burger that brings the heat with jalapeños, banana peppers, ghost pepper cheese, and inferno sauce.", 900, 5, 4.4)
     ;
 
+    public static final Type TYPE = Type.BURGER;
     private final String name;
     private final double price;
     private final List<IngredientI> ingredients;
@@ -33,6 +35,11 @@ public enum SpicyBurger implements Burger {
         this.calories = calories;
         this.spicinessLevel = spicinessLevel;
         this.popularityRating = popularityRating;
+    }
+
+    @Override
+    public Type getType() {
+        return TYPE;
     }
 
     @Override

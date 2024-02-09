@@ -8,6 +8,7 @@ public enum FrenchFries implements Product {
     GARLIC_PARMESAN("Garlic Parmesan Fries", 4.49, "Irresistible fries seasoned with garlic powder, grated Parmesan cheese, and fresh parsley for a savory experience.", 300)
     ;
 
+    public static final Type TYPE = Type.FRENCH_FRIES;
     private final String name;
     private final double price;
     private final String description;
@@ -18,6 +19,11 @@ public enum FrenchFries implements Product {
         this.price = price;
         this.description = description;
         this.calories = calories;
+    }
+
+    @Override
+    public Type getType() {
+        return TYPE;
     }
 
     @Override

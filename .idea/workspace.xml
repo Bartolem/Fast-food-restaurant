@@ -178,7 +178,7 @@
       <recent name="org.fast_food.product.burger" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ColdDrinkTest.testGetDescriptionForDifferentColdDrinks">
+  <component name="RunManager" selected="JUnit.ColdDrinkTest">
     <configuration name="ColdDrinkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
@@ -190,6 +190,38 @@
       <option name="PACKAGE_NAME" value="org.fast_food.product" />
       <option name="MAIN_CLASS_NAME" value="org.fast_food.product.ColdDrinkTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ColdDrinkTest.testGetCalories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.fast_food.product" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.ColdDrinkTest" />
+      <option name="METHOD_NAME" value="testGetCalories" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ColdDrinkTest.testGetCaloriesForDifferentColdDrinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.fast_food.product" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.ColdDrinkTest" />
+      <option name="METHOD_NAME" value="testGetCaloriesForDifferentColdDrinks" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -210,7 +242,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColdDrinkTest.testGetNameForDifferentColdDrinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ColdDrinkTest.testValueOfDifferentColdDrinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
         <pattern>
@@ -220,39 +252,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="org.fast_food.product" />
       <option name="MAIN_CLASS_NAME" value="org.fast_food.product.ColdDrinkTest" />
-      <option name="METHOD_NAME" value="testGetNameForDifferentColdDrinks" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ColdDrinkTest.testGetNameForDifferentFriesTypes" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Fast-food-restaurant" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.fast_food.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.product" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.ColdDrinkTest" />
-      <option name="METHOD_NAME" value="testGetNameForDifferentFriesTypes" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ColdDrinkTest.testGetPriceForDifferentColdDrinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Fast-food-restaurant" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.fast_food.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.product" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.ColdDrinkTest" />
-      <option name="METHOD_NAME" value="testGetPriceForDifferentColdDrinks" />
+      <option name="METHOD_NAME" value="testValueOfDifferentColdDrinks" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -271,18 +271,18 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.ColdDrinkTest" />
+      <item itemvalue="JUnit.ColdDrinkTest.testGetCalories" />
+      <item itemvalue="JUnit.ColdDrinkTest.testGetCaloriesForDifferentColdDrinks" />
       <item itemvalue="JUnit.ColdDrinkTest.testGetDescriptionForDifferentColdDrinks" />
-      <item itemvalue="JUnit.ColdDrinkTest.testGetNameForDifferentColdDrinks" />
-      <item itemvalue="JUnit.ColdDrinkTest.testGetNameForDifferentFriesTypes" />
-      <item itemvalue="JUnit.ColdDrinkTest.testGetPriceForDifferentColdDrinks" />
+      <item itemvalue="JUnit.ColdDrinkTest.testValueOfDifferentColdDrinks" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ColdDrinkTest.testGetDescriptionForDifferentColdDrinks" />
-        <item itemvalue="JUnit.ColdDrinkTest.testGetNameForDifferentColdDrinks" />
-        <item itemvalue="JUnit.ColdDrinkTest.testGetPriceForDifferentColdDrinks" />
         <item itemvalue="JUnit.ColdDrinkTest" />
-        <item itemvalue="JUnit.ColdDrinkTest.testGetNameForDifferentFriesTypes" />
+        <item itemvalue="JUnit.ColdDrinkTest.testValueOfDifferentColdDrinks" />
+        <item itemvalue="JUnit.ColdDrinkTest.testGetCaloriesForDifferentColdDrinks" />
+        <item itemvalue="JUnit.ColdDrinkTest.testGetCalories" />
+        <item itemvalue="JUnit.ColdDrinkTest.testGetDescriptionForDifferentColdDrinks" />
       </list>
     </recent_temporary>
   </component>

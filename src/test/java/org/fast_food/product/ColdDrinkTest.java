@@ -77,4 +77,52 @@ public class ColdDrinkTest {
         assertEquals("Refresh your palate with the invigorating flavors of fresh mint in this cooling cocktail, perfect for a hot summer day or as a palate cleanser between meals.", MINT_COCKTAIL.getDescription());
         assertEquals("Quench your thirst with the bubbly and tangy flavors of lemon and lime in this classic soda beverage, served ice-cold for maximum refreshment.", LEMON_LIME_SODA.getDescription());
     }
+
+    @Test
+    void testGetCaloriesForDifferentColdDrinks() {
+        assertEquals(380, PEANUT_BUTTER_BANANA_SMOOTHIE.getCalories());
+        assertEquals(220, PAPAYA_SMOOTHIE.getCalories());
+        assertEquals(180, SPINACH_SMOOTHIE.getCalories());
+        assertEquals(250, STRAWBERRY_SMOOTHIE.getCalories());
+        assertEquals(230, BLUEBERRY_SMOOTHIE.getCalories());
+        assertEquals(260, MULBERRY_SMOOTHIE.getCalories());
+        assertEquals(200, KIWI_SMOOTHIE.getCalories());
+        assertEquals(220, PINEAPPLE_SMOOTHIE.getCalories());
+        assertEquals(150, CARAMEL_ICED_COFFEE.getCalories());
+        assertEquals(550, MILKSHAKE_COOKIES_AND_CREAM.getCalories());
+        assertEquals(500, CHOCOLATE_MILKSHAKE.getCalories());
+        assertEquals(520, STRAWBERRY_MILKSHAKE.getCalories());
+        assertEquals(170, BANANA_JUICE.getCalories());
+        assertEquals(120, ORANGE_JUICE.getCalories());
+        assertEquals(100, WATERMELON_JUICE.getCalories());
+        assertEquals(350, PINEAPPLE_PINA_COLADA.getCalories());
+        assertEquals(140, COLA_DRINK.getCalories());
+        assertEquals(80, ICE_TEA.getCalories());
+        assertEquals(200, MINT_COCKTAIL.getCalories());
+        assertEquals(160, LEMON_LIME_SODA.getCalories());
+    }
+
+    @Test
+    void testValueOfDifferentColdDrinks() {
+        assertEquals(PEANUT_BUTTER_BANANA_SMOOTHIE, ColdDrink.valueOf("PEANUT_BUTTER_BANANA_SMOOTHIE"));
+        assertEquals(PAPAYA_SMOOTHIE, ColdDrink.valueOf("PAPAYA_SMOOTHIE"));
+        assertEquals(SPINACH_SMOOTHIE, ColdDrink.valueOf("SPINACH_SMOOTHIE"));
+        assertEquals(STRAWBERRY_SMOOTHIE, ColdDrink.valueOf("STRAWBERRY_SMOOTHIE"));
+        assertEquals(BLUEBERRY_SMOOTHIE, ColdDrink.valueOf("BLUEBERRY_SMOOTHIE"));
+        assertEquals(MULBERRY_SMOOTHIE, ColdDrink.valueOf("MULBERRY_SMOOTHIE"));
+        assertEquals(KIWI_SMOOTHIE, ColdDrink.valueOf("KIWI_SMOOTHIE"));
+        assertEquals(PINEAPPLE_SMOOTHIE, ColdDrink.valueOf("PINEAPPLE_SMOOTHIE"));
+        assertEquals(CARAMEL_ICED_COFFEE, ColdDrink.valueOf("CARAMEL_ICED_COFFEE"));
+        assertEquals(MILKSHAKE_COOKIES_AND_CREAM, ColdDrink.valueOf("MILKSHAKE_COOKIES_AND_CREAM"));
+        assertEquals(CHOCOLATE_MILKSHAKE, ColdDrink.valueOf("CHOCOLATE_MILKSHAKE"));
+        assertEquals(STRAWBERRY_MILKSHAKE, ColdDrink.valueOf("STRAWBERRY_MILKSHAKE"));
+        assertEquals(BANANA_JUICE, ColdDrink.valueOf("BANANA_JUICE"));
+        assertEquals(ORANGE_JUICE, ColdDrink.valueOf("ORANGE_JUICE"));
+        assertEquals(WATERMELON_JUICE, ColdDrink.valueOf("WATERMELON_JUICE"));
+        assertEquals(PINEAPPLE_PINA_COLADA, ColdDrink.valueOf("PINEAPPLE_PINA_COLADA"));
+        assertEquals(COLA_DRINK, ColdDrink.valueOf("COLA_DRINK"));
+        assertEquals(ICE_TEA, ColdDrink.valueOf("ICE_TEA"));
+        assertEquals(MINT_COCKTAIL, ColdDrink.valueOf("MINT_COCKTAIL"));
+        assertEquals(LEMON_LIME_SODA, ColdDrink.valueOf("LEMON_LIME_SODA"));
+    }
 }

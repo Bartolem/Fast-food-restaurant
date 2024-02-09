@@ -1,5 +1,6 @@
 package org.fast_food.product.burger;
 
+import org.fast_food.product.Type;
 import org.fast_food.product.burger.ingredient.*;
 
 import java.util.List;
@@ -15,6 +16,7 @@ public enum GourmetBurger implements Burger {
     PHILLY_CHEESE_STEAK("Philly Cheese Steak Burger", 8.29, List.of(Patty.BEEF, Ingredient.STEAK, Cheese.PROVOLONE_CHEESE, Ingredient.GRILLED_PEPPERS, Ingredient.ONION, Bun.PRETZEL), "A burger inspired by the classic Philly cheese steak, featuring sliced steak, provolone cheese, and grilled peppers and onions.", 820, 1, 3.9),
     MEDITERRANEAN_LAMB("Mediterranean Lamb Burger", 8.49, List.of(Patty.LAMB, Cheese.FETA_CHEESE, Sauce.TZATZIKI, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.WHOLE_GRAIN), "A flavorful lamb burger topped with crumbled feta, cool tzatziki sauce, and fresh lettuce and tomato.", 900, 1, 3.6);
 
+    public static final Type TYPE = Type.BURGER;
     private final String name;
     private final double price;
     private final List<IngredientI> ingredients;
@@ -31,6 +33,11 @@ public enum GourmetBurger implements Burger {
         this.calories = calories;
         this.spicinessLevel = spicinessLevel;
         this.popularityRating = popularityRating;
+    }
+
+    @Override
+    public Type getType() {
+        return TYPE;
     }
 
     @Override

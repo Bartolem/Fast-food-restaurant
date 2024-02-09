@@ -1,5 +1,6 @@
 package org.fast_food.product.burger;
 
+import org.fast_food.product.Type;
 import org.fast_food.product.burger.ingredient.*;
 
 import java.util.List;
@@ -19,6 +20,7 @@ public enum ClassicBurger implements Burger {
     DOUBLE_BACON("Double Bacon Burger", 6.99, List.of(Patty.BEEF, Patty.BEEF, Ingredient.BACON, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.SESAME), "For the ultimate bacon lover – double beef and crispy bacon.", 1120, 2, 4.6),
     DOUBLE_BACON_CHEESEBURGER("Double Bacon Cheeseburger", 7.19, List.of(Patty.BEEF, Patty.BEEF, Ingredient.BACON, Cheese.CHEESE, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.BRIOCHE), "For the ultimate bacon and cheese lover – double beef, double cheese, and crispy bacon.", 1280, 2, 4.5);
 
+    public static final Type TYPE = Type.BURGER;
     private final String name;
     private final double price;
     private final List<IngredientI> ingredients;
@@ -35,6 +37,11 @@ public enum ClassicBurger implements Burger {
         this.calories = calories;
         this.spicinessLevel = spicinessLevel;
         this.popularityRating = popularityRating;
+    }
+
+    @Override
+    public Type getType() {
+        return TYPE;
     }
 
     @Override

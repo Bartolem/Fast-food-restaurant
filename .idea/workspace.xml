@@ -7,7 +7,22 @@
     <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/Dessert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/Dessert.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/fries/fries_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/fries/fries_4.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -92,6 +107,8 @@
     "JUnit.CustomerTest.testGetPointsIsPositiveNumber.executor": "Run",
     "JUnit.CustomerTest.testRemovePointsIsPositiveNumber.executor": "Run",
     "JUnit.CustomerTest.testSetNameWithEmptyString.executor": "Run",
+    "JUnit.DessertTest.executor": "Run",
+    "JUnit.DessertTest.testGetDescriptionForDifferentDesserts.executor": "Run",
     "JUnit.FrenchFriesTest.executor": "Run",
     "JUnit.FrenchFriesTest.getCalories.executor": "Run",
     "JUnit.FrenchFriesTest.getDescription.executor": "Run",
@@ -145,11 +162,11 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "253",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "add-hot-drinks",
+    "git-widget-placeholder": "add-dessert",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "temurin-21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Projekty/Java Projects/Fast food ordering/src/main/resources/images/hot_drinks",
+    "last_opened_file_path": "D:/Projekty/Java Projects/Fast food ordering/src/main/resources/images/fries",
     "onboarding.tips.debug.path": "D:/Projekty/Java Projects/Fast food ordering/untitled/src/Main.java",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -159,6 +176,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\fries" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\hot_drinks" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources" />
@@ -168,8 +186,8 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\cold_drinks" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\fries" />
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\cold_drinks" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\unique" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\classic" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\spicy" />
@@ -214,7 +232,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColdDrinkTest.testGetCaloriesForDifferentColdDrinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DessertTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
         <pattern>
@@ -223,14 +241,13 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.fast_food.product" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.ColdDrinkTest" />
-      <option name="METHOD_NAME" value="testGetCaloriesForDifferentColdDrinks" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.DessertTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColdDrinkTest.testValueOfDifferentColdDrinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DessertTest.testGetDescriptionForDifferentDesserts" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
         <pattern>
@@ -239,8 +256,8 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="org.fast_food.product" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.ColdDrinkTest" />
-      <option name="METHOD_NAME" value="testValueOfDifferentColdDrinks" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.DessertTest" />
+      <option name="METHOD_NAME" value="testGetDescriptionForDifferentDesserts" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -274,18 +291,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.DessertTest" />
+      <item itemvalue="JUnit.DessertTest.testGetDescriptionForDifferentDesserts" />
       <item itemvalue="JUnit.HotDrinkTest" />
       <item itemvalue="JUnit.ColdDrinkTest" />
-      <item itemvalue="JUnit.ColdDrinkTest.testGetCaloriesForDifferentColdDrinks" />
-      <item itemvalue="JUnit.ColdDrinkTest.testValueOfDifferentColdDrinks" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.DessertTest" />
+        <item itemvalue="JUnit.DessertTest.testGetDescriptionForDifferentDesserts" />
         <item itemvalue="JUnit.HotDrinkTest" />
         <item itemvalue="JUnit.ColdDrinkTest" />
-        <item itemvalue="JUnit.ColdDrinkTest.testValueOfDifferentColdDrinks" />
-        <item itemvalue="JUnit.ColdDrinkTest.testGetCaloriesForDifferentColdDrinks" />
       </list>
     </recent_temporary>
   </component>

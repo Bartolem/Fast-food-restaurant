@@ -4,5 +4,6 @@ public enum Type {
     BURGER,
     FRENCH_FRIES,
     DRINK_COLD,
-    DRINK_HOT
+    DRINK_HOT,
+    DESSERT,
 }

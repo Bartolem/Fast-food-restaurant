@@ -7,34 +7,7 @@
     <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/ColdDrink.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/ColdDrink.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/FrenchFries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/FrenchFries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ClassicBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ClassicBurger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/GourmetBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/GourmetBurger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/SpicyBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/SpicyBurger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/UniqueFlavorBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/UniqueFlavorBurger.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_13.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_14.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_15.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_17.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_8.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/cold_drinks/cold_8.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/fast_food/product/ColdDrinkTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/fast_food/product/ColdDrinkTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_13.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_13.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_14.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_14.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_15.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_15.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_17.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_17.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_2.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_2.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_4.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_4.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_5.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_5.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_6.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_6.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_7.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_7.png" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_8.png" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/images/cold_drinks/cold_8.png" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,8 +22,8 @@
         <option value="module-info" />
         <option value="FxmlFile" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Enum" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -139,6 +112,7 @@
     "JUnit.GourmetBurgerTest.testGetIngredientsForDifferentBurgerTypes.executor": "Run",
     "JUnit.GourmetBurgerTest.testGourmetBurgerContainsAllValues.executor": "Run",
     "JUnit.GourmetBurgerTest.testValueOfDifferentBurgerTypes.executor": "Run",
+    "JUnit.HotDrinkTest.executor": "Run",
     "JUnit.OrderCreationTest.testCreateOrder.executor": "Run",
     "JUnit.OrderManagementTest.executor": "Run",
     "JUnit.OrderManagementTest.testAddProductToOrder.executor": "Run",
@@ -171,11 +145,11 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "253",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "add-cold-drinks",
+    "git-widget-placeholder": "add-hot-drinks",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "temurin-21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Projekty/Java Projects/Fast food ordering/src/main/resources/images",
+    "last_opened_file_path": "D:/Projekty/Java Projects/Fast food ordering/src/main/resources/images/hot_drinks",
     "onboarding.tips.debug.path": "D:/Projekty/Java Projects/Fast food ordering/untitled/src/Main.java",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -185,6 +159,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\hot_drinks" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\java\org\fast_food\user_interface" />
@@ -239,22 +214,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ColdDrinkTest.testGetCalories" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Fast-food-restaurant" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.fast_food.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.product" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.ColdDrinkTest" />
-      <option name="METHOD_NAME" value="testGetCalories" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ColdDrinkTest.testGetCaloriesForDifferentColdDrinks" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
@@ -287,6 +246,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="HotDrinkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.fast_food.product" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.HotDrinkTest" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration default="true" type="JetRunConfigurationType">
       <method v="2">
         <option name="Make" enabled="true" />
@@ -300,18 +274,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.HotDrinkTest" />
       <item itemvalue="JUnit.ColdDrinkTest" />
-      <item itemvalue="JUnit.ColdDrinkTest.testGetCalories" />
       <item itemvalue="JUnit.ColdDrinkTest.testGetCaloriesForDifferentColdDrinks" />
       <item itemvalue="JUnit.ColdDrinkTest.testValueOfDifferentColdDrinks" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.HotDrinkTest" />
         <item itemvalue="JUnit.ColdDrinkTest" />
         <item itemvalue="JUnit.ColdDrinkTest.testValueOfDifferentColdDrinks" />
         <item itemvalue="JUnit.ColdDrinkTest.testGetCaloriesForDifferentColdDrinks" />
-        <item itemvalue="JUnit.ColdDrinkTest.testGetCalories" />
       </list>
     </recent_temporary>
   </component>

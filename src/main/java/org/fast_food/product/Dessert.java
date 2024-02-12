@@ -1,7 +1,7 @@
 package org.fast_food.product;
 
 public enum Dessert implements Product {
-    SWEET_CORNBREAD("Sweet Cornbread", 3.99, "Indulge in the rich sweetness of cornbread with a hint of honey, baked to perfection for a delightful treat.", 250),
+    SWEET_CORNBREAD("Sweet Cornbread with Jalapeño", 3.99, "Indulge in the rich sweetness of cornbread with a hint of honey and a kick of jalapeño pepper, baked to perfection for a delightful treat.", 250),
     SWEET_NANAMI_BARS("Sweet Nanami Bars", 5.49, "Satisfy your sweet tooth with these decadent Nanami bars, featuring layers of chocolate, custard, and coconut on a crumbly base.", 320),
     MANGO_SLICES("Mango Slices", 2.99, "Enjoy the tropical flavor of ripe mango slices, perfect as a refreshing snack or dessert option.", 80),
     SWEET_RED_DATE_CAKE("Sweet Red Date Cake", 4.79, "Treat yourself to the rich and moist sweetness of red date cake, infused with the unique flavor of Chinese red dates.", 300),

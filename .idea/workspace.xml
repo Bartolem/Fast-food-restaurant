@@ -89,6 +89,7 @@
     "JUnit.CustomerTest.testRemovePointsIsPositiveNumber.executor": "Run",
     "JUnit.CustomerTest.testSetNameWithEmptyString.executor": "Run",
     "JUnit.DessertTest.executor": "Run",
+    "JUnit.DessertTest.testGetDescriptionForDifferentDesserts.executor": "Run",
     "JUnit.FrenchFriesTest.executor": "Run",
     "JUnit.FrenchFriesTest.getCalories.executor": "Run",
     "JUnit.FrenchFriesTest.getDescription.executor": "Run",

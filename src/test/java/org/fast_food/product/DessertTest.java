@@ -8,7 +8,7 @@ public class DessertTest {
 
     @Test
     void testGetNameForDifferentDesserts() {
-        assertEquals("Sweet Cornbread", Dessert.SWEET_CORNBREAD.getName());
+        assertEquals("Sweet Cornbread with Jalapeño", Dessert.SWEET_CORNBREAD.getName());
         assertEquals("Sweet Nanami Bars", Dessert.SWEET_NANAMI_BARS.getName());
         assertEquals("Mango Slices", Dessert.MANGO_SLICES.getName());
         assertEquals("Sweet Red Date Cake", Dessert.SWEET_RED_DATE_CAKE.getName());
@@ -40,7 +40,7 @@ public class DessertTest {
 
     @Test
     void testGetDescriptionForDifferentDesserts() {
-        assertEquals("Indulge in the rich sweetness of cornbread with a hint of honey, baked to perfection for a delightful treat.", Dessert.SWEET_CORNBREAD.getDescription());
+        assertEquals("Indulge in the rich sweetness of cornbread with a hint of honey and a kick of jalapeño pepper, baked to perfection for a delightful treat.", Dessert.SWEET_CORNBREAD.getDescription());
         assertEquals("Satisfy your sweet tooth with these decadent Nanami bars, featuring layers of chocolate, custard, and coconut on a crumbly base.", Dessert.SWEET_NANAMI_BARS.getDescription());
         assertEquals("Enjoy the tropical flavor of ripe mango slices, perfect as a refreshing snack or dessert option.", Dessert.MANGO_SLICES.getDescription());
         assertEquals("Treat yourself to the rich and moist sweetness of red date cake, infused with the unique flavor of Chinese red dates.", Dessert.SWEET_RED_DATE_CAKE.getDescription());

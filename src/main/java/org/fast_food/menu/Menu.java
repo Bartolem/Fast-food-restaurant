@@ -55,25 +55,25 @@ public class Menu {
     }
 
     public static List<File> getClassicBurgerImages() {
-        File[] images = new File("src/main/resources/images/classic").listFiles();
+        File[] images = new File("src/main/resources/images/burgers/classic").listFiles();
         Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
         return List.of(images);
     }
 
     public static List<File> getGourmetBurgerImages() {
-        File[] images = new File("src/main/resources/images/gourmet").listFiles();
+        File[] images = new File("src/main/resources/images/burgers/gourmet").listFiles();
         Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
         return List.of(images);
     }
 
     public static List<File> getSpicyBurgerImages() {
-        File[] images = new File("src/main/resources/images/spicy").listFiles();
+        File[] images = new File("src/main/resources/images/burgers/spicy").listFiles();
         Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
         return List.of(images);
     }
 
     public static List<File> getUniqueFlavorBurgerImages() {
-        File[] images = new File("src/main/resources/images/unique").listFiles();
+        File[] images = new File("src/main/resources/images/burgers/unique").listFiles();
         Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
         return List.of(images);
     }
@@ -85,13 +85,13 @@ public class Menu {
     }
 
     public static List<File> getColdDrinksImages() {
-        File[] images = new File("src/main/resources/images/cold_drinks").listFiles();
+        File[] images = new File("src/main/resources/images/drinks/cold_drinks").listFiles();
         Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
         return List.of(images);
     }
 
     public static List<File> getHotDrinksImages() {
-        File[] images = new File("src/main/resources/images/hot_drinks").listFiles();
+        File[] images = new File("src/main/resources/images/drinks/hot_drinks").listFiles();
         Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
         return List.of(images);
     }

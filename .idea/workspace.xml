@@ -4,26 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/Dessert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/Dessert.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_1.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_10.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_11.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_12.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_2.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_4.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_5.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_6.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_7.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_8.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_9.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/fries/fries_3.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/images/fries/fries_4.png" beforeDir="false" />
-    </list>
+    <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -162,7 +143,7 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "253",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "add-dessert",
+    "git-widget-placeholder": "add-burger-types",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "temurin-21",
     "kotlin-language-version-configured": "true",

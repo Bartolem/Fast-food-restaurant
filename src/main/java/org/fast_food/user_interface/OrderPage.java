@@ -63,6 +63,7 @@ public class OrderPage {
         JScrollPane uniqueBurgerPanel = new JScrollPane(createItemsPanel(Menu.getUniqueFlavorBurgerList(), Menu.getUniqueFlavorBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JScrollPane frenchFries = new JScrollPane(createItemsPanel(Menu.getFrenchFriesList(), Menu.getFrenchFriesImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JScrollPane coldDrinks = new JScrollPane(createItemsPanel(Menu.getColdDrinkList(), Menu.getColdDrinksImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane hotDrinks = new JScrollPane(createItemsPanel(Menu.getHotDrinkList(), Menu.getHotDrinksImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         panel.add(classicBurgerPanel, "classicBurgerPanel");
         panel.add(gourmetBurgerPanel, "gourmetBurgerPanel");
@@ -70,6 +71,7 @@ public class OrderPage {
         panel.add(uniqueBurgerPanel, "uniqueBurgerPanel");
         panel.add(frenchFries, "frenchFries");
         panel.add(coldDrinks, "coldDrinks");
+        panel.add(hotDrinks, "hotDrinks");
         return panel;
     }
 
@@ -120,6 +122,10 @@ public class OrderPage {
 
         coldDrinksButton.addActionListener(e -> {
             cardLayout.show(menuPanel, "coldDrinks");
+        });
+
+        hotDrinksButton.addActionListener(e -> {
+            cardLayout.show(menuPanel, "hotDrinks");
         });
 
         return panel;

@@ -29,7 +29,7 @@ public enum Dessert implements Product {
 
     @Override
     public Type getType() {
-        return null;
+        return TYPE;
     }
 
     @Override

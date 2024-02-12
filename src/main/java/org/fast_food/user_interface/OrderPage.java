@@ -64,6 +64,7 @@ public class OrderPage {
         JScrollPane frenchFries = new JScrollPane(createItemsPanel(Menu.getFrenchFriesList(), Menu.getFrenchFriesImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JScrollPane coldDrinks = new JScrollPane(createItemsPanel(Menu.getColdDrinkList(), Menu.getColdDrinksImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JScrollPane hotDrinks = new JScrollPane(createItemsPanel(Menu.getHotDrinkList(), Menu.getHotDrinksImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane desserts = new JScrollPane(createItemsPanel(Menu.getDessertList(), Menu.getDessertsImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         panel.add(classicBurgerPanel, "classicBurgerPanel");
         panel.add(gourmetBurgerPanel, "gourmetBurgerPanel");
@@ -72,6 +73,7 @@ public class OrderPage {
         panel.add(frenchFries, "frenchFries");
         panel.add(coldDrinks, "coldDrinks");
         panel.add(hotDrinks, "hotDrinks");
+        panel.add(desserts, "desserts");
         return panel;
     }
 
@@ -126,6 +128,10 @@ public class OrderPage {
 
         hotDrinksButton.addActionListener(e -> {
             cardLayout.show(menuPanel, "hotDrinks");
+        });
+
+        dessertsButton.addActionListener(e -> {
+            cardLayout.show(menuPanel, "desserts");
         });
 
         return panel;
@@ -300,7 +306,7 @@ public class OrderPage {
         panel.setBackground(new Color(255, 194, 150));
         panel.add(burgerName, "span, pushx, wrap, growx");
 
-        int imageWidth = 180;
+        int imageWidth = 200;
         int imageHeight = 200;
         if (product.getType().equals(Type.BURGER)) {
             imageWidth = 250;

@@ -1,9 +1,6 @@
 package org.fast_food.menu;
 
-import org.fast_food.product.ColdDrink;
-import org.fast_food.product.FrenchFries;
-import org.fast_food.product.HotDrink;
-import org.fast_food.product.Product;
+import org.fast_food.product.*;
 import org.fast_food.product.burger.ClassicBurger;
 import org.fast_food.product.burger.GourmetBurger;
 import org.fast_food.product.burger.SpicyBurger;
@@ -23,6 +20,7 @@ public class Menu {
     private static final List<Product> FRENCH_FRIES_LIST = List.of(FrenchFries.values());
     private static final List<Product> COLD_DRINK_LIST = List.of(ColdDrink.values());
     private static final List<Product> HOT_DRINK_LIST = List.of(HotDrink.values());
+    private static final List<Product> DESSERT_LIST = List.of(Dessert.values());
 
     public static List<Product> getClassicBurgerList() {
         return CLASSIC_BURGER_LIST;
@@ -50,6 +48,10 @@ public class Menu {
 
     public static List<Product> getHotDrinkList() {
         return HOT_DRINK_LIST;
+    }
+
+    public static List<Product> getDessertList() {
+        return DESSERT_LIST;
     }
 
     public static List<File> getClassicBurgerImages() {
@@ -90,6 +92,12 @@ public class Menu {
 
     public static List<File> getHotDrinksImages() {
         File[] images = new File("src/main/resources/images/hot_drinks").listFiles();
+        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
+        return List.of(images);
+    }
+
+    public static List<File> getDessertsImages() {
+        File[] images = new File("src/main/resources/images/desserts").listFiles();
         Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
         return List.of(images);
     }

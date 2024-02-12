@@ -4,7 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="" />
+    <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/Dessert.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/Dessert.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_10.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_11.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_12.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_2.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_4.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_5.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_6.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_7.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_8.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/desserts/dessert_9.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/fries/fries_3.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/images/fries/fries_4.png" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -147,7 +166,7 @@
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "temurin-21",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "D:/Projekty/Java Projects/Fast food ordering/src/main/resources/images/hot_drinks",
+    "last_opened_file_path": "D:/Projekty/Java Projects/Fast food ordering/src/main/resources/images/fries",
     "onboarding.tips.debug.path": "D:/Projekty/Java Projects/Fast food ordering/untitled/src/Main.java",
     "project.structure.last.edited": "Libraries",
     "project.structure.proportion": "0.15",
@@ -157,6 +176,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\fries" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\hot_drinks" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources" />
@@ -166,8 +186,8 @@
       <recent name="" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\cold_drinks" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\fries" />
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\cold_drinks" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\unique" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\classic" />
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images\spicy" />
@@ -183,7 +203,7 @@
       <recent name="org.fast_food.product.burger" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.DessertTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.fast_food.Main" />
       <module name="Fast-food-restaurant" />
@@ -278,9 +298,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.DessertTest" />
         <item itemvalue="JUnit.DessertTest.testGetDescriptionForDifferentDesserts" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.HotDrinkTest" />
         <item itemvalue="JUnit.ColdDrinkTest" />
       </list>

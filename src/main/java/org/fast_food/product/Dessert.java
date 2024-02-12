@@ -2,7 +2,7 @@ package org.fast_food.product;
 
 public enum Dessert implements Product {
     SWEET_CORNBREAD("Sweet Cornbread", 3.99, "Indulge in the rich sweetness of cornbread with a hint of honey, baked to perfection for a delightful treat.", 250),
-    SWEET_NANAMI_BARS("Sweet Nanami Bars", 5.49, "Satisfy your sweet tooth with these decadent Nanaimo bars, featuring layers of chocolate, custard, and coconut on a crumbly base.", 320),
+    SWEET_NANAMI_BARS("Sweet Nanami Bars", 5.49, "Satisfy your sweet tooth with these decadent Nanami bars, featuring layers of chocolate, custard, and coconut on a crumbly base.", 320),
     MANGO_SLICES("Mango Slices", 2.99, "Enjoy the tropical flavor of ripe mango slices, perfect as a refreshing snack or dessert option.", 80),
     SWEET_RED_DATE_CAKE("Sweet Red Date Cake", 4.79, "Treat yourself to the rich and moist sweetness of red date cake, infused with the unique flavor of Chinese red dates.", 300),
     SWEET_OIL_TEA_CAKE("Sweet Oil Tea Cake", 3.99, "Indulge in the soft and fluffy texture of oil tea cake, subtly sweetened for a delightful tea-time treat.", 220),
@@ -12,7 +12,7 @@ public enum Dessert implements Product {
     CARMEL_PEANUT_PANCAKES("Carmel Peanut Pancakes", 7.29, "Indulge in fluffy pancakes drizzled with rich caramel sauce and topped with crunchy peanuts, offering a decadent twist on a classic breakfast.", 450),
     CHOCOLATE_CAKE("Chocolate Cake", 6.49, "Satisfy your chocolate cravings with this moist and decadent chocolate cake, layered with creamy frosting for the ultimate dessert experience.", 400),
     KIWI_DESSERT("Kiwi Dessert", 3.49, "Refresh your palate with the vibrant sweetness of kiwi fruit, served in a refreshing and light dessert option.", 120),
-    MACAROONS("Macaroons", 8.99, "Indulge in these delicate and colorful French macarons, featuring a crispy shell and a creamy filling in a variety of flavors.", 280);
+    MACAROONS("Macaroons", 8.99, "Indulge in these delicate and colorful French macaroons, featuring a crispy shell and a creamy filling in a variety of flavors.", 280);
 
     private static final Type TYPE = Type.DESSERT;
     private final String name;

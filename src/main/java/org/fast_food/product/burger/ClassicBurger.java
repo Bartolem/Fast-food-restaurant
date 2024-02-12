@@ -1,5 +1,6 @@
 package org.fast_food.product.burger;
 
+import org.fast_food.product.Side;
 import org.fast_food.product.Type;
 import org.fast_food.product.burger.ingredient.*;
 
@@ -12,7 +13,7 @@ public enum ClassicBurger implements Burger {
     VEGGIE("Veggie Burger", 4.79, List.of(Patty.VEGGIE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Sauce.MAYO, Bun.WHOLE_GRAIN), "A meat-free option loaded with fresh vegetables and a tasty vegetarian patty.", 440, 1, 4.1),
     CHICKEN("Chicken Burger", 5.29, List.of(Patty.CHICKEN, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Sauce.MAYO, Bun.SESAME), "A grilled chicken burger with crisp veggies and mayo for a delightful flavor.", 550, 1, 4.3),
     TURKEY("Turkey Burger", 5.49, List.of(Patty.TURKEY, Ingredient.LETTUCE, Ingredient.TOMATO, Ingredient.ONION, Sauce.CRANBERRY_SAUCE, Bun.BRIOCHE), "A healthier option with a turkey patty and a touch of sweet cranberry sauce.", 550, 1, 4.0),
-    BBQ("BBQ Burger", 5.99, List.of(Patty.BEEF, Sauce.BBQ_SAUCE, Ingredient.ONION_RINGS, Ingredient.LETTUCE, Bun.SESAME), "A savory BBQ-infused burger with melted cheddar and crispy onion rings.", 680, 1.5, 4.3),
+    BBQ("BBQ Burger", 5.99, List.of(Patty.BEEF, Sauce.BBQ_SAUCE, Side.ONION_RINGS, Ingredient.LETTUCE, Bun.SESAME), "A savory BBQ-infused burger with melted cheddar and crispy onion rings.", 680, 1.5, 4.3),
     JALAPENO("Jalapeño Burger", 5.59, List.of(Patty.BEEF, Cheese.PEPPER_JACK_CHEESE, Ingredient.JALAPENOS, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.POTATO), "A spicy delight with pepper jack cheese and a kick of jalapeños.", 640, 3, 3.8),
     TERIYAKI("Teriyaki Burger", 5.89, List.of(Patty.BEEF, Sauce.TERIYAKI_SAUCE, Ingredient.TOMATO, Ingredient.LETTUCE, Ingredient.TOMATO, Ingredient.PINEAPPLE, Bun.SESAME), "A flavorful burger with a sweet and tangy teriyaki glaze and a hint of pineapple.", 600, 1, 4.2),
     DOUBLE_BURGER("Double Burger", 6.29, List.of(Patty.BEEF, Patty.BEEF, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.SESAME), "A hearty and indulgent burger for the ultimate burger enthusiast. This Double Burger features not one, but two succulent beef patties. Complemented by fresh lettuce, ripe tomatoes, pickles, and onions.", 950, 1, 4.4),

@@ -1,5 +1,6 @@
 package org.fast_food.product.burger;
 
+import org.fast_food.product.Side;
 import org.fast_food.product.burger.ingredient.*;
 import org.junit.jupiter.api.Test;
 
@@ -41,7 +42,7 @@ public class UniqueFlavorBurgerTest {
         assertTrue(SWEAT_POTATO.getIngredients().containsAll(List.of(Patty.SWEAT_POTATO, Ingredient.AVOCADO, Ingredient.LETTUCE, Sauce.CHIPOTLE_MAYO, Bun.WHOLE_GRAIN)));
         assertTrue(SMOKED_SALMON.getIngredients().containsAll(List.of(Patty.SMOKED_SALMON, Sauce.DILL, Ingredient.CUCUMBER, Ingredient.ARUGULA, Bun.BRIOCHE)));
         assertTrue(PEANUT_BANANA.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.PEANUT_BUTTER, Ingredient.BANANA, Ingredient.BACON, Sauce.HONEY, Bun.ENGLISH_MUFFIN)));
-        assertTrue(ONION_RINGS.getIngredients().containsAll(List.of(Patty.BEEF, Ingredient.ONION_RINGS, Sauce.BBQ_SAUCE, Cheese.CHEDDAR, Ingredient.LETTUCE, Bun.PRETZEL)));
+        assertTrue(ONION_RINGS.getIngredients().containsAll(List.of(Patty.BEEF, Side.ONION_RINGS, Sauce.BBQ_SAUCE, Cheese.CHEDDAR, Ingredient.LETTUCE, Bun.PRETZEL)));
     }
 
     @Test

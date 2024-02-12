@@ -8,8 +8,8 @@ import static org.junit.jupiter.api.Assertions.*;
 public class ColdDrinkTest {
     @Test
     void testGetNameForDifferentColdDrinks() {
-        assertEquals("Peanut and Banana Smoothie", PEANUT_BUTTER_BANANA_SMOOTHIE.getName());
-        assertEquals("Papaya Smoothie", MANGO_SMOOTHIE.getName());
+        assertEquals("Peanut Banana Smoothie", PEANUT_BUTTER_BANANA_SMOOTHIE.getName());
+        assertEquals("Mango Smoothie", MANGO_SMOOTHIE.getName());
         assertEquals("Spinach Smoothie", SPINACH_SMOOTHIE.getName());
         assertEquals("Strawberry Smoothie", STRAWBERRY_SMOOTHIE.getName());
         assertEquals("Blueberry Smoothie", BLUEBERRY_SMOOTHIE.getName());
@@ -57,7 +57,7 @@ public class ColdDrinkTest {
     @Test
     void testGetDescriptionForDifferentColdDrinks() {
         assertEquals("Indulge in the creamy blend of peanut butter, ripe bananas, and rich chocolate, creating a decadent and satisfying smoothie.", PEANUT_BUTTER_BANANA_SMOOTHIE.getDescription());
-        assertEquals("Refresh your taste buds with the tropical sweetness of ripe papaya blended into a smooth and creamy drink.", MANGO_SMOOTHIE.getDescription());
+        assertEquals("Refresh your taste buds with the tropical sweetness of ripe mango blended into a smooth and creamy drink.", MANGO_SMOOTHIE.getDescription());
         assertEquals("Boost your energy with this nutritious blend of fresh spinach, sweet fruits, and a hint of citrus, delivering a healthy and revitalizing drink.", SPINACH_SMOOTHIE.getDescription());
         assertEquals("Savor the sweetness of ripe strawberries blended to perfection, creating a refreshing and delightful beverage.", STRAWBERRY_SMOOTHIE.getDescription());
         assertEquals("Dive into the antioxidant-rich goodness of blueberries in this smooth and velvety drink, bursting with fruity flavor.", BLUEBERRY_SMOOTHIE.getDescription());
@@ -105,7 +105,7 @@ public class ColdDrinkTest {
     @Test
     void testValueOfDifferentColdDrinks() {
         assertEquals(PEANUT_BUTTER_BANANA_SMOOTHIE, ColdDrink.valueOf("PEANUT_BUTTER_BANANA_SMOOTHIE"));
-        assertEquals(MANGO_SMOOTHIE, ColdDrink.valueOf("PAPAYA_SMOOTHIE"));
+        assertEquals(MANGO_SMOOTHIE, ColdDrink.valueOf("MANGO_SMOOTHIE"));
         assertEquals(SPINACH_SMOOTHIE, ColdDrink.valueOf("SPINACH_SMOOTHIE"));
         assertEquals(STRAWBERRY_SMOOTHIE, ColdDrink.valueOf("STRAWBERRY_SMOOTHIE"));
         assertEquals(BLUEBERRY_SMOOTHIE, ColdDrink.valueOf("BLUEBERRY_SMOOTHIE"));

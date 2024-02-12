@@ -1,5 +1,6 @@
 package org.fast_food.product.burger;
 
+import org.fast_food.product.Side;
 import org.fast_food.product.burger.ingredient.*;
 import org.junit.jupiter.api.Test;
 
@@ -50,7 +51,7 @@ class ClassicBurgerTest {
         assertTrue(VEGGIE.getIngredients().containsAll(List.of(Patty.VEGGIE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Sauce.MAYO, Bun.WHOLE_GRAIN)));
         assertTrue(CHICKEN.getIngredients().containsAll(List.of(Patty.CHICKEN, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Sauce.MAYO, Bun.SESAME)));
         assertTrue(TURKEY.getIngredients().containsAll(List.of(Patty.TURKEY, Ingredient.LETTUCE, Ingredient.TOMATO, Ingredient.ONION, Sauce.CRANBERRY_SAUCE, Bun.BRIOCHE)));
-        assertTrue(BBQ.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.BBQ_SAUCE, Ingredient.ONION_RINGS, Ingredient.LETTUCE, Bun.SESAME)));
+        assertTrue(BBQ.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.BBQ_SAUCE, Side.ONION_RINGS, Ingredient.LETTUCE, Bun.SESAME)));
         assertTrue(JALAPENO.getIngredients().containsAll(List.of(Patty.BEEF, Cheese.PEPPER_JACK_CHEESE, Ingredient.JALAPENOS, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.POTATO)));
         assertTrue(TERIYAKI.getIngredients().containsAll(List.of(Patty.BEEF, Sauce.TERIYAKI_SAUCE, Ingredient.TOMATO, Ingredient.LETTUCE, Ingredient.PINEAPPLE, Ingredient.TOMATO, Bun.SESAME)));
         assertTrue(DOUBLE_BURGER.getIngredients().containsAll(List.of(Patty.BEEF, Patty.BEEF, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.SESAME)));

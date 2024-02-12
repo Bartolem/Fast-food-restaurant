@@ -6,7 +6,6 @@ public enum Ingredient implements IngredientI {
     TOMATO("Tomato"),
     ONION("Onion"),
     PICKLES("Pickles"),
-    ONION_RINGS("Onion rings"),
     JALAPENOS("Jalapeños"),
     PINEAPPLE("Pineapple"),
     AVOCADO("Avocado"),

@@ -5,5 +5,5 @@ public enum Type {
     FRENCH_FRIES,
     DRINK_COLD,
     DRINK_HOT,
-    DESSERT,
+    DESSERT, SIDE_DISH, COMBO_MEAL,
 }

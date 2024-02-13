@@ -14,6 +14,8 @@ public class ComboMealTest {
     @Test
     void testGetNameForDifferentComboMeals() {
         assertEquals("Classic Combo Meal", ComboMeal.CLASSIC.getName());
+        assertEquals("Veggie Delight Combo Meal", ComboMeal.VEGGIE_DELIGHT.getName());
+        assertEquals("Breakfast Combo Meal", ComboMeal.BREAKFAST.getName());
         assertEquals("Gourmet Combo Meal", ComboMeal.GOURMET.getName());
         assertEquals("Tex-Mex Combo Meal", ComboMeal.TEX_MEX.getName());
         assertEquals("Spicy Combo Meal", ComboMeal.SPICY.getName());
@@ -36,6 +38,8 @@ public class ComboMealTest {
     @Test
     void testGetPriceForDifferentComboMeals() {
         assertEquals(9.99, ComboMeal.CLASSIC.getPrice());
+        assertEquals(10.99, ComboMeal.VEGGIE_DELIGHT.getPrice());
+        assertEquals(8.49, ComboMeal.BREAKFAST.getPrice());
         assertEquals(12.99, ComboMeal.GOURMET.getPrice());
         assertEquals(10.49, ComboMeal.TEX_MEX.getPrice());
         assertEquals(9.99, ComboMeal.SPICY.getPrice());
@@ -58,6 +62,8 @@ public class ComboMealTest {
     @Test
     void testGetDescriptionForDifferentComboMeals() {
         assertEquals("Classic Cheeseburger with Regular Fries and Cola Drink", ComboMeal.CLASSIC.getDescription());
+        assertEquals("Veggie Burger with Sweet Potato Fries and Spinach Smoothie", ComboMeal.VEGGIE_DELIGHT.getDescription());
+        assertEquals("Bacon Egg Burger with Curly Fries and Espresso Coffee", ComboMeal.BREAKFAST.getDescription());
         assertEquals("Blue Cheese Burger with Sweet Potato Fries and Pineapple Piña Colada", ComboMeal.GOURMET.getDescription());
         assertEquals("Jalapeño Burger with Regular Fries and Iced Tea", ComboMeal.TEX_MEX.getDescription());
         assertEquals("Spicy Sriracha Burger with Regular Fries and Mint Cocktail", ComboMeal.SPICY.getDescription());
@@ -80,6 +86,8 @@ public class ComboMealTest {
     @Test
     void testGetCaloriesForDifferentComboMeals() {
         assertEquals(1120, ComboMeal.CLASSIC.getCalories());
+        assertEquals(980, ComboMeal.VEGGIE_DELIGHT.getCalories());
+        assertEquals(900, ComboMeal.BREAKFAST.getCalories());
         assertEquals(1180, ComboMeal.GOURMET.getCalories());
         assertEquals(1050, ComboMeal.TEX_MEX.getCalories());
         assertEquals(980, ComboMeal.SPICY.getCalories());
@@ -102,7 +110,9 @@ public class ComboMealTest {
     @Test
     void testGetIngredientsForDifferentComboMeals() {
         assertEquals(List.of(ClassicBurger.CLASSIC_CHEESEBURGER, FrenchFries.REGULAR, ColdDrink.COLA_DRINK), ComboMeal.CLASSIC.getIngredients());
-        assertEquals(List.of(GourmetBurger.BLUE_CHEESE, FrenchFries.SWEET_POTATO, ColdDrink.PINEAPPLE_PINA_COLADA), ComboMeal.GOURMET.getIngredients());
+        assertEquals(List.of(ClassicBurger.VEGGIE, FrenchFries.SWEET_POTATO, ColdDrink.SPINACH_SMOOTHIE), ComboMeal.VEGGIE_DELIGHT.getIngredients());
+        assertEquals(List.of(UniqueFlavorBurger.BREAKFAST, FrenchFries.CURLY, HotDrink.ESPRESSO), ComboMeal.BREAKFAST.getIngredients());
+        assertEquals(List.of(GourmetBurger.BLUE_CHEESE, FrenchFries.LOADED_FRIES, ColdDrink.PINEAPPLE_PINA_COLADA), ComboMeal.GOURMET.getIngredients());
         assertEquals(List.of(ClassicBurger.JALAPENO, FrenchFries.REGULAR, ColdDrink.ICE_TEA), ComboMeal.TEX_MEX.getIngredients());
         assertEquals(List.of(SpicyBurger.SPICY_SRIRACHA, FrenchFries.REGULAR, ColdDrink.MINT_COCKTAIL), ComboMeal.SPICY.getIngredients());
         assertEquals(List.of(SpicyBurger.INFERNO, FrenchFries.REGULAR, ColdDrink.COLA_DRINK), ComboMeal.INFERNO.getIngredients());
@@ -124,6 +134,8 @@ public class ComboMealTest {
     @Test
     void testGetSpicinessLevelForDifferentComboMeals() {
         assertEquals(1, ComboMeal.CLASSIC.getSpicinessLevel());
+        assertEquals(1, ComboMeal.VEGGIE_DELIGHT.getSpicinessLevel());
+        assertEquals(1, ComboMeal.BREAKFAST.getSpicinessLevel());
         assertEquals(2, ComboMeal.GOURMET.getSpicinessLevel());
         assertEquals(3, ComboMeal.TEX_MEX.getSpicinessLevel());
         assertEquals(4, ComboMeal.SPICY.getSpicinessLevel());
@@ -145,19 +157,21 @@ public class ComboMealTest {
 
     @Test
     void testGetPopularityRatingForDifferentComboMeals() {
-        assertEquals(4.3, ComboMeal.CLASSIC.getPopularityRating());
-        assertEquals(4.7, ComboMeal.GOURMET.getPopularityRating());
+        assertEquals(4.8, ComboMeal.CLASSIC.getPopularityRating());
+        assertEquals(4.2, ComboMeal.VEGGIE_DELIGHT.getPopularityRating());
+        assertEquals(4.5, ComboMeal.BREAKFAST.getPopularityRating());
+        assertEquals(4.0, ComboMeal.GOURMET.getPopularityRating());
         assertEquals(4.0, ComboMeal.TEX_MEX.getPopularityRating());
-        assertEquals(4.6, ComboMeal.SPICY.getPopularityRating());
-        assertEquals(4.8, ComboMeal.INFERNO.getPopularityRating());
+        assertEquals(3.6, ComboMeal.SPICY.getPopularityRating());
+        assertEquals(3.8, ComboMeal.INFERNO.getPopularityRating());
         assertEquals(4.4, ComboMeal.BBQ.getPopularityRating());
         assertEquals(4.2, ComboMeal.SEAFOOD.getPopularityRating());
         assertEquals(4.5, ComboMeal.FITNESS.getPopularityRating());
-        assertEquals(4.9, ComboMeal.ULTIMATE.getPopularityRating());
-        assertEquals(4.7, ComboMeal.HEALTHY.getPopularityRating());
-        assertEquals(4.8, ComboMeal.ITALIAN.getPopularityRating());
+        assertEquals(3.9, ComboMeal.ULTIMATE.getPopularityRating());
+        assertEquals(3.7, ComboMeal.HEALTHY.getPopularityRating());
+        assertEquals(3.8, ComboMeal.ITALIAN.getPopularityRating());
         assertEquals(4.1, ComboMeal.SOUTHWESTERN.getPopularityRating());
-        assertEquals(4.6, ComboMeal.TRUFFLE.getPopularityRating());
+        assertEquals(3.6, ComboMeal.TRUFFLE.getPopularityRating());
         assertEquals(4.4, ComboMeal.TROPICAL_TWIST.getPopularityRating());
         assertEquals(4.5, ComboMeal.MEDITERRANEAN.getPopularityRating());
         assertEquals(4.3, ComboMeal.FARMHOUSE.getPopularityRating());

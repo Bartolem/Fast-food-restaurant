@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/FrenchFries.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/FrenchFries.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/Type.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/Type.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/Burger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/Burger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ClassicBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ClassicBurger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/UniqueFlavorBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/UniqueFlavorBurger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/Ingredient.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/Ingredient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/fast_food/product/FrenchFriesTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/fast_food/product/FrenchFriesTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/ComboMeal.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/ComboMeal.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,9 +20,9 @@
         <option value="module-info" />
         <option value="FxmlFile" />
         <option value="JUnit5 Test Class" />
-        <option value="Class" />
         <option value="Enum" />
         <option value="Interface" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -85,6 +79,7 @@
     "JUnit.ColdDrinkTest.testGetNameForDifferentFriesTypes.executor": "Run",
     "JUnit.ColdDrinkTest.testGetPriceForDifferentColdDrinks.executor": "Run",
     "JUnit.ColdDrinkTest.testValueOfDifferentColdDrinks.executor": "Run",
+    "JUnit.ComboMealTest.executor": "Run",
     "JUnit.CustomerCreationTest.executor": "Run",
     "JUnit.CustomerManagementTest.testAddCustomer.executor": "Run",
     "JUnit.CustomerManagementTest.testGetCustomer.executor": "Run",
@@ -193,7 +188,7 @@
       <recent name="org.fast_food.product.burger" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.fast_food in Fast-food-restaurant">
+  <component name="RunManager" selected="JUnit.ComboMealTest">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.fast_food.Main" />
       <module name="Fast-food-restaurant" />
@@ -203,6 +198,21 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ComboMealTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.product.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.fast_food.product" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.ComboMealTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -238,21 +248,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="HotDrinkTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Fast-food-restaurant" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.fast_food.product.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.product" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.HotDrinkTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="fast_food in Fast-food-restaurant" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <option name="TEST_OBJECT" value="directory" />
@@ -274,18 +269,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.ComboMealTest" />
       <item itemvalue="JUnit.fast_food in Fast-food-restaurant" />
       <item itemvalue="JUnit.DessertTest" />
       <item itemvalue="JUnit.DessertTest.testGetDescriptionForDifferentDesserts" />
-      <item itemvalue="JUnit.HotDrinkTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.fast_food in Fast-food-restaurant" />
+        <item itemvalue="JUnit.ComboMealTest" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.fast_food in Fast-food-restaurant" />
         <item itemvalue="JUnit.DessertTest" />
         <item itemvalue="JUnit.DessertTest.testGetDescriptionForDifferentDesserts" />
-        <item itemvalue="JUnit.HotDrinkTest" />
       </list>
     </recent_temporary>
   </component>

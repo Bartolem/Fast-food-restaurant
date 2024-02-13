@@ -5,7 +5,7 @@ import org.fast_food.product.burger.ingredient.*;
 
 import java.util.List;
 
-public enum SpicyBurger implements Burger {
+public enum SpicyBurger implements Burger<IngredientI> {
     SPICY_SRIRACHA("Spicy Sriracha Burger", 6.79, List.of(Patty.BEEF, Sauce.SRIRACHA_SAUCE, Cheese.PEPPER_JACK_CHEESE, Ingredient.TOMATO, Ingredient.LETTUCE, Bun.POTATO), "Heat things up with a spicy Sriracha-infused burger topped with pepper jack cheese.", 650, 4, 3.2),
     JALAPENO_POPPER("Jalapeño Popper Burger", 7.09, List.of(Patty.BEEF, Ingredient.JALAPENO_POPPER_FILLING, Cheese.CREAM_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.POTATO), "A fiery burger featuring jalapeño popper filling, cream cheese, and fresh lettuce and tomato.", 700, 3, 3.3),
     BUFFALO_CHICKEN("Buffalo Chicken Burger", 7.49, List.of(Patty.CHICKEN, Sauce.BUFFALO_SAUCE, Sauce.BLUE_CHEESE_DRESSING, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.SESAME), "Enjoy the bold flavors of buffalo sauce and blue cheese dressing on a crispy chicken patty.", 720, 4, 3.4),

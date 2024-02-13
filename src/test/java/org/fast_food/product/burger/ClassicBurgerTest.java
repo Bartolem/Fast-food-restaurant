@@ -25,6 +25,7 @@ class ClassicBurgerTest {
         assertEquals(DOUBLE_CHEESEBURGER.getName(), "Double Cheeseburger");
         assertEquals(DOUBLE_BACON.getName(), "Double Bacon Burger");
         assertEquals(DOUBLE_BACON_CHEESEBURGER.getName(), "Double Bacon Cheeseburger");
+        assertEquals(FISH.getName(), "Fish Burger");
     }
 
     @Test
@@ -42,6 +43,7 @@ class ClassicBurgerTest {
         assertEquals(DOUBLE_CHEESEBURGER.getPrice(), 6.49);
         assertEquals(DOUBLE_BACON.getPrice(), 6.99);
         assertEquals(DOUBLE_BACON_CHEESEBURGER.getPrice(), 7.19);
+        assertEquals(FISH.getPrice(), 6.49);
     }
     @Test
     void testGetIngredientsForDifferentBurgerTypes() {
@@ -58,7 +60,7 @@ class ClassicBurgerTest {
         assertTrue(DOUBLE_CHEESEBURGER.getIngredients().containsAll(List.of(Patty.BEEF, Patty.BEEF, Cheese.CHEESE, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.SESAME)));
         assertTrue(DOUBLE_BACON.getIngredients().containsAll(List.of(Patty.BEEF, Patty.BEEF, Ingredient.BACON, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.SESAME)));
         assertTrue(DOUBLE_BACON_CHEESEBURGER.getIngredients().containsAll(List.of(Patty.BEEF, Patty.BEEF, Ingredient.BACON, Cheese.CHEESE, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.BRIOCHE)));
-
+        assertEquals(FISH.getIngredients(), List.of(Patty.FISH_FILLET, Cheese.CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO, Sauce.TATAR, Bun.SESAME));
     }
 
     @Test
@@ -76,6 +78,7 @@ class ClassicBurgerTest {
         assertEquals(DOUBLE_CHEESEBURGER.getCalories(), 1000);
         assertEquals(DOUBLE_BACON.getCalories(), 1120);
         assertEquals(DOUBLE_BACON_CHEESEBURGER.getCalories(), 1280);
+        assertEquals(FISH.getCalories(), 480);
     }
 
     @Test
@@ -93,6 +96,7 @@ class ClassicBurgerTest {
         assertEquals(DOUBLE_CHEESEBURGER.getSpicinessLevel(), 1);
         assertEquals(DOUBLE_BACON.getSpicinessLevel(), 2);
         assertEquals(DOUBLE_BACON_CHEESEBURGER.getSpicinessLevel(), 2);
+        assertEquals(FISH.getSpicinessLevel(), 1);
     }
 
     @Test
@@ -110,6 +114,7 @@ class ClassicBurgerTest {
         assertEquals(DOUBLE_CHEESEBURGER.getPopularityRating(), 4.4);
         assertEquals(DOUBLE_BACON.getPopularityRating(), 4.6);
         assertEquals(DOUBLE_BACON_CHEESEBURGER.getPopularityRating(), 4.5);
+        assertEquals(FISH.getPopularityRating(), 4.4);
     }
 
     @Test
@@ -127,11 +132,12 @@ class ClassicBurgerTest {
         assertEquals(DOUBLE_CHEESEBURGER.getDescription(), "A hearty and indulgent burger for the ultimate cheese enthusiast. This Double Cheeseburger features not one, but two succulent beef patties and topped with double cheese. Complemented by fresh lettuce, ripe tomatoes, pickles, and onions.");
         assertEquals(DOUBLE_BACON.getDescription(), "For the ultimate bacon lover – double beef and crispy bacon.");
         assertEquals(DOUBLE_BACON_CHEESEBURGER.getDescription(), "For the ultimate bacon and cheese lover – double beef, double cheese, and crispy bacon.");
+        assertEquals(FISH.getDescription(), "A delicious fish fillet served on a soft sesame bun with lettuce, tartar sauce, and tomatoes.");
     }
 
     @Test
     void testClassicBurgerContainsAllValues() {
-        assertTrue(List.of(CLASSIC_BURGER, CLASSIC_CHEESEBURGER, BACON, VEGGIE, CHICKEN, TURKEY, BBQ, JALAPENO, TERIYAKI, DOUBLE_BURGER, DOUBLE_CHEESEBURGER, DOUBLE_BACON, DOUBLE_BACON_CHEESEBURGER).containsAll(List.of(ClassicBurger.values())));
+        assertEquals(List.of(CLASSIC_BURGER, CLASSIC_CHEESEBURGER, BACON, VEGGIE, CHICKEN, TURKEY, BBQ, JALAPENO, TERIYAKI, DOUBLE_BURGER, DOUBLE_CHEESEBURGER, DOUBLE_BACON, DOUBLE_BACON_CHEESEBURGER, FISH), List.of(ClassicBurger.values()));
     }
 
     @Test
@@ -149,5 +155,6 @@ class ClassicBurgerTest {
         assertEquals(DOUBLE_CHEESEBURGER, ClassicBurger.valueOf("DOUBLE_CHEESEBURGER"));
         assertEquals(DOUBLE_BACON, ClassicBurger.valueOf("DOUBLE_BACON"));
         assertEquals(DOUBLE_BACON_CHEESEBURGER, ClassicBurger.valueOf("DOUBLE_BACON_CHEESEBURGER"));
+        assertEquals(FISH, ClassicBurger.valueOf("FISH"));
     }
 }

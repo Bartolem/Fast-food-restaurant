@@ -6,7 +6,7 @@ import org.fast_food.product.burger.ingredient.*;
 
 import java.util.List;
 
-public enum ClassicBurger implements Burger {
+public enum ClassicBurger implements Burger<IngredientI> {
     CLASSIC_BURGER("Classic Burger", 4.99, List.of(Patty.BEEF, Ingredient.LETTUCE, Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.SESAME), "The classic cheeseburger with a juicy beef patty, melted cheese, and fresh vegetables.", 570, 1, 4.7),
     CLASSIC_CHEESEBURGER("Classic Cheeseburger", 5.19, List.of(Patty.BEEF, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.SESAME), "The classic burger with a juicy beef patty and fresh vegetables.", 650, 1, 4.5),
     BACON("Bacon Burger", 5.49, List.of(Patty.BEEF, Ingredient.BACON, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.SESAME), "A mouthwatering burger featuring crispy bacon on top of a delicious beef patty.", 800, 2, 4.8),
@@ -19,7 +19,8 @@ public enum ClassicBurger implements Burger {
     DOUBLE_BURGER("Double Burger", 6.29, List.of(Patty.BEEF, Patty.BEEF, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.SESAME), "A hearty and indulgent burger for the ultimate burger enthusiast. This Double Burger features not one, but two succulent beef patties. Complemented by fresh lettuce, ripe tomatoes, pickles, and onions.", 950, 1, 4.4),
     DOUBLE_CHEESEBURGER("Double Cheeseburger", 6.49,  List.of(Patty.BEEF, Patty.BEEF, Cheese.CHEESE, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.SESAME), "A hearty and indulgent burger for the ultimate cheese enthusiast. This Double Cheeseburger features not one, but two succulent beef patties and topped with double cheese. Complemented by fresh lettuce, ripe tomatoes, pickles, and onions.", 1000, 1, 4.4),
     DOUBLE_BACON("Double Bacon Burger", 6.99, List.of(Patty.BEEF, Patty.BEEF, Ingredient.BACON, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.SESAME), "For the ultimate bacon lover – double beef and crispy bacon.", 1120, 2, 4.6),
-    DOUBLE_BACON_CHEESEBURGER("Double Bacon Cheeseburger", 7.19, List.of(Patty.BEEF, Patty.BEEF, Ingredient.BACON, Cheese.CHEESE, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.BRIOCHE), "For the ultimate bacon and cheese lover – double beef, double cheese, and crispy bacon.", 1280, 2, 4.5);
+    DOUBLE_BACON_CHEESEBURGER("Double Bacon Cheeseburger", 7.19, List.of(Patty.BEEF, Patty.BEEF, Ingredient.BACON, Cheese.CHEESE, Cheese.CHEESE, Ingredient.LETTUCE,  Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.BRIOCHE), "For the ultimate bacon and cheese lover – double beef, double cheese, and crispy bacon.", 1280, 2, 4.5),
+    FISH("Fish Burger", 6.49, List.of(Patty.FISH_FILLET, Cheese.CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO, Sauce.TATAR, Bun.SESAME), "A delicious fish fillet served on a soft sesame bun with lettuce, tartar sauce, and tomatoes.", 480, 1, 4.4);
 
     public static final Type TYPE = Type.BURGER;
     private final String name;

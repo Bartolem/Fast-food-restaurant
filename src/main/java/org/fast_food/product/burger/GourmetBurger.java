@@ -5,7 +5,7 @@ import org.fast_food.product.burger.ingredient.*;
 
 import java.util.List;
 
-public enum GourmetBurger implements Burger {
+public enum GourmetBurger implements Burger<IngredientI> {
     BLUE_CHEESE("Blue Cheese Burger", 6.99, List.of(Patty.BEEF, Cheese.BLUE_CHEESE, Ingredient.LETTUCE, Ingredient.TOMATO, Ingredient.ONION, Bun.POTATO), "A gourmet delight featuring a succulent beef patty topped with rich and tangy blue cheese, fresh lettuce, tomato, and onion.", 680, 1, 3.3),
     AVOCADO_RANCH("Avocado Ranch Burger", 7.29, List.of(Patty.BEEF, Ingredient.AVOCADO, Sauce.RANCH_DRESSING, Ingredient.TOMATO, Ingredient.ONION, Bun.WHOLE_GRAIN), "Indulge in the creamy goodness of avocado and the zesty flavor of ranch dressing on a perfectly grilled beef patty.", 720, 1, 3.5),
     TRUFFLE_MUSHROOM("Truffle Mushroom Burger", 7.49, List.of(Patty.BEEF, Sauce.TRUFFLE_OIL, Cheese.SWISS_CHEESE, Ingredient.SAUTEED_MUSHROOMS, Ingredient.LETTUCE, Bun.WHOLE_GRAIN), "A gourmet experience with truffle-infused mushrooms, Swiss cheese, and a juicy beef patty for a rich and earthy taste.", 780, 1, 3.8),

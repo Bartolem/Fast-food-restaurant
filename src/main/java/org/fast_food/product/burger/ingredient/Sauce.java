@@ -23,7 +23,8 @@ public enum Sauce implements IngredientI {
     BLUEBERRY_BBQ("Blueberry BBQ sauce"),
     DILL("Dill sauce"),
     PEANUT_BUTTER("Creamy peanut butter"),
-    HONEY("Honey");
+    HONEY("Honey"),
+    TATAR("Tatar sauce");
 
     private final String name;
 

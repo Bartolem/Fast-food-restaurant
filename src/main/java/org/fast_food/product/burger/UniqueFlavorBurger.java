@@ -6,7 +6,7 @@ import org.fast_food.product.burger.ingredient.*;
 
 import java.util.List;
 
-public enum UniqueFlavorBurger implements Burger {
+public enum UniqueFlavorBurger implements Burger<IngredientI> {
     BREAKFAST("Breakfast Burger", 8.99, List.of(Patty.BEEF, Ingredient.BACON, Ingredient.FRIED_EGG, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.PRETZEL), "Start your day right with this hearty breakfast burger featuring a juicy beef patty, crispy bacon, a perfectly fried egg, and fresh lettuce and tomato.", 780, 2, 4),
     MOZZARELLA("Mozzarella Burger", 8.99, List.of(Patty.BEEF, Cheese.MOZZARELLA, Sauce.MARINARA, Ingredient.LETTUCE, Ingredient.TOMATO, Bun.POTATO), "Indulge in the cheesy goodness of melted mozzarella cheese atop a juicy beef patty, complemented by tangy marinara sauce, lettuce, and tomato.", 820, 1, 3.6),
     SPINACH("Spinach and Artichoke Burger", 10.49, List.of(Patty.SPINACH_ARTICHOKE, Cheese.GOAT_CHEESE, Ingredient.GRILLED_PEPPERS, Ingredient.ARUGULA, Bun.WHOLE_GRAIN), "A vegetarian delight featuring a flavorful spinach and artichoke patty, creamy goat cheese, roasted red peppers, and arugula, served on a wholesome whole grain bun.", 690, 1, 3.8),

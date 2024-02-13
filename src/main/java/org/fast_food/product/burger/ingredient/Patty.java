@@ -11,6 +11,7 @@ public enum Patty implements IngredientI {
     SPINACH_ARTICHOKE("Spinach and artichoke patty"),
     SWEAT_POTATO("Sweet potato and black bean patty"),
     SMOKED_SALMON("Smoked salmon patty"),
+    FISH_FILLET("Fish Fillet"),
     ;
 
     private final String name;

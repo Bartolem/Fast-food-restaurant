@@ -3,6 +3,8 @@ package org.fast_food.order;
 import org.fast_food.product.Product;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.*;
 
 public class Order {
@@ -44,6 +46,7 @@ public class Order {
     public void cancel() {
         if (status != OrderStatus.COMPLETED) {
             this.status = OrderStatus.CANCELED;
+            clear();
         }
     }
 
@@ -91,5 +94,10 @@ public class Order {
 
     private String generateUniqueId() {
         return String.valueOf(UUID.randomUUID());
+    }
+
+    @Override
+    public String toString() {
+        return "Id: %s\nStatus: %s\nDate: %s\nContent: %s\nTotal: %s".formatted(id, status, date.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)), content, totalPrice);
     }
 }

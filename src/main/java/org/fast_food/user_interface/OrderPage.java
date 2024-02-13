@@ -4,6 +4,7 @@ import jiconfont.icons.font_awesome.FontAwesome;
 import jiconfont.swing.IconFontSwing;
 import net.miginfocom.swing.MigLayout;
 import org.fast_food.order.Order;
+import org.fast_food.order.OrderManagement;
 import org.fast_food.product.Product;
 import org.fast_food.menu.Menu;
 import org.fast_food.product.Type;
@@ -29,6 +30,8 @@ public class OrderPage {
     private JLabel totalOrderPrice;
     private CardLayout cardLayout;
     private JPanel menuPanel;
+    private JButton cancelOrderButton;
+    private JButton makeOrderButton;
 
     public OrderPage() {
         initialize();
@@ -41,6 +44,8 @@ public class OrderPage {
         this.removeButtonsList = new ArrayList<>();
         this.cardLayout = new CardLayout();
         this.menuPanel = createMenuPanel();
+
+        OrderManagement.addOrder(order);
 
         frame.setLayout(new BorderLayout());
         frame.setSize(1200, 650);
@@ -106,45 +111,25 @@ public class OrderPage {
         panel.add(sideDishesButton);
         panel.add(dessertsButton);
 
-        classicBurgerButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "classicBurgerPanel");
-        });
+        classicBurgerButton.addActionListener(e -> cardLayout.show(menuPanel, "classicBurgerPanel"));
 
-        gourmetBurgerButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "gourmetBurgerPanel");
-        });
+        gourmetBurgerButton.addActionListener(e -> cardLayout.show(menuPanel, "gourmetBurgerPanel"));
 
-        spicyBurgersButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "spicyBurgerPanel");
-        });
+        spicyBurgersButton.addActionListener(e -> cardLayout.show(menuPanel, "spicyBurgerPanel"));
 
-        uniqueBurgerButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "uniqueBurgerPanel");
-        });
+        uniqueBurgerButton.addActionListener(e -> cardLayout.show(menuPanel, "uniqueBurgerPanel"));
 
-        frenchFriesButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "frenchFries");
-        });
+        frenchFriesButton.addActionListener(e -> cardLayout.show(menuPanel, "frenchFries"));
 
-        coldDrinksButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "coldDrinks");
-        });
+        coldDrinksButton.addActionListener(e -> cardLayout.show(menuPanel, "coldDrinks"));
 
-        hotDrinksButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "hotDrinks");
-        });
+        hotDrinksButton.addActionListener(e -> cardLayout.show(menuPanel, "hotDrinks"));
 
-        comboMealsButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "comboMeals");
-        });
+        comboMealsButton.addActionListener(e -> cardLayout.show(menuPanel, "comboMeals"));
 
-        sideDishesButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "sideDishes");
-        });
+        sideDishesButton.addActionListener(e -> cardLayout.show(menuPanel, "sideDishes"));
 
-        dessertsButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "desserts");
-        });
+        dessertsButton.addActionListener(e -> cardLayout.show(menuPanel, "desserts"));
 
         return panel;
     }
@@ -183,8 +168,8 @@ public class OrderPage {
         JPanel panel = new JPanel(new MigLayout());
         String[] column = {"Name","Price","Quantity"};
         JLabel totalCost = createLabel("Total cost: $", "Verdana", Font.PLAIN, 20);
-        JButton cancelButton = createButton("Cancel", 16);
-        JButton makeOrderButton = createButton("Pay", 16);
+        this.cancelOrderButton = createButton("Cancel", 16);
+        this.makeOrderButton = createButton("Pay", 16);
         this.defaultTableModel = new DefaultTableModel(column, 0) {
             //This causes all cells to be not editable
             @Override
@@ -202,19 +187,39 @@ public class OrderPage {
         panel.add(totalCost, "split2");
         panel.add(totalOrderPrice, "wrap");
         panel.add(makeOrderButton, "split2, pushx, growx");
-        panel.add(cancelButton, "pushx, growx");
+        panel.add(cancelOrderButton, "pushx, growx");
 
-        cancelButton.addActionListener(e -> {
-            cancelOrder();
-        });
+        disableButton(cancelOrderButton);
+        disableButton(makeOrderButton);
+
+        cancelOrderButton.addActionListener(e -> cancelOrder());
+        makeOrderButton.addActionListener(e -> processOrder());
 
         return panel;
     }
 
     private void cancelOrder() {
-        order.clear();
+        OrderManagement.cancelOrder(order);
+        OrderManagement.removeOrder(order);
+
         totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
         defaultTableModel.setRowCount(0);
+
+        disableButton(makeOrderButton);
+        disableButton(cancelOrderButton);
+
+        for (JButton button : removeButtonsList) {
+            if (button.isEnabled()) {
+                disableButton(button);
+            }
+        }
+    }
+
+    private void processOrder() {
+        if (!order.getContent().isEmpty()) {
+            OrderManagement.processOrder(order);
+            JOptionPane.showMessageDialog(frame,"Your order are processing. Please wait.");
+        }
     }
 
     private void addItemToTable(Product product, int quantity, int buttonIndex) {
@@ -248,6 +253,8 @@ public class OrderPage {
             totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
             // Enable remove button because order list contains at least one item of this type
             enableRemoveButton(removeButtonsList.get(buttonIndex));
+            enableButton(makeOrderButton);
+            enableButton(cancelOrderButton);
         }
     }
 
@@ -259,6 +266,11 @@ public class OrderPage {
     private void enableAddButton(JButton button) {
         button.setEnabled(true);
         button.setBackground(new Color(54, 208, 54));
+    }
+
+    private void enableButton(JButton button) {
+        button.setEnabled(true);
+        button.setBackground(new Color(121, 186, 253));
     }
 
     private void disableButton(JButton button) {
@@ -282,6 +294,8 @@ public class OrderPage {
                 totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
                 disableButton(removeButtonsList.get(buttonIndex));
                 enableAddButton(addButtonsList.get(buttonIndex));
+                disableButton(cancelOrderButton);
+                disableButton(makeOrderButton);
             }
         }
     }

@@ -20,6 +20,8 @@ public class Menu {
     private static final List<Product> FRENCH_FRIES_LIST = List.of(FrenchFries.values());
     private static final List<Product> COLD_DRINK_LIST = List.of(ColdDrink.values());
     private static final List<Product> HOT_DRINK_LIST = List.of(HotDrink.values());
+    private static final List<Product> COMBO_MEALS_LIST = List.of(ComboMeal.values());
+    private static final List<Product> SIDE_DISH_LIST = List.of(Side.values());
     private static final List<Product> DESSERT_LIST = List.of(Dessert.values());
 
     public static List<Product> getClassicBurgerList() {
@@ -48,6 +50,14 @@ public class Menu {
 
     public static List<Product> getHotDrinkList() {
         return HOT_DRINK_LIST;
+    }
+
+    public static List<Product> getComboMealsList() {
+        return COMBO_MEALS_LIST;
+    }
+
+    public static List<Product> getSideDishList() {
+        return SIDE_DISH_LIST;
     }
 
     public static List<Product> getDessertList() {
@@ -92,6 +102,18 @@ public class Menu {
 
     public static List<File> getHotDrinksImages() {
         File[] images = new File("src/main/resources/images/drinks/hot_drinks").listFiles();
+        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
+        return List.of(images);
+    }
+
+    public static List<File> getComboMealsImages() {
+        File[] images = new File("src/main/resources/images/combo").listFiles();
+        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
+        return List.of(images);
+    }
+
+    public static List<File> getSideDishesImages() {
+        File[] images = new File("src/main/resources/images/side").listFiles();
         Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
         return List.of(images);
     }

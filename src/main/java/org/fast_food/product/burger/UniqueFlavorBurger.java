@@ -1,5 +1,6 @@
 package org.fast_food.product.burger;
 
+import org.fast_food.product.Side;
 import org.fast_food.product.Type;
 import org.fast_food.product.burger.ingredient.*;
 
@@ -13,7 +14,7 @@ public enum UniqueFlavorBurger implements Burger {
     SWEAT_POTATO("Sweet Potato Burger", 9.99, List.of(Patty.SWEAT_POTATO, Ingredient.AVOCADO, Ingredient.LETTUCE, Sauce.CHIPOTLE_MAYO, Bun.WHOLE_GRAIN), "Dive into a wholesome and hearty sweet potato burger, made with a savory sweet potato and black bean patty, creamy avocado slices, crisp lettuce, and zesty chipotle mayo, all served on a nutritious whole wheat bun.", 580, 1, 4.1),
     SMOKED_SALMON("Smoked Salmon Burger", 12.99, List.of(Patty.SMOKED_SALMON, Sauce.DILL, Ingredient.CUCUMBER, Ingredient.ARUGULA, Bun.BRIOCHE), "Elevate your burger experience with this gourmet option featuring a succulent smoked salmon patty, creamy dill sauce, crisp cucumber slices, and peppery arugula, all nestled on a toasted brioche bun for a taste of luxury.", 620, 1, 4.2),
     PEANUT_BANANA("Peanut Banana Bacon Burger", 10.79, List.of(Patty.BEEF, Sauce.PEANUT_BUTTER, Ingredient.BANANA, Ingredient.BACON, Sauce.HONEY, Bun.ENGLISH_MUFFIN), "Embark on a flavor adventure with this unconventional burger featuring a juicy beef patty topped with creamy peanut butter, caramelized bananas, crispy bacon, and a drizzle of honey, all sandwiched between two toasted English muffins.", 790, 1, 4.3),
-    ONION_RINGS("Onion Rings Burger", 11.49, List.of(Patty.BEEF, Ingredient.ONION_RINGS, Sauce.BBQ_SAUCE, Cheese.CHEDDAR, Ingredient.LETTUCE, Bun.PRETZEL), "Indulge in crunchy perfection with this mouthwatering burger featuring a juicy beef patty topped with crispy beer-battered onion rings, tangy BBQ sauce, melted cheddar cheese, and crisp lettuce, all served on a toasted pretzel bun for a satisfying crunch.", 780, 1, 4.2)
+    ONION_RINGS("Onion Rings Burger", 11.49, List.of(Patty.BEEF, Side.ONION_RINGS, Sauce.BBQ_SAUCE, Cheese.CHEDDAR, Ingredient.LETTUCE, Bun.PRETZEL), "Indulge in crunchy perfection with this mouthwatering burger featuring a juicy beef patty topped with crispy beer-battered onion rings, tangy BBQ sauce, melted cheddar cheese, and crisp lettuce, all served on a toasted pretzel bun for a satisfying crunch.", 780, 1, 4.2)
     ;
 
     public static final Type TYPE = Type.BURGER;

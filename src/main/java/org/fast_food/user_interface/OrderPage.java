@@ -64,6 +64,8 @@ public class OrderPage {
         JScrollPane frenchFries = new JScrollPane(createItemsPanel(Menu.getFrenchFriesList(), Menu.getFrenchFriesImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JScrollPane coldDrinks = new JScrollPane(createItemsPanel(Menu.getColdDrinkList(), Menu.getColdDrinksImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JScrollPane hotDrinks = new JScrollPane(createItemsPanel(Menu.getHotDrinkList(), Menu.getHotDrinksImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane comboMeals = new JScrollPane(createItemsPanel(Menu.getComboMealsList(), Menu.getComboMealsImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane sideDishes = new JScrollPane(createItemsPanel(Menu.getSideDishList(), Menu.getSideDishesImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         JScrollPane desserts = new JScrollPane(createItemsPanel(Menu.getDessertList(), Menu.getDessertsImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         panel.add(classicBurgerPanel, "classicBurgerPanel");
@@ -73,6 +75,8 @@ public class OrderPage {
         panel.add(frenchFries, "frenchFries");
         panel.add(coldDrinks, "coldDrinks");
         panel.add(hotDrinks, "hotDrinks");
+        panel.add(comboMeals, "comboMeals");
+        panel.add(sideDishes, "sideDishes");
         panel.add(desserts, "desserts");
         return panel;
     }
@@ -128,6 +132,14 @@ public class OrderPage {
 
         hotDrinksButton.addActionListener(e -> {
             cardLayout.show(menuPanel, "hotDrinks");
+        });
+
+        comboMealsButton.addActionListener(e -> {
+            cardLayout.show(menuPanel, "comboMeals");
+        });
+
+        sideDishesButton.addActionListener(e -> {
+            cardLayout.show(menuPanel, "sideDishes");
         });
 
         dessertsButton.addActionListener(e -> {

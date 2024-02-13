@@ -203,7 +203,18 @@ public class OrderPage {
         panel.add(totalOrderPrice, "wrap");
         panel.add(makeOrderButton, "split2, pushx, growx");
         panel.add(cancelButton, "pushx, growx");
+
+        cancelButton.addActionListener(e -> {
+            cancelOrder();
+        });
+
         return panel;
+    }
+
+    private void cancelOrder() {
+        order.clear();
+        totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
+        defaultTableModel.setRowCount(0);
     }
 
     private void addItemToTable(Product product, int quantity, int buttonIndex) {

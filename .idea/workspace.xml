@@ -6,13 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ClassicBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ClassicBurger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/GourmetBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/GourmetBurger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/SpicyBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/SpicyBurger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/UniqueFlavorBurger.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/UniqueFlavorBurger.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/Patty.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/Patty.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/Sauce.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/product/burger/ingredient/Sauce.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/org/fast_food/product/burger/ClassicBurgerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/fast_food/product/burger/ClassicBurgerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -155,7 +149,7 @@
     "UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH": "253",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "git-widget-placeholder": "add-burger-types",
+    "git-widget-placeholder": "add-user-interface",
     "ignore.virus.scanning.warn.message": "true",
     "jdk.selected.JAVA_MODULE": "temurin-21",
     "kotlin-language-version-configured": "true",
@@ -196,7 +190,7 @@
       <recent name="org.fast_food.product.burger" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ClassicBurgerTest">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.fast_food.Main" />
       <module name="Fast-food-restaurant" />
@@ -291,9 +285,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ClassicBurgerTest" />
         <item itemvalue="JUnit.ComboMealTest" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.ComboMealTest.testGetNameForDifferentComboMeals" />
         <item itemvalue="JUnit.SideTest" />
       </list>

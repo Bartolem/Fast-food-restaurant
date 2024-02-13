@@ -47,6 +47,13 @@ public class Order {
         }
     }
 
+    public void clear() {
+        if (!content.isEmpty()) {
+            content.clear();
+            totalPrice = 0;
+        }
+    }
+
     public LocalDateTime getDate() {
         return date;
     }

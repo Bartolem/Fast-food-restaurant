@@ -51,7 +51,7 @@ class FrenchFriesTest {
     }
 
     @Test
-    void testValueOfDifferentBurgerTypes() {
+    void testValueOfDifferentFrenchFriesTypes() {
         assertEquals(REGULAR, FrenchFries.valueOf("REGULAR"));
         assertEquals(CURLY, FrenchFries.valueOf("CURLY"));
         assertEquals(SWEET_POTATO, FrenchFries.valueOf("SWEET_POTATO"));

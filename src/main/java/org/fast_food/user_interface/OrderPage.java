@@ -182,6 +182,7 @@ public class OrderPage {
         table.getColumnModel().getColumn(0).setPreferredWidth(220);
         table.setFocusable(false);
         JScrollPane scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollPane.setPreferredSize(new Dimension(350, 300));
         panel.setPreferredSize(new Dimension(350, 350));
         panel.add(scrollPane, "wrap, growx, pushx");
         panel.add(totalCost, "split2");

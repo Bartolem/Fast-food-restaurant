@@ -294,8 +294,11 @@ public class OrderPage {
                 totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
                 disableButton(removeButtonsList.get(buttonIndex));
                 enableAddButton(addButtonsList.get(buttonIndex));
-                disableButton(cancelOrderButton);
-                disableButton(makeOrderButton);
+                // If order list is empty it's not possible to make or cancel the order
+                if (order.getContent().isEmpty()) {
+                    disableButton(cancelOrderButton);
+                    disableButton(makeOrderButton);
+                }
             }
         }
     }

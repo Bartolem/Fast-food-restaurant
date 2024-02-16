@@ -8,8 +8,6 @@ import org.fast_food.order.OrderManagement;
 import org.fast_food.product.Product;
 import org.fast_food.menu.Menu;
 import org.fast_food.product.Type;
-import org.fast_food.product.burger.ClassicBurger;
-import org.fast_food.product.burger.UniqueFlavorBurger;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

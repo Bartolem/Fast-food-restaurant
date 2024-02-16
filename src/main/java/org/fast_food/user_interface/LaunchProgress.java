@@ -14,15 +14,14 @@ public class LaunchProgress {
     private void initialize() {
         this.frame = new JFrame();
         JProgressBar progressBar = createProgressBar();
-        JLabel label = createLabel();
         frame.setIconImage(UserInterface.ICON.getImage());
         frame.setTitle(UserInterface.TITLE);
         frame.setLayout(new BorderLayout());
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.getContentPane().setBackground(new Color(255, 89, 60));
-        frame.add(label, BorderLayout.NORTH);
-        frame.add(progressBar, BorderLayout.CENTER);
+        frame.add(new StartPage().createUpperPanel(), BorderLayout.CENTER);
+        frame.add(progressBar, BorderLayout.SOUTH);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         frame.pack();
     }
@@ -37,17 +36,12 @@ public class LaunchProgress {
 
     private JProgressBar createProgressBar() {
         JProgressBar progressBar = new JProgressBar();
+        progressBar.setStringPainted(true);
+        progressBar.setString("Loading...");
         progressBar.setPreferredSize(new Dimension(500, 20));
         progressBar.setIndeterminate(true);
         progressBar.setBackground(new Color(255, 194, 150));
         progressBar.setForeground(new Color(255, 89, 60));
         return progressBar;
-    }
-
-    private JLabel createLabel() {
-        JLabel label = UserInterface.createLabel("Loading...", "Verdana", Font.PLAIN, 24);
-        label.setHorizontalAlignment(SwingConstants.CENTER);
-        label.setBorder(new EmptyBorder(20, 0, 20, 0));
-        return label;
     }
 }

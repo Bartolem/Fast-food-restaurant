@@ -37,7 +37,7 @@ public class StartPage {
         frame.setVisible(true);
     }
 
-    private JPanel createUpperPanel() {
+    protected JPanel createUpperPanel() {
         JPanel panel = new JPanel(new BorderLayout());
         JLabel labelImage = createImageLabel("src/main/resources/logo.png", 350, 125);
         JLabel  label = new JLabel("Satisfy Your Hunger, Elevate Your Taste.");

@@ -207,6 +207,12 @@ public class OrderPage {
         disableButton(makeOrderButton);
         disableButton(cancelOrderButton);
 
+        for (JButton button : addButtonsList) {
+            if (!button.isEnabled()) {
+                enableAddButton(button);
+            }
+        }
+
         for (JButton button : removeButtonsList) {
             if (button.isEnabled()) {
                 disableButton(button);
@@ -217,7 +223,7 @@ public class OrderPage {
     private void processOrder() {
         if (!order.getContent().isEmpty()) {
             OrderManagement.processOrder(order);
-            JOptionPane.showMessageDialog(frame,"Your order are processing. Please wait.");
+            new ProcessingOrderPage(order).show();
         }
     }
 
@@ -247,6 +253,9 @@ public class OrderPage {
                 defaultTableModel.setValueAt(order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE, productIndex, 2);
             }
         } else {
+            if (quantity == order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE) {
+                disableButton(addButtonsList.get(buttonIndex));
+            }
             defaultTableModel.addRow(vector);
             order.addProduct(product, quantity);
             totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));

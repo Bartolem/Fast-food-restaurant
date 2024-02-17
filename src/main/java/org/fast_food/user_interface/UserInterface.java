@@ -23,12 +23,12 @@ public class UserInterface {
     }
 
     protected static JTextField createTextField() {
-        JTextField textField = new JTextField(20);
-        return textField;
+        return new JTextField(20);
     }
 
     protected static JLabel createLabel(String text, String fontName, int fontStyle, int fontSize) {
         JLabel label = new JLabel(text);
+        label.setForeground(Color.BLACK);
         label.setFont(new Font(fontName, fontStyle, fontSize));
         return label;
     }

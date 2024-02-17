@@ -92,6 +92,14 @@ public class Order {
         }
     }
 
+    public int getNumberOfProducts() {
+        int numberOfProducts = 0;
+        for (Integer num : content.values()) {
+            numberOfProducts += num;
+        }
+        return numberOfProducts;
+    }
+
     private String generateUniqueId() {
         return String.valueOf(UUID.randomUUID());
     }

@@ -66,7 +66,7 @@ public class StartPage {
                 SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
                     @Override
                     protected Void doInBackground() throws Exception {
-                        // Perform your time-consuming task here
+                        // Perform time-consuming task here
                         launchProgress = new LaunchProgress();
                         launchProgress.show();
                         frame.dispose();

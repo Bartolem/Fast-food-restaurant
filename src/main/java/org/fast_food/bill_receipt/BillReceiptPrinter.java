@@ -1,7 +1,8 @@
-package org.fast_food.user_interface;
+package org.fast_food.bill_receipt;
 
 import org.fast_food.order.Order;
 import org.fast_food.product.Product;
+import org.fast_food.user_interface.UserInterface;
 
 import java.awt.*;
 import java.awt.print.*;

@@ -75,7 +75,7 @@ public class Order {
 
     public void addProduct(Product product, int quantity) {
         if (content.containsKey(product)) {
-            content.replace(product, content.get(product) + 1);
+            content.replace(product, content.get(product) + quantity);
         } else {
             content.putIfAbsent(product, quantity);
         }

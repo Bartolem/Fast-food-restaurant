@@ -45,12 +45,14 @@ public class ProcessingOrderPage {
                 int progress = 0;
                 while (progress < 100) {
                     progressBar.setValue(progress);
-                    //Sleep for up to one second.
+                    // Sleep for a time that depends on how many products the order contains.
                     try {
-                        Thread.sleep(random.nextInt(100 * (order.getNumberOfProducts() / 2)));
+                        int timeDivider = 10;
+                        // Higher timeDivider = shorter sleep time = faster loading
+                        Thread.sleep(random.nextInt(100 * order.getNumberOfProducts() / timeDivider));
                     } catch (InterruptedException ignore) {}
-                    //Make random progress.
-                    progress += random.nextInt(10);
+                    // Make random progress.
+                    progress += random.nextInt(1, 5);
                 }
                 return null;
             }
@@ -60,10 +62,10 @@ public class ProcessingOrderPage {
                 progressBar.setValue(100);
                 OrderManagement.completeOrder(order);
 //                OrderManagement.removeOrder(order);
-                JOptionPane.showMessageDialog(frame, "Your order is successfully completed.");
+                JOptionPane.showMessageDialog(frame, "Your order has been successfully completed.");
                 frame.setVisible(false);
-                BillReceiptPrinter billReceiptPrinter = new BillReceiptPrinter(order);
-                billReceiptPrinter.printReceipt();
+                CompletedOrderPage completedOrderPage = new CompletedOrderPage(order);
+                completedOrderPage.show();
             }
         };
         swingWorker.execute();
@@ -75,12 +77,13 @@ public class ProcessingOrderPage {
 
     private JProgressBar createProgressBar() {
         JProgressBar progressBar = new JProgressBar();
+        progressBar.setFont(new Font("Verdana", Font.BOLD, 16));
         progressBar.setStringPainted(true);
         return progressBar;
     }
 
     private JLabel createLabel() {
-        JLabel label = UserInterface.createLabel("Your order are processing. Please wait.", "Verdana", Font.PLAIN, 16);
+        JLabel label = UserInterface.createLabel("Your order are processing. Please wait.", "Verdana", Font.BOLD, 16, Color.WHITE);
         label.setBorder(new EmptyBorder(20, 20, 20, 20));
         label.setHorizontalAlignment(SwingConstants.CENTER);
         return label;

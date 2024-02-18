@@ -48,7 +48,7 @@ public class OrderPage {
         OrderManagement.addOrder(order);
 
         frame.setLayout(new BorderLayout());
-        frame.setSize(1200, 650);
+        frame.setSize(1250, 650);
         frame.setTitle(TITLE);
         frame.setIconImage(ICON.getImage());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -179,12 +179,13 @@ public class OrderPage {
         };
         this.totalOrderPrice = createLabel(String.valueOf(order.getTotalPrice()), "Verdana", Font.PLAIN, 20);
         JTable table = new JTable(defaultTableModel);
-        table.setFont(new Font("Verdana", Font.PLAIN, 16));
-        table.getColumnModel().getColumn(0).setPreferredWidth(220);
+        table.setFont(new Font("Verdana", Font.PLAIN, 14));
+        table.setRowHeight(25);
+        table.getColumnModel().getColumn(0).setPreferredWidth(225);
         table.setFocusable(false);
         JScrollPane scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollPane.setPreferredSize(new Dimension(350, 300));
-        panel.setPreferredSize(new Dimension(350, 350));
+        scrollPane.setPreferredSize(new Dimension(400, 300));
+        panel.setPreferredSize(new Dimension(400, 350));
         panel.add(scrollPane, "wrap, growx, pushx");
         panel.add(totalCost, "split2");
         panel.add(totalOrderPrice, "wrap");
@@ -230,6 +231,17 @@ public class OrderPage {
         }
     }
 
+    private int getIndexOfValueFromTable(Product product) {
+        int column = 0;
+
+        for (int row = 0; row < defaultTableModel.getRowCount(); row++) {
+            if (defaultTableModel.getValueAt(row, column).equals(product.getName())) {
+                return row;
+            }
+        }
+        return -1;
+    }
+
     private void addItemToTable(Product product, int quantity, int buttonIndex) {
         Vector<Object> vector = new Vector<>();
         vector.add(product.getName());
@@ -241,12 +253,13 @@ public class OrderPage {
             // Enable remove button because order list contains at least one item of this type
             enableRemoveButton(removeButtonsList.get(buttonIndex));
 
-            int productIndex = order.getProducts().stream().toList().indexOf(product);
+            int productIndex = getIndexOfValueFromTable(product);
             Integer currentProductQuantity = (Integer) defaultTableModel.getValueAt(productIndex, 2);
 
             if (currentProductQuantity + quantity < order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE) {
                 order.addProduct(product, quantity);
                 totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
+                System.out.println(getIndexOfValueFromTable(product));
                 defaultTableModel.setValueAt(currentProductQuantity + quantity, productIndex, 2);
             } else {
                 order.addProduct(product, order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE - currentProductQuantity);
@@ -291,7 +304,7 @@ public class OrderPage {
 
     private void removeItemFromTable(Product product, int quantity, int buttonIndex) {
         if (order.getProducts().contains(product)) {
-            int productIndex = order.getProducts().stream().toList().indexOf(product);
+            int productIndex = getIndexOfValueFromTable(product);
             Integer currentProductQuantity = (Integer) defaultTableModel.getValueAt(productIndex, 2);
 
             if (currentProductQuantity > 1 && currentProductQuantity - quantity > 0) {

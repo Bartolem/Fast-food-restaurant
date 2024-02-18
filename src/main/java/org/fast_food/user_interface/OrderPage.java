@@ -179,6 +179,7 @@ public class OrderPage {
         };
         this.totalOrderPrice = createLabel(String.valueOf(order.getTotalPrice()), "Verdana", Font.PLAIN, 20);
         JTable table = new JTable(defaultTableModel);
+        table.setFont(new Font("Verdana", Font.PLAIN, 16));
         table.getColumnModel().getColumn(0).setPreferredWidth(220);
         table.setFocusable(false);
         JScrollPane scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);

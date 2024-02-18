@@ -62,7 +62,7 @@ public class ProcessingOrderPage {
 //                OrderManagement.removeOrder(order);
                 JOptionPane.showMessageDialog(frame, "Your order is successfully completed.");
                 frame.setVisible(false);
-                BillReceiptPrinter billReceiptPrinter = new BillReceiptPrinter(order.getContent());
+                BillReceiptPrinter billReceiptPrinter = new BillReceiptPrinter(order);
                 billReceiptPrinter.printReceipt();
             }
         };

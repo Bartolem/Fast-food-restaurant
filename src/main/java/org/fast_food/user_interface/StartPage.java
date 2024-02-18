@@ -50,7 +50,7 @@ public class StartPage {
         label.setHorizontalAlignment(SwingConstants.CENTER);
 
         panel.add(labelImage, BorderLayout.CENTER);
-        panel.setBackground(new Color(255, 89, 60));
+        panel.setBackground(OrderPage.PRIMARY_BACKGROUND_COLOR);
         panel.add(label, BorderLayout.SOUTH);
         return panel;
     }
@@ -86,7 +86,7 @@ public class StartPage {
             }
         });
 
-        panel.setBackground(new Color(255, 194, 150));
+        panel.setBackground(OrderPage.SECONDARY_BACKGROUND_COLOR);
         loginLabel.setHorizontalAlignment(SwingConstants.CENTER);
         loginLabel.setForeground(new Color(0, 0, 0));
         passwordField.setForeground(new Color(0, 0, 0));

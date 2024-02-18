@@ -61,8 +61,12 @@ public class Order {
         return date;
     }
 
-    public Set<Product> getContent() {
+    public Set<Product> getProducts() {
         return content.keySet();
+    }
+
+    public Map<Product, Integer> getContent() {
+        return content;
     }
 
     public double getTotalPrice() {

@@ -20,6 +20,8 @@ import java.util.List;
 import static org.fast_food.user_interface.UserInterface.*;
 
 public class OrderPage {
+    public static Color PRIMARY_BACKGROUND_COLOR = new Color(255, 89, 60);
+    public static Color SECONDARY_BACKGROUND_COLOR = new Color(255, 194, 150);
     private JFrame frame;
     private DefaultTableModel defaultTableModel;
     private Order order;
@@ -86,7 +88,7 @@ public class OrderPage {
 
     private JPanel createCategoryPanel() {
         JPanel panel = new JPanel(new GridLayout(0, 1));
-        panel.setBackground(new Color(255, 89, 60));
+        panel.setBackground(PRIMARY_BACKGROUND_COLOR);
         JButton classicBurgerButton = createButton("Classic Burgers", 12);
         JButton gourmetBurgerButton = createButton("Gourmet Burgers",12);
         JButton spicyBurgersButton = createButton("Spicy Burgers",12);
@@ -138,7 +140,7 @@ public class OrderPage {
         int index = 0;
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
         JPanel panel = new JPanel(new GridBagLayout());
-        panel.setBackground(new Color(255, 89, 60));
+        panel.setBackground(PRIMARY_BACKGROUND_COLOR);
         // Set border for item containers
         gridBagConstraints.insets = new Insets(10,10,10,10);
 
@@ -221,7 +223,7 @@ public class OrderPage {
     }
 
     private void processOrder() {
-        if (!order.getContent().isEmpty()) {
+        if (!order.getProducts().isEmpty()) {
             OrderManagement.processOrder(order);
             new ProcessingOrderPage(order).show();
         }
@@ -234,11 +236,11 @@ public class OrderPage {
         vector.add(quantity);
 
         // Increase quantity value in the row without adding new one
-        if (order.getContent().contains(product)) {
+        if (order.getProducts().contains(product)) {
             // Enable remove button because order list contains at least one item of this type
             enableRemoveButton(removeButtonsList.get(buttonIndex));
 
-            int productIndex = order.getContent().stream().toList().indexOf(product);
+            int productIndex = order.getProducts().stream().toList().indexOf(product);
             Integer currentProductQuantity = (Integer) defaultTableModel.getValueAt(productIndex, 2);
 
             if (currentProductQuantity + quantity < order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE) {
@@ -278,7 +280,7 @@ public class OrderPage {
 
     private void enableButton(JButton button) {
         button.setEnabled(true);
-        button.setBackground(new Color(121, 186, 253));
+        button.setBackground(BUTTON_COLOR);
     }
 
     private void disableButton(JButton button) {
@@ -287,8 +289,8 @@ public class OrderPage {
     }
 
     private void removeItemFromTable(Product product, int quantity, int buttonIndex) {
-        if (order.getContent().contains(product)) {
-            int productIndex = order.getContent().stream().toList().indexOf(product);
+        if (order.getProducts().contains(product)) {
+            int productIndex = order.getProducts().stream().toList().indexOf(product);
             Integer currentProductQuantity = (Integer) defaultTableModel.getValueAt(productIndex, 2);
 
             if (currentProductQuantity > 1 && currentProductQuantity - quantity > 0) {
@@ -303,7 +305,7 @@ public class OrderPage {
                 disableButton(removeButtonsList.get(buttonIndex));
                 enableAddButton(addButtonsList.get(buttonIndex));
                 // If order list is empty it's not possible to make or cancel the order
-                if (order.getContent().isEmpty()) {
+                if (order.getProducts().isEmpty()) {
                     disableButton(cancelOrderButton);
                     disableButton(makeOrderButton);
                 }
@@ -351,7 +353,7 @@ public class OrderPage {
 
         burgerName.setHorizontalAlignment(SwingConstants.CENTER);
         panel.setPreferredSize(new Dimension(280, 300));
-        panel.setBackground(new Color(255, 194, 150));
+        panel.setBackground(SECONDARY_BACKGROUND_COLOR);
         panel.add(burgerName, "span, pushx, wrap, growx");
 
         int imageWidth = 200;

@@ -18,7 +18,7 @@ public class LaunchProgress {
         frame.setLayout(new BorderLayout());
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
-        frame.getContentPane().setBackground(new Color(255, 89, 60));
+        frame.getContentPane().setBackground(OrderPage.PRIMARY_BACKGROUND_COLOR);
         frame.add(new StartPage().createUpperPanel(), BorderLayout.CENTER);
         frame.add(progressBar, BorderLayout.SOUTH);
         frame.setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
@@ -39,8 +39,8 @@ public class LaunchProgress {
         progressBar.setString("Loading...");
         progressBar.setPreferredSize(new Dimension(500, 20));
         progressBar.setIndeterminate(true);
-        progressBar.setBackground(new Color(255, 194, 150));
-        progressBar.setForeground(new Color(255, 89, 60));
+        progressBar.setBackground(OrderPage.SECONDARY_BACKGROUND_COLOR);
+        progressBar.setForeground(OrderPage.PRIMARY_BACKGROUND_COLOR);
         return progressBar;
     }
 }

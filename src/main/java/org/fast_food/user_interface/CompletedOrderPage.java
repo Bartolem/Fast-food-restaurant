@@ -2,6 +2,7 @@ package org.fast_food.user_interface;
 
 import org.fast_food.bill_receipt.BillReceiptGenerator;
 import org.fast_food.bill_receipt.BillReceiptPrinter;
+import org.fast_food.bill_receipt.BillReceiptWriter;
 import org.fast_food.order.Order;
 
 import javax.swing.*;
@@ -60,7 +61,24 @@ public class CompletedOrderPage {
         panel.add(printButton);
         panel.add(csvButton);
         panel.add(jsonButton);
+        txtButton.addActionListener(e -> createFileChooser(BillReceiptWriter.TXT));
         printButton.addActionListener(e -> new BillReceiptPrinter(order).printReceipt());
+        csvButton.addActionListener(e -> createFileChooser(BillReceiptWriter.CSV));
         return panel;
+    }
+
+    private void createFileChooser(String extension) {
+        BillReceiptWriter billReceiptWriter = new BillReceiptWriter(order);
+        JFileChooser fileChooser= new JFileChooser();
+        fileChooser.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
+
+        if (fileChooser.showSaveDialog(frame) == JFileChooser.APPROVE_OPTION) {
+            String filePath = fileChooser.getSelectedFile().getPath();
+
+            switch (extension) {
+                case BillReceiptWriter.TXT ->  billReceiptWriter.writeBillReceiptToTextFile(filePath);
+                case BillReceiptWriter.CSV ->  billReceiptWriter.writeBillReceiptToCSVFile(filePath);
+            }
+        }
     }
 }

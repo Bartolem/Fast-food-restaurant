@@ -259,7 +259,6 @@ public class OrderPage {
             if (currentProductQuantity + quantity < order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE) {
                 order.addProduct(product, quantity);
                 totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
-                System.out.println(getIndexOfValueFromTable(product));
                 defaultTableModel.setValueAt(currentProductQuantity + quantity, productIndex, 2);
             } else {
                 order.addProduct(product, order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE - currentProductQuantity);

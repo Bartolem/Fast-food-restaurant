@@ -21,4 +21,12 @@ public class BillReceiptGenerator {
         }
         return stringBuilder.toString();
     }
+
+    public String generateBillReceiptComaSeparatedContent() {
+        StringBuilder stringBuilder = new StringBuilder("Product name,Price,Quantity\n");
+        for (Product product : products.keySet()) {
+            stringBuilder.append("%s,%s,%d\n".formatted(product.getName(), product.getPrice(), products.get(product)));
+        }
+        return stringBuilder.toString();
+    }
 }

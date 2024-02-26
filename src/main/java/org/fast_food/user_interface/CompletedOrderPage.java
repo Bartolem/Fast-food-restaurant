@@ -1,21 +1,12 @@
 package org.fast_food.user_interface;
 
-import com.itextpdf.kernel.pdf.*;
-import com.itextpdf.layout.Document;
-import com.itextpdf.layout.element.Paragraph;
 import org.fast_food.bill_receipt.BillReceiptGenerator;
-import org.fast_food.bill_receipt.BillReceiptPrinter;
 import org.fast_food.bill_receipt.BillReceiptWriter;
 import org.fast_food.order.Order;
 
 import javax.swing.*;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
-import java.io.File;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.IOException;
-import java.util.Arrays;
 
 public class CompletedOrderPage {
     private JFrame frame;
@@ -63,17 +54,14 @@ public class CompletedOrderPage {
     private JPanel createButtonsPanel() {
         JPanel panel = new JPanel(new GridLayout(1, 0));
         JButton txtButton = UserInterface.createButton("Text file", 14);
-        JButton printButton = UserInterface.createButton("Print", 14);
         JButton pdfButton = UserInterface.createButton("Pdf", 14);
         JButton csvButton = UserInterface.createButton("CSV", 14);
         JButton jsonButton = UserInterface.createButton("Json", 14);
         panel.add(txtButton);
-        panel.add(printButton);
         panel.add(pdfButton);
         panel.add(csvButton);
         panel.add(jsonButton);
         txtButton.addActionListener(e -> createFileChooser(BillReceiptWriter.TXT));
-        printButton.addActionListener(e -> new BillReceiptPrinter(order).printReceipt());
         pdfButton.addActionListener(e -> createFileChooser(BillReceiptWriter.PDF));
         csvButton.addActionListener(e -> createFileChooser(BillReceiptWriter.CSV));
         return panel;

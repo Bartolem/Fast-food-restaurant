@@ -4,11 +4,10 @@ import jiconfont.icons.font_awesome.FontAwesome;
 import jiconfont.swing.IconFontSwing;
 import net.miginfocom.swing.MigLayout;
 import org.fast_food.order.Order;
+import org.fast_food.order.OrderManagement;
 import org.fast_food.product.Product;
 import org.fast_food.menu.Menu;
 import org.fast_food.product.Type;
-import org.fast_food.product.burger.ClassicBurger;
-import org.fast_food.product.burger.UniqueFlavorBurger;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
@@ -21,6 +20,8 @@ import java.util.List;
 import static org.fast_food.user_interface.UserInterface.*;
 
 public class OrderPage {
+    public static Color PRIMARY_BACKGROUND_COLOR = new Color(255, 89, 60);
+    public static Color SECONDARY_BACKGROUND_COLOR = new Color(255, 194, 150);
     private JFrame frame;
     private DefaultTableModel defaultTableModel;
     private Order order;
@@ -29,6 +30,8 @@ public class OrderPage {
     private JLabel totalOrderPrice;
     private CardLayout cardLayout;
     private JPanel menuPanel;
+    private JButton cancelOrderButton;
+    private JButton makeOrderButton;
 
     public OrderPage() {
         initialize();
@@ -42,8 +45,10 @@ public class OrderPage {
         this.cardLayout = new CardLayout();
         this.menuPanel = createMenuPanel();
 
+        OrderManagement.addOrder(order);
+
         frame.setLayout(new BorderLayout());
-        frame.setSize(1200, 650);
+        frame.setSize(1250, 650);
         frame.setTitle(TITLE);
         frame.setIconImage(ICON.getImage());
         frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -83,7 +88,7 @@ public class OrderPage {
 
     private JPanel createCategoryPanel() {
         JPanel panel = new JPanel(new GridLayout(0, 1));
-        panel.setBackground(new Color(255, 89, 60));
+        panel.setBackground(PRIMARY_BACKGROUND_COLOR);
         JButton classicBurgerButton = createButton("Classic Burgers", 12);
         JButton gourmetBurgerButton = createButton("Gourmet Burgers",12);
         JButton spicyBurgersButton = createButton("Spicy Burgers",12);
@@ -106,45 +111,25 @@ public class OrderPage {
         panel.add(sideDishesButton);
         panel.add(dessertsButton);
 
-        classicBurgerButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "classicBurgerPanel");
-        });
+        classicBurgerButton.addActionListener(e -> cardLayout.show(menuPanel, "classicBurgerPanel"));
 
-        gourmetBurgerButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "gourmetBurgerPanel");
-        });
+        gourmetBurgerButton.addActionListener(e -> cardLayout.show(menuPanel, "gourmetBurgerPanel"));
 
-        spicyBurgersButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "spicyBurgerPanel");
-        });
+        spicyBurgersButton.addActionListener(e -> cardLayout.show(menuPanel, "spicyBurgerPanel"));
 
-        uniqueBurgerButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "uniqueBurgerPanel");
-        });
+        uniqueBurgerButton.addActionListener(e -> cardLayout.show(menuPanel, "uniqueBurgerPanel"));
 
-        frenchFriesButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "frenchFries");
-        });
+        frenchFriesButton.addActionListener(e -> cardLayout.show(menuPanel, "frenchFries"));
 
-        coldDrinksButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "coldDrinks");
-        });
+        coldDrinksButton.addActionListener(e -> cardLayout.show(menuPanel, "coldDrinks"));
 
-        hotDrinksButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "hotDrinks");
-        });
+        hotDrinksButton.addActionListener(e -> cardLayout.show(menuPanel, "hotDrinks"));
 
-        comboMealsButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "comboMeals");
-        });
+        comboMealsButton.addActionListener(e -> cardLayout.show(menuPanel, "comboMeals"));
 
-        sideDishesButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "sideDishes");
-        });
+        sideDishesButton.addActionListener(e -> cardLayout.show(menuPanel, "sideDishes"));
 
-        dessertsButton.addActionListener(e -> {
-            cardLayout.show(menuPanel, "desserts");
-        });
+        dessertsButton.addActionListener(e -> cardLayout.show(menuPanel, "desserts"));
 
         return panel;
     }
@@ -155,7 +140,7 @@ public class OrderPage {
         int index = 0;
         GridBagConstraints gridBagConstraints = new GridBagConstraints();
         JPanel panel = new JPanel(new GridBagLayout());
-        panel.setBackground(new Color(255, 89, 60));
+        panel.setBackground(PRIMARY_BACKGROUND_COLOR);
         // Set border for item containers
         gridBagConstraints.insets = new Insets(10,10,10,10);
 
@@ -183,8 +168,8 @@ public class OrderPage {
         JPanel panel = new JPanel(new MigLayout());
         String[] column = {"Name","Price","Quantity"};
         JLabel totalCost = createLabel("Total cost: $", "Verdana", Font.PLAIN, 20);
-        JButton cancelButton = createButton("Cancel", 16);
-        JButton makeOrderButton = createButton("Pay", 16);
+        this.cancelOrderButton = createButton("Cancel", 16);
+        this.makeOrderButton = createButton("Pay", 16);
         this.defaultTableModel = new DefaultTableModel(column, 0) {
             //This causes all cells to be not editable
             @Override
@@ -194,16 +179,67 @@ public class OrderPage {
         };
         this.totalOrderPrice = createLabel(String.valueOf(order.getTotalPrice()), "Verdana", Font.PLAIN, 20);
         JTable table = new JTable(defaultTableModel);
-        table.getColumnModel().getColumn(0).setPreferredWidth(220);
+        table.setFont(new Font("Verdana", Font.PLAIN, 14));
+        table.setRowHeight(25);
+        table.getColumnModel().getColumn(0).setPreferredWidth(225);
         table.setFocusable(false);
         JScrollPane scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-        panel.setPreferredSize(new Dimension(350, 350));
+        scrollPane.setPreferredSize(new Dimension(400, 300));
+        panel.setPreferredSize(new Dimension(400, 350));
         panel.add(scrollPane, "wrap, growx, pushx");
         panel.add(totalCost, "split2");
         panel.add(totalOrderPrice, "wrap");
         panel.add(makeOrderButton, "split2, pushx, growx");
-        panel.add(cancelButton, "pushx, growx");
+        panel.add(cancelOrderButton, "pushx, growx");
+
+        disableButton(cancelOrderButton);
+        disableButton(makeOrderButton);
+
+        cancelOrderButton.addActionListener(e -> cancelOrder());
+        makeOrderButton.addActionListener(e -> processOrder());
+
         return panel;
+    }
+
+    private void cancelOrder() {
+        OrderManagement.cancelOrder(order);
+        OrderManagement.removeOrder(order);
+
+        totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
+        defaultTableModel.setRowCount(0);
+
+        disableButton(makeOrderButton);
+        disableButton(cancelOrderButton);
+
+        for (JButton button : addButtonsList) {
+            if (!button.isEnabled()) {
+                enableAddButton(button);
+            }
+        }
+
+        for (JButton button : removeButtonsList) {
+            if (button.isEnabled()) {
+                disableButton(button);
+            }
+        }
+    }
+
+    private void processOrder() {
+        if (!order.getProducts().isEmpty()) {
+            OrderManagement.processOrder(order);
+            new ProcessingOrderPage(order).show();
+        }
+    }
+
+    private int getIndexOfValueFromTable(Product product) {
+        int column = 0;
+
+        for (int row = 0; row < defaultTableModel.getRowCount(); row++) {
+            if (defaultTableModel.getValueAt(row, column).equals(product.getName())) {
+                return row;
+            }
+        }
+        return -1;
     }
 
     private void addItemToTable(Product product, int quantity, int buttonIndex) {
@@ -213,11 +249,11 @@ public class OrderPage {
         vector.add(quantity);
 
         // Increase quantity value in the row without adding new one
-        if (order.getContent().contains(product)) {
+        if (order.getProducts().contains(product)) {
             // Enable remove button because order list contains at least one item of this type
             enableRemoveButton(removeButtonsList.get(buttonIndex));
 
-            int productIndex = order.getContent().stream().toList().indexOf(product);
+            int productIndex = getIndexOfValueFromTable(product);
             Integer currentProductQuantity = (Integer) defaultTableModel.getValueAt(productIndex, 2);
 
             if (currentProductQuantity + quantity < order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE) {
@@ -232,11 +268,16 @@ public class OrderPage {
                 defaultTableModel.setValueAt(order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE, productIndex, 2);
             }
         } else {
+            if (quantity == order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE) {
+                disableButton(addButtonsList.get(buttonIndex));
+            }
             defaultTableModel.addRow(vector);
             order.addProduct(product, quantity);
             totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
             // Enable remove button because order list contains at least one item of this type
             enableRemoveButton(removeButtonsList.get(buttonIndex));
+            enableButton(makeOrderButton);
+            enableButton(cancelOrderButton);
         }
     }
 
@@ -250,14 +291,19 @@ public class OrderPage {
         button.setBackground(new Color(54, 208, 54));
     }
 
+    private void enableButton(JButton button) {
+        button.setEnabled(true);
+        button.setBackground(BUTTON_COLOR);
+    }
+
     private void disableButton(JButton button) {
         button.setEnabled(false);
         button.setBackground(Color.LIGHT_GRAY);
     }
 
     private void removeItemFromTable(Product product, int quantity, int buttonIndex) {
-        if (order.getContent().contains(product)) {
-            int productIndex = order.getContent().stream().toList().indexOf(product);
+        if (order.getProducts().contains(product)) {
+            int productIndex = getIndexOfValueFromTable(product);
             Integer currentProductQuantity = (Integer) defaultTableModel.getValueAt(productIndex, 2);
 
             if (currentProductQuantity > 1 && currentProductQuantity - quantity > 0) {
@@ -271,6 +317,11 @@ public class OrderPage {
                 totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
                 disableButton(removeButtonsList.get(buttonIndex));
                 enableAddButton(addButtonsList.get(buttonIndex));
+                // If order list is empty it's not possible to make or cancel the order
+                if (order.getProducts().isEmpty()) {
+                    disableButton(cancelOrderButton);
+                    disableButton(makeOrderButton);
+                }
             }
         }
     }
@@ -315,7 +366,7 @@ public class OrderPage {
 
         burgerName.setHorizontalAlignment(SwingConstants.CENTER);
         panel.setPreferredSize(new Dimension(280, 300));
-        panel.setBackground(new Color(255, 194, 150));
+        panel.setBackground(SECONDARY_BACKGROUND_COLOR);
         panel.add(burgerName, "span, pushx, wrap, growx");
 
         int imageWidth = 200;

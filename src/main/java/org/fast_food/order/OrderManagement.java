@@ -1,7 +1,5 @@
 package org.fast_food.order;
 
-import org.fast_food.product.Product;
-
 import java.util.ArrayList;
 import java.util.List;
 

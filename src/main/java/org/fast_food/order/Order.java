@@ -3,6 +3,8 @@ package org.fast_food.order;
 import org.fast_food.product.Product;
 
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
 import java.util.*;
 
 public class Order {
@@ -44,6 +46,14 @@ public class Order {
     public void cancel() {
         if (status != OrderStatus.COMPLETED) {
             this.status = OrderStatus.CANCELED;
+            clear();
+        }
+    }
+
+    public void clear() {
+        if (!content.isEmpty()) {
+            content.clear();
+            totalPrice = 0;
         }
     }
 
@@ -51,8 +61,12 @@ public class Order {
         return date;
     }
 
-    public Set<Product> getContent() {
+    public Set<Product> getProducts() {
         return content.keySet();
+    }
+
+    public Map<Product, Integer> getContent() {
+        return content;
     }
 
     public double getTotalPrice() {
@@ -61,7 +75,7 @@ public class Order {
 
     public void addProduct(Product product, int quantity) {
         if (content.containsKey(product)) {
-            content.replace(product, content.get(product) + 1);
+            content.replace(product, content.get(product) + quantity);
         } else {
             content.putIfAbsent(product, quantity);
         }
@@ -82,7 +96,20 @@ public class Order {
         }
     }
 
+    public int getNumberOfProducts() {
+        int numberOfProducts = 0;
+        for (Integer num : content.values()) {
+            numberOfProducts += num;
+        }
+        return numberOfProducts;
+    }
+
     private String generateUniqueId() {
         return String.valueOf(UUID.randomUUID());
+    }
+
+    @Override
+    public String toString() {
+        return "Id: %s\nStatus: %s\nDate: %s\nContent: %s\nTotal: %s".formatted(id, status, date.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)), content, totalPrice);
     }
 }

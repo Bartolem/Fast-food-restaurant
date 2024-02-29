@@ -5,14 +5,13 @@ import net.miginfocom.swing.MigLayout;
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 import static org.fast_food.user_interface.UserInterface.*;
 
 public class StartPage {
     private JFrame frame;
     private OrderPage orderPage;
+    private LaunchProgress launchProgress;
 
     public StartPage() {
         initialize();
@@ -38,7 +37,7 @@ public class StartPage {
         frame.setVisible(true);
     }
 
-    private JPanel createUpperPanel() {
+    protected JPanel createUpperPanel() {
         JPanel panel = new JPanel(new BorderLayout());
         JLabel labelImage = createImageLabel("src/main/resources/logo.png", 350, 125);
         JLabel  label = new JLabel("Satisfy Your Hunger, Elevate Your Taste.");
@@ -51,7 +50,7 @@ public class StartPage {
         label.setHorizontalAlignment(SwingConstants.CENTER);
 
         panel.add(labelImage, BorderLayout.CENTER);
-        panel.setBackground(new Color(255, 89, 60));
+        panel.setBackground(OrderPage.PRIMARY_BACKGROUND_COLOR);
         panel.add(label, BorderLayout.SOUTH);
         return panel;
     }
@@ -62,18 +61,32 @@ public class StartPage {
         JPasswordField passwordField = new JPasswordField(20);
         JButton continueButton = createButton("Continue without account", 14);
 
-        continueButton.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-                if (e.getSource() == continueButton) {
-                    frame.dispose();
-                    orderPage = new OrderPage();
-                    orderPage.show();
-                }
+        continueButton.addActionListener(e -> {
+            if (e.getSource() == continueButton) {
+                SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
+                    @Override
+                    protected Void doInBackground() throws Exception {
+                        // Perform time-consuming task here
+                        launchProgress = new LaunchProgress();
+                        launchProgress.show();
+                        frame.dispose();
+                        orderPage = new OrderPage();
+                        return null;
+                    }
+
+                    @Override
+                    protected void done() {
+                        // Open the OrderPage after the task is complete
+                        launchProgress.close();
+                        orderPage.show();
+                        JOptionPane.showMessageDialog(frame,"Welcome to Bartolo's Burger!");
+                    }
+                };
+                worker.execute();
             }
         });
 
-        panel.setBackground(new Color(255, 194, 150));
+        panel.setBackground(OrderPage.SECONDARY_BACKGROUND_COLOR);
         loginLabel.setHorizontalAlignment(SwingConstants.CENTER);
         loginLabel.setForeground(new Color(0, 0, 0));
         passwordField.setForeground(new Color(0, 0, 0));

@@ -23,9 +23,9 @@ public class BillReceiptGenerator {
             stringBuilder.append("%d. %-35s\t%.2f\t%d\n".formatted(index, product.getName(), product.getPrice(), products.get(product)));
             index++;
         }
-        stringBuilder.append("\nOrder date: %s\n".formatted(order.getDate().format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM))));
-        stringBuilder.append("Discount: 0\n"); // TODO change 0 to actual discount value
-        stringBuilder.append("Total price: %s".formatted(order.getTotalPrice()));
+        stringBuilder.append("\nOrder date:\t%s\n".formatted(order.getDate().format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM))));
+        stringBuilder.append("Discount:\t0\n"); // TODO change 0 to actual discount value
+        stringBuilder.append("Total price:\t%s".formatted(order.getTotalPrice()));
         return stringBuilder.toString();
     }
 

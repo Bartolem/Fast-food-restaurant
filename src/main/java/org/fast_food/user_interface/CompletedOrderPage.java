@@ -77,10 +77,7 @@ public class CompletedOrderPage {
 
             switch (extension) {
                 case BillReceiptWriter.TXT ->  billReceiptWriter.writeBillReceiptToTextFile(filePath);
-                case BillReceiptWriter.CSV -> {
-                    fileChooser.addChoosableFileFilter(new FileNameExtensionFilter("*.csv", "CSV"));
-                    billReceiptWriter.writeBillReceiptToCSVFile(filePath);
-                }
+                case BillReceiptWriter.CSV -> billReceiptWriter.writeBillReceiptToCSVFile(filePath);
                 case BillReceiptWriter.PDF -> billReceiptWriter.writeBillReceiptToPDFFile(filePath);
             }
         }

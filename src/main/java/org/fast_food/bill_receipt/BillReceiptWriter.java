@@ -1,23 +1,40 @@
 package org.fast_food.bill_receipt;
 
+import com.itextpdf.io.image.ImageData;
+import com.itextpdf.io.image.ImageDataFactory;
+import com.itextpdf.kernel.colors.DeviceRgb;
 import com.itextpdf.kernel.pdf.PdfDocument;
 import com.itextpdf.kernel.pdf.PdfWriter;
 import com.itextpdf.layout.Document;
+import com.itextpdf.layout.borders.Border;
+import com.itextpdf.layout.element.Cell;
+import com.itextpdf.layout.element.Image;
 import com.itextpdf.layout.element.Paragraph;
+import com.itextpdf.layout.element.Table;
+import com.itextpdf.layout.properties.HorizontalAlignment;
+import com.itextpdf.layout.properties.TextAlignment;
 import org.apache.commons.io.FilenameUtils;
 import org.fast_food.order.Order;
+import org.fast_food.product.Product;
+import org.fast_food.user_interface.UserInterface;
 
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.net.MalformedURLException;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+import java.util.Arrays;
 
 public class BillReceiptWriter {
     public static final String TXT = ".txt";
     public static final String CSV = ".csv";
     public static final String PDF = ".pdf";
+    private final Order order;
     private final BillReceiptGenerator billReceiptGenerator;
 
     public BillReceiptWriter(Order order) {
+        this.order = order;
         this.billReceiptGenerator = new BillReceiptGenerator(order);
     }
 
@@ -53,13 +70,72 @@ public class BillReceiptWriter {
         if (FilenameUtils.getExtension(filePath).isEmpty()) {
             filePath = filePath + PDF;
         }
+
         try (PdfDocument pdf = new PdfDocument(new PdfWriter(filePath))) {
             Document document = new Document(pdf);
-            document.add(new Paragraph(billReceiptGenerator.generateBillReceiptContent()));
+
+            Image image = new Image(ImageDataFactory.create("src/main/resources/logo.png"));
+            image.scaleToFit(175, 62.5f);
+            image.setMarginBottom(25f);
+            image.setHorizontalAlignment(HorizontalAlignment.CENTER);
+
+            float[] columnWidth = {250f, 75f, 75f};
+            Table contentTable = new Table(columnWidth);
+            contentTable.setMarginBottom(25f);
+            contentTable.setHorizontalAlignment(HorizontalAlignment.CENTER);
+
+            Cell[] tableHeaders = {
+                    new Cell().add(new Paragraph("Product name")),
+                    new Cell().add(new Paragraph("Price")),
+                    new Cell().add(new Paragraph("Quantity"))
+            };
+
+            Arrays.stream(tableHeaders).forEach(cell -> {
+                cell.setBackgroundColor(new DeviceRgb(91, 192, 255));
+                cell.setTextAlignment(TextAlignment.CENTER);
+            });
+
+            contentTable.addCell(tableHeaders[0]);
+            contentTable.addCell(tableHeaders[1]);
+            contentTable.addCell(tableHeaders[2]);
+
+            int index = 0;
+
+            for (Product product : order.getContent().keySet()) {
+                DeviceRgb backgroundColor = new DeviceRgb(168, 221, 255);
+
+                if (index % 2 != 0) {
+                    backgroundColor = new DeviceRgb(214, 239, 255);
+                }
+
+                contentTable.addCell(new Cell().add(new Paragraph(product.getName())).setBackgroundColor(backgroundColor));
+                contentTable.addCell(new Cell().add(new Paragraph(String.valueOf(product.getPrice()))).setBackgroundColor(backgroundColor).setTextAlignment(TextAlignment.RIGHT));
+                contentTable.addCell(new Cell().add(new Paragraph(String.valueOf(order.getContent().get(product)))).setBackgroundColor(backgroundColor).setTextAlignment(TextAlignment.CENTER));
+                index++;
+            }
+
+            columnWidth = new float[]{200f, 200f};
+            Table infoTable = new Table(columnWidth);
+
+            infoTable.setHorizontalAlignment(HorizontalAlignment.CENTER);
+            infoTable.addCell(new Cell().add(new Paragraph("Order date")).setBorder(Border.NO_BORDER));
+            infoTable.addCell(new Cell().add(new Paragraph(order
+                    .getDate()
+                    .format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM))).setTextAlignment(TextAlignment.RIGHT)).setBorder(Border.NO_BORDER));
+            infoTable.addCell(new Cell().add(new Paragraph("Total price")).setBorder(Border.NO_BORDER));
+            infoTable.addCell(new Cell().add(new Paragraph(String.valueOf(order.getTotalPrice())).setTextAlignment(TextAlignment.RIGHT)).setBorder(Border.NO_BORDER));
+            infoTable.addCell(new Cell().add(new Paragraph("Discount")).setBorder(Border.NO_BORDER));
+            infoTable.addCell(new Cell().add(new Paragraph("0").setTextAlignment(TextAlignment.RIGHT)).setBorder(Border.NO_BORDER)); // TODO change 0 to actual discount value
+
+            document.add(image);
+            document.add(contentTable);
+            document.add(infoTable);
             document.close();
             System.out.println("PDF file saved to: " + filePath);
         } catch (FileNotFoundException e) {
             System.err.println("Failed to write PDF file: " + e.getMessage());
+        } catch (MalformedURLException e) {
+            throw new RuntimeException(e);
         }
     }
 }

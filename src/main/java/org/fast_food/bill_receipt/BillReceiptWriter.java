@@ -16,7 +16,6 @@ import com.itextpdf.layout.properties.TextAlignment;
 import org.apache.commons.io.FilenameUtils;
 import org.fast_food.order.Order;
 import org.fast_food.product.Product;
-import org.fast_food.user_interface.UserInterface;
 
 import java.io.FileNotFoundException;
 import java.io.FileWriter;

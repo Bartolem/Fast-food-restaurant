@@ -196,7 +196,10 @@ public class OrderPage {
         disableButton(makeOrderButton);
 
         cancelOrderButton.addActionListener(e -> cancelOrder());
-        makeOrderButton.addActionListener(e -> processOrder());
+        makeOrderButton.addActionListener(e -> {
+            processOrder();
+            frame.dispose();
+        });
 
         return panel;
     }

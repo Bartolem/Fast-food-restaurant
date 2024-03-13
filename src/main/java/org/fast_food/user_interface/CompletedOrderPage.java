@@ -12,6 +12,7 @@ import java.awt.event.WindowEvent;
 public class CompletedOrderPage {
     private JFrame frame;
     private final Order order;
+    private boolean saved;
 
     public CompletedOrderPage(Order order) {
         this.order = order;
@@ -20,6 +21,7 @@ public class CompletedOrderPage {
 
     private void initialize() {
         this.frame = new JFrame();
+        this.saved = false;
         frame.setTitle(UserInterface.TITLE);
         frame.setIconImage(UserInterface.ICON.getImage());
         frame.setLayout(new BorderLayout());
@@ -34,8 +36,14 @@ public class CompletedOrderPage {
         frame.addWindowListener(new WindowAdapter() {
             @Override
             public void windowClosing(WindowEvent e) {
+                String message = "Are you sure you want to exit the program without saving the bill receipt?";
+
+                if (saved) {
+                    message = "Are you sure you want to exit the program?";
+                }
+
                 int confirmed = JOptionPane.showConfirmDialog(frame,
-                        "Are you sure you want to exit the program without saving the bill receipt?",
+                        message,
                         "Exit Program Message Box",
                         JOptionPane.YES_NO_OPTION);
 
@@ -93,9 +101,18 @@ public class CompletedOrderPage {
             String filePath = fileChooser.getSelectedFile().getPath();
 
             switch (extension) {
-                case BillReceiptWriter.TXT ->  billReceiptWriter.writeBillReceiptToTextFile(filePath);
-                case BillReceiptWriter.CSV -> billReceiptWriter.writeBillReceiptToCSVFile(filePath);
-                case BillReceiptWriter.PDF -> billReceiptWriter.writeBillReceiptToPDFFile(filePath);
+                case BillReceiptWriter.TXT -> {
+                    billReceiptWriter.writeBillReceiptToTextFile(filePath);
+                    saved = true;
+                }
+                case BillReceiptWriter.CSV -> {
+                    billReceiptWriter.writeBillReceiptToCSVFile(filePath);
+                    saved = true;
+                }
+                case BillReceiptWriter.PDF -> {
+                    billReceiptWriter.writeBillReceiptToPDFFile(filePath);
+                    saved = true;
+                }
             }
         }
     }

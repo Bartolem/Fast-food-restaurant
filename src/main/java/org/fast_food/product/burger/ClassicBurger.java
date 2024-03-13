@@ -5,6 +5,7 @@ import org.fast_food.product.Type;
 import org.fast_food.product.burger.ingredient.*;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
 public enum ClassicBurger implements Burger<IngredientI> {
     CLASSIC_BURGER("Classic Burger", 4.99, List.of(Patty.BEEF, Ingredient.LETTUCE, Ingredient.TOMATO, Ingredient.PICKLES, Ingredient.ONION, Bun.SESAME), "The classic cheeseburger with a juicy beef patty, melted cheese, and fresh vegetables.", 570, 1, 4.7),

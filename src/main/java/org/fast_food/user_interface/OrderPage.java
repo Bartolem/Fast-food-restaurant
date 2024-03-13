@@ -331,8 +331,9 @@ public class OrderPage {
 
     private JPanel createItemContainer(Product product, File image) {
         JPanel panel = new JPanel(new MigLayout());
-        JLabel burgerName = createLabel(product.getName(), "Verdana", Font.PLAIN, 18);
-        JLabel burgerCost = createLabel("$" + product.getPrice(), "Verdana", Font.PLAIN, 20);
+        JLabel productName = createLabel(product.getName(), "Verdana", Font.PLAIN, 18);
+        JLabel productCost = createLabel("$" + product.getPrice(), "Verdana", Font.PLAIN, 20);
+        productCost.setHorizontalAlignment(SwingConstants.CENTER);
         JSpinner spinner = new JSpinner(new SpinnerNumberModel(1, 1, 10, 1));
         JSpinner.DefaultEditor editor = (JSpinner.DefaultEditor) spinner.getEditor();
         JFormattedTextField textField = editor.getTextField();
@@ -341,11 +342,18 @@ public class OrderPage {
         textField.setFocusable(false);
         textField.setBackground(new Color(121, 186, 253));
 
-        spinner.setFont(new Font("Verdana", Font.PLAIN, 22));
+        spinner.setFont(new Font("Verdana", Font.PLAIN, 16));
 
         IconFontSwing.register(FontAwesome.getIconFont());
 
-        JButton addProductButton = new JButton(IconFontSwing.buildIcon(FontAwesome.PLUS, 22));
+        JButton infoButton = createButton("", 14);
+        infoButton.setIcon(IconFontSwing.buildIcon(FontAwesome.INFO_CIRCLE, 16));
+
+        infoButton.addActionListener(e -> {
+            new ProductDetailPage(product, image).show();
+        });
+
+        JButton addProductButton = new JButton(IconFontSwing.buildIcon(FontAwesome.PLUS, 16));
         addProductButton.setBackground(new Color(54, 208, 54));
         addProductButton.setFocusable(false);
 
@@ -356,7 +364,7 @@ public class OrderPage {
             addItemToTable(product, (Integer) spinner.getValue(), buttonIndex);
         });
 
-        JButton removeProductButton = new JButton(IconFontSwing.buildIcon(FontAwesome.MINUS, 22));
+        JButton removeProductButton = new JButton(IconFontSwing.buildIcon(FontAwesome.MINUS, 16));
         disableButton(removeProductButton);
         removeProductButton.setFocusable(false);
 
@@ -367,10 +375,11 @@ public class OrderPage {
             removeItemFromTable(product, (Integer) spinner.getValue(), buttonIndex);
         });
 
-        burgerName.setHorizontalAlignment(SwingConstants.CENTER);
-        panel.setPreferredSize(new Dimension(280, 300));
+        productName.setHorizontalAlignment(SwingConstants.CENTER);
+        panel.setPreferredSize(new Dimension(280, 320));
         panel.setBackground(SECONDARY_BACKGROUND_COLOR);
-        panel.add(burgerName, "span, pushx, wrap, growx");
+        panel.add(productName, "span, growx, wrap");
+        panel.add(infoButton, "align right, wrap");
 
         int imageWidth = 200;
         int imageHeight = 200;
@@ -379,10 +388,10 @@ public class OrderPage {
         }
 
         panel.add(createImageLabel(image.getPath(), imageWidth, imageHeight), "wrap, pushx, growx");
-        panel.add(spinner, "split4, pushx");
+        panel.add(spinner, "split4");
         panel.add(addProductButton);
         panel.add(removeProductButton);
-        panel.add(burgerCost);
+        panel.add(productCost, "span, growx");
         return panel;
     }
 

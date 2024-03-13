@@ -5,12 +5,14 @@ import org.fast_food.bill_receipt.BillReceiptWriter;
 import org.fast_food.order.Order;
 
 import javax.swing.*;
-import javax.swing.filechooser.FileNameExtensionFilter;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 
 public class CompletedOrderPage {
     private JFrame frame;
     private final Order order;
+    private boolean saved;
 
     public CompletedOrderPage(Order order) {
         this.order = order;
@@ -19,6 +21,7 @@ public class CompletedOrderPage {
 
     private void initialize() {
         this.frame = new JFrame();
+        this.saved = false;
         frame.setTitle(UserInterface.TITLE);
         frame.setIconImage(UserInterface.ICON.getImage());
         frame.setLayout(new BorderLayout());
@@ -26,9 +29,31 @@ public class CompletedOrderPage {
         frame.getContentPane().setBackground(OrderPage.PRIMARY_BACKGROUND_COLOR);
         frame.add(createTextAreaPanel(), BorderLayout.CENTER);
         frame.add(createButtonsPanel(), BorderLayout.SOUTH);
-//        frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         frame.setResizable(false);
         frame.pack();
+        frame.setLocationByPlatform(true);
+
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                String message = "Are you sure you want to exit the program without saving the bill receipt?";
+
+                if (saved) {
+                    message = "Are you sure you want to exit the program?";
+                }
+
+                int confirmed = JOptionPane.showConfirmDialog(frame,
+                        message,
+                        "Exit Program Message Box",
+                        JOptionPane.YES_NO_OPTION);
+
+                if (confirmed == JOptionPane.YES_OPTION) {
+                    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                } else {
+                    frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+                }
+            }
+        });
     }
 
     public void show() {
@@ -53,10 +78,10 @@ public class CompletedOrderPage {
 
     private JPanel createButtonsPanel() {
         JPanel panel = new JPanel(new GridLayout(1, 0));
-        JButton txtButton = UserInterface.createButton("Text file", 14);
-        JButton pdfButton = UserInterface.createButton("Pdf", 14);
+        JButton txtButton = UserInterface.createButton("TXT", 14);
+        JButton pdfButton = UserInterface.createButton("PDF", 14);
         JButton csvButton = UserInterface.createButton("CSV", 14);
-        JButton jsonButton = UserInterface.createButton("Json", 14);
+        JButton jsonButton = UserInterface.createButton("JSON", 14);
         panel.add(txtButton);
         panel.add(pdfButton);
         panel.add(csvButton);
@@ -76,9 +101,18 @@ public class CompletedOrderPage {
             String filePath = fileChooser.getSelectedFile().getPath();
 
             switch (extension) {
-                case BillReceiptWriter.TXT ->  billReceiptWriter.writeBillReceiptToTextFile(filePath);
-                case BillReceiptWriter.CSV -> billReceiptWriter.writeBillReceiptToCSVFile(filePath);
-                case BillReceiptWriter.PDF -> billReceiptWriter.writeBillReceiptToPDFFile(filePath);
+                case BillReceiptWriter.TXT -> {
+                    billReceiptWriter.writeBillReceiptToTextFile(filePath);
+                    saved = true;
+                }
+                case BillReceiptWriter.CSV -> {
+                    billReceiptWriter.writeBillReceiptToCSVFile(filePath);
+                    saved = true;
+                }
+                case BillReceiptWriter.PDF -> {
+                    billReceiptWriter.writeBillReceiptToPDFFile(filePath);
+                    saved = true;
+                }
             }
         }
     }

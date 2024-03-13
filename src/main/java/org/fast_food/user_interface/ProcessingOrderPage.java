@@ -34,6 +34,7 @@ public class ProcessingOrderPage {
         frame.add(progressBar, BorderLayout.SOUTH);
         frame.setResizable(false);
         frame.pack();
+        frame.setLocationByPlatform(true);
         simulateProgress();
     }
 

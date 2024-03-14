@@ -2,6 +2,8 @@ package org.fast_food.product;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+
 import static org.fast_food.product.ColdDrink.*;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -32,26 +34,26 @@ public class ColdDrinkTest {
 
     @Test
     void testGetPriceForDifferentColdDrinks() {
-        assertEquals(5.99, PEANUT_BUTTER_BANANA_SMOOTHIE.getPrice(), 0.01);
-        assertEquals(7.49, MANGO_SMOOTHIE.getPrice(), 0.01);
-        assertEquals(6.89, SPINACH_SMOOTHIE.getPrice(), 0.01);
-        assertEquals(5.99, STRAWBERRY_SMOOTHIE.getPrice(), 0.01);
-        assertEquals(6.79, BLUEBERRY_SMOOTHIE.getPrice(), 0.01);
-        assertEquals(7.29, MULBERRY_SMOOTHIE.getPrice(), 0.01);
-        assertEquals(7.09, KIWI_SMOOTHIE.getPrice(), 0.01);
-        assertEquals(7.49, PINEAPPLE_SMOOTHIE.getPrice(), 0.01);
-        assertEquals(3.99, CARAMEL_ICED_COFFEE.getPrice(), 0.01);
-        assertEquals(6.49, MILKSHAKE_COOKIES_AND_CREAM.getPrice(), 0.01);
-        assertEquals(5.99, CHOCOLATE_MILKSHAKE.getPrice(), 0.01);
-        assertEquals(6.99, STRAWBERRY_MILKSHAKE.getPrice(), 0.01);
-        assertEquals(3.49, BANANA_JUICE.getPrice(), 0.01);
-        assertEquals(2.99, ORANGE_JUICE.getPrice(), 0.01);
-        assertEquals(3.99, WATERMELON_JUICE.getPrice(), 0.01);
-        assertEquals(7.99, PINEAPPLE_PINA_COLADA.getPrice(), 0.01);
-        assertEquals(1.99, COLA_DRINK.getPrice(), 0.01);
-        assertEquals(2.49, ICE_TEA.getPrice(), 0.01);
-        assertEquals(2.29, MINT_COCKTAIL.getPrice(), 0.01);
-        assertEquals(2.29, LEMON_LIME_SODA.getPrice(), 0.01);
+        assertEquals(BigDecimal.valueOf(5.99), PEANUT_BUTTER_BANANA_SMOOTHIE.getPrice());
+        assertEquals(BigDecimal.valueOf(7.49), MANGO_SMOOTHIE.getPrice());
+        assertEquals(BigDecimal.valueOf(6.89), SPINACH_SMOOTHIE.getPrice());
+        assertEquals(BigDecimal.valueOf(5.99), STRAWBERRY_SMOOTHIE.getPrice());
+        assertEquals(BigDecimal.valueOf(6.79), BLUEBERRY_SMOOTHIE.getPrice());
+        assertEquals(BigDecimal.valueOf(7.29), MULBERRY_SMOOTHIE.getPrice());
+        assertEquals(BigDecimal.valueOf(7.09), KIWI_SMOOTHIE.getPrice());
+        assertEquals(BigDecimal.valueOf(7.49), PINEAPPLE_SMOOTHIE.getPrice());
+        assertEquals(BigDecimal.valueOf(3.99), CARAMEL_ICED_COFFEE.getPrice());
+        assertEquals(BigDecimal.valueOf(6.49), MILKSHAKE_COOKIES_AND_CREAM.getPrice());
+        assertEquals(BigDecimal.valueOf(5.99), CHOCOLATE_MILKSHAKE.getPrice());
+        assertEquals(BigDecimal.valueOf(6.99), STRAWBERRY_MILKSHAKE.getPrice());
+        assertEquals(BigDecimal.valueOf(3.49), BANANA_JUICE.getPrice());
+        assertEquals(BigDecimal.valueOf(2.99), ORANGE_JUICE.getPrice());
+        assertEquals(BigDecimal.valueOf(3.99), WATERMELON_JUICE.getPrice());
+        assertEquals(BigDecimal.valueOf(7.99), PINEAPPLE_PINA_COLADA.getPrice());
+        assertEquals(BigDecimal.valueOf(1.99), COLA_DRINK.getPrice());
+        assertEquals(BigDecimal.valueOf(2.49), ICE_TEA.getPrice());
+        assertEquals(BigDecimal.valueOf(2.29), MINT_COCKTAIL.getPrice());
+        assertEquals(BigDecimal.valueOf(2.29), LEMON_LIME_SODA.getPrice());
     }
 
     @Test

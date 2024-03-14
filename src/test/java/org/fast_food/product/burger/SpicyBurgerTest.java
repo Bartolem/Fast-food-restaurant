@@ -3,6 +3,7 @@ package org.fast_food.product.burger;
 import org.fast_food.product.burger.ingredient.*;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import static org.fast_food.product.burger.SpicyBurger.*;
@@ -25,16 +26,16 @@ public class SpicyBurgerTest {
 
     @Test
     void testGetPriceForDifferentBurgerTypes() {
-        assertEquals(SPICY_SRIRACHA.getPrice(), 6.79);
-        assertEquals(JALAPENO_POPPER.getPrice(), 7.09);
-        assertEquals(BUFFALO_CHICKEN.getPrice(), 7.49);
-        assertEquals(CHIPOTLE_BLACK_BEAN.getPrice(), 6.89);
-        assertEquals(CAJUN_SHRIMP.getPrice(), 8.29);
-        assertEquals(GHOST_PEPPER.getPrice(), 8.99);
-        assertEquals(HOT_PEPPER_JACK.getPrice(), 7.89);
-        assertEquals(FIERY_HABANERO.getPrice(), 8.49);
-        assertEquals(SPICY_THAI.getPrice(), 7.79);
-        assertEquals(INFERNO.getPrice(), 9.49);
+        assertEquals(SPICY_SRIRACHA.getPrice(), BigDecimal.valueOf(6.79));
+        assertEquals(JALAPENO_POPPER.getPrice(), BigDecimal.valueOf(7.09));
+        assertEquals(BUFFALO_CHICKEN.getPrice(), BigDecimal.valueOf(7.49));
+        assertEquals(CHIPOTLE_BLACK_BEAN.getPrice(), BigDecimal.valueOf(6.89));
+        assertEquals(CAJUN_SHRIMP.getPrice(), BigDecimal.valueOf(8.29));
+        assertEquals(GHOST_PEPPER.getPrice(), BigDecimal.valueOf(8.99));
+        assertEquals(HOT_PEPPER_JACK.getPrice(), BigDecimal.valueOf(7.89));
+        assertEquals(FIERY_HABANERO.getPrice(), BigDecimal.valueOf(8.49));
+        assertEquals(SPICY_THAI.getPrice(), BigDecimal.valueOf(7.79));
+        assertEquals(INFERNO.getPrice(), BigDecimal.valueOf(9.49));
     }
     @Test
     void testGetIngredientsForDifferentBurgerTypes() {

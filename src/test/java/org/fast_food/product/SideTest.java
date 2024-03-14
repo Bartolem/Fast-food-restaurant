@@ -2,6 +2,7 @@ package org.fast_food.product;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import static org.fast_food.product.Side.*;
@@ -18,10 +19,10 @@ public class SideTest {
 
     @Test
     void testGetPriceForDifferentSideMeals() {
-        assertEquals(ONION_RINGS.getPrice(), 4.79);
-        assertEquals(SALAD.getPrice(), 3.99);
-        assertEquals(QUINOA_SALAD.getPrice(), 4.79);
-        assertEquals(GREEK_SALAD.getPrice(), 4.99);
+        assertEquals(ONION_RINGS.getPrice(), BigDecimal.valueOf(4.79));
+        assertEquals(SALAD.getPrice(), BigDecimal.valueOf(3.99));
+        assertEquals(QUINOA_SALAD.getPrice(), BigDecimal.valueOf(4.79));
+        assertEquals(GREEK_SALAD.getPrice(), BigDecimal.valueOf(4.99));
     }
 
     @Test

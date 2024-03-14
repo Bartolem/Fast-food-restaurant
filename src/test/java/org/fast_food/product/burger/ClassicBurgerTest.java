@@ -4,6 +4,7 @@ import org.fast_food.product.Side;
 import org.fast_food.product.burger.ingredient.*;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import static org.fast_food.product.burger.ClassicBurger.*;
@@ -30,20 +31,20 @@ class ClassicBurgerTest {
 
     @Test
     void testGetPriceForDifferentBurgerTypes() {
-        assertEquals(CLASSIC_BURGER.getPrice(), 4.99);
-        assertEquals(CLASSIC_CHEESEBURGER.getPrice(), 5.19);
-        assertEquals(BACON.getPrice(), 5.49);
-        assertEquals(VEGGIE.getPrice(), 4.79);
-        assertEquals(CHICKEN.getPrice(), 5.29);
-        assertEquals(TURKEY.getPrice(), 5.49);
-        assertEquals(BBQ.getPrice(), 5.99);
-        assertEquals(JALAPENO.getPrice(), 5.59);
-        assertEquals(TERIYAKI.getPrice(), 5.89);
-        assertEquals(DOUBLE_BURGER.getPrice(), 6.29);
-        assertEquals(DOUBLE_CHEESEBURGER.getPrice(), 6.49);
-        assertEquals(DOUBLE_BACON.getPrice(), 6.99);
-        assertEquals(DOUBLE_BACON_CHEESEBURGER.getPrice(), 7.19);
-        assertEquals(FISH.getPrice(), 6.49);
+        assertEquals(CLASSIC_BURGER.getPrice(), BigDecimal.valueOf(4.99));
+        assertEquals(CLASSIC_CHEESEBURGER.getPrice(), BigDecimal.valueOf(5.19));
+        assertEquals(BACON.getPrice(), BigDecimal.valueOf(5.49));
+        assertEquals(VEGGIE.getPrice(), BigDecimal.valueOf(4.79));
+        assertEquals(CHICKEN.getPrice(), BigDecimal.valueOf(5.29));
+        assertEquals(TURKEY.getPrice(), BigDecimal.valueOf(5.49));
+        assertEquals(BBQ.getPrice(), BigDecimal.valueOf(5.99));
+        assertEquals(JALAPENO.getPrice(), BigDecimal.valueOf(5.59));
+        assertEquals(TERIYAKI.getPrice(), BigDecimal.valueOf(5.89));
+        assertEquals(DOUBLE_BURGER.getPrice(), BigDecimal.valueOf(6.29));
+        assertEquals(DOUBLE_CHEESEBURGER.getPrice(), BigDecimal.valueOf(6.49));
+        assertEquals(DOUBLE_BACON.getPrice(), BigDecimal.valueOf(6.99));
+        assertEquals(DOUBLE_BACON_CHEESEBURGER.getPrice(), BigDecimal.valueOf(7.19));
+        assertEquals(FISH.getPrice(), BigDecimal.valueOf(6.49));
     }
     @Test
     void testGetIngredientsForDifferentBurgerTypes() {

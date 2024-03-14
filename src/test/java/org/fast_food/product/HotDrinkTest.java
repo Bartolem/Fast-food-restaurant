@@ -1,6 +1,9 @@
 package org.fast_food.product;
 
 import org.junit.jupiter.api.Test;
+
+import java.math.BigDecimal;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class HotDrinkTest {
@@ -19,14 +22,14 @@ public class HotDrinkTest {
 
     @Test
     void testGetPriceForDifferentHotDrinks() {
-        assertEquals(2.49, HotDrink.TEA.getPrice());
-        assertEquals(2.99, HotDrink.GREEN_TEA.getPrice());
-        assertEquals(3.49, HotDrink.CHAMOMILE_DRINK.getPrice());
-        assertEquals(2.99, HotDrink.ESPRESSO.getPrice());
-        assertEquals(4.49, HotDrink.LATTE.getPrice());
-        assertEquals(4.29, HotDrink.CAPPUCCINO.getPrice());
-        assertEquals(3.99, HotDrink.MALTED_MILK.getPrice());
-        assertEquals(3.79, HotDrink.HOT_CHOCOLATE.getPrice());
+        assertEquals(BigDecimal.valueOf(2.49), HotDrink.TEA.getPrice());
+        assertEquals(BigDecimal.valueOf(2.99), HotDrink.GREEN_TEA.getPrice());
+        assertEquals(BigDecimal.valueOf(3.49), HotDrink.CHAMOMILE_DRINK.getPrice());
+        assertEquals(BigDecimal.valueOf(2.99), HotDrink.ESPRESSO.getPrice());
+        assertEquals(BigDecimal.valueOf(4.49), HotDrink.LATTE.getPrice());
+        assertEquals(BigDecimal.valueOf(4.29), HotDrink.CAPPUCCINO.getPrice());
+        assertEquals(BigDecimal.valueOf(3.99), HotDrink.MALTED_MILK.getPrice());
+        assertEquals(BigDecimal.valueOf(3.79), HotDrink.HOT_CHOCOLATE.getPrice());
     }
 
     @Test

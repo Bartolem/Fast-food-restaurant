@@ -13,8 +13,8 @@ import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 import java.io.File;
-import java.util.ArrayList;
-import java.util.Vector;
+import java.text.NumberFormat;
+import java.util.*;
 import java.util.List;
 
 import static org.fast_food.user_interface.UserInterface.*;
@@ -167,7 +167,7 @@ public class OrderPage {
     private JPanel createOrderListPanel() {
         JPanel panel = new JPanel(new MigLayout());
         String[] column = {"Name","Price","Quantity"};
-        JLabel totalCost = createLabel("Total cost: $", "Verdana", Font.PLAIN, 20);
+        JLabel totalCost = createLabel("Total cost: ", "Verdana", Font.PLAIN, 20);
         this.cancelOrderButton = createButton("Cancel", 16);
         this.makeOrderButton = createButton("Pay", 16);
         this.defaultTableModel = new DefaultTableModel(column, 0) {
@@ -177,7 +177,7 @@ public class OrderPage {
                 return false;
             }
         };
-        this.totalOrderPrice = createLabel(String.valueOf(order.getTotalPrice()), "Verdana", Font.PLAIN, 20);
+        this.totalOrderPrice = createLabel(order.getFormattedTotalPrice(), "Verdana", Font.PLAIN, 20);
         JTable table = new JTable(defaultTableModel);
         table.setFont(new Font("Verdana", Font.PLAIN, 14));
         table.setRowHeight(25);
@@ -208,7 +208,7 @@ public class OrderPage {
         OrderManagement.cancelOrder(order);
         OrderManagement.removeOrder(order);
 
-        totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
+        totalOrderPrice.setText(order.getFormattedTotalPrice());
         defaultTableModel.setRowCount(0);
 
         disableButton(makeOrderButton);
@@ -261,11 +261,11 @@ public class OrderPage {
 
             if (currentProductQuantity + quantity < order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE) {
                 order.addProduct(product, quantity);
-                totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
+                totalOrderPrice.setText(order.getFormattedTotalPrice());
                 defaultTableModel.setValueAt(currentProductQuantity + quantity, productIndex, 2);
             } else {
                 order.addProduct(product, order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE - currentProductQuantity);
-                totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
+                totalOrderPrice.setText(order.getFormattedTotalPrice());
                 // Disable button when product reach max quantity allowed
                 disableButton(addButtonsList.get(buttonIndex));
                 defaultTableModel.setValueAt(order.MAX_QUANTITY_OF_PRODUCT_SAME_TYPE, productIndex, 2);
@@ -276,7 +276,7 @@ public class OrderPage {
             }
             defaultTableModel.addRow(vector);
             order.addProduct(product, quantity);
-            totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
+            totalOrderPrice.setText(order.getFormattedTotalPrice());
             // Enable remove button because order list contains at least one item of this type
             enableRemoveButton(removeButtonsList.get(buttonIndex));
             enableButton(makeOrderButton);
@@ -311,13 +311,13 @@ public class OrderPage {
 
             if (currentProductQuantity > 1 && currentProductQuantity - quantity > 0) {
                 order.removeProduct(product, quantity);
-                totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
+                totalOrderPrice.setText(order.getFormattedTotalPrice());
                 enableAddButton(addButtonsList.get(buttonIndex));
                 defaultTableModel.setValueAt(currentProductQuantity - quantity, productIndex, 2);
             } else {
                 order.removeProduct(product, quantity);
                 defaultTableModel.removeRow(productIndex);
-                totalOrderPrice.setText(String.valueOf(order.getTotalPrice()));
+                totalOrderPrice.setText(order.getFormattedTotalPrice());
                 disableButton(removeButtonsList.get(buttonIndex));
                 enableAddButton(addButtonsList.get(buttonIndex));
                 // If order list is empty it's not possible to make or cancel the order
@@ -332,7 +332,7 @@ public class OrderPage {
     private JPanel createItemContainer(Product product, File image) {
         JPanel panel = new JPanel(new MigLayout());
         JLabel productName = createLabel(product.getName(), "Verdana", Font.PLAIN, 18);
-        JLabel productCost = createLabel("$" + product.getPrice(), "Verdana", Font.PLAIN, 20);
+        JLabel productCost = createLabel(NumberFormat.getCurrencyInstance(Locale.US).format(product.getPrice()), "Verdana", Font.PLAIN, 20);
         productCost.setHorizontalAlignment(SwingConstants.CENTER);
         JSpinner spinner = new JSpinner(new SpinnerNumberModel(1, 1, 10, 1));
         JSpinner.DefaultEditor editor = (JSpinner.DefaultEditor) spinner.getEditor();

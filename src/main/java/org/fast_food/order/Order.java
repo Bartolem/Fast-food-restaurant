@@ -2,6 +2,9 @@ package org.fast_food.order;
 
 import org.fast_food.product.Product;
 
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.text.NumberFormat;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
@@ -13,14 +16,14 @@ public class Order {
     private OrderStatus status;
     private final LocalDateTime date;
     private final Map<Product, Integer> content;
-    private double totalPrice;
+    private BigDecimal totalPrice;
 
     public Order() {
         this.id = generateUniqueId();
         this.status = OrderStatus.NEW;
         this.date = LocalDateTime.now();
         this.content = new HashMap<>();
-        this.totalPrice = 0;
+        this.totalPrice = BigDecimal.valueOf(0);
     }
 
     public String getId() {
@@ -53,7 +56,7 @@ public class Order {
     public void clear() {
         if (!content.isEmpty()) {
             content.clear();
-            totalPrice = 0;
+            totalPrice = BigDecimal.valueOf(0);
         }
     }
 
@@ -69,8 +72,12 @@ public class Order {
         return content;
     }
 
-    public double getTotalPrice() {
-        return totalPrice;
+    public BigDecimal getTotalPrice() {
+        return totalPrice.setScale(2, RoundingMode.HALF_UP);
+    }
+
+    public String getFormattedTotalPrice() {
+        return NumberFormat.getCurrencyInstance(Locale.US).format(getTotalPrice());
     }
 
     public void addProduct(Product product, int quantity) {
@@ -79,7 +86,7 @@ public class Order {
         } else {
             content.putIfAbsent(product, quantity);
         }
-        totalPrice += product.getPrice() * quantity;
+        totalPrice = totalPrice.add(product.getPrice().multiply(BigDecimal.valueOf(quantity)));
     }
 
     public void removeProduct(Product product, int quantity) {
@@ -89,10 +96,10 @@ public class Order {
             content.remove(product);
         }
 
-        if (totalPrice < product.getPrice() * quantity) {
-            totalPrice = 0.0;
+        if (totalPrice.compareTo(product.getPrice().multiply(BigDecimal.valueOf(quantity))) < 0) {
+            totalPrice = BigDecimal.valueOf(0);
         } else {
-            totalPrice -= product.getPrice() * quantity;
+            totalPrice = totalPrice.subtract(product.getPrice().multiply(BigDecimal.valueOf(quantity)));
         }
     }
 

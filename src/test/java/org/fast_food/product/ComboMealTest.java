@@ -6,6 +6,7 @@ import org.fast_food.product.burger.SpicyBurger;
 import org.fast_food.product.burger.UniqueFlavorBurger;
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -37,26 +38,26 @@ public class ComboMealTest {
 
     @Test
     void testGetPriceForDifferentComboMeals() {
-        assertEquals(9.99, ComboMeal.CLASSIC.getPrice());
-        assertEquals(10.99, ComboMeal.VEGGIE_DELIGHT.getPrice());
-        assertEquals(8.49, ComboMeal.BREAKFAST.getPrice());
-        assertEquals(12.99, ComboMeal.GOURMET.getPrice());
-        assertEquals(10.49, ComboMeal.TEX_MEX.getPrice());
-        assertEquals(9.99, ComboMeal.SPICY.getPrice());
-        assertEquals(11.49, ComboMeal.INFERNO.getPrice());
-        assertEquals(11.99, ComboMeal.BBQ.getPrice());
-        assertEquals(12.99, ComboMeal.SEAFOOD.getPrice());
-        assertEquals(9.49, ComboMeal.FITNESS.getPrice());
-        assertEquals(13.99, ComboMeal.ULTIMATE.getPrice());
-        assertEquals(10.49, ComboMeal.HEALTHY.getPrice());
-        assertEquals(11.99, ComboMeal.ITALIAN.getPrice());
-        assertEquals(10.49, ComboMeal.SOUTHWESTERN.getPrice());
-        assertEquals(12.99, ComboMeal.TRUFFLE.getPrice());
-        assertEquals(11.99, ComboMeal.TROPICAL_TWIST.getPrice());
-        assertEquals(12.49, ComboMeal.MEDITERRANEAN.getPrice());
-        assertEquals(11.99, ComboMeal.FARMHOUSE.getPrice());
-        assertEquals(11.99, ComboMeal.BBQ_BONANZA.getPrice());
-        assertEquals(13.49, ComboMeal.SAVORY_SEAFOOD.getPrice());
+        assertEquals(BigDecimal.valueOf(9.99), ComboMeal.CLASSIC.getPrice());
+        assertEquals(BigDecimal.valueOf(10.99), ComboMeal.VEGGIE_DELIGHT.getPrice());
+        assertEquals(BigDecimal.valueOf(8.49), ComboMeal.BREAKFAST.getPrice());
+        assertEquals(BigDecimal.valueOf(12.99), ComboMeal.GOURMET.getPrice());
+        assertEquals(BigDecimal.valueOf(10.49), ComboMeal.TEX_MEX.getPrice());
+        assertEquals(BigDecimal.valueOf(9.99), ComboMeal.SPICY.getPrice());
+        assertEquals(BigDecimal.valueOf(11.49), ComboMeal.INFERNO.getPrice());
+        assertEquals(BigDecimal.valueOf(11.99), ComboMeal.BBQ.getPrice());
+        assertEquals(BigDecimal.valueOf(12.99), ComboMeal.SEAFOOD.getPrice());
+        assertEquals(BigDecimal.valueOf(9.49), ComboMeal.FITNESS.getPrice());
+        assertEquals(BigDecimal.valueOf(13.99), ComboMeal.ULTIMATE.getPrice());
+        assertEquals(BigDecimal.valueOf(10.49), ComboMeal.HEALTHY.getPrice());
+        assertEquals(BigDecimal.valueOf(11.99), ComboMeal.ITALIAN.getPrice());
+        assertEquals(BigDecimal.valueOf(10.49), ComboMeal.SOUTHWESTERN.getPrice());
+        assertEquals(BigDecimal.valueOf(12.99), ComboMeal.TRUFFLE.getPrice());
+        assertEquals(BigDecimal.valueOf(11.99), ComboMeal.TROPICAL_TWIST.getPrice());
+        assertEquals(BigDecimal.valueOf(12.49), ComboMeal.MEDITERRANEAN.getPrice());
+        assertEquals(BigDecimal.valueOf(11.99), ComboMeal.FARMHOUSE.getPrice());
+        assertEquals(BigDecimal.valueOf(11.99), ComboMeal.BBQ_BONANZA.getPrice());
+        assertEquals(BigDecimal.valueOf(13.49), ComboMeal.SAVORY_SEAFOOD.getPrice());
     }
 
     @Test

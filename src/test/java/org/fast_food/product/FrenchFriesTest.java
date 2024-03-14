@@ -2,6 +2,7 @@ package org.fast_food.product;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
 import java.util.List;
 
 import static org.fast_food.product.FrenchFries.*;
@@ -20,11 +21,11 @@ class FrenchFriesTest {
 
     @Test
     void testGetPriceForDifferentFriesTypes() {
-        assertEquals(REGULAR.getPrice(), 2.99);
-        assertEquals(CURLY.getPrice(), 3.49);
-        assertEquals(SWEET_POTATO.getPrice(), 3.99);
-        assertEquals(LOADED_FRIES.getPrice(), 4.99);
-        assertEquals(GARLIC_PARMESAN.getPrice(), 4.49);
+        assertEquals(REGULAR.getPrice(), BigDecimal.valueOf(2.99));
+        assertEquals(CURLY.getPrice(), BigDecimal.valueOf(3.49));
+        assertEquals(SWEET_POTATO.getPrice(), BigDecimal.valueOf(3.99));
+        assertEquals(LOADED_FRIES.getPrice(), BigDecimal.valueOf(4.99));
+        assertEquals(GARLIC_PARMESAN.getPrice(), BigDecimal.valueOf(4.49));
     }
 
     @Test

@@ -2,6 +2,8 @@ package org.fast_food.product;
 
 import org.junit.jupiter.api.Test;
 
+import java.math.BigDecimal;
+
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class DessertTest {
@@ -24,18 +26,18 @@ public class DessertTest {
 
     @Test
     void testGetPriceForDifferentDesserts() {
-        assertEquals(3.99, Dessert.SWEET_CORNBREAD.getPrice());
-        assertEquals(5.49, Dessert.SWEET_NANAMI_BARS.getPrice());
-        assertEquals(2.99, Dessert.MANGO_SLICES.getPrice());
-        assertEquals(4.79, Dessert.SWEET_RED_DATE_CAKE.getPrice());
-        assertEquals(3.99, Dessert.SWEET_OIL_TEA_CAKE.getPrice());
-        assertEquals(6.99, Dessert.CHERRY_WHITE_CHOCOLATE.getPrice());
-        assertEquals(5.89, Dessert.CHOCOLATE_CHILI_CAKE.getPrice());
-        assertEquals(4.99, Dessert.CANTONESE_SPONGE_CAKE.getPrice());
-        assertEquals(7.29, Dessert.CARMEL_PEANUT_PANCAKES.getPrice());
-        assertEquals(6.49, Dessert.CHOCOLATE_CAKE.getPrice());
-        assertEquals(3.49, Dessert.KIWI_DESSERT.getPrice());
-        assertEquals(8.99, Dessert.MACAROONS.getPrice());
+        assertEquals(BigDecimal.valueOf(3.99), Dessert.SWEET_CORNBREAD.getPrice());
+        assertEquals(BigDecimal.valueOf(5.49), Dessert.SWEET_NANAMI_BARS.getPrice());
+        assertEquals(BigDecimal.valueOf(2.99), Dessert.MANGO_SLICES.getPrice());
+        assertEquals(BigDecimal.valueOf(4.79), Dessert.SWEET_RED_DATE_CAKE.getPrice());
+        assertEquals(BigDecimal.valueOf(3.99), Dessert.SWEET_OIL_TEA_CAKE.getPrice());
+        assertEquals(BigDecimal.valueOf(6.99), Dessert.CHERRY_WHITE_CHOCOLATE.getPrice());
+        assertEquals(BigDecimal.valueOf(5.89), Dessert.CHOCOLATE_CHILI_CAKE.getPrice());
+        assertEquals(BigDecimal.valueOf(4.99), Dessert.CANTONESE_SPONGE_CAKE.getPrice());
+        assertEquals(BigDecimal.valueOf(7.29), Dessert.CARMEL_PEANUT_PANCAKES.getPrice());
+        assertEquals(BigDecimal.valueOf(6.49), Dessert.CHOCOLATE_CAKE.getPrice());
+        assertEquals(BigDecimal.valueOf(3.49), Dessert.KIWI_DESSERT.getPrice());
+        assertEquals(BigDecimal.valueOf(8.99), Dessert.MACAROONS.getPrice());
     }
 
     @Test

@@ -1,26 +1,35 @@
 package org.fast_food.customer;
 
+import java.sql.Date;
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class Customer {
-    private final String id;
+    private UUID id;
     private String name;
     private String email;
     private String phoneNumber;
     private int points;
-    private final LocalDateTime creationDate;
+    private Date creationDate;
 
     public Customer(String name, String email, String phoneNumber) {
-        this.id = generateUniqueId();
+        this.id = UUID.randomUUID();
         this.name = name;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.points = 0;
-        this.creationDate = LocalDateTime.now();
+        this.creationDate = Date.valueOf(String.valueOf(LocalDate.now()));
     }
 
-    public String getId() {
+    public Customer(UUID id, String name, String email, String phoneNumber, int points, Date creationDate) {
+        this(name, email, phoneNumber);
+        this.id = id;
+        this.points = points;
+        this.creationDate = creationDate;
+    }
+
+    public UUID getId() {
         return id;
     }
 
@@ -58,7 +67,7 @@ public class Customer {
         return points;
     }
 
-    public LocalDateTime getCreationDate() {
+    public Date getCreationDate() {
         return creationDate;
     }
 
@@ -74,7 +83,14 @@ public class Customer {
         }
     }
 
-    private String generateUniqueId() {
-        return String.valueOf(UUID.randomUUID());
+    @Override
+    public String toString() {
+        return "{id=" + id +
+                ", name='" + name + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", points=" + points +
+                ", creationDate=" + creationDate +
+                '}';
     }
 }

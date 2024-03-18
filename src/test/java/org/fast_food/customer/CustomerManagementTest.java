@@ -2,6 +2,8 @@ package org.fast_food.customer;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.UUID;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerManagementTest {
@@ -22,7 +24,7 @@ class CustomerManagementTest {
 
     @Test
     void testGetCustomerFakeId() {
-        assertNull(CustomerManagement.getCustomer("23fa-23"));
+        assertNull(CustomerManagement.getCustomer(UUID.fromString("23fa-23")));
     }
 
     @Test

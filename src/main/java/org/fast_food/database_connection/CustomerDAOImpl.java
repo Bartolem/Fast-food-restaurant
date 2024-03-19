@@ -23,13 +23,13 @@ public class CustomerDAOImpl implements CustomerDAO {
             resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
+                UUID customerId = (UUID) resultSet.getObject("id");
                 String firstName = resultSet.getString("first_name");
                 String lastName = resultSet.getString("last_name");
                 String email = resultSet.getString("email");
                 String phoneNumber = resultSet.getString("phone_number");
                 int points = resultSet.getInt("points");
                 Date creationDate = resultSet.getDate("creation_date");
-                UUID customerId = (UUID) resultSet.getObject("id");
 
                 CustomerManagement.addCustomer(customerId, new Customer(customerId, firstName, lastName, email, phoneNumber, points, creationDate));
                 customer = CustomerManagement.getCustomer(customerId);
@@ -37,6 +37,7 @@ public class CustomerDAOImpl implements CustomerDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
         } finally {
+            assert resultSet != null;
             DatabaseConnector.closeResultSet(resultSet);
             DatabaseConnector.closePreparedStatement(preparedStatement);
             DatabaseConnector.closeConnection(connection);
@@ -57,13 +58,13 @@ public class CustomerDAOImpl implements CustomerDAO {
             resultSet = preparedStatement.executeQuery();
 
             while (resultSet.next()) {
+                UUID customerId = (UUID) resultSet.getObject("id");
                 String firstName = resultSet.getString("first_name");
                 String lastName = resultSet.getString("last_name");
                 String email = resultSet.getString("email");
                 String phoneNumber = resultSet.getString("phone_number");
                 int points = resultSet.getInt("points");
                 Date creationDate = resultSet.getDate("creation_date");
-                UUID customerId = (UUID) resultSet.getObject("id");
 
                 Customer customer = new Customer(customerId, firstName, lastName, email, phoneNumber, points, creationDate);
                 CustomerManagement.addCustomer(customerId, customer);
@@ -71,6 +72,7 @@ public class CustomerDAOImpl implements CustomerDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
         } finally {
+            assert resultSet != null;
             DatabaseConnector.closeResultSet(resultSet);
             DatabaseConnector.closePreparedStatement(preparedStatement);
             DatabaseConnector.closeConnection(connection);
@@ -106,6 +108,7 @@ public class CustomerDAOImpl implements CustomerDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
         } finally {
+            assert preparedStatement != null;
             DatabaseConnector.closePreparedStatement(preparedStatement);
             DatabaseConnector.closeConnection(connection);
         }
@@ -131,6 +134,7 @@ public class CustomerDAOImpl implements CustomerDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
         } finally {
+            assert preparedStatement != null;
             DatabaseConnector.closePreparedStatement(preparedStatement);
             DatabaseConnector.closeConnection(connection);
         }
@@ -155,6 +159,7 @@ public class CustomerDAOImpl implements CustomerDAO {
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
         } finally {
+            assert preparedStatement != null;
             DatabaseConnector.closePreparedStatement(preparedStatement);
             DatabaseConnector.closeConnection(connection);
         }

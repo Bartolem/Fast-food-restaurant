@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerTest {
-    Customer customer = new Customer("Michał", "mica3@gmial.com", "453 432 442");
+    Customer customer = new Customer("Michał", "Obraz", "mica3@gmial.com", "pas123", "453 432 442");
 
     @Test
     void testGetIdNotNull() {
@@ -13,21 +13,39 @@ class CustomerTest {
     }
 
     @Test
-    void testGetName() {
+    void testGetFirstName() {
         assertEquals(customer.getFirstName(), "Michał");
     }
 
     @Test
-    void testSetName() {
+    void testGetLastName() {
+        assertEquals(customer.getLastName(), "Obraz");
+    }
+
+    @Test
+    void testSetFirstName() {
         String newName = "Mariusz";
         customer.setFirstName(newName);
         assertEquals(customer.getFirstName(), newName);
     }
 
     @Test
-    void testSetNameWithEmptyString() {
+    void testSetLastName() {
+        String newName = "Godło";
+        customer.setLastName(newName);
+        assertEquals(customer.getLastName(), newName);
+    }
+
+    @Test
+    void testSetFirstNameWithEmptyString() {
         customer.setFirstName("");
         assertEquals(customer.getFirstName(), "Michał");
+    }
+
+    @Test
+    void testSetLastNameWithEmptyString() {
+        customer.setLastName("");
+        assertEquals(customer.getLastName(), "Michał");
     }
 
     @Test

@@ -10,59 +10,70 @@ import java.util.UUID;
 public class CustomerDAOImpl implements CustomerDAO {
 
     @Override
-    public Customer get(UUID id) {
+    public Customer get(UUID id) throws SQLException {
         Customer customer = null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
 
         try {
-            Connection connection = DatabaseConnector.connect();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM customers WHERE id = ?");
+            connection = DatabaseConnector.connect();
+            preparedStatement = connection.prepareStatement("SELECT id, first_name, last_name, email, phone_number, points, creation_date FROM customers WHERE id = ?");
             preparedStatement.setObject(1, id);
-            ResultSet resultSet = preparedStatement.executeQuery();
+            resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                String name = resultSet.getString("name");
+                String firstName = resultSet.getString("first_name");
+                String lastName = resultSet.getString("last_name");
                 String email = resultSet.getString("email");
                 String phoneNumber = resultSet.getString("phone_number");
                 int points = resultSet.getInt("points");
                 Date creationDate = resultSet.getDate("creation_date");
                 UUID customerId = (UUID) resultSet.getObject("id");
 
-                CustomerManagement.addCustomer(customerId, new Customer(customerId, name, email, phoneNumber, points, creationDate));
+                CustomerManagement.addCustomer(customerId, new Customer(customerId, firstName, lastName, email, phoneNumber, points, creationDate));
                 customer = CustomerManagement.getCustomer(customerId);
-
-                DatabaseConnector.closePreparedStatement(preparedStatement);
-                DatabaseConnector.closeConnection(connection);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
+        } finally {
+            DatabaseConnector.closeResultSet(resultSet);
+            DatabaseConnector.closePreparedStatement(preparedStatement);
+            DatabaseConnector.closeConnection(connection);
         }
 
         return customer;
     }
 
     @Override
-    public List<Customer> getAll() {
-        try {
-            Connection connection = DatabaseConnector.connect();
-            PreparedStatement preparedStatement = connection.prepareStatement("SELECT id, name, email, phone_number, points, creation_date FROM customers");
-            ResultSet resultSet = preparedStatement.executeQuery();
+    public List<Customer> getAll() throws SQLException {
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
 
-            if (resultSet.next()) {
-                String name = resultSet.getString("name");
+        try {
+            connection = DatabaseConnector.connect();
+            preparedStatement = connection.prepareStatement("SELECT id, first_name, last_name, email, phone_number, points, creation_date FROM customers");
+            resultSet = preparedStatement.executeQuery();
+
+            while (resultSet.next()) {
+                String firstName = resultSet.getString("first_name");
+                String lastName = resultSet.getString("last_name");
                 String email = resultSet.getString("email");
                 String phoneNumber = resultSet.getString("phone_number");
                 int points = resultSet.getInt("points");
                 Date creationDate = resultSet.getDate("creation_date");
                 UUID customerId = (UUID) resultSet.getObject("id");
 
-                Customer customer = new Customer(customerId, name, email, phoneNumber, points, creationDate);
+                Customer customer = new Customer(customerId, firstName, lastName, email, phoneNumber, points, creationDate);
                 CustomerManagement.addCustomer(customerId, customer);
-
-                DatabaseConnector.closePreparedStatement(preparedStatement);
-                DatabaseConnector.closeConnection(connection);
             }
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
+        } finally {
+            DatabaseConnector.closeResultSet(resultSet);
+            DatabaseConnector.closePreparedStatement(preparedStatement);
+            DatabaseConnector.closeConnection(connection);
         }
 
         return CustomerManagement.getCustomers().stream().toList();
@@ -74,14 +85,16 @@ public class CustomerDAOImpl implements CustomerDAO {
     }
 
     @Override
-    public int insert(Customer customer) {
+    public int insert(Customer customer) throws SQLException {
         int result;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
 
         try {
-            Connection connection = DatabaseConnector.connect();
-            PreparedStatement preparedStatement = connection.prepareStatement("INSERT INTO customers (id, name, email, phone_number, points, creation_date) VALUES (?, ?, ?, ?, ?, ?)");
+            connection = DatabaseConnector.connect();
+            preparedStatement = connection.prepareStatement("INSERT INTO customers (id, first_name, last_name, email, phone_number, points, creation_date) VALUES (?, ?, ?, ?, ?, ?)");
             preparedStatement.setObject(1, customer.getId());
-            preparedStatement.setString(2, customer.getName());
+            preparedStatement.setString(2, customer.getFirstName());
             preparedStatement.setString(3, customer.getEmail());
             preparedStatement.setString(4, customer.getPhoneNumber());
             preparedStatement.setInt(5, customer.getPoints());
@@ -90,55 +103,60 @@ public class CustomerDAOImpl implements CustomerDAO {
             CustomerManagement.addCustomer(customer.getId(), customer);
 
             result = preparedStatement.executeUpdate();
-
-            DatabaseConnector.closePreparedStatement(preparedStatement);
-            DatabaseConnector.closeConnection(connection);
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
+        } finally {
+            DatabaseConnector.closePreparedStatement(preparedStatement);
+            DatabaseConnector.closeConnection(connection);
         }
 
         return result;
     }
 
     @Override
-    public int update(Customer customer) {
+    public int update(Customer customer) throws SQLException {
         int result;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
 
         try {
-            Connection connection = DatabaseConnector.connect();
-            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE customers SET name = ?, email = ?, phone_number = ?, points = ?");
-            preparedStatement.setString(1, customer.getName());
+            connection = DatabaseConnector.connect();
+            preparedStatement = connection.prepareStatement("UPDATE customers SET first_name = ?, last_name = ?, email = ?, phone_number = ?, points = ?");
+            preparedStatement.setString(1, customer.getFirstName());
             preparedStatement.setString(2, customer.getEmail());
             preparedStatement.setString(3, customer.getPhoneNumber());
             preparedStatement.setInt(4, customer.getPoints());
 
             result = preparedStatement.executeUpdate();
-
-            DatabaseConnector.closePreparedStatement(preparedStatement);
-            DatabaseConnector.closeConnection(connection);
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
+        } finally {
+            DatabaseConnector.closePreparedStatement(preparedStatement);
+            DatabaseConnector.closeConnection(connection);
         }
+
         return result;
     }
 
     @Override
-    public int delete(Customer customer) {
+    public int delete(Customer customer) throws SQLException {
         int result;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
 
         try {
-            Connection connection = DatabaseConnector.connect();
-            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM customers WHERE id = ?");
+            connection = DatabaseConnector.connect();
+            preparedStatement = connection.prepareStatement("DELETE FROM customers WHERE id = ?");
             preparedStatement.setObject(1, customer.getId());
 
             CustomerManagement.removeCustomer(customer.getId());
 
             result = preparedStatement.executeUpdate();
-
-            DatabaseConnector.closePreparedStatement(preparedStatement);
-            DatabaseConnector.closeConnection(connection);
         } catch (SQLException e) {
             throw new RuntimeException(e.getMessage());
+        } finally {
+            DatabaseConnector.closePreparedStatement(preparedStatement);
+            DatabaseConnector.closeConnection(connection);
         }
 
         return result;

@@ -2,28 +2,29 @@ package org.fast_food.customer;
 
 import java.sql.Date;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.util.UUID;
 
 public class Customer {
     private UUID id;
-    private String name;
+    private String firstName;
+    private String lastName;
     private String email;
     private String phoneNumber;
     private int points;
     private Date creationDate;
 
-    public Customer(String name, String email, String phoneNumber) {
+    public Customer(String firstName, String lastName, String email, String phoneNumber) {
         this.id = UUID.randomUUID();
-        this.name = name;
+        this.firstName = firstName;
+        this.lastName = lastName;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.points = 0;
         this.creationDate = Date.valueOf(String.valueOf(LocalDate.now()));
     }
 
-    public Customer(UUID id, String name, String email, String phoneNumber, int points, Date creationDate) {
-        this(name, email, phoneNumber);
+    public Customer(UUID id, String firstName, String lastName, String email, String phoneNumber, int points, Date creationDate) {
+        this(firstName, lastName, email, phoneNumber);
         this.id = id;
         this.points = points;
         this.creationDate = creationDate;
@@ -33,13 +34,23 @@ public class Customer {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        if (!name.isEmpty()) {
-            this.name = name;
+    public void setFirstName(String firstName) {
+        if (!firstName.isEmpty()) {
+            this.firstName = firstName;
+        }
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        if (!lastName.isEmpty()) {
+            this.lastName = lastName;
         }
     }
 
@@ -86,11 +97,11 @@ public class Customer {
     @Override
     public String toString() {
         return "{id=" + id +
-                ", name='" + name + '\'' +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
                 ", points=" + points +
-                ", creationDate=" + creationDate +
-                '}';
+                ", creationDate=" + creationDate + "\n}";
     }
 }

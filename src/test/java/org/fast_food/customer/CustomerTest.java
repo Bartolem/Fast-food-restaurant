@@ -14,20 +14,20 @@ class CustomerTest {
 
     @Test
     void testGetName() {
-        assertEquals(customer.getName(), "Michał");
+        assertEquals(customer.getFirstName(), "Michał");
     }
 
     @Test
     void testSetName() {
         String newName = "Mariusz";
-        customer.setName(newName);
-        assertEquals(customer.getName(), newName);
+        customer.setFirstName(newName);
+        assertEquals(customer.getFirstName(), newName);
     }
 
     @Test
     void testSetNameWithEmptyString() {
-        customer.setName("");
-        assertEquals(customer.getName(), "Michał");
+        customer.setFirstName("");
+        assertEquals(customer.getFirstName(), "Michał");
     }
 
     @Test

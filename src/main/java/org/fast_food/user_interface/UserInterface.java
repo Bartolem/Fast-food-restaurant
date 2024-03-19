@@ -7,10 +7,10 @@ public class UserInterface {
     public static String TITLE = "Bartolo's Burger";
     public static ImageIcon ICON = new ImageIcon("src/main/resources/icon.png");
     public static Color BUTTON_COLOR = new Color(121, 186, 253);
-    private final StartPage startPage;
+    private final LoginPage startPage;
 
     public UserInterface() {
-        this.startPage = new StartPage();
+        this.startPage = new LoginPage();
         startPage.show();
     }
 

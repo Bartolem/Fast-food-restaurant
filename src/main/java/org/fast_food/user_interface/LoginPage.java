@@ -1,19 +1,23 @@
 package org.fast_food.user_interface;
 
 import net.miginfocom.swing.MigLayout;
+import org.fast_food.authentication.Authenticator;
+import org.fast_food.customer.Customer;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.sql.SQLException;
+import java.util.Arrays;
 
 import static org.fast_food.user_interface.UserInterface.*;
 
-public class StartPage {
+public class LoginPage {
     private JFrame frame;
     private OrderPage orderPage;
     private LaunchProgress launchProgress;
 
-    public StartPage() {
+    public LoginPage() {
         initialize();
     }
 
@@ -58,8 +62,34 @@ public class StartPage {
     private JPanel createBottomPanel() {
         JPanel panel = new JPanel(new MigLayout());
         JLabel loginLabel = createLabel("Login", "Verdana",Font.PLAIN, 28);
+        JTextField email = createTextField();
         JPasswordField passwordField = new JPasswordField(20);
+        JButton loginButton = createButton("Login", 14);
+        JButton registerButton = createButton("Register", 14);
         JButton continueButton = createButton("Continue without account", 14);
+
+        loginButton.addActionListener(e -> {
+            if (email.getText().isEmpty() && passwordField.getPassword().length == 0) {
+                JOptionPane.showMessageDialog(frame, "Email and Password fields cannot be empty", "Required Fields", JOptionPane.ERROR_MESSAGE);
+            } else if (email.getText().isEmpty()) {
+                JOptionPane.showMessageDialog(frame, "Email field cannot be empty", "Missing Email", JOptionPane.ERROR_MESSAGE);
+            } else if (passwordField.getPassword().length == 0) {
+                JOptionPane.showMessageDialog(frame, "Password field cannot be empty", "Missing Password", JOptionPane.ERROR_MESSAGE);
+            } else {
+                try {
+                    Customer customer = Authenticator.login(email.getText(), passwordField.getPassword());
+                    if (customer != null) {
+                        System.out.println("Successfully logged in!");
+                    } else {
+                        JOptionPane.showMessageDialog(frame, "Incorrect Email or Password", "Authentication Failed", JOptionPane.ERROR_MESSAGE);
+                    }
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex.getMessage());
+                }
+            }
+
+
+        });
 
         continueButton.addActionListener(e -> {
             if (e.getSource() == continueButton) {
@@ -93,11 +123,11 @@ public class StartPage {
 
         panel.add(loginLabel, "span, wrap, growx");
         panel.add(createLabel("E-mail", "Verdana",Font.PLAIN, 14), "pushx");
-        panel.add(createTextField(), "wrap, pushx, growx");
+        panel.add(email, "wrap, pushx, growx");
         panel.add(createLabel("Password", "Verdana",Font.PLAIN, 14), "pushx");
         panel.add(passwordField, "wrap, pushx, growx");
-        panel.add(createButton("Login", 14), "skip, split2, growx");
-        panel.add(createButton("Register", 14), "wrap, growx");
+        panel.add(loginButton, "skip, split2, growx");
+        panel.add(registerButton, "wrap, growx");
         panel.add(continueButton, "skip, growx");
         return panel;
     }

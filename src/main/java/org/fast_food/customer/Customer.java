@@ -9,22 +9,24 @@ public class Customer {
     private String firstName;
     private String lastName;
     private String email;
+    private String password;
     private String phoneNumber;
     private int points;
     private Date creationDate;
 
-    public Customer(String firstName, String lastName, String email, String phoneNumber) {
+    public Customer(String firstName, String lastName, String email, String password, String phoneNumber) {
         this.id = UUID.randomUUID();
         this.firstName = firstName;
         this.lastName = lastName;
+        this.password = password;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.points = 0;
         this.creationDate = Date.valueOf(String.valueOf(LocalDate.now()));
     }
 
-    public Customer(UUID id, String firstName, String lastName, String email, String phoneNumber, int points, Date creationDate) {
-        this(firstName, lastName, email, phoneNumber);
+    public Customer(UUID id, String firstName, String lastName, String password, String email, String phoneNumber, int points, Date creationDate) {
+        this(firstName, lastName, password, email, phoneNumber);
         this.id = id;
         this.points = points;
         this.creationDate = creationDate;
@@ -62,6 +64,14 @@ public class Customer {
         if (!email.isEmpty()) {
             this.email = email;
         }
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getPhoneNumber() {

@@ -6,7 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/database_connection/CustomerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/database_connection/CustomerDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/LoginPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,6 +84,7 @@
     &quot;JUnit.ComboMealTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.ComboMealTest.testGetNameForDifferentComboMeals.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CustomerCreationTest.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.CustomerManagementTest.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CustomerManagementTest.testAddCustomer.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CustomerManagementTest.testGetCustomer.executor&quot;: &quot;Run&quot;,
     &quot;JUnit.CustomerManagementTest.testGetCustomerFakeId.executor&quot;: &quot;Run&quot;,
@@ -151,7 +152,7 @@
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;253&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;create-database-connection&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;implement-login-functionality&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;temurin-21&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
@@ -192,20 +193,7 @@
       <recent name="org.fast_food.product.burger" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.org.fast_food.database_connection.Main">
-    <configuration name="BillReceiptPrinter" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.bill_receipt.BillReceiptPrinter" />
-      <module name="Fast-food-restaurant" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.fast_food.bill_receipt.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.fast_food.Main" />
       <module name="Fast-food-restaurant" />
@@ -232,17 +220,33 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ClassicBurgerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="CustomerManagementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.fast_food.product.burger.*" />
+          <option name="PATTERN" value="org.fast_food.customer.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.product.burger" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.product.burger.ClassicBurgerTest" />
+      <option name="PACKAGE_NAME" value="org.fast_food.customer" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.customer.CustomerManagementTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="CustomerManagementTest.testGetCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.customer.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.fast_food.customer" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.customer.CustomerManagementTest" />
+      <option name="METHOD_NAME" value="testGetCustomer" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -268,18 +272,18 @@
     </configuration>
     <list>
       <item itemvalue="Application.org.fast_food.database_connection.Main" />
-      <item itemvalue="Application.BillReceiptPrinter" />
       <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.CustomerManagementTest" />
+      <item itemvalue="JUnit.CustomerManagementTest.testGetCustomer" />
       <item itemvalue="JUnit.java in Fast-food-restaurant" />
-      <item itemvalue="JUnit.ClassicBurgerTest" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.org.fast_food.database_connection.Main" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="Application.org.fast_food.database_connection.Main" />
+        <item itemvalue="JUnit.CustomerManagementTest" />
         <item itemvalue="JUnit.java in Fast-food-restaurant" />
-        <item itemvalue="Application.BillReceiptPrinter" />
-        <item itemvalue="JUnit.ClassicBurgerTest" />
+        <item itemvalue="JUnit.CustomerManagementTest.testGetCustomer" />
       </list>
     </recent_temporary>
   </component>

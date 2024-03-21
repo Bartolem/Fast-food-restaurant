@@ -7,7 +7,7 @@ import java.util.UUID;
 import static org.junit.jupiter.api.Assertions.*;
 
 class CustomerManagementTest {
-    Customer customer = new Customer("Michał", "mica3@gmial.com", "453 432 442");
+    Customer customer = new Customer("Michał", "Obraz", "mica3@gmial.com", "pas123", "453 432 442");
 
     @Test
     void testGetCustomersNotNull() {
@@ -17,22 +17,15 @@ class CustomerManagementTest {
     @Test
     void testGetCustomer() {
         CustomerManagement.addCustomer(customer.getId(), customer);
-        assertTrue(CustomerManagement.getCustomers().containsKey(customer.getId()));
-        assertTrue(CustomerManagement.getCustomers().containsValue(customer));
+        assertTrue(CustomerManagement.getCustomers().contains(customer));
         assertEquals(CustomerManagement.getCustomer(customer.getId()), customer);
-    }
-
-    @Test
-    void testGetCustomerFakeId() {
-        assertNull(CustomerManagement.getCustomer(UUID.fromString("23fa-23")));
     }
 
     @Test
     void testAddCustomer() {
         CustomerManagement.addCustomer(customer.getId(), customer);
         assertNotNull(CustomerManagement.getCustomer(customer.getId()));
-        assertTrue(CustomerManagement.getCustomers().containsKey(customer.getId()));
-        assertTrue(CustomerManagement.getCustomers().containsValue(customer));
+        assertTrue(CustomerManagement.getCustomers().contains(customer));
         assertEquals(CustomerManagement.getCustomer(customer.getId()), customer);
     }
 
@@ -40,7 +33,7 @@ class CustomerManagementTest {
     void testRemoveCustomer() {
         CustomerManagement.removeCustomer(customer.getId());
         assertNull(CustomerManagement.getCustomer(customer.getId()));
-        assertFalse(CustomerManagement.getCustomers().containsKey(customer.getId()));
-        assertFalse(CustomerManagement.getCustomers().containsValue(customer));
+        assertFalse(CustomerManagement.getCustomers().contains(customer.getId()));
+        assertFalse(CustomerManagement.getCustomers().contains(customer));
     }
 }

@@ -19,7 +19,7 @@ public class LaunchProgress {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.getContentPane().setBackground(OrderPage.PRIMARY_BACKGROUND_COLOR);
-        frame.add(new StartPage().createUpperPanel(), BorderLayout.CENTER);
+        frame.add(new LoginPage().createUpperPanel(), BorderLayout.CENTER);
         frame.add(progressBar, BorderLayout.SOUTH);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();

@@ -8,7 +8,6 @@ import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.sql.SQLException;
-import java.util.Arrays;
 
 import static org.fast_food.user_interface.UserInterface.*;
 
@@ -70,25 +69,23 @@ public class LoginPage {
 
         loginButton.addActionListener(e -> {
             if (email.getText().isEmpty() && passwordField.getPassword().length == 0) {
-                JOptionPane.showMessageDialog(frame, "Email and Password fields cannot be empty", "Required Fields", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(frame, "Email and Password fields cannot be empty!", "Required Fields", JOptionPane.ERROR_MESSAGE);
             } else if (email.getText().isEmpty()) {
-                JOptionPane.showMessageDialog(frame, "Email field cannot be empty", "Missing Email", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(frame, "Email field cannot be empty!", "Missing Email", JOptionPane.ERROR_MESSAGE);
             } else if (passwordField.getPassword().length == 0) {
-                JOptionPane.showMessageDialog(frame, "Password field cannot be empty", "Missing Password", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(frame, "Password field cannot be empty!", "Missing Password", JOptionPane.ERROR_MESSAGE);
             } else {
                 try {
                     Customer customer = Authenticator.login(email.getText(), passwordField.getPassword());
                     if (customer != null) {
-                        System.out.println("Successfully logged in!");
+                        JOptionPane.showMessageDialog(frame, "Successfully logged in!");
                     } else {
-                        JOptionPane.showMessageDialog(frame, "Incorrect Email or Password", "Authentication Failed", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(frame, "Incorrect Email or Password!", "Authentication Failed", JOptionPane.ERROR_MESSAGE);
                     }
                 } catch (SQLException ex) {
                     throw new RuntimeException(ex.getMessage());
                 }
             }
-
-
         });
 
         continueButton.addActionListener(e -> {

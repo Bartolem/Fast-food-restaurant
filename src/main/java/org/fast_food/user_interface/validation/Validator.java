@@ -1,6 +1,10 @@
 package org.fast_food.user_interface.validation;
 
+import org.fast_food.customer.Customer;
+import org.fast_food.database_connection.CustomerDAOImpl;
+
 import javax.swing.*;
+import java.sql.SQLException;
 import java.util.Arrays;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -16,25 +20,28 @@ public class Validator {
 
     public static boolean validatePassword(JPasswordField password, JPasswordField repeatedPassword) {
         if (password.getPassword().length == 0) {
-            System.out.println("Password field cannot be empty!");
+            JOptionPane.showMessageDialog(null, "Password field cannot be empty!", "Empty password field", JOptionPane.ERROR_MESSAGE);
             return false;
         } else if (repeatedPassword.getPassword().length == 0) {
-            System.out.println("Repeated password field cannot be empty!");
+            JOptionPane.showMessageDialog(null, "Repeated password field cannot be empty!", "Empty password field", JOptionPane.ERROR_MESSAGE);
             return false;
         } else if (Arrays.compare(password.getPassword(), repeatedPassword.getPassword()) != 0) {
-            System.out.println("Password and repeated password should be the same!");
+            JOptionPane.showMessageDialog(null, "Password and repeated password must be the same!", "Empty password field", JOptionPane.ERROR_MESSAGE);
             return false;
         }
         return true;
     }
 
-    public static boolean validateEmail(JTextField emailField) {
+    public static boolean validateEmail(JTextField emailField) throws SQLException {
         if (validateField(emailField, "E-mail")) {
             // Regular Expression by RFC 5322 for Email Validation
             Pattern pattern = Pattern.compile("^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
             Matcher matcher = pattern.matcher(emailField.getText());
             if (!matcher.matches()) {
                 JOptionPane.showMessageDialog(null, "Email is in the wrong format!", "Invalid email format", JOptionPane.ERROR_MESSAGE);
+                return false;
+            } else if (new CustomerDAOImpl().getCustomerByEmail(emailField.getText()) != null) {
+                JOptionPane.showMessageDialog(null, "Email is already used by some user! Provide a different one.", "Email already used", JOptionPane.ERROR_MESSAGE);
                 return false;
             }
             return true;

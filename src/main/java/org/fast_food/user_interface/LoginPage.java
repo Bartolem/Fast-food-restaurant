@@ -16,6 +16,7 @@ public class LoginPage {
     private OrderPage orderPage;
     private LaunchProgress launchProgress;
     private RegistrationForm registrationForm;
+    private Customer customer;
 
     public LoginPage() {
         initialize();
@@ -77,9 +78,10 @@ public class LoginPage {
                 JOptionPane.showMessageDialog(frame, "Password field cannot be empty!", "Missing Password", JOptionPane.ERROR_MESSAGE);
             } else {
                 try {
-                    Customer customer = Authenticator.login(email.getText(), passwordField.getPassword());
+                    this.customer = Authenticator.login(email.getText(), passwordField.getPassword());
                     if (customer != null) {
                         JOptionPane.showMessageDialog(frame, "Successfully logged in!");
+                        launchApplication(customer);
                     } else {
                         JOptionPane.showMessageDialog(frame, "Incorrect Email or Password!", "Authentication Failed", JOptionPane.ERROR_MESSAGE);
                     }
@@ -95,28 +97,7 @@ public class LoginPage {
         });
 
         continueButton.addActionListener(e -> {
-            if (e.getSource() == continueButton) {
-                SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
-                    @Override
-                    protected Void doInBackground() throws Exception {
-                        // Perform time-consuming task here
-                        launchProgress = new LaunchProgress();
-                        launchProgress.show();
-                        frame.dispose();
-                        orderPage = new OrderPage();
-                        return null;
-                    }
-
-                    @Override
-                    protected void done() {
-                        // Open the OrderPage after the task is complete
-                        launchProgress.close();
-                        orderPage.show();
-                        JOptionPane.showMessageDialog(frame,"Welcome to Bartolo's Burger!");
-                    }
-                };
-                worker.execute();
-            }
+            launchApplication(customer);
         });
 
         panel.setBackground(OrderPage.SECONDARY_BACKGROUND_COLOR);
@@ -133,5 +114,32 @@ public class LoginPage {
         panel.add(registerButton, "wrap, growx");
         panel.add(continueButton, "skip, growx");
         return panel;
+    }
+
+    private void launchApplication(Customer customer) {
+        SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
+            @Override
+            protected Void doInBackground() throws Exception {
+                // Perform time-consuming task here
+                launchProgress = new LaunchProgress();
+                launchProgress.show();
+                frame.dispose();
+                orderPage = new OrderPage(customer);
+                return null;
+            }
+
+            @Override
+            protected void done() {
+                // Open the OrderPage after the task is complete
+                launchProgress.close();
+                orderPage.show();
+                if (customer == null) {
+                    JOptionPane.showMessageDialog(frame,"Welcome to Bartolo's Burger!");
+                } else {
+                    JOptionPane.showMessageDialog(frame,"Welcome %s!".formatted(customer.getFirstName()), "Welcome to Bartolo's Burger", JOptionPane.PLAIN_MESSAGE);
+                }
+            }
+        };
+        worker.execute();
     }
 }

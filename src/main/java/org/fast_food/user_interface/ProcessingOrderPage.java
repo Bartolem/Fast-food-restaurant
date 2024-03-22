@@ -63,8 +63,8 @@ public class ProcessingOrderPage {
                 progressBar.setValue(100);
                 OrderManagement.completeOrder(order);
 //                OrderManagement.removeOrder(order);
-                JOptionPane.showMessageDialog(frame, "Your order has been successfully completed.");
                 frame.setVisible(false);
+                JOptionPane.showMessageDialog(frame, "Your order has been successfully completed.");
                 CompletedOrderPage completedOrderPage = new CompletedOrderPage(order);
                 completedOrderPage.show();
             }

@@ -164,7 +164,7 @@ public class CustomerDAOImpl implements CustomerDAO {
 
         try {
             connection = DatabaseConnector.connect();
-            preparedStatement = connection.prepareStatement("INSERT INTO customers (id, first_name, last_name, password, email, phone_number, points, creation_date) VALUES (?, ?, ?, ?, ?, ?)");
+            preparedStatement = connection.prepareStatement("INSERT INTO customers (id, first_name, last_name, email, password, phone_number, points, creation_date) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
             preparedStatement.setObject(1, customer.getId());
             preparedStatement.setString(2, customer.getFirstName());
             preparedStatement.setString(3, customer.getLastName());

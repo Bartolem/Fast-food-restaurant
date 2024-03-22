@@ -6,7 +6,9 @@
   <component name="ChangeListManager">
     <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/database_connection/CustomerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/database_connection/CustomerDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/RegistrationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/RegistrationForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +154,7 @@
     &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;253&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
     &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;implement-login-functionality&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;implement-register-functionality&quot;,
     &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;temurin-21&quot;,
     &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,

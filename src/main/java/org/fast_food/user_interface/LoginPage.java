@@ -15,6 +15,7 @@ public class LoginPage {
     private JFrame frame;
     private OrderPage orderPage;
     private LaunchProgress launchProgress;
+    private RegistrationForm registrationForm;
 
     public LoginPage() {
         initialize();
@@ -86,6 +87,11 @@ public class LoginPage {
                     throw new RuntimeException(ex.getMessage());
                 }
             }
+        });
+
+        registerButton.addActionListener(e -> {
+            this.registrationForm = new RegistrationForm();
+            registrationForm.show();
         });
 
         continueButton.addActionListener(e -> {

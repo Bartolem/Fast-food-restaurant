@@ -41,7 +41,7 @@ public class Validator {
                 JOptionPane.showMessageDialog(null, "Email is in the wrong format!", "Invalid email format", JOptionPane.ERROR_MESSAGE);
                 return false;
             } else if (new CustomerDAOImpl().getCustomerByEmail(emailField.getText()) != null) {
-                JOptionPane.showMessageDialog(null, "Email is already used by some user! Provide a different one.", "Email already used", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "this email address is already used by some user! Provide a different one.", "Email already used", JOptionPane.ERROR_MESSAGE);
                 return false;
             }
             return true;
@@ -49,10 +49,13 @@ public class Validator {
         return false;
     }
 
-    public static boolean validatePhoneNumber(JTextField phoneNumberField) {
+    public static boolean validatePhoneNumber(JTextField phoneNumberField) throws SQLException {
         if (validateField(phoneNumberField, "Phone number")) {
             if (phoneNumberField.getText().length() < 9) {
                 JOptionPane.showMessageDialog(null, "Phone number should include the minimum of 9 digits!", "Invalid phone number format", JOptionPane.ERROR_MESSAGE);
+                return false;
+            } else if (new CustomerDAOImpl().getCustomerByPhoneNumber(phoneNumberField.getText()) != null) {
+                JOptionPane.showMessageDialog(null, "This phone number is already used by some user! Provide a different one.", "Phone number already used", JOptionPane.ERROR_MESSAGE);
                 return false;
             }
             return true;

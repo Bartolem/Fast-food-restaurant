@@ -13,6 +13,8 @@ import org.fast_food.product.Type;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.File;
 import java.text.NumberFormat;
 import java.util.*;
@@ -63,6 +65,22 @@ public class OrderPage {
         frame.add(menuPanel, BorderLayout.CENTER);
         frame.add(createOrderListPanel(), BorderLayout.EAST);
         frame.setLocationByPlatform(true);
+
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                int confirmed = JOptionPane.showConfirmDialog(frame,
+                        "Are you sure you want to exit the program?",
+                        "Exit Program Message Box",
+                        JOptionPane.YES_NO_OPTION);
+
+                if (confirmed == JOptionPane.YES_OPTION) {
+                    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                } else {
+                    frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+                }
+            }
+        });
     }
 
     private JPanel createMenuPanel() {
@@ -212,9 +230,11 @@ public class OrderPage {
             JButton discountButton = createButton("Check for discount", 16);
             JButton logoutButton = createButton("Logout", 16);
 
+            menageButton.addActionListener(e -> new CustomerPanel(customer).show());
+
             logoutButton.addActionListener(e -> {
                 int confirmed = JOptionPane.showConfirmDialog(frame,
-                        "Are you sure tou want to logout from your account?",
+                        "Are you sure you want to logout from your account?",
                         "Logout Message Box",
                         JOptionPane.YES_NO_OPTION);
 

@@ -86,6 +86,43 @@ public class CustomerDAOImpl implements CustomerDAO {
         return customer;
     }
 
+    public Customer getCustomerByPhoneNumber(String phoneNumber) throws SQLException {
+        Customer customer = null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = DatabaseConnector.connect();
+            preparedStatement = connection.prepareStatement("SELECT id, first_name, last_name, email, password, phone_number, points, creation_date FROM customers WHERE phone_number = ?");
+            preparedStatement.setString(1, phoneNumber);
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                UUID customerId = (UUID) resultSet.getObject("id");
+                String firstName = resultSet.getString("first_name");
+                String lastName = resultSet.getString("last_name");
+                String customerEmail = resultSet.getString("email");
+                String password = resultSet.getString("password");
+                String customerPhoneNumber = resultSet.getString("phone_number");
+                int points = resultSet.getInt("points");
+                Date creationDate = resultSet.getDate("creation_date");
+
+                CustomerManagement.addCustomer(customerId, new Customer(customerId, firstName, lastName, customerEmail, password, customerPhoneNumber, points, creationDate));
+                customer = CustomerManagement.getCustomer(customerId);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e.getMessage());
+        } finally {
+            assert resultSet != null;
+            DatabaseConnector.closeResultSet(resultSet);
+            DatabaseConnector.closePreparedStatement(preparedStatement);
+            DatabaseConnector.closeConnection(connection);
+        }
+
+        return customer;
+    }
+
     @Override
     public String getCustomerPassword(Customer customer) throws SQLException {
         String password = null;

@@ -233,13 +233,14 @@ public class CustomerDAOImpl implements CustomerDAO {
 
         try {
             connection = DatabaseConnector.connect();
-            preparedStatement = connection.prepareStatement("UPDATE customers SET first_name = ?, last_name = ?, email = ?, password = ?, phone_number = ?, points = ?");
+            preparedStatement = connection.prepareStatement("UPDATE customers SET first_name = ?, last_name = ?, email = ?, password = ?, phone_number = ?, points = ? WHERE id = ?");
             preparedStatement.setString(1, customer.getFirstName());
             preparedStatement.setString(2, customer.getLastName());
             preparedStatement.setString(3, customer.getEmail());
             preparedStatement.setString(4, customer.getPassword());
             preparedStatement.setString(5, customer.getPhoneNumber());
             preparedStatement.setInt(6, customer.getPoints());
+            preparedStatement.setObject(7, customer.getId());
 
             result = preparedStatement.executeUpdate();
         } catch (SQLException e) {

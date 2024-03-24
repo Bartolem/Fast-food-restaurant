@@ -2,8 +2,11 @@ package org.fast_food.user_interface;
 
 import org.fast_food.customer.Customer;
 import org.fast_food.database_connection.CustomerDAOImpl;
+import org.fast_food.user_interface.validation.NameFilter;
+import org.fast_food.user_interface.validation.Validator;
 
 import javax.swing.*;
+import javax.swing.text.AbstractDocument;
 import java.awt.*;
 import java.sql.SQLException;
 
@@ -41,25 +44,7 @@ public class CustomerPanel {
         frame.add(changeOwnerButton, gridBagConstraints);
 
         changeOwnerButton.addActionListener(e -> {
-            String newFirstName = JOptionPane.showInputDialog("First name: ");
-            String newLastName = JOptionPane.showInputDialog("Last name: ");
-
-            if (newFirstName.equals(customer.getFirstName()) && newLastName.equals(customer.getLastName())) {
-                JOptionPane.showMessageDialog(frame, "No change has been made, because the provided values are the same as the current one.");
-            } else if (newFirstName.isEmpty() || newLastName.isEmpty()) {
-                JOptionPane.showMessageDialog(frame, "No change has been made, because the provided values cannot be empty.");
-            } else {
-                customer.setFirstName(newFirstName);
-                customer.setLastName(newLastName);
-
-                try {
-                    new CustomerDAOImpl().update(customer);
-                    JOptionPane.showMessageDialog(frame, "Owner credentials successfully changed.");
-                    ownerLabel.setText("Owner: %s %s".formatted(customer.getFirstName(), customer.getLastName()));
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex);
-                }
-            }
+            createChangeOwnerDialog();
         });
 
         gridBagConstraints.gridx = 0;
@@ -69,6 +54,14 @@ public class CustomerPanel {
         gridBagConstraints.gridx = 1;
         JButton changeEmailButton = UserInterface.createButton("Change email", 14);
         frame.add(changeEmailButton, gridBagConstraints);
+
+        changeEmailButton.addActionListener(e -> {
+            try {
+                createChangeEmailDialog();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 20;
@@ -89,6 +82,87 @@ public class CustomerPanel {
 
         frame.pack();
         frame.setLocationByPlatform(true);
+    }
+
+    private void createChangeEmailDialog() throws SQLException {
+        JDialog dialog = new JDialog(frame, "Change email", true);
+        JTextField textField = new JTextField(20);
+        JButton submitButton = UserInterface.createButton("Submit", 14);
+
+        submitButton.addActionListener(e -> {
+            try {
+                if (Validator.validateEmail(textField)) {
+                    customer.setEmail(textField.getText());
+                    new CustomerDAOImpl().update(customer);
+                    JOptionPane.showMessageDialog(frame, "The email was successfully changed.");
+                    dialog.setVisible(false);
+                }
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        dialog.setLayout(new GridBagLayout());
+        dialog.setIconImage(UserInterface.ICON.getImage());
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        // Set border for item containers
+        gridBagConstraints.insets = new Insets(10,10,10,10);
+        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
+
+        dialog.setResizable(false);
+        dialog.add(UserInterface.createLabel("E-mail", "Verdana", Font.PLAIN, 14), gridBagConstraints);
+        dialog.add(textField, gridBagConstraints);
+
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 5;
+        dialog.add(submitButton, gridBagConstraints);
+        dialog.pack();
+        dialog.setVisible(true);
+    }
+
+    private void createChangeOwnerDialog() {
+        JDialog dialog = new JDialog(frame, "Change owner", true);
+        JTextField firstNameField = new JTextField(20);
+        JTextField lastNameField = new JTextField(20);
+        JButton submitButton = UserInterface.createButton("Submit", 14);
+
+        ((AbstractDocument) firstNameField.getDocument()).setDocumentFilter(new NameFilter(30));
+        ((AbstractDocument) lastNameField.getDocument()).setDocumentFilter(new NameFilter(30));
+
+        submitButton.addActionListener(e -> {
+            try {
+                if (Validator.validateField(firstNameField, "First name") && Validator.validateField(lastNameField, "Last name")) {
+                    customer.setFirstName(firstNameField.getText());
+                    customer.setLastName(lastNameField.getText());
+                    new CustomerDAOImpl().update(customer);
+                    JOptionPane.showMessageDialog(frame, "The owner credentials was successfully changed.");
+                    dialog.setVisible(false);
+                }
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        dialog.setLayout(new GridBagLayout());
+        dialog.setIconImage(UserInterface.ICON.getImage());
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        // Set border for item containers
+        gridBagConstraints.insets = new Insets(10,10,10,10);
+        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
+
+        dialog.setResizable(false);
+        dialog.add(UserInterface.createLabel("First name", "Verdana", Font.PLAIN, 14), gridBagConstraints);
+        dialog.add(firstNameField, gridBagConstraints);
+
+        gridBagConstraints.gridy = 5;
+        dialog.add(UserInterface.createLabel("Last name", "Verdana", Font.PLAIN, 14), gridBagConstraints);
+        dialog.add(lastNameField, gridBagConstraints);
+
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 10;
+        dialog.add(submitButton, gridBagConstraints);
+        dialog.pack();
+        dialog.setVisible(true);
     }
 
     public void show() {

@@ -142,11 +142,15 @@ public class CustomerPanel {
         submitButton.addActionListener(e -> {
             try {
                 if (Validator.validatePhoneNumber(phoneNumber)) {
-                    customer.setPhoneNumber(phoneNumber.getText());
-                    new CustomerDAOImpl().update(customer);
-                    JOptionPane.showMessageDialog(frame, "The phone number was successfully changed.");
-                    label.setText("Phone number: %s".formatted(customer.getPhoneNumber()));
-                    dialog.setVisible(false);
+                    if (phoneNumber.getText().equals(customer.getPhoneNumber())) {
+                        JOptionPane.showMessageDialog(frame, "No changes have been made, because provided phone number is same as current one.");
+                    } else {
+                        customer.setPhoneNumber(phoneNumber.getText());
+                        new CustomerDAOImpl().update(customer);
+                        JOptionPane.showMessageDialog(frame, "The phone number was successfully changed.");
+                        label.setText("Phone number: %s".formatted(customer.getPhoneNumber()));
+                        dialog.setVisible(false);
+                    }
                 }
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
@@ -180,11 +184,15 @@ public class CustomerPanel {
         submitButton.addActionListener(e -> {
             try {
                 if (Validator.validateEmail(textField)) {
-                    customer.setEmail(textField.getText());
-                    new CustomerDAOImpl().update(customer);
-                    JOptionPane.showMessageDialog(frame, "The email was successfully changed.");
-                    label.setText("E-mail: %s".formatted(customer.getEmail()));
-                    dialog.setVisible(false);
+                    if (textField.getText().equals(customer.getEmail())) {
+                        JOptionPane.showMessageDialog(frame, "No changes have been made, because provided email is same as current one.");
+                    } else {
+                        customer.setEmail(textField.getText());
+                        new CustomerDAOImpl().update(customer);
+                        JOptionPane.showMessageDialog(frame, "The email was successfully changed.");
+                        label.setText("E-mail: %s".formatted(customer.getEmail()));
+                        dialog.setVisible(false);
+                    }
                 }
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
@@ -225,12 +233,16 @@ public class CustomerPanel {
                     firstNameField.setText(firstNameField.getText().substring(0, 1).toUpperCase() + firstNameField.getText().substring(1));
                     lastNameField.setText(lastNameField.getText().substring(0, 1).toUpperCase() + lastNameField.getText().substring(1));
 
-                    customer.setFirstName(firstNameField.getText());
-                    customer.setLastName(lastNameField.getText());
-                    new CustomerDAOImpl().update(customer);
-                    JOptionPane.showMessageDialog(frame, "The owner credentials was successfully changed.");
-                    label.setText("Owner: %s %s".formatted(customer.getFirstName(), customer.getLastName()));
-                    dialog.setVisible(false);
+                    if (customer.getFirstName().equals(firstNameField.getText()) && customer.getLastName().equals(lastNameField.getText())) {
+                        JOptionPane.showMessageDialog(frame, "No changes have been made, because provided values are same as current ones.");
+                    } else {
+                        customer.setFirstName(firstNameField.getText());
+                        customer.setLastName(lastNameField.getText());
+                        new CustomerDAOImpl().update(customer);
+                        JOptionPane.showMessageDialog(frame, "The owner credentials was successfully changed.");
+                        label.setText("Owner: %s %s".formatted(customer.getFirstName(), customer.getLastName()));
+                        dialog.setVisible(false);
+                    }
                 }
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);

@@ -3,6 +3,7 @@ package org.fast_food.user_interface;
 import org.fast_food.customer.Customer;
 import org.fast_food.database_connection.CustomerDAOImpl;
 import org.fast_food.user_interface.validation.NameFilter;
+import org.fast_food.user_interface.validation.TextFieldFilter;
 import org.fast_food.user_interface.validation.Validator;
 
 import javax.swing.*;
@@ -43,9 +44,7 @@ public class CustomerPanel {
         JButton changeOwnerButton = UserInterface.createButton("Change owner", 14);
         frame.add(changeOwnerButton, gridBagConstraints);
 
-        changeOwnerButton.addActionListener(e -> {
-            createChangeOwnerDialog();
-        });
+        changeOwnerButton.addActionListener(e -> createChangeOwnerDialog());
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 15;
@@ -71,6 +70,8 @@ public class CustomerPanel {
         JButton changePhoneNumberButton = UserInterface.createButton("Change phone number", 14);
         frame.add(changePhoneNumberButton, gridBagConstraints);
 
+        changePhoneNumberButton.addActionListener(e -> createChangePhoneNumberDialog());
+
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 25;
         JButton orderHistoryButton = UserInterface.createButton("View order history", 14);
@@ -82,6 +83,44 @@ public class CustomerPanel {
 
         frame.pack();
         frame.setLocationByPlatform(true);
+    }
+
+    private void createChangePhoneNumberDialog() {
+        JDialog dialog = new JDialog(frame, "Change phone number", true);
+        JTextField phoneNumber = new JTextField(20);
+        JButton submitButton = UserInterface.createButton("Submit", 14);
+        ((AbstractDocument) phoneNumber.getDocument()).setDocumentFilter(new TextFieldFilter(10, true));
+
+        submitButton.addActionListener(e -> {
+            try {
+                if (Validator.validatePhoneNumber(phoneNumber)) {
+                    customer.setPhoneNumber(phoneNumber.getText());
+                    new CustomerDAOImpl().update(customer);
+                    JOptionPane.showMessageDialog(frame, "The phone number was successfully changed.");
+                    dialog.setVisible(false);
+                }
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        dialog.setLayout(new GridBagLayout());
+        dialog.setIconImage(UserInterface.ICON.getImage());
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        // Set border for item containers
+        gridBagConstraints.insets = new Insets(10,10,10,10);
+        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
+
+        dialog.setResizable(false);
+        dialog.add(UserInterface.createLabel("Phone number", "Verdana", Font.PLAIN, 14), gridBagConstraints);
+        dialog.add(phoneNumber, gridBagConstraints);
+
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 5;
+        dialog.setLocationRelativeTo(frame);
+        dialog.add(submitButton, gridBagConstraints);
+        dialog.pack();
+        dialog.setVisible(true);
     }
 
     private void createChangeEmailDialog() throws SQLException {
@@ -115,6 +154,7 @@ public class CustomerPanel {
 
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 5;
+        dialog.setLocationRelativeTo(frame);
         dialog.add(submitButton, gridBagConstraints);
         dialog.pack();
         dialog.setVisible(true);
@@ -160,6 +200,7 @@ public class CustomerPanel {
 
         gridBagConstraints.gridx = 5;
         gridBagConstraints.gridy = 10;
+        dialog.setLocationRelativeTo(frame);
         dialog.add(submitButton, gridBagConstraints);
         dialog.pack();
         dialog.setVisible(true);

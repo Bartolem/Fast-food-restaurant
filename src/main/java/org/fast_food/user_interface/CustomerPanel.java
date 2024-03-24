@@ -31,9 +31,11 @@ public class CustomerPanel {
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
 
         frame.setLocationRelativeTo(null);
-        frame.getContentPane().setBackground(OrderPage.PRIMARY_BACKGROUND_COLOR);
+        frame.getContentPane().setBackground(OrderPage.SECONDARY_BACKGROUND_COLOR);
         frame.setResizable(false);
-        frame.add(UserInterface.createLabel("Creation date: %s".formatted(customer.getCreationDate()), "Verdana", Font.PLAIN, 14), gridBagConstraints);
+
+        JLabel pointsLabel = UserInterface.createLabel("Creation date: %s".formatted(customer.getCreationDate()), "Verdana", Font.PLAIN, 14);
+        frame.add(pointsLabel, gridBagConstraints);
         frame.add(UserInterface.createLabel("Points: %s".formatted(customer.getPoints()), "Verdana", Font.PLAIN, 14), gridBagConstraints);
 
         gridBagConstraints.gridy = 10;
@@ -44,11 +46,12 @@ public class CustomerPanel {
         JButton changeOwnerButton = UserInterface.createButton("Change owner", 14);
         frame.add(changeOwnerButton, gridBagConstraints);
 
-        changeOwnerButton.addActionListener(e -> createChangeOwnerDialog());
+        changeOwnerButton.addActionListener(e -> createChangeOwnerDialog(ownerLabel));
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 15;
-        frame.add(UserInterface.createLabel("E-mail: %s".formatted(customer.getEmail()), "Verdana", Font.PLAIN, 14), gridBagConstraints);
+        JLabel emailLabel = UserInterface.createLabel("E-mail: %s".formatted(customer.getEmail()), "Verdana", Font.PLAIN, 14);
+        frame.add(emailLabel, gridBagConstraints);
 
         gridBagConstraints.gridx = 1;
         JButton changeEmailButton = UserInterface.createButton("Change email", 14);
@@ -56,7 +59,7 @@ public class CustomerPanel {
 
         changeEmailButton.addActionListener(e -> {
             try {
-                createChangeEmailDialog();
+                createChangeEmailDialog(emailLabel);
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
             }
@@ -64,13 +67,14 @@ public class CustomerPanel {
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 20;
-        frame.add(UserInterface.createLabel("Phone number: %s".formatted(customer.getPhoneNumber()), "Verdana", Font.PLAIN, 14), gridBagConstraints);
+        JLabel phoneLabel = UserInterface.createLabel("Phone number: %s".formatted(customer.getPhoneNumber()), "Verdana", Font.PLAIN, 14);
+        frame.add(phoneLabel, gridBagConstraints);
 
         gridBagConstraints.gridx = 1;
         JButton changePhoneNumberButton = UserInterface.createButton("Change phone number", 14);
         frame.add(changePhoneNumberButton, gridBagConstraints);
 
-        changePhoneNumberButton.addActionListener(e -> createChangePhoneNumberDialog());
+        changePhoneNumberButton.addActionListener(e -> createChangePhoneNumberDialog(phoneLabel));
 
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 25;
@@ -81,11 +85,55 @@ public class CustomerPanel {
         JButton resetPasswordButton = UserInterface.createButton("Reset password", 14);
         frame.add(resetPasswordButton, gridBagConstraints);
 
+        resetPasswordButton.addActionListener(e -> createResetPasswordDialog());
+
         frame.pack();
         frame.setLocationByPlatform(true);
     }
 
-    private void createChangePhoneNumberDialog() {
+    private void createResetPasswordDialog() {
+        JDialog dialog = new JDialog(frame, "Reset password", true);
+        JPasswordField passwordField = new JPasswordField(20);
+        JPasswordField repeatedPasswordField = new JPasswordField(20);
+        JButton submitButton = UserInterface.createButton("Submit", 14);
+
+        submitButton.addActionListener(e -> {
+            try {
+                if (Validator.validatePassword(passwordField, repeatedPasswordField)) {
+                    customer.setPassword(repeatedPasswordField.getPassword());
+                    new CustomerDAOImpl().update(customer);
+                    JOptionPane.showMessageDialog(frame, "The password was successfully changed.");
+                    dialog.setVisible(false);
+                }
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
+
+        dialog.setLayout(new GridBagLayout());
+        dialog.setIconImage(UserInterface.ICON.getImage());
+        GridBagConstraints gridBagConstraints = new GridBagConstraints();
+        // Set border for item containers
+        gridBagConstraints.insets = new Insets(10,10,10,10);
+        gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
+
+        dialog.setResizable(false);
+        dialog.add(UserInterface.createLabel("Password", "Verdana", Font.PLAIN, 14), gridBagConstraints);
+        dialog.add(passwordField, gridBagConstraints);
+
+        gridBagConstraints.gridy = 5;
+        dialog.add(UserInterface.createLabel("Repeat password", "Verdana", Font.PLAIN, 14), gridBagConstraints);
+        dialog.add(repeatedPasswordField, gridBagConstraints);
+
+        gridBagConstraints.gridx = 5;
+        gridBagConstraints.gridy = 10;
+        dialog.setLocationRelativeTo(frame);
+        dialog.add(submitButton, gridBagConstraints);
+        dialog.pack();
+        dialog.setVisible(true);
+    }
+
+    private void createChangePhoneNumberDialog(JLabel label) {
         JDialog dialog = new JDialog(frame, "Change phone number", true);
         JTextField phoneNumber = new JTextField(20);
         JButton submitButton = UserInterface.createButton("Submit", 14);
@@ -97,6 +145,7 @@ public class CustomerPanel {
                     customer.setPhoneNumber(phoneNumber.getText());
                     new CustomerDAOImpl().update(customer);
                     JOptionPane.showMessageDialog(frame, "The phone number was successfully changed.");
+                    label.setText("Phone number: %s".formatted(customer.getPhoneNumber()));
                     dialog.setVisible(false);
                 }
             } catch (SQLException ex) {
@@ -123,7 +172,7 @@ public class CustomerPanel {
         dialog.setVisible(true);
     }
 
-    private void createChangeEmailDialog() throws SQLException {
+    private void createChangeEmailDialog(JLabel label) throws SQLException {
         JDialog dialog = new JDialog(frame, "Change email", true);
         JTextField textField = new JTextField(20);
         JButton submitButton = UserInterface.createButton("Submit", 14);
@@ -134,6 +183,7 @@ public class CustomerPanel {
                     customer.setEmail(textField.getText());
                     new CustomerDAOImpl().update(customer);
                     JOptionPane.showMessageDialog(frame, "The email was successfully changed.");
+                    label.setText("E-mail: %s".formatted(customer.getEmail()));
                     dialog.setVisible(false);
                 }
             } catch (SQLException ex) {
@@ -160,7 +210,7 @@ public class CustomerPanel {
         dialog.setVisible(true);
     }
 
-    private void createChangeOwnerDialog() {
+    private void createChangeOwnerDialog(JLabel label) {
         JDialog dialog = new JDialog(frame, "Change owner", true);
         JTextField firstNameField = new JTextField(20);
         JTextField lastNameField = new JTextField(20);
@@ -172,10 +222,14 @@ public class CustomerPanel {
         submitButton.addActionListener(e -> {
             try {
                 if (Validator.validateField(firstNameField, "First name") && Validator.validateField(lastNameField, "Last name")) {
+                    firstNameField.setText(firstNameField.getText().substring(0, 1).toUpperCase() + firstNameField.getText().substring(1));
+                    lastNameField.setText(lastNameField.getText().substring(0, 1).toUpperCase() + lastNameField.getText().substring(1));
+
                     customer.setFirstName(firstNameField.getText());
                     customer.setLastName(lastNameField.getText());
                     new CustomerDAOImpl().update(customer);
                     JOptionPane.showMessageDialog(frame, "The owner credentials was successfully changed.");
+                    label.setText("Owner: %s %s".formatted(customer.getFirstName(), customer.getLastName()));
                     dialog.setVisible(false);
                 }
             } catch (SQLException ex) {

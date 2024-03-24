@@ -57,7 +57,7 @@ public class RegistrationForm {
                         firstName.setText(firstName.getText().substring(0, 1).toUpperCase() + firstName.getText().substring(1));
                         lastName.setText(lastName.getText().substring(0, 1).toUpperCase() + lastName.getText().substring(1));
 
-                        Customer customer = new Customer(firstName.getText(), lastName.getText(), email.getText(), new String(repeatedPassword.getPassword()), phoneNumber.getText());
+                        Customer customer = new Customer(firstName.getText(), lastName.getText(), email.getText(), repeatedPassword.getPassword(), phoneNumber.getText());
                         new CustomerDAOImpl()
                                 .insert(customer);
                         JOptionPane.showMessageDialog(frame, "Your account was successfully created! Now you can log in.");

@@ -35,7 +35,7 @@ public class Validator {
     public static boolean validateEmail(JTextField emailField) throws SQLException {
         if (validateField(emailField, "E-mail")) {
             // Regular Expression by RFC 5322 for Email Validation
-            Pattern pattern = Pattern.compile("^[a-zA-Z0-9_!#$%&’*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+$");
+            Pattern pattern = Pattern.compile("^[\\w!#$%&'*+/=?`{|}~^.-]+@[a-zA-Z0-9.-]+\\.[a-zA-Z]{2,}$");
             Matcher matcher = pattern.matcher(emailField.getText());
             if (!matcher.matches()) {
                 JOptionPane.showMessageDialog(null, "Email is in the wrong format!", "Invalid email format", JOptionPane.ERROR_MESSAGE);

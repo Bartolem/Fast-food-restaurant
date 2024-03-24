@@ -47,23 +47,27 @@ public class RegistrationForm {
         JButton submitButton = createButton("Submit", 14);
 
         submitButton.addActionListener(e -> {
-            if (Validator.validateField(firstName, "First name") &&
-                    Validator.validateField(lastName, "Last name") &&
-                    Validator.validateEmail(email) &&
-                    Validator.validatePassword(password, repeatedPassword) &&
-                    Validator.validatePhoneNumber(phoneNumber)) {
-                try {
-                    firstName.setText(firstName.getText().substring(0, 1).toUpperCase() + firstName.getText().substring(1));
-                    lastName.setText(lastName.getText().substring(0, 1).toUpperCase() + lastName.getText().substring(1));
+            try {
+                if (Validator.validateField(firstName, "First name") &&
+                        Validator.validateField(lastName, "Last name") &&
+                        Validator.validateEmail(email) &&
+                        Validator.validatePassword(password, repeatedPassword) &&
+                        Validator.validatePhoneNumber(phoneNumber)) {
+                    try {
+                        firstName.setText(firstName.getText().substring(0, 1).toUpperCase() + firstName.getText().substring(1));
+                        lastName.setText(lastName.getText().substring(0, 1).toUpperCase() + lastName.getText().substring(1));
 
-                    Customer customer = new Customer(firstName.getText(), lastName.getText(), email.getText(), new String(repeatedPassword.getPassword()), phoneNumber.getText());
-                    new CustomerDAOImpl()
-                            .insert(customer);
-                    JOptionPane.showMessageDialog(frame, "Your account was successfully created!");
-                    close();
-                } catch (SQLException ex) {
-                    throw new RuntimeException(ex.getMessage());
+                        Customer customer = new Customer(firstName.getText(), lastName.getText(), email.getText(), repeatedPassword.getPassword(), phoneNumber.getText());
+                        new CustomerDAOImpl()
+                                .insert(customer);
+                        JOptionPane.showMessageDialog(frame, "Your account was successfully created! Now you can log in.");
+                        close();
+                    } catch (SQLException ex) {
+                        throw new RuntimeException(ex.getMessage());
+                    }
                 }
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
             }
         });
 

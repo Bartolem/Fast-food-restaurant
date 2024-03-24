@@ -15,7 +15,7 @@ public class NameFilter extends DocumentFilter {
     public void insertString(FilterBypass fb, int offset, String text,
                              AttributeSet attr) throws BadLocationException {
         if ((fb.getDocument().getLength() + text.length()) <= maxLength &&
-                text.matches("[a-zA-Z]+")) {
+                text.matches("^[\\p{L}\\s]+$")) {
             super.insertString(fb, offset, text, attr);
         }
     }
@@ -24,7 +24,7 @@ public class NameFilter extends DocumentFilter {
     public void replace(FilterBypass fb, int offset, int length, String text,
                         AttributeSet attrs) throws BadLocationException {
         int newLength = fb.getDocument().getLength() - length + text.length();
-        if (newLength <= maxLength && text.matches("[a-zA-Z]+")) {
+        if (newLength <= maxLength && text.matches("^[\\p{L}\\s]+$")) {
             super.replace(fb, offset, length, text, attrs);
         }
     }

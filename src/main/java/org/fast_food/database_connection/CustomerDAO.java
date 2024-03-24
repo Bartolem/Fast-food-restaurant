@@ -7,5 +7,7 @@ import java.sql.SQLException;
 public interface CustomerDAO extends DAO<Customer> {
     Customer getCustomerByEmail(String email) throws SQLException;
 
+    Customer getCustomerByPhoneNumber(String phoneNumber) throws SQLException;
+
     String getCustomerPassword(Customer customer) throws SQLException;
 }

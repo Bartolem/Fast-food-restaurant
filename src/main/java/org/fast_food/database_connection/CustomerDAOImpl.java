@@ -28,7 +28,7 @@ public class CustomerDAOImpl implements CustomerDAO {
                 String firstName = resultSet.getString("first_name");
                 String lastName = resultSet.getString("last_name");
                 String email = resultSet.getString("email");
-                String password = resultSet.getString("password");
+                char[] password = resultSet.getString("password").toCharArray();
                 String phoneNumber = resultSet.getString("phone_number");
                 int points = resultSet.getInt("points");
                 Date creationDate = resultSet.getDate("creation_date");
@@ -66,12 +66,49 @@ public class CustomerDAOImpl implements CustomerDAO {
                 String firstName = resultSet.getString("first_name");
                 String lastName = resultSet.getString("last_name");
                 String customerEmail = resultSet.getString("email");
-                String password = resultSet.getString("password");
+                char[] password = resultSet.getString("password").toCharArray();
                 String phoneNumber = resultSet.getString("phone_number");
                 int points = resultSet.getInt("points");
                 Date creationDate = resultSet.getDate("creation_date");
 
                 CustomerManagement.addCustomer(customerId, new Customer(customerId, firstName, lastName, customerEmail, password, phoneNumber, points, creationDate));
+                customer = CustomerManagement.getCustomer(customerId);
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e.getMessage());
+        } finally {
+            assert resultSet != null;
+            DatabaseConnector.closeResultSet(resultSet);
+            DatabaseConnector.closePreparedStatement(preparedStatement);
+            DatabaseConnector.closeConnection(connection);
+        }
+
+        return customer;
+    }
+
+    public Customer getCustomerByPhoneNumber(String phoneNumber) throws SQLException {
+        Customer customer = null;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+        ResultSet resultSet = null;
+
+        try {
+            connection = DatabaseConnector.connect();
+            preparedStatement = connection.prepareStatement("SELECT id, first_name, last_name, email, password, phone_number, points, creation_date FROM customers WHERE phone_number = ?");
+            preparedStatement.setString(1, phoneNumber);
+            resultSet = preparedStatement.executeQuery();
+
+            if (resultSet.next()) {
+                UUID customerId = (UUID) resultSet.getObject("id");
+                String firstName = resultSet.getString("first_name");
+                String lastName = resultSet.getString("last_name");
+                String customerEmail = resultSet.getString("email");
+                char[] password = resultSet.getString("password").toCharArray();
+                String customerPhoneNumber = resultSet.getString("phone_number");
+                int points = resultSet.getInt("points");
+                Date creationDate = resultSet.getDate("creation_date");
+
+                CustomerManagement.addCustomer(customerId, new Customer(customerId, firstName, lastName, customerEmail, password, customerPhoneNumber, points, creationDate));
                 customer = CustomerManagement.getCustomer(customerId);
             }
         } catch (SQLException e) {
@@ -131,7 +168,7 @@ public class CustomerDAOImpl implements CustomerDAO {
                 String firstName = resultSet.getString("first_name");
                 String lastName = resultSet.getString("last_name");
                 String email = resultSet.getString("email");
-                String password = resultSet.getString("password");
+                char[] password = resultSet.getString("password").toCharArray();
                 String phoneNumber = resultSet.getString("phone_number");
                 int points = resultSet.getInt("points");
                 Date creationDate = resultSet.getDate("creation_date");
@@ -169,7 +206,7 @@ public class CustomerDAOImpl implements CustomerDAO {
             preparedStatement.setString(2, customer.getFirstName());
             preparedStatement.setString(3, customer.getLastName());
             preparedStatement.setString(4, customer.getEmail());
-            preparedStatement.setString(5, PasswordHashingUtil.hashPassword(customer.getPassword()));
+            preparedStatement.setString(5, PasswordHashingUtil.hashPassword(new String(customer.getPassword())));
             preparedStatement.setString(6, customer.getPhoneNumber());
             preparedStatement.setInt(7, customer.getPoints());
             preparedStatement.setDate(8, customer.getCreationDate());
@@ -196,13 +233,14 @@ public class CustomerDAOImpl implements CustomerDAO {
 
         try {
             connection = DatabaseConnector.connect();
-            preparedStatement = connection.prepareStatement("UPDATE customers SET first_name = ?, last_name = ?, email = ?, password = ?, phone_number = ?, points = ?");
+            preparedStatement = connection.prepareStatement("UPDATE customers SET first_name = ?, last_name = ?, email = ?, password = ?, phone_number = ?, points = ? WHERE id = ?");
             preparedStatement.setString(1, customer.getFirstName());
             preparedStatement.setString(2, customer.getLastName());
             preparedStatement.setString(3, customer.getEmail());
-            preparedStatement.setString(4, customer.getPassword());
+            preparedStatement.setString(4, PasswordHashingUtil.hashPassword(new String(customer.getPassword())));
             preparedStatement.setString(5, customer.getPhoneNumber());
             preparedStatement.setInt(6, customer.getPoints());
+            preparedStatement.setObject(7, customer.getId());
 
             result = preparedStatement.executeUpdate();
         } catch (SQLException e) {

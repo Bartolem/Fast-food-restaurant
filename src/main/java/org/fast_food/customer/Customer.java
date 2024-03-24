@@ -88,6 +88,10 @@ public class Customer {
         return points;
     }
 
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
     public Date getCreationDate() {
         return creationDate;
     }

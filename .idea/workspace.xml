@@ -6,7 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/customer/Customer.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/database_connection/CustomerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/database_connection/CustomerDAOImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/points_manager/PointsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/points_manager/PointsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/RegistrationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/RegistrationForm.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,10 +24,10 @@
         <option value="JavaFXApplication" />
         <option value="module-info" />
         <option value="FxmlFile" />
-        <option value="JUnit5 Test Class" />
         <option value="Enum" />
         <option value="Interface" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -133,6 +138,11 @@
     "JUnit.OrderTest.testCompleteOrder.executor": "Run",
     "JUnit.OrderTest.testGetContentEmpty.executor": "Run",
     "JUnit.OrderTest.testGetContentNotEmpty.executor": "Run",
+    "JUnit.PointsManagerTest.testApplyDiscount.executor": "Run",
+    "JUnit.PointsManagerTest.testAwardPointsToCustomer.executor": "Run",
+    "JUnit.PointsManagerTest.testCalculateDiscount.executor": "Run",
+    "JUnit.PointsManagerTest.testCalculateDiscountPercent.executor": "Run",
+    "JUnit.PointsManagerTest.testCalculatePoints.executor": "Run",
     "JUnit.SideTest.executor": "Run",
     "JUnit.SpicyBurgerTest.executor": "Run",
     "JUnit.SpicyBurgerTest.testGetIngredientsForDifferentBurgerTypes.executor": "Run",
@@ -188,28 +198,15 @@
       <recent name="org.fast_food" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.fast_food.points_manager" />
       <recent name="org.fast_food.product" />
       <recent name="org.fast_food.order" />
       <recent name="org.fast_food.customer" />
       <recent name="org.fast_food.product.burger" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.PointsManager">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.Main" />
-      <module name="Fast-food-restaurant" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.fast_food.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PointsManager" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.points_manager.PointsManager" />
+  <component name="RunManager" selected="JUnit.PointsManagerTest.testApplyDiscount">
+    <configuration name="PointsManagerTest.testApplyDiscount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
         <pattern>
@@ -217,42 +214,74 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="org.fast_food.points_manager" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.points_manager.PointsManagerTest" />
+      <option name="METHOD_NAME" value="testApplyDiscount" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="org.fast_food.database_connection.Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.database_connection.Main" />
+    <configuration name="PointsManagerTest.testAwardPointsToCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.fast_food.database_connection.*" />
+          <option name="PATTERN" value="org.fast_food.points_manager.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="org.fast_food.points_manager" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.points_manager.PointsManagerTest" />
+      <option name="METHOD_NAME" value="testAwardPointsToCustomer" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CustomerManagementTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PointsManagerTest.testCalculateDiscount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="org.fast_food.customer.*" />
+          <option name="PATTERN" value="org.fast_food.points_manager.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.customer" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.customer.CustomerManagementTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="PACKAGE_NAME" value="org.fast_food.points_manager" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.points_manager.PointsManagerTest" />
+      <option name="METHOD_NAME" value="testCalculateDiscount" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="java in Fast-food-restaurant" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PointsManagerTest.testCalculateDiscountPercent" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/src/test/java" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.points_manager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.fast_food.points_manager" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.points_manager.PointsManagerTest" />
+      <option name="METHOD_NAME" value="testCalculateDiscountPercent" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PointsManagerTest.testCalculatePoints" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.points_manager.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.fast_food.points_manager" />
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.points_manager.PointsManagerTest" />
+      <option name="METHOD_NAME" value="testCalculatePoints" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -269,19 +298,19 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.PointsManager" />
-      <item itemvalue="Application.org.fast_food.database_connection.Main" />
-      <item itemvalue="Application.Main" />
-      <item itemvalue="JUnit.CustomerManagementTest" />
-      <item itemvalue="JUnit.java in Fast-food-restaurant" />
+      <item itemvalue="JUnit.PointsManagerTest.testApplyDiscount" />
+      <item itemvalue="JUnit.PointsManagerTest.testAwardPointsToCustomer" />
+      <item itemvalue="JUnit.PointsManagerTest.testCalculateDiscount" />
+      <item itemvalue="JUnit.PointsManagerTest.testCalculateDiscountPercent" />
+      <item itemvalue="JUnit.PointsManagerTest.testCalculatePoints" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.PointsManager" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="Application.org.fast_food.database_connection.Main" />
-        <item itemvalue="JUnit.CustomerManagementTest" />
-        <item itemvalue="JUnit.java in Fast-food-restaurant" />
+        <item itemvalue="JUnit.PointsManagerTest.testApplyDiscount" />
+        <item itemvalue="JUnit.PointsManagerTest.testCalculatePoints" />
+        <item itemvalue="JUnit.PointsManagerTest.testCalculateDiscount" />
+        <item itemvalue="JUnit.PointsManagerTest.testCalculateDiscountPercent" />
+        <item itemvalue="JUnit.PointsManagerTest.testAwardPointsToCustomer" />
       </list>
     </recent_temporary>
   </component>

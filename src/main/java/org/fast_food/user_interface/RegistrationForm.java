@@ -1,5 +1,6 @@
 package org.fast_food.user_interface;
 
+import org.fast_food.authentication.PasswordHashingUtil;
 import org.fast_food.customer.Customer;
 import org.fast_food.database_connection.CustomerDAOImpl;
 import org.fast_food.user_interface.validation.NameFilter;
@@ -57,9 +58,8 @@ public class RegistrationForm {
                         firstName.setText(firstName.getText().substring(0, 1).toUpperCase() + firstName.getText().substring(1));
                         lastName.setText(lastName.getText().substring(0, 1).toUpperCase() + lastName.getText().substring(1));
 
-                        Customer customer = new Customer(firstName.getText(), lastName.getText(), email.getText(), repeatedPassword.getPassword(), phoneNumber.getText());
-                        new CustomerDAOImpl()
-                                .insert(customer);
+                        Customer customer = new Customer(firstName.getText(), lastName.getText(), email.getText(), PasswordHashingUtil.hashPassword(new String(repeatedPassword.getPassword())), phoneNumber.getText());
+                        new CustomerDAOImpl().insert(customer);
                         JOptionPane.showMessageDialog(frame, "Your account was successfully created! Now you can log in.");
                         close();
                     } catch (SQLException ex) {

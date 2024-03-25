@@ -24,8 +24,9 @@ public class BillReceiptGenerator {
             index++;
         }
         stringBuilder.append("\nOrder date:\t%s\n".formatted(order.getDate().format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM))));
-        stringBuilder.append("Discount:\t0\n"); // TODO change 0 to actual discount value
-        stringBuilder.append("Total price:\t%s".formatted(order.getTotalPrice()));
+        stringBuilder.append("Total price:\t%s\n".formatted(order.getTotalPrice()));
+        stringBuilder.append("Discount:\t%s\n".formatted(order.getDiscount()));
+        stringBuilder.append("Total price after discount:\t%s\n".formatted(order.getTotalPriceAfterDiscount()));
         return stringBuilder.toString();
     }
 

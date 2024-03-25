@@ -6,12 +6,12 @@
   <component name="ChangeListManager">
     <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/customer/Customer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/customer/Customer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/database_connection/CustomerDAOImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/database_connection/CustomerDAOImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/points_manager/PointsManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/points_manager/PointsManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/bill_receipt/BillReceiptGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/bill_receipt/BillReceiptGenerator.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/bill_receipt/BillReceiptWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/bill_receipt/BillReceiptWriter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/order/Order.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/order/OrderCreation.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/RegistrationForm.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/RegistrationForm.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/fast_food/order/OrderCreationTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +205,20 @@
       <recent name="org.fast_food.product.burger" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PointsManagerTest.testApplyDiscount">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="org.fast_food.Main" />
+      <module name="Fast-food-restaurant" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.fast_food.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PointsManagerTest.testApplyDiscount" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Fast-food-restaurant" />
       <extension name="coverage">
@@ -217,22 +230,6 @@
       <option name="PACKAGE_NAME" value="org.fast_food.points_manager" />
       <option name="MAIN_CLASS_NAME" value="org.fast_food.points_manager.PointsManagerTest" />
       <option name="METHOD_NAME" value="testApplyDiscount" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PointsManagerTest.testAwardPointsToCustomer" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="Fast-food-restaurant" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="org.fast_food.points_manager.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="org.fast_food.points_manager" />
-      <option name="MAIN_CLASS_NAME" value="org.fast_food.points_manager.PointsManagerTest" />
-      <option name="METHOD_NAME" value="testAwardPointsToCustomer" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -298,19 +295,19 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.Main" />
       <item itemvalue="JUnit.PointsManagerTest.testApplyDiscount" />
-      <item itemvalue="JUnit.PointsManagerTest.testAwardPointsToCustomer" />
       <item itemvalue="JUnit.PointsManagerTest.testCalculateDiscount" />
       <item itemvalue="JUnit.PointsManagerTest.testCalculateDiscountPercent" />
       <item itemvalue="JUnit.PointsManagerTest.testCalculatePoints" />
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.PointsManagerTest.testApplyDiscount" />
         <item itemvalue="JUnit.PointsManagerTest.testCalculatePoints" />
         <item itemvalue="JUnit.PointsManagerTest.testCalculateDiscount" />
         <item itemvalue="JUnit.PointsManagerTest.testCalculateDiscountPercent" />
-        <item itemvalue="JUnit.PointsManagerTest.testAwardPointsToCustomer" />
       </list>
     </recent_temporary>
   </component>

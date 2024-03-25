@@ -17,13 +17,17 @@ public class Order {
     private final LocalDateTime date;
     private final Map<Product, Integer> content;
     private BigDecimal totalPrice;
+    private BigDecimal totalPriceAfterDiscount;
+    private BigDecimal discount;
 
     public Order() {
         this.id = generateUniqueId();
         this.status = OrderStatus.NEW;
         this.date = LocalDateTime.now();
         this.content = new HashMap<>();
-        this.totalPrice = BigDecimal.valueOf(0);
+        this.totalPrice =  BigDecimal.ZERO;
+        this.totalPriceAfterDiscount =  BigDecimal.ZERO;
+        this.discount = BigDecimal.ZERO;
     }
 
     public String getId() {
@@ -56,7 +60,7 @@ public class Order {
     public void clear() {
         if (!content.isEmpty()) {
             content.clear();
-            totalPrice = BigDecimal.valueOf(0);
+            totalPrice =  BigDecimal.ZERO;
         }
     }
 
@@ -76,8 +80,32 @@ public class Order {
         return totalPrice.setScale(2, RoundingMode.HALF_UP);
     }
 
+    public BigDecimal getTotalPriceAfterDiscount() {
+        return totalPriceAfterDiscount.setScale(2, RoundingMode.HALF_UP);
+    }
+
+    public void  setTotalPriceAfterDiscount(BigDecimal priceAfterDiscount) {
+        this.totalPriceAfterDiscount = priceAfterDiscount;
+    }
+
+    public BigDecimal getDiscount() {
+        return discount.setScale(2, RoundingMode.HALF_UP);
+    }
+
+    public void setDiscount(BigDecimal discount) {
+        this.discount = discount;
+    }
+
     public String getFormattedTotalPrice() {
         return NumberFormat.getCurrencyInstance(Locale.US).format(getTotalPrice());
+    }
+
+    public String getFormattedTotalPriceAfterDiscount() {
+        return NumberFormat.getCurrencyInstance(Locale.US).format(getTotalPriceAfterDiscount());
+    }
+
+    public String getFormattedDiscount() {
+        return NumberFormat.getCurrencyInstance(Locale.US).format(getDiscount());
     }
 
     public void addProduct(Product product, int quantity) {

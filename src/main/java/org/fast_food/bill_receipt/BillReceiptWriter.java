@@ -122,9 +122,11 @@ public class BillReceiptWriter {
                     .getDate()
                     .format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM))).setTextAlignment(TextAlignment.RIGHT)).setBorder(Border.NO_BORDER));
             infoTable.addCell(new Cell().add(new Paragraph("Total price")).setBorder(Border.NO_BORDER));
-            infoTable.addCell(new Cell().add(new Paragraph(String.valueOf(order.getTotalPrice())).setTextAlignment(TextAlignment.RIGHT)).setBorder(Border.NO_BORDER));
+            infoTable.addCell(new Cell().add(new Paragraph(order.getFormattedTotalPrice()).setTextAlignment(TextAlignment.RIGHT)).setBorder(Border.NO_BORDER));
             infoTable.addCell(new Cell().add(new Paragraph("Discount")).setBorder(Border.NO_BORDER));
-            infoTable.addCell(new Cell().add(new Paragraph("0").setTextAlignment(TextAlignment.RIGHT)).setBorder(Border.NO_BORDER)); // TODO change 0 to actual discount value
+            infoTable.addCell(new Cell().add(new Paragraph(order.getFormattedDiscount()).setTextAlignment(TextAlignment.RIGHT)).setBorder(Border.NO_BORDER));
+            infoTable.addCell(new Cell().add(new Paragraph("Total price after discount")).setBorder(Border.NO_BORDER));
+            infoTable.addCell(new Cell().add(new Paragraph(order.getFormattedTotalPriceAfterDiscount()).setTextAlignment(TextAlignment.RIGHT)).setBorder(Border.NO_BORDER));
 
             document.add(image);
             document.add(contentTable);

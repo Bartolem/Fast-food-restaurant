@@ -239,9 +239,13 @@ public class OrderPage {
         makeOrderButton.addActionListener(e -> {
             try {
                 if (isDiscounted.get()) {
-                    PointsManager.applyDiscount(customer, order.getTotalPrice(), PointsManager.calculateDiscount(customer, order.getTotalPrice()));
+                    order.setDiscount(PointsManager.calculateDiscount(customer, order.getTotalPrice()));
+                    order.setTotalPriceAfterDiscount(PointsManager.applyDiscount(customer, order.getTotalPrice(), order.getDiscount()));
+                } else {
+                    order.setTotalPriceAfterDiscount(order.getTotalPrice());
                 }
-                PointsManager.awardPointsToCustomer(customer, order.getTotalPrice().subtract(PointsManager.calculateDiscount(customer, order.getTotalPrice())));
+
+                PointsManager.awardPointsToCustomer(customer, order.getTotalPrice().subtract(order.getDiscount()));
                 new CustomerDAOImpl().update(customer);
             } catch (SQLException ex) {
                 throw new RuntimeException(ex);
@@ -268,7 +272,7 @@ public class OrderPage {
                     totalOrderPrice.setFont(new Font(attributes));
 
                     totalOrderPriceAfterDiscount.setText(NumberFormat.getCurrencyInstance(Locale.US).format(order.getTotalPrice().subtract(PointsManager.calculateDiscount(customer, order.getTotalPrice()))));
-                    totalOrderPriceAfterDiscount.setForeground(Color.GREEN);
+                    totalOrderPriceAfterDiscount.setForeground(new Color(0, 138, 0));
                     totalOrderPriceAfterDiscount.setVisible(true);
                 }
             });
@@ -312,10 +316,10 @@ public class OrderPage {
         textArea.setWrapStyleWord(true);
         textArea.setEditable(false);
         textArea.setFocusable(false);
-        textArea.setBackground(Color.LIGHT_GRAY);
+        textArea.setBackground(Color.DARK_GRAY);
         textArea.setFont(new Font("Verdana", Font.PLAIN, 16));
         textArea.setForeground(Color.BLACK);
-        textArea.setText("Up to 100 $ discount for all types of orders! Available only for customers with an active account. Create an account and start collecting points now!");
+        textArea.setText("Up to $100 discount for all types of orders! Available only for customers with an active account. Create an account and start collecting points now!");
         return textArea;
     }
 

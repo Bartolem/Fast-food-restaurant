@@ -33,8 +33,8 @@ public class OrderPage {
     private JFrame frame;
     private DefaultTableModel defaultTableModel;
     private Order order;
-    private Customer customer;
-    private LoginPage loginPage;
+    private final Customer customer;
+    private final LoginPage loginPage;
     private List<JButton> addButtonsList;
     private List<JButton> removeButtonsList;
     private JLabel totalOrderPrice;
@@ -51,7 +51,7 @@ public class OrderPage {
 
     private void initialize() {
         this.frame = new JFrame();
-        this.order = new Order();
+        this.order = new Order(customer);
         this.addButtonsList = new ArrayList<>();
         this.removeButtonsList = new ArrayList<>();
         this.cardLayout = new CardLayout();
@@ -237,18 +237,20 @@ public class OrderPage {
         });
 
         makeOrderButton.addActionListener(e -> {
-            try {
-                if (isDiscounted.get()) {
-                    order.setDiscount(PointsManager.calculateDiscount(customer, order.getTotalPrice()));
-                    order.setTotalPriceAfterDiscount(PointsManager.applyDiscount(customer, order.getTotalPrice(), order.getDiscount()));
-                } else {
-                    order.setTotalPriceAfterDiscount(order.getTotalPrice());
-                }
+            if (customer != null) {
+                try {
+                    if (isDiscounted.get()) {
+                        order.setDiscount(PointsManager.calculateDiscount(customer, order.getTotalPrice()));
+                        order.setTotalPriceAfterDiscount(PointsManager.applyDiscount(customer, order.getTotalPrice(), order.getDiscount()));
+                    } else {
+                        order.setTotalPriceAfterDiscount(order.getTotalPrice());
+                    }
 
-                PointsManager.awardPointsToCustomer(customer, order.getTotalPrice().subtract(order.getDiscount()));
-                new CustomerDAOImpl().update(customer);
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
+                    PointsManager.awardPointsToCustomer(customer, order.getTotalPrice().subtract(order.getDiscount()));
+                    new CustomerDAOImpl().update(customer);
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
             }
 
             processOrder();
@@ -316,7 +318,7 @@ public class OrderPage {
         textArea.setWrapStyleWord(true);
         textArea.setEditable(false);
         textArea.setFocusable(false);
-        textArea.setBackground(Color.DARK_GRAY);
+        textArea.setBackground(Color.LIGHT_GRAY);
         textArea.setFont(new Font("Verdana", Font.PLAIN, 16));
         textArea.setForeground(Color.BLACK);
         textArea.setText("Up to $100 discount for all types of orders! Available only for customers with an active account. Create an account and start collecting points now!");

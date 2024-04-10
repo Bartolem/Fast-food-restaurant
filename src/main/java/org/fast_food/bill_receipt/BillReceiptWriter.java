@@ -14,9 +14,11 @@ import com.itextpdf.layout.element.Table;
 import com.itextpdf.layout.properties.HorizontalAlignment;
 import com.itextpdf.layout.properties.TextAlignment;
 import org.apache.commons.io.FilenameUtils;
+import org.fast_food.customer.Customer;
 import org.fast_food.order.Order;
 import org.fast_food.product.Product;
 
+import javax.swing.*;
 import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -30,10 +32,12 @@ public class BillReceiptWriter {
     public static final String CSV = ".csv";
     public static final String PDF = ".pdf";
     private final Order order;
+    private final Customer customer;
     private final BillReceiptGenerator billReceiptGenerator;
 
     public BillReceiptWriter(Order order) {
         this.order = order;
+        this.customer = order.getCustomer();
         this.billReceiptGenerator = new BillReceiptGenerator(order);
     }
 
@@ -113,10 +117,20 @@ public class BillReceiptWriter {
                 index++;
             }
 
-            columnWidth = new float[]{200f, 200f};
+            columnWidth = new float[]{150f, 250f};
             Table infoTable = new Table(columnWidth);
 
             infoTable.setHorizontalAlignment(HorizontalAlignment.CENTER);
+            infoTable.addCell(new Cell().add(new Paragraph("Customer")).setBorder(Border.NO_BORDER));
+
+            if (customer == null) {
+                infoTable.addCell(new Cell().add(new Paragraph("Guest (no account)")).setTextAlignment(TextAlignment.RIGHT).setBorder(Border.NO_BORDER));
+            } else {
+                infoTable.addCell(new Cell().add(new Paragraph(customer.getFirstName() + " " + customer.getLastName())).setTextAlignment(TextAlignment.RIGHT).setBorder(Border.NO_BORDER));
+            }
+
+            infoTable.addCell(new Cell().add(new Paragraph("Order Id")).setBorder(Border.NO_BORDER));
+            infoTable.addCell(new Cell().add(new Paragraph(order.getId())).setTextAlignment(TextAlignment.RIGHT).setBorder(Border.NO_BORDER));
             infoTable.addCell(new Cell().add(new Paragraph("Order date")).setBorder(Border.NO_BORDER));
             infoTable.addCell(new Cell().add(new Paragraph(order
                     .getDate()
@@ -131,7 +145,9 @@ public class BillReceiptWriter {
             document.add(image);
             document.add(contentTable);
             document.add(infoTable);
+            document.add(new Paragraph("Thank you for using my application. Bartolem.").setTextAlignment(TextAlignment.CENTER).setMargin(50f));
             document.close();
+            JOptionPane.showMessageDialog(null, "PDF file saved to: " + filePath);
             System.out.println("PDF file saved to: " + filePath);
         } catch (FileNotFoundException e) {
             System.err.println("Failed to write PDF file: " + e.getMessage());

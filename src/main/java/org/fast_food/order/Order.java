@@ -1,5 +1,6 @@
 package org.fast_food.order;
 
+import org.fast_food.customer.Customer;
 import org.fast_food.product.Product;
 
 import java.math.BigDecimal;
@@ -19,8 +20,9 @@ public class Order {
     private BigDecimal totalPrice;
     private BigDecimal totalPriceAfterDiscount;
     private BigDecimal discount;
+    private Customer customer;
 
-    public Order() {
+    public Order(Customer customer) {
         this.id = generateUniqueId();
         this.status = OrderStatus.NEW;
         this.date = LocalDateTime.now();
@@ -28,6 +30,7 @@ public class Order {
         this.totalPrice =  BigDecimal.ZERO;
         this.totalPriceAfterDiscount =  BigDecimal.ZERO;
         this.discount = BigDecimal.ZERO;
+        this.customer = customer;
     }
 
     public String getId() {
@@ -81,6 +84,9 @@ public class Order {
     }
 
     public BigDecimal getTotalPriceAfterDiscount() {
+        if (customer == null) {
+            return getTotalPrice();
+        }
         return totalPriceAfterDiscount.setScale(2, RoundingMode.HALF_UP);
     }
 
@@ -106,6 +112,10 @@ public class Order {
 
     public String getFormattedDiscount() {
         return NumberFormat.getCurrencyInstance(Locale.US).format(getDiscount());
+    }
+
+    public Customer getCustomer() {
+        return customer;
     }
 
     public void addProduct(Product product, int quantity) {

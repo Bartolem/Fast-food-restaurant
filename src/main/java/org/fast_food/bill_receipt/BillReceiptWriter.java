@@ -1,6 +1,5 @@
 package org.fast_food.bill_receipt;
 
-import com.itextpdf.io.image.ImageData;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.colors.DeviceRgb;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -130,7 +129,7 @@ public class BillReceiptWriter {
             }
 
             infoTable.addCell(new Cell().add(new Paragraph("Order Id")).setBorder(Border.NO_BORDER));
-            infoTable.addCell(new Cell().add(new Paragraph(order.getId())).setTextAlignment(TextAlignment.RIGHT).setBorder(Border.NO_BORDER));
+            infoTable.addCell(new Cell().add(new Paragraph(order.getId().toString())).setTextAlignment(TextAlignment.RIGHT).setBorder(Border.NO_BORDER));
             infoTable.addCell(new Cell().add(new Paragraph("Order date")).setBorder(Border.NO_BORDER));
             infoTable.addCell(new Cell().add(new Paragraph(order
                     .getDate()

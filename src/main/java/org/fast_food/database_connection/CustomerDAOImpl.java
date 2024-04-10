@@ -206,7 +206,7 @@ public class CustomerDAOImpl implements CustomerDAO {
             preparedStatement.setString(2, customer.getFirstName());
             preparedStatement.setString(3, customer.getLastName());
             preparedStatement.setString(4, customer.getEmail());
-            preparedStatement.setString(5, new String(customer.getPassword()));
+            preparedStatement.setString(5, customer.getPassword());
             preparedStatement.setString(6, customer.getPhoneNumber());
             preparedStatement.setInt(7, customer.getPoints());
             preparedStatement.setDate(8, customer.getCreationDate());
@@ -237,7 +237,7 @@ public class CustomerDAOImpl implements CustomerDAO {
             preparedStatement.setString(1, customer.getFirstName());
             preparedStatement.setString(2, customer.getLastName());
             preparedStatement.setString(3, customer.getEmail());
-            preparedStatement.setString(4, new String(customer.getPassword()));
+            preparedStatement.setString(4, customer.getPassword());
             preparedStatement.setString(5, customer.getPhoneNumber());
             preparedStatement.setInt(6, customer.getPoints());
             preparedStatement.setObject(7, customer.getId());

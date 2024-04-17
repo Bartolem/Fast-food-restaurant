@@ -129,7 +129,7 @@ public class OrderDAOImpl implements OrderDAO {
                 preparedStatement.setBigDecimal(6, order.getTotalPriceAfterDiscount());
                 preparedStatement.setBigDecimal(7, order.getDiscount());
             } else {
-                preparedStatement = connection.prepareStatement("INSERT INTO orders (status, creation_date, id, total_price, customer_id, content, total_price_after_discount, discount) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+                preparedStatement = connection.prepareStatement("INSERT INTO orders (status, creation_date, id, total_price, content, customer_id, total_price_after_discount, discount) VALUES (?, ?, ?, ?, ?::JSONB, ?, ?, ?)");
                 preparedStatement.setObject(6, customer.getId());
                 preparedStatement.setBigDecimal(7, order.getTotalPriceAfterDiscount());
                 preparedStatement.setBigDecimal(8, order.getDiscount());

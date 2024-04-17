@@ -254,11 +254,6 @@ public class OrderPage {
                 }
             }
 
-            try {
-                new OrderDAOImpl().insert(order);
-            } catch (SQLException ex) {
-                throw new RuntimeException(ex);
-            }
             processOrder();
             frame.dispose();
         });

@@ -162,6 +162,6 @@ public class Order {
 
     @Override
     public String toString() {
-        return "Id: %s\nStatus: %s\nDate: %s\nContent: %s\nTotal: %s".formatted(id, status, date.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)), content, totalPrice);
+        return "Id: %s\nStatus: %s\nDate: %s\nCustomer: %s\nContent: %s\nTotal: %s\nTotal after discount: %s\nDiscount: %s".formatted(id, status, date.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)), customer, content, totalPrice, totalPriceAfterDiscount, discount);
     }
 }

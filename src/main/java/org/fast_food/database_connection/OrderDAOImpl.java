@@ -122,6 +122,26 @@ public class OrderDAOImpl implements OrderDAO {
 
     @Override
     public int delete(Order order) throws SQLException {
-        return 0;
+        int result;
+        Connection connection = null;
+        PreparedStatement preparedStatement = null;
+
+        try {
+            connection = DatabaseConnector.connect();
+            preparedStatement = connection.prepareStatement("DELETE FROM orders WHERE id = ?");
+            preparedStatement.setObject(1, order.getId());
+
+            CustomerManagement.removeCustomer(order.getId());
+
+            result = preparedStatement.executeUpdate();
+        } catch (SQLException e) {
+            throw new RuntimeException(e.getMessage());
+        } finally {
+            assert preparedStatement != null;
+            DatabaseConnector.closePreparedStatement(preparedStatement);
+            DatabaseConnector.closeConnection(connection);
+        }
+
+        return result;
     }
 }

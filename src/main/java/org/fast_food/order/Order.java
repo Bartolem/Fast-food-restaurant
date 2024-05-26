@@ -13,17 +13,17 @@ import java.util.*;
 
 public class Order {
     public final int MAX_QUANTITY_OF_PRODUCT_SAME_TYPE = 10;
-    private final String id;
+    private final UUID id;
     private OrderStatus status;
     private final LocalDateTime date;
     private final Map<Product, Integer> content;
     private BigDecimal totalPrice;
     private BigDecimal totalPriceAfterDiscount;
     private BigDecimal discount;
-    private Customer customer;
+    private final Customer customer;
 
     public Order(Customer customer) {
-        this.id = generateUniqueId();
+        this.id = UUID.randomUUID();
         this.status = OrderStatus.NEW;
         this.date = LocalDateTime.now();
         this.content = new HashMap<>();
@@ -33,7 +33,18 @@ public class Order {
         this.customer = customer;
     }
 
-    public String getId() {
+    public Order(UUID id, OrderStatus status, LocalDateTime date, Map<Product, Integer> content, BigDecimal totalPrice, BigDecimal totalPriceAfterDiscount, BigDecimal discount, Customer customer) {
+        this.id = id;
+        this.status = status;
+        this.date = date;
+        this.content = content;
+        this.totalPrice = totalPrice;
+        this.totalPriceAfterDiscount = totalPriceAfterDiscount;
+        this.discount = discount;
+        this.customer = customer;
+    }
+
+    public UUID getId() {
         return id;
     }
 
@@ -149,12 +160,8 @@ public class Order {
         return numberOfProducts;
     }
 
-    private String generateUniqueId() {
-        return String.valueOf(UUID.randomUUID());
-    }
-
     @Override
     public String toString() {
-        return "Id: %s\nStatus: %s\nDate: %s\nContent: %s\nTotal: %s".formatted(id, status, date.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)), content, totalPrice);
+        return "Id: %s\nStatus: %s\nDate: %s\nCustomer: %s\nContent: %s\nTotal: %s\nTotal after discount: %s\nDiscount: %s".formatted(id, status, date.format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)), customer, content, totalPrice, totalPriceAfterDiscount, discount);
     }
 }

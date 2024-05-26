@@ -4,13 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/bill_receipt/BillReceiptGenerator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/bill_receipt/BillReceiptGenerator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/bill_receipt/BillReceiptWriter.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/bill_receipt/BillReceiptWriter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/order/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/order/Order.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" afterDir="false" />
-    </list>
+    <list default="true" id="93bcd15d-52b0-4fc9-a3ce-1e75554c2de2" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -24,8 +18,8 @@
         <option value="FxmlFile" />
         <option value="Enum" />
         <option value="Interface" />
-        <option value="Class" />
         <option value="JUnit5 Test Class" />
+        <option value="Class" />
       </list>
     </option>
   </component>
@@ -55,124 +49,16 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Application.BillReceiptPrintExample.executor&quot;: &quot;Run&quot;,
-    &quot;Application.GUI.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.PointsManager.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.fast_food.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.fast_food.database_connection.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.org.fast_food.user_interface.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.ClassicBurgerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClassicBurgerTest.getCalories.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClassicBurgerTest.getDescription.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClassicBurgerTest.getIngredients.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClassicBurgerTest.getName.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClassicBurgerTest.getPopularityRating.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClassicBurgerTest.getPrice.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClassicBurgerTest.getSpicinessLevel.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClassicBurgerTest.testClassicBurgerContainsAllValues.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClassicBurgerTest.testGetIngredientsForDifferentBurgerTypes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClassicBurgerTest.valueOf.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ClassicBurgerTest.values.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ColdDrinkTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ColdDrinkTest.testGetCalories.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ColdDrinkTest.testGetCaloriesForDifferentColdDrinks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ColdDrinkTest.testGetDescriptionForDifferentColdDrinks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ColdDrinkTest.testGetNameForDifferentColdDrinks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ColdDrinkTest.testGetNameForDifferentFriesTypes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ColdDrinkTest.testGetPriceForDifferentColdDrinks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ColdDrinkTest.testValueOfDifferentColdDrinks.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ComboMealTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ComboMealTest.testGetNameForDifferentComboMeals.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerCreationTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerManagementTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerManagementTest.testAddCustomer.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerManagementTest.testGetCustomer.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerManagementTest.testGetCustomerFakeId.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerManagementTest.testGetCustomers.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerManagementTest.testGetCustomersNotNull.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerManagementTest.testRemoveCustomer.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerTest.testAddPoints.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.CustomerTest.testGetPointsIsPositiveNumber.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerTest.testRemovePointsIsPositiveNumber.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.CustomerTest.testSetNameWithEmptyString.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DessertTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.DessertTest.testGetDescriptionForDifferentDesserts.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FrenchFriesTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FrenchFriesTest.getCalories.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FrenchFriesTest.getDescription.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FrenchFriesTest.testFrenchFriesContainsAllValues.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FrenchFriesTest.testGetCaloriesForDifferentFriesTypes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FrenchFriesTest.testGetDescriptionForDifferentFriesTypes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FrenchFriesTest.testGetNameForDifferentFriesTypes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FrenchFriesTest.testGetPriceForDifferentFriesTypes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.FrenchFriesTest.testValueOfDifferentBurgerTypes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GourmetBurgerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GourmetBurgerTest.getCalories.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GourmetBurgerTest.getDescription.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GourmetBurgerTest.getIngredients.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GourmetBurgerTest.getName.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GourmetBurgerTest.getPopularityRating.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GourmetBurgerTest.getPrice.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GourmetBurgerTest.getSpicinessLevel.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GourmetBurgerTest.testGetIngredientsForDifferentBurgerTypes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GourmetBurgerTest.testGourmetBurgerContainsAllValues.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.GourmetBurgerTest.testValueOfDifferentBurgerTypes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.HotDrinkTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderCreationTest.testCreateOrder.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderManagementTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderManagementTest.testAddProductToOrder.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderManagementTest.testGetOrders.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderManagementTest.testRemoveOrder.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderManagementTest.testRemoveProductFromOrder.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderTest.addProduct.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderTest.getContent.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderTest.removeProduct.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderTest.testCompleteOrder.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderTest.testGetContentEmpty.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.OrderTest.testGetContentNotEmpty.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PointsManagerTest.testApplyDiscount.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PointsManagerTest.testAwardPointsToCustomer.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PointsManagerTest.testCalculateDiscount.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PointsManagerTest.testCalculateDiscountPercent.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PointsManagerTest.testCalculatePoints.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SideTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SpicyBurgerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SpicyBurgerTest.testGetIngredientsForDifferentBurgerTypes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SpicyBurgerTest.testGetNameForDifferentBurgerTypes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SpicyBurgerTest.testGetSpicinessLevelForDifferentBurgerTypes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SpicyBurgerTest.testValueOfDifferentBurgerTypes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UniqueFlavorBurgerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.UniqueFlavorBurgerTest.testGetIngredientsForDifferentBurgerTypes.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.burger in Fast-food-restaurant.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.fast_food in Fast-food-restaurant.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.java in Fast-food-restaurant.executor&quot;: &quot;Run&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;UI_DESIGNER_EDITOR_MODE.UIDesignerToolWindowManager.WIDTH&quot;: &quot;253&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;create-points-menagement-system&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;temurin-21&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;D:/Projekty/Java Projects/Fast food ordering&quot;,
-    &quot;onboarding.tips.debug.path&quot;: &quot;D:/Projekty/Java Projects/Fast food ordering/untitled/src/Main.java&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.5264368&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Application.Main.executor": "Run",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "create-database-connection",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources" />
@@ -313,19 +199,21 @@
     <attachedChunks>
       <set>
         <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
-        <option value="jdk-21.0.2-temurin-21.0.2-4caba194b151-7da56cdf" />
       </set>
     </attachedChunks>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="341b9b96-3b22-4fe6-89ae-8dca366d2f7e" name="Changes" comment="" />
+      <changelist id="93bcd15d-52b0-4fc9-a3ce-1e75554c2de2" name="Changes" comment="" />
       <created>1705958460759</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1705958460759</updated>
     </task>
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="LAST_COMMIT_MESSAGE" value="" />
   </component>
 </project>

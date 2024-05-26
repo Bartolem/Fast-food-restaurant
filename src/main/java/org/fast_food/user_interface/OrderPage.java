@@ -44,9 +44,12 @@ public class OrderPage {
     private JButton cancelOrderButton;
     private JButton makeOrderButton;
 
-    public OrderPage(Customer customer) {
+    private final CustomerPanel customerPanel;
+
+    public OrderPage(Customer customer) throws SQLException {
         this.customer = customer;
-        loginPage = new LoginPage();
+        this.loginPage = new LoginPage();
+        this.customerPanel = new CustomerPanel(customer);
         initialize();
     }
 
@@ -263,7 +266,9 @@ public class OrderPage {
             JButton discountButton = createButton("Check for discount", 16);
             JButton logoutButton = createButton("Logout", 16);
 
-            manageButton.addActionListener(e -> new CustomerPanel(customer).show());
+            manageButton.addActionListener(e -> {
+                customerPanel.show();
+            });
 
             discountButton.addActionListener(e -> {
                 if (order.getContent().isEmpty()) {

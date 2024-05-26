@@ -2,7 +2,6 @@ package org.fast_food.database_connection;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.core.type.TypeReference;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.module.SimpleModule;
 import org.fast_food.customer.Customer;
@@ -15,8 +14,9 @@ import org.fast_food.product.ProductKeyDeserializer;
 
 import java.math.BigDecimal;
 import java.sql.*;
-import java.sql.Date;
-import java.util.*;
+import java.util.HashMap;
+import java.util.List;
+import java.util.UUID;
 
 public class OrderDAOImpl implements OrderDAO {
 
@@ -45,7 +45,7 @@ public class OrderDAOImpl implements OrderDAO {
                 SimpleModule module = new SimpleModule();
                 module.addKeyDeserializer(Product.class, new ProductKeyDeserializer());
                 mapper.registerModule(module);
-                HashMap<Product, Integer> content = mapper.readValue(jsonbString, new TypeReference<HashMap<Product, Integer>>(){});
+                HashMap<Product, Integer> content = mapper.readValue(jsonbString, new TypeReference<>() {});
                 BigDecimal totalPriceAfterDiscount = resultSet.getBigDecimal("total_price_after_discount");
                 BigDecimal discount = resultSet.getBigDecimal("discount");
 
@@ -88,7 +88,7 @@ public class OrderDAOImpl implements OrderDAO {
                 SimpleModule module = new SimpleModule();
                 module.addKeyDeserializer(Product.class, new ProductKeyDeserializer());
                 mapper.registerModule(module);
-                HashMap<Product, Integer> content = mapper.readValue(jsonbString, new TypeReference<HashMap<Product, Integer>>(){});
+                HashMap<Product, Integer> content = mapper.readValue(jsonbString, new TypeReference<>() {});
                 BigDecimal totalPriceAfterDiscount = resultSet.getBigDecimal("total_price_after_discount");
                 BigDecimal discount = resultSet.getBigDecimal("discount");
 

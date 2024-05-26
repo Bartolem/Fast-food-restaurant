@@ -7,13 +7,14 @@ import org.fast_food.user_interface.validation.TextFieldFilter;
 import org.fast_food.user_interface.validation.Validator;
 
 import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
 import javax.swing.text.AbstractDocument;
 import java.awt.*;
 import java.sql.SQLException;
 
 public class CustomerPanel {
     private JFrame frame;
-    private Customer customer;
+    private final Customer customer;
 
     public CustomerPanel(Customer customer) {
         this.customer = customer;
@@ -80,6 +81,8 @@ public class CustomerPanel {
         gridBagConstraints.gridy = 25;
         JButton orderHistoryButton = UserInterface.createButton("View order history", 14);
         frame.add(orderHistoryButton, gridBagConstraints);
+
+        orderHistoryButton.addActionListener(e -> createShowOrderHistoryPanel());
 
         gridBagConstraints.gridx = 1;
         JButton resetPasswordButton = UserInterface.createButton("Reset password", 14);
@@ -270,6 +273,10 @@ public class CustomerPanel {
         dialog.add(submitButton, gridBagConstraints);
         dialog.pack();
         dialog.setVisible(true);
+    }
+
+    public void createShowOrderHistoryPanel() {
+        new OrderHistoryPage();
     }
 
     public void show() {

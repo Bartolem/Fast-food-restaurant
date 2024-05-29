@@ -15,6 +15,7 @@ import org.fast_food.product.Type;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -215,6 +216,7 @@ public class OrderPage {
         AtomicBoolean isDiscounted = new AtomicBoolean(false);
         Font font = totalOrderPriceAfterDiscount.getFont();
         JTable table = new JTable(defaultTableModel);
+        table.setRowSorter(new TableRowSorter<>(defaultTableModel));
         table.setFont(new Font("Verdana", Font.PLAIN, 14));
         table.setRowHeight(25);
         table.getColumnModel().getColumn(0).setPreferredWidth(225);

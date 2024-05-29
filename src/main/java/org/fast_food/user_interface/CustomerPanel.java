@@ -7,7 +7,6 @@ import org.fast_food.user_interface.validation.TextFieldFilter;
 import org.fast_food.user_interface.validation.Validator;
 
 import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
 import javax.swing.text.AbstractDocument;
 import java.awt.*;
 import java.sql.SQLException;

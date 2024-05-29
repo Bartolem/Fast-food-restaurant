@@ -5,7 +5,6 @@ import jiconfont.swing.IconFontSwing;
 import net.miginfocom.swing.MigLayout;
 import org.fast_food.customer.Customer;
 import org.fast_food.database_connection.CustomerDAOImpl;
-import org.fast_food.database_connection.OrderDAOImpl;
 import org.fast_food.order.Order;
 import org.fast_food.order.OrderManagement;
 import org.fast_food.points_manager.PointsManager;
@@ -15,6 +14,7 @@ import org.fast_food.product.Type;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
@@ -44,9 +44,16 @@ public class OrderPage {
     private JButton cancelOrderButton;
     private JButton makeOrderButton;
 
-    public OrderPage(Customer customer) {
+    private CustomerPanel customerPanel;
+
+    public OrderPage(Customer customer) throws SQLException {
         this.customer = customer;
-        loginPage = new LoginPage();
+        this.loginPage = new LoginPage();
+
+        if (customer != null) {
+            this.customerPanel = new CustomerPanel(customer);
+        }
+
         initialize();
     }
 
@@ -212,6 +219,7 @@ public class OrderPage {
         AtomicBoolean isDiscounted = new AtomicBoolean(false);
         Font font = totalOrderPriceAfterDiscount.getFont();
         JTable table = new JTable(defaultTableModel);
+        table.setRowSorter(new TableRowSorter<>(defaultTableModel));
         table.setFont(new Font("Verdana", Font.PLAIN, 14));
         table.setRowHeight(25);
         table.getColumnModel().getColumn(0).setPreferredWidth(225);
@@ -263,7 +271,9 @@ public class OrderPage {
             JButton discountButton = createButton("Check for discount", 16);
             JButton logoutButton = createButton("Logout", 16);
 
-            manageButton.addActionListener(e -> new CustomerPanel(customer).show());
+            manageButton.addActionListener(e -> {
+                customerPanel.show();
+            });
 
             discountButton.addActionListener(e -> {
                 if (order.getContent().isEmpty()) {

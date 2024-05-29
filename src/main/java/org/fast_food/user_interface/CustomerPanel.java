@@ -13,15 +13,17 @@ import java.sql.SQLException;
 
 public class CustomerPanel {
     private JFrame frame;
-    private Customer customer;
+    private final Customer customer;
+    private OrderHistoryPage orderHistoryPage;
 
-    public CustomerPanel(Customer customer) {
+    public CustomerPanel(Customer customer) throws SQLException {
         this.customer = customer;
         initialize();
     }
 
-    private void initialize() {
+    private void initialize() throws SQLException {
         this.frame = new JFrame();
+        this.orderHistoryPage = new OrderHistoryPage(customer);
         frame.setTitle(UserInterface.TITLE);
         frame.setIconImage(UserInterface.ICON.getImage());
         frame.setLayout(new GridBagLayout());
@@ -80,6 +82,10 @@ public class CustomerPanel {
         gridBagConstraints.gridy = 25;
         JButton orderHistoryButton = UserInterface.createButton("View order history", 14);
         frame.add(orderHistoryButton, gridBagConstraints);
+
+        orderHistoryButton.addActionListener(e -> {
+           orderHistoryPage.show();
+        });
 
         gridBagConstraints.gridx = 1;
         JButton resetPasswordButton = UserInterface.createButton("Reset password", 14);

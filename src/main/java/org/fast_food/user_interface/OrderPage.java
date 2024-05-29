@@ -5,7 +5,6 @@ import jiconfont.swing.IconFontSwing;
 import net.miginfocom.swing.MigLayout;
 import org.fast_food.customer.Customer;
 import org.fast_food.database_connection.CustomerDAOImpl;
-import org.fast_food.database_connection.OrderDAOImpl;
 import org.fast_food.order.Order;
 import org.fast_food.order.OrderManagement;
 import org.fast_food.points_manager.PointsManager;
@@ -45,12 +44,16 @@ public class OrderPage {
     private JButton cancelOrderButton;
     private JButton makeOrderButton;
 
-    private final CustomerPanel customerPanel;
+    private CustomerPanel customerPanel;
 
     public OrderPage(Customer customer) throws SQLException {
         this.customer = customer;
         this.loginPage = new LoginPage();
-        this.customerPanel = new CustomerPanel(customer);
+
+        if (customer != null) {
+            this.customerPanel = new CustomerPanel(customer);
+        }
+
         initialize();
     }
 

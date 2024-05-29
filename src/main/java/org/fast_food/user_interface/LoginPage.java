@@ -119,7 +119,7 @@ public class LoginPage {
     private void launchApplication(Customer customer) {
         SwingWorker<Void, Void> worker = new SwingWorker<Void, Void>() {
             @Override
-            protected Void doInBackground() throws Exception {
+            protected Void doInBackground() throws SQLException {
                 // Perform time-consuming task here
                 launchProgress = new LaunchProgress();
                 launchProgress.show();

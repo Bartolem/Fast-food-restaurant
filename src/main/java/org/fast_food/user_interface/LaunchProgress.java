@@ -2,15 +2,16 @@ package org.fast_food.user_interface;
 
 import javax.swing.*;
 import java.awt.*;
+import java.sql.SQLException;
 
 public class LaunchProgress {
     private JFrame frame;
 
-    public LaunchProgress() {
+    public LaunchProgress() throws SQLException {
         initialize();
     }
 
-    private void initialize() {
+    private void initialize() throws SQLException {
         this.frame = new JFrame();
         JProgressBar progressBar = createProgressBar();
         frame.setIconImage(UserInterface.ICON.getImage());

@@ -3,20 +3,23 @@ package org.fast_food.user_interface;
 import org.fast_food.customer.Customer;
 import org.fast_food.database_connection.OrderDAOImpl;
 import org.fast_food.order.Order;
+import org.fast_food.product.Product;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 import java.awt.*;
 import java.sql.SQLException;
+import java.text.NumberFormat;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
-import java.util.Vector;
+import java.util.*;
 import java.util.List;
 
 public class OrderHistoryPage {
     private JFrame frame;
     private final Customer customer;
+    private DefaultTableModel bottomTableModel;
 
     public OrderHistoryPage(Customer customer) throws SQLException {
         this.customer = customer;
@@ -65,7 +68,9 @@ public class OrderHistoryPage {
 
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
-        table.getSelectionModel().addListSelectionListener(event -> System.out.println(orders.get(table.getSelectedRow())));
+        table.getSelectionModel().addListSelectionListener(event -> {
+            addOrderToTable(orders.get(table.getSelectedRow()));
+        });
 
         JButton showContentButton = UserInterface.createButton("Show content", 14);
 
@@ -80,7 +85,7 @@ public class OrderHistoryPage {
         JPanel panel = new JPanel();
         String[] column = {"Name","Price","Quantity"};
 
-        DefaultTableModel defaultTableModel = new DefaultTableModel(column, 0) {
+        this.bottomTableModel = new DefaultTableModel(column, 0) {
             //This causes all cells to be not editable
             @Override
             public boolean isCellEditable(int row, int column) {
@@ -88,8 +93,8 @@ public class OrderHistoryPage {
             }
         };
 
-        JTable table = new JTable(defaultTableModel);
-        table.setRowSorter(new TableRowSorter<>(defaultTableModel));
+        JTable table = new JTable(bottomTableModel);
+        table.setRowSorter(new TableRowSorter<>(bottomTableModel));
         table.setFont(new Font("Verdana", Font.PLAIN, 14));
         table.setRowHeight(25);
         table.getColumnModel().getColumn(0).setPreferredWidth(350);
@@ -99,6 +104,23 @@ public class OrderHistoryPage {
         panel.add(scrollPane);
 
         return panel;
+    }
+
+    private void addOrderToTable(Order order) {
+        Map<Product, Integer> products = order.getContent();
+
+        if (bottomTableModel.getRowCount() > 0) {
+            bottomTableModel.setRowCount(0);
+        }
+
+        products.forEach((key, value) -> {
+            Vector<Object> vector = new Vector<>();
+            vector.add(key.getName());
+            vector.add(NumberFormat.getCurrencyInstance(Locale.US).format(key.getPrice()));
+            vector.add(value);
+
+            bottomTableModel.addRow(vector);
+        });
     }
 
     public void show() {

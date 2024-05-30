@@ -54,7 +54,7 @@ public class ProductDetailPage {
         if (product.getType().equals(Type.BURGER)) {
             Burger<IngredientI> burger = (Burger) product;
             String ingredients = burger.getIngredients().stream()
-                    .map(e -> "-" + e.getName() + "\n").collect(Collectors.joining());
+                    .map(e -> "- " + e.getName() + "\n").collect(Collectors.joining());
             textPane.setText("%s\n\nIngredients:\n%s\n\nCalories:\t %s\n\nSpiciness level:\t %s\n\nPopularity rating:\t %s".formatted(
                     product.getDescription(),
                     ingredients,

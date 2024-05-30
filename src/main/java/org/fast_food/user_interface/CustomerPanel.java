@@ -33,7 +33,7 @@ public class CustomerPanel {
         gridBagConstraints.fill = GridBagConstraints.HORIZONTAL;
 
         frame.setLocationRelativeTo(null);
-        frame.getContentPane().setBackground(OrderPage.SECONDARY_BACKGROUND_COLOR);
+        frame.getContentPane().setBackground(Color.LIGHT_GRAY);
         frame.setResizable(false);
 
         JLabel pointsLabel = UserInterface.createLabel("Creation date: %s".formatted(customer.getCreationDate()), "Verdana", Font.PLAIN, 14);

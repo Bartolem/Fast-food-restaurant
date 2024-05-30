@@ -89,6 +89,7 @@ public class CompletedOrderPage {
         txtButton.addActionListener(e -> createFileChooser(BillReceiptWriter.TXT));
         pdfButton.addActionListener(e -> createFileChooser(BillReceiptWriter.PDF));
         csvButton.addActionListener(e -> createFileChooser(BillReceiptWriter.CSV));
+        jsonButton.addActionListener(e -> createFileChooser(BillReceiptWriter.JSON));
         return panel;
     }
 
@@ -111,6 +112,10 @@ public class CompletedOrderPage {
                 }
                 case BillReceiptWriter.PDF -> {
                     billReceiptWriter.writeBillReceiptToPDFFile(filePath);
+                    saved = true;
+                }
+                case BillReceiptWriter.JSON -> {
+                    billReceiptWriter.writeBillRecipeToJSONFile(filePath);
                     saved = true;
                 }
             }

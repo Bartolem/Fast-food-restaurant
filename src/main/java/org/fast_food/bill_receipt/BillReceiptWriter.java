@@ -1,5 +1,7 @@
 package org.fast_food.bill_receipt;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.itextpdf.io.image.ImageDataFactory;
 import com.itextpdf.kernel.colors.DeviceRgb;
 import com.itextpdf.kernel.pdf.PdfDocument;
@@ -25,11 +27,14 @@ import java.net.MalformedURLException;
 import java.time.format.DateTimeFormatter;
 import java.time.format.FormatStyle;
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class BillReceiptWriter {
     public static final String TXT = ".txt";
     public static final String CSV = ".csv";
     public static final String PDF = ".pdf";
+    public static final String JSON = ".json";
     private final Order order;
     private final Customer customer;
     private final BillReceiptGenerator billReceiptGenerator;
@@ -152,6 +157,45 @@ public class BillReceiptWriter {
             System.err.println("Failed to write PDF file: " + e.getMessage());
         } catch (MalformedURLException e) {
             throw new RuntimeException(e);
+        }
+    }
+
+    public void writeBillRecipeToJSONFile(String filePath) {
+        // Write the bill receipt content to a json file
+        if (FilenameUtils.getExtension(filePath).isEmpty()) {
+            filePath = filePath + JSON;
+        }
+
+        ObjectMapper mapper = new ObjectMapper();
+
+        Map<String, Object> orderMap = new HashMap<>();
+        orderMap.put("id", order.getId().toString());
+        orderMap.put("status", order.getStatus().toString());
+        orderMap.put("date", order.getDate().toString());
+        orderMap.put("total_price", order.getTotalPrice());
+        orderMap.put("total_price_after_discount", order.getTotalPriceAfterDiscount());
+        orderMap.put("discount", order.getDiscount());
+
+        Map<String, Object> customerMap = new HashMap<>();
+        Customer customer = order.getCustomer();
+        if (customer != null) {
+            customerMap.put("id", customer.getId().toString());
+            customerMap.put("first_name", customer.getFirstName());
+            customerMap.put("last_name", customer.getLastName());
+            customerMap.put("email", customer.getEmail());
+        }
+        orderMap.put("customer", customerMap);
+
+        Map<String, Integer> contentMap = new HashMap<>();
+        for (Map.Entry<Product, Integer> entry : order.getContent().entrySet()) {
+            contentMap.put(entry.getKey().getName(), entry.getValue());
+        }
+        orderMap.put("content", contentMap);
+
+        try {
+            writeToFile(mapper.writeValueAsString(orderMap), filePath);
+        } catch (IOException e) {
+            throw new RuntimeException("Failed to write order to JSON file: " + e.getMessage());
         }
     }
 }

@@ -1,36 +1,58 @@
 package org.fast_food.customer;
 
-import java.time.LocalDateTime;
+import java.sql.Date;
+import java.time.LocalDate;
 import java.util.UUID;
 
 public class Customer {
-    private final String id;
-    private String name;
+    private UUID id;
+    private String firstName;
+    private String lastName;
     private String email;
+    private String password;
     private String phoneNumber;
     private int points;
-    private final LocalDateTime creationDate;
+    private Date creationDate;
 
-    public Customer(String name, String email, String phoneNumber) {
-        this.id = generateUniqueId();
-        this.name = name;
+    public Customer(String firstName, String lastName, String email, String password, String phoneNumber) {
+        this.id = UUID.randomUUID();
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.password = password;
         this.email = email;
         this.phoneNumber = phoneNumber;
         this.points = 0;
-        this.creationDate = LocalDateTime.now();
+        this.creationDate = Date.valueOf(String.valueOf(LocalDate.now()));
     }
 
-    public String getId() {
+    public Customer(UUID id, String firstName, String lastName, String email, String password, String phoneNumber, int points, Date creationDate) {
+        this(firstName, lastName, email, password, phoneNumber);
+        this.id = id;
+        this.points = points;
+        this.creationDate = creationDate;
+    }
+
+    public UUID getId() {
         return id;
     }
 
-    public String getName() {
-        return name;
+    public String getFirstName() {
+        return firstName;
     }
 
-    public void setName(String name) {
-        if (!name.isEmpty()) {
-            this.name = name;
+    public void setFirstName(String firstName) {
+        if (!firstName.isEmpty()) {
+            this.firstName = firstName;
+        }
+    }
+
+    public String getLastName() {
+        return lastName;
+    }
+
+    public void setLastName(String lastName) {
+        if (!lastName.isEmpty()) {
+            this.lastName = lastName;
         }
     }
 
@@ -42,6 +64,14 @@ public class Customer {
         if (!email.isEmpty()) {
             this.email = email;
         }
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(char[] password) {
+        this.password = new String(password);
     }
 
     public String getPhoneNumber() {
@@ -58,7 +88,11 @@ public class Customer {
         return points;
     }
 
-    public LocalDateTime getCreationDate() {
+    public void setPoints(int points) {
+        this.points = points;
+    }
+
+    public Date getCreationDate() {
         return creationDate;
     }
 
@@ -74,7 +108,14 @@ public class Customer {
         }
     }
 
-    private String generateUniqueId() {
-        return String.valueOf(UUID.randomUUID());
+    @Override
+    public String toString() {
+        return "{id=" + id +
+                ", firstName='" + firstName + '\'' +
+                ", lastName='" + lastName + '\'' +
+                ", email='" + email + '\'' +
+                ", phoneNumber='" + phoneNumber + '\'' +
+                ", points=" + points +
+                ", creationDate=" + creationDate + "\n}";
     }
 }

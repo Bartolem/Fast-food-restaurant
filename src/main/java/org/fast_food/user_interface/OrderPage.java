@@ -3,19 +3,28 @@ package org.fast_food.user_interface;
 import jiconfont.icons.font_awesome.FontAwesome;
 import jiconfont.swing.IconFontSwing;
 import net.miginfocom.swing.MigLayout;
+import org.fast_food.customer.Customer;
+import org.fast_food.database_connection.CustomerDAOImpl;
 import org.fast_food.order.Order;
 import org.fast_food.order.OrderManagement;
+import org.fast_food.points_manager.PointsManager;
 import org.fast_food.product.Product;
 import org.fast_food.menu.Menu;
 import org.fast_food.product.Type;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableRowSorter;
 import java.awt.*;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
+import java.awt.font.TextAttribute;
 import java.io.File;
+import java.sql.SQLException;
 import java.text.NumberFormat;
 import java.util.*;
 import java.util.List;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 import static org.fast_food.user_interface.UserInterface.*;
 
@@ -25,6 +34,8 @@ public class OrderPage {
     private JFrame frame;
     private DefaultTableModel defaultTableModel;
     private Order order;
+    private final Customer customer;
+    private final LoginPage loginPage;
     private List<JButton> addButtonsList;
     private List<JButton> removeButtonsList;
     private JLabel totalOrderPrice;
@@ -33,13 +44,22 @@ public class OrderPage {
     private JButton cancelOrderButton;
     private JButton makeOrderButton;
 
-    public OrderPage() {
+    private CustomerPanel customerPanel;
+
+    public OrderPage(Customer customer) throws SQLException {
+        this.customer = customer;
+        this.loginPage = new LoginPage();
+
+        if (customer != null) {
+            this.customerPanel = new CustomerPanel(customer);
+        }
+
         initialize();
     }
 
     private void initialize() {
         this.frame = new JFrame();
-        this.order = new Order();
+        this.order = new Order(customer);
         this.addButtonsList = new ArrayList<>();
         this.removeButtonsList = new ArrayList<>();
         this.cardLayout = new CardLayout();
@@ -58,6 +78,22 @@ public class OrderPage {
         frame.add(menuPanel, BorderLayout.CENTER);
         frame.add(createOrderListPanel(), BorderLayout.EAST);
         frame.setLocationByPlatform(true);
+
+        frame.addWindowListener(new WindowAdapter() {
+            @Override
+            public void windowClosing(WindowEvent e) {
+                int confirmed = JOptionPane.showConfirmDialog(frame,
+                        "Are you sure you want to exit the program?",
+                        "Exit Program Message Box",
+                        JOptionPane.YES_NO_OPTION);
+
+                if (confirmed == JOptionPane.YES_OPTION) {
+                    frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+                } else {
+                    frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
+                }
+            }
+        });
     }
 
     private JPanel createMenuPanel() {
@@ -178,7 +214,12 @@ public class OrderPage {
             }
         };
         this.totalOrderPrice = createLabel(order.getFormattedTotalPrice(), "Verdana", Font.PLAIN, 20);
+        JLabel totalOrderPriceAfterDiscount = createLabel(order.getFormattedTotalPrice(), "Verdana", Font.PLAIN, 20);
+        totalOrderPriceAfterDiscount.setVisible(false);
+        AtomicBoolean isDiscounted = new AtomicBoolean(false);
+        Font font = totalOrderPriceAfterDiscount.getFont();
         JTable table = new JTable(defaultTableModel);
+        table.setRowSorter(new TableRowSorter<>(defaultTableModel));
         table.setFont(new Font("Verdana", Font.PLAIN, 14));
         table.setRowHeight(25);
         table.getColumnModel().getColumn(0).setPreferredWidth(225);
@@ -186,22 +227,113 @@ public class OrderPage {
         JScrollPane scrollPane = new JScrollPane(table, JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
         scrollPane.setPreferredSize(new Dimension(400, 300));
         panel.setPreferredSize(new Dimension(400, 350));
+        panel.setBackground(Color.LIGHT_GRAY);
         panel.add(scrollPane, "wrap, growx, pushx");
-        panel.add(totalCost, "split2");
-        panel.add(totalOrderPrice, "wrap");
+        panel.add(totalCost, "split3");
+        panel.add(totalOrderPrice);
+        panel.add(totalOrderPriceAfterDiscount, "wrap");
         panel.add(makeOrderButton, "split2, pushx, growx");
-        panel.add(cancelOrderButton, "pushx, growx");
+        panel.add(cancelOrderButton, "pushx, growx, wrap");
 
         disableButton(cancelOrderButton);
         disableButton(makeOrderButton);
 
-        cancelOrderButton.addActionListener(e -> cancelOrder());
+        cancelOrderButton.addActionListener(e -> {
+            cancelOrder();
+            totalOrderPriceAfterDiscount.setVisible(false);
+            totalOrderPriceAfterDiscount.setText(order.getFormattedTotalPrice());
+            totalOrderPrice.setFont(font);
+        });
+
         makeOrderButton.addActionListener(e -> {
+            if (customer != null) {
+                try {
+                    if (isDiscounted.get()) {
+                        order.setDiscount(PointsManager.calculateDiscount(customer, order.getTotalPrice()));
+                        order.setTotalPriceAfterDiscount(PointsManager.applyDiscount(customer, order.getTotalPrice(), order.getDiscount()));
+                    } else {
+                        order.setTotalPriceAfterDiscount(order.getTotalPrice());
+                    }
+
+                    PointsManager.awardPointsToCustomer(customer, order.getTotalPrice().subtract(order.getDiscount()));
+                    new CustomerDAOImpl().update(customer);
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
+            }
+
             processOrder();
             frame.dispose();
         });
 
+        if (customer != null) {
+            JButton manageButton = createButton("Manage Account", 16);
+            JButton discountButton = createButton("Check for discount", 16);
+            JButton logoutButton = createButton("Logout", 16);
+
+            manageButton.addActionListener(e -> {
+                customerPanel.show();
+            });
+
+            discountButton.addActionListener(e -> {
+                if (order.getContent().isEmpty()) {
+                    JOptionPane.showMessageDialog(frame, "There is nothing to calculate! You need at least one product in cart to apply discount.", "Empty cart", JOptionPane.WARNING_MESSAGE);
+                } else {
+                    isDiscounted.set(true);
+                    Map attributes = font.getAttributes();
+                    attributes.put(TextAttribute.STRIKETHROUGH, TextAttribute.STRIKETHROUGH_ON);
+                    totalOrderPrice.setFont(new Font(attributes));
+
+                    totalOrderPriceAfterDiscount.setText(NumberFormat.getCurrencyInstance(Locale.US).format(order.getTotalPrice().subtract(PointsManager.calculateDiscount(customer, order.getTotalPrice()))));
+                    totalOrderPriceAfterDiscount.setForeground(new Color(0, 138, 0));
+                    totalOrderPriceAfterDiscount.setVisible(true);
+                }
+            });
+
+            logoutButton.addActionListener(e -> {
+                int confirmed = JOptionPane.showConfirmDialog(frame,
+                        "Are you sure you want to logout from your account?",
+                        "Logout Message Box",
+                        JOptionPane.YES_NO_OPTION);
+
+                if (confirmed == JOptionPane.YES_OPTION) {
+                    close();
+                    loginPage.show();
+                }
+            });
+
+            panel.add(createLabel("Account: %s %s".formatted(customer.getFirstName(), customer.getLastName()), "Verdana", Font.PLAIN, 20), "wrap");
+            panel.add(manageButton, "pushx, growx, wrap");
+            panel.add(discountButton, "pushx, growx, wrap");
+            panel.add(logoutButton, "pushx, growx");
+        } else {
+            JTextArea textArea = createTextArea();
+            JButton createAccountButton = createButton("Create an account", 16);
+
+            createAccountButton.addActionListener(e -> {
+                close();
+                loginPage.show();
+                new RegistrationForm().show();
+            });
+
+            panel.add(textArea, "pushx, growx, wrap");
+            panel.add(createAccountButton, "pushx, growx");
+        }
+
         return panel;
+    }
+
+    private JTextArea createTextArea() {
+        JTextArea textArea = new JTextArea(5, 25);
+        textArea.setLineWrap(true);
+        textArea.setWrapStyleWord(true);
+        textArea.setEditable(false);
+        textArea.setFocusable(false);
+        textArea.setBackground(Color.LIGHT_GRAY);
+        textArea.setFont(new Font("Verdana", Font.PLAIN, 16));
+        textArea.setForeground(Color.BLACK);
+        textArea.setText("Up to $100 discount for all types of orders! Available only for customers with an active account. Create an account and start collecting points now!");
+        return textArea;
     }
 
     private void cancelOrder() {
@@ -397,5 +529,9 @@ public class OrderPage {
 
     public void show() {
         frame.setVisible(true);
+    }
+
+    public void close() {
+        frame.setVisible(false);
     }
 }

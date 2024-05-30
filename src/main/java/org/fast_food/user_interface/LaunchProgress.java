@@ -2,15 +2,16 @@ package org.fast_food.user_interface;
 
 import javax.swing.*;
 import java.awt.*;
+import java.sql.SQLException;
 
 public class LaunchProgress {
     private JFrame frame;
 
-    public LaunchProgress() {
+    public LaunchProgress() throws SQLException {
         initialize();
     }
 
-    private void initialize() {
+    private void initialize() throws SQLException {
         this.frame = new JFrame();
         JProgressBar progressBar = createProgressBar();
         frame.setIconImage(UserInterface.ICON.getImage());
@@ -19,7 +20,7 @@ public class LaunchProgress {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.getContentPane().setBackground(OrderPage.PRIMARY_BACKGROUND_COLOR);
-        frame.add(new StartPage().createUpperPanel(), BorderLayout.CENTER);
+        frame.add(new LoginPage().createUpperPanel(), BorderLayout.CENTER);
         frame.add(progressBar, BorderLayout.SOUTH);
         frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         frame.pack();

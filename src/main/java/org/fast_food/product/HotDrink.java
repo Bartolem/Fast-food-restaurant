@@ -1,5 +1,7 @@
 package org.fast_food.product;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
+
 import java.math.BigDecimal;
 
 public enum HotDrink implements Product {
@@ -24,7 +26,6 @@ public enum HotDrink implements Product {
         this.description = description;
         this.calories = calories;
     }
-
     @Override
     public Type getType() {
         return TYPE;
@@ -48,6 +49,15 @@ public enum HotDrink implements Product {
     @Override
     public int getCalories() {
         return calories;
+    }
+
+    @JsonCreator
+    public static Product fromName(String name) {
+        try {
+            return HotDrink.valueOf(name.toUpperCase());
+        } catch (IllegalArgumentException e) {
+            throw new IllegalArgumentException("Unknown hot drink: " + name);
+        }
     }
 }
 

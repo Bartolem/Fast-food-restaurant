@@ -1,11 +1,13 @@
 package org.fast_food.user_interface;
 
+import org.fast_food.database_connection.OrderDAOImpl;
 import org.fast_food.order.Order;
 import org.fast_food.order.OrderManagement;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
+import java.sql.SQLException;
 import java.util.Random;
 
 public class ProcessingOrderPage {
@@ -62,9 +64,14 @@ public class ProcessingOrderPage {
             protected void done() {
                 progressBar.setValue(100);
                 OrderManagement.completeOrder(order);
+                try {
+                    new OrderDAOImpl().insert(order);
+                } catch (SQLException ex) {
+                    throw new RuntimeException(ex);
+                }
 //                OrderManagement.removeOrder(order);
-                JOptionPane.showMessageDialog(frame, "Your order has been successfully completed.");
                 frame.setVisible(false);
+                JOptionPane.showMessageDialog(frame, "Your order has been successfully completed.");
                 CompletedOrderPage completedOrderPage = new CompletedOrderPage(order);
                 completedOrderPage.show();
             }

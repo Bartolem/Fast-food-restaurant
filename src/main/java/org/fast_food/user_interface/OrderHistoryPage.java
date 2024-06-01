@@ -30,7 +30,7 @@ public class OrderHistoryPage {
         this.frame = new JFrame();
         frame.setTitle(UserInterface.TITLE);
         frame.setIconImage(UserInterface.ICON.getImage());
-        frame.setLayout(new BorderLayout());
+        frame.setLayout(new BoxLayout(frame.getContentPane(), BoxLayout.Y_AXIS));
         String[] column = {"Id", "Order date", "Total price", "Discount", "Total price after discount"};
         DefaultTableModel defaultTableModel = new DefaultTableModel(column, 0) {
             //This causes all cells to be not editable
@@ -69,14 +69,16 @@ public class OrderHistoryPage {
         table.setSelectionMode(ListSelectionModel.SINGLE_SELECTION);
 
         table.getSelectionModel().addListSelectionListener(event -> {
-            addOrderToTable(orders.get(table.getSelectedRow()));
+            if (table.getSelectedRow() > -1) {
+                addOrderToTable(orders.get(table.getSelectedRow()));
+            }
         });
 
         JButton showContentButton = UserInterface.createButton("Show content", 14);
 
         frame.setBackground(Color.LIGHT_GRAY);
-        frame.add(scrollPane, BorderLayout.CENTER);
-        frame.add(bottomPanel, BorderLayout.SOUTH);
+        frame.add(scrollPane);
+        frame.add(bottomPanel);
         frame.pack();
         frame.setResizable(false);
     }

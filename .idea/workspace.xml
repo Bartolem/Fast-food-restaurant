@@ -6,6 +6,7 @@
   <component name="ChangeListManager">
     <list default="true" id="83a9b51d-5eda-416a-9d6b-17fceab7521a" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderHistoryPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderHistoryPage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,9 +19,9 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2hECid0ut8wYgGU253Nh4LyoBxp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -29,13 +30,14 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.Main.executor": "Run",
+    "JUnit.java in Fast-food-restaurant.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "implement-save-to-json",
+    "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.fast_food.Main" />
       <module name="Fast-food-restaurant" />
@@ -49,8 +51,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="java in Fast-food-restaurant" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.java in Fast-food-restaurant" />
         <item itemvalue="Application.Main" />
       </list>
     </recent_temporary>

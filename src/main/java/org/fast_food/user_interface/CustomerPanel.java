@@ -24,7 +24,7 @@ public class CustomerPanel {
     private void initialize() throws SQLException {
         this.frame = new JFrame();
         this.orderHistoryPage = new OrderHistoryPage(customer);
-        frame.setTitle(UserInterface.TITLE);
+        frame.setTitle("Customer Panel");
         frame.setIconImage(UserInterface.ICON.getImage());
         frame.setLayout(new GridBagLayout());
         GridBagConstraints gridBagConstraints = new GridBagConstraints();

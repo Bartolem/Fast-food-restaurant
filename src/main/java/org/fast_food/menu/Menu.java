@@ -105,71 +105,101 @@ public class Menu {
         return loadImages(imageNames, path);
     }
 
-    public static List<File> getGourmetBurgerImages() {
-        File[] images = new File("src/main/resources/images/burgers/gourmet").listFiles();
-        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
-        return List.of(images);
+    public static Map<String, ImageIcon> getGourmetBurgerImages() {
+        String path = "images/burgers/gourmet/";
+        String[] imageNames = {
+                "gourmet_1.png", "gourmet_2.png", "gourmet_3.png", "gourmet_4.png",
+                "gourmet_5.png", "gourmet_6.png", "gourmet_7.png", "gourmet_8.png",
+                "gourmet_9.png"
+        };
+
+        return loadImages(imageNames, path);
     }
 
-    public static List<File> getSpicyBurgerImages() {
-        File[] images = new File("src/main/resources/images/burgers/spicy").listFiles();
-        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
-        return List.of(images);
+    public static Map<String, ImageIcon> getSpicyBurgerImages() {
+        String path = "images/burgers/spicy/";
+        String[] imageNames = {
+                "spicy_1.png", "spicy_2.png", "spicy_3.png", "spicy_4.png",
+                "spicy_5.png", "spicy_6.png", "spicy_7.png", "spicy_8.png",
+                "spicy_9.png", "spicy_10.png"
+        };
+
+        return loadImages(imageNames, path);
     }
 
-    public static List<File> getUniqueFlavorBurgerImages() {
-        File[] images = new File("src/main/resources/images/burgers/unique").listFiles();
-        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
-        return List.of(images);
+    public static Map<String, ImageIcon> getUniqueFlavorBurgerImages() {
+        String path = "images/burgers/unique/";
+        String[] imageNames = {
+                "unique_1.png", "unique_2.png", "unique_3.png", "unique_4.png",
+                "unique_5.png", "unique_6.png", "unique_7.png", "unique_8.png"
+        };
+
+        return loadImages(imageNames, path);
     }
 
-    public static List<File> getFrenchFriesImages() {
-        File[] images = new File("src/main/resources/images/fries").listFiles();
-        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
-        return List.of(images);
+    public static Map<String, ImageIcon> getFrenchFriesImages() {
+        String path = "images/fries/";
+        String[] imageNames = {
+                "fries_1.png", "fries_2.png", "fries_3.png", "fries_4.png",
+                "fries_5.png"
+        };
+
+        return loadImages(imageNames, path);
     }
 
-    public static List<File> getColdDrinksImages() {
-        File[] images = new File("src/main/resources/images/drinks/cold_drinks").listFiles();
-        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
-        return List.of(images);
+    public static Map<String, ImageIcon> getColdDrinksImages() {
+        String path = "images/drinks/cold_drinks/";
+        String[] imageNames = {
+                "cold_1.png", "cold_2.png", "cold_3.png", "cold_4.png",
+                "cold_5.png", "cold_6.png", "cold_7.png", "cold_8.png",
+                "cold_9.png", "cold_10.png", "cold_11.png", "cold_12.png",
+                "cold_13.png", "cold_14.png", "cold_15.png", "cold_16.png",
+                "cold_17.png", "cold_18.png", "cold_19.png", "cold_20.png"
+        };
+
+        return loadImages(imageNames, path);
     }
 
-    public static List<File> getHotDrinksImages() {
-        File[] images = new File("src/main/resources/images/drinks/hot_drinks").listFiles();
-        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
-        return List.of(images);
+    public static Map<String, ImageIcon> getHotDrinksImages() {
+        String path = "images/drinks/hot_drinks/";
+        String[] imageNames = {
+                "hot_1.png", "hot_2.png", "hot_3.png", "hot_4.png",
+                "hot_5.png", "hot_6.png", "hot_7.png", "hot_8.png"
+        };
+
+        return loadImages(imageNames, path);
     }
 
-    public static List<File> getComboMealsImages() {
-        File[] images = new File("src/main/resources/images/combo").listFiles();
-        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
-        return List.of(images);
+    public static Map<String, ImageIcon> getComboMealsImages() {
+        String path = "images/combo/";
+        String[] imageNames = {
+                "combo_1.png", "combo_2.png", "combo_3.png", "combo_4.png",
+                "combo_5.png", "combo_6.png", "combo_7.png", "combo_8.png",
+                "combo_9.png", "combo_10.png", "combo_11.png", "combo_12.png",
+                "combo_13.png", "combo_14.png", "combo_15.png", "combo_16.png",
+                "combo_17.png", "combo_18.png", "combo_19.png", "combo_20.png"
+        };
+
+        return loadImages(imageNames, path);
     }
 
-    public static List<File> getSideDishesImages() {
-        File[] images = new File("src/main/resources/images/side").listFiles();
-        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
-        return List.of(images);
+    public static Map<String, ImageIcon> getSideDishesImages() {
+        String path = "images/side/";
+        String[] imageNames = {
+                "side_1.png", "side_2.png", "side_3.png", "side_4.png"
+        };
+
+        return loadImages(imageNames, path);
     }
 
-    public static List<File> getDessertsImages() {
-        File[] images = new File("src/main/resources/images/desserts").listFiles();
-        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
-        return List.of(images);
-    }
+    public static Map<String, ImageIcon> getDessertsImages() {
+        String path = "images/desserts/";
+        String[] imageNames = {
+                "dessert_1.png", "dessert_2.png", "dessert_3.png", "dessert_4.png",
+                "dessert_5.png", "dessert_6.png", "dessert_7.png", "dessert_8.png",
+                "dessert_9.png", "dessert_10.png", "dessert_11.png", "dessert_12.png"
+        };
 
-    // Comparator used for sorting file names including numerical values
-    static class NaturalOrderComparator implements Comparator<File> {
-        public int compare(File o1, File o2) {
-            String[] parts1 = o1.getName().split("_");
-            String[] parts2 = o2.getName().split("_");
-
-            // Assuming the numerical part is always at the end
-            String numericPart1 = parts1[parts1.length - 1].replaceAll("\\D", "");
-            String numericPart2 = parts2[parts2.length - 1].replaceAll("\\D", "");
-
-            return Integer.compare(Integer.parseInt(numericPart1), Integer.parseInt(numericPart2));
-        }
+        return loadImages(imageNames, path);
     }
 }

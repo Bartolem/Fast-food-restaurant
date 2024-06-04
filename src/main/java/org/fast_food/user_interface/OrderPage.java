@@ -5,11 +5,12 @@ import jiconfont.swing.IconFontSwing;
 import net.miginfocom.swing.MigLayout;
 import org.fast_food.customer.Customer;
 import org.fast_food.database_connection.CustomerDAOImpl;
+import org.fast_food.menu.Menu;
+import org.fast_food.menu.NaturalOrderComparator;
 import org.fast_food.order.Order;
 import org.fast_food.order.OrderManagement;
 import org.fast_food.points_manager.PointsManager;
 import org.fast_food.product.Product;
-import org.fast_food.menu.Menu;
 import org.fast_food.product.Type;
 
 import javax.swing.*;
@@ -19,11 +20,10 @@ import java.awt.*;
 import java.awt.event.WindowAdapter;
 import java.awt.event.WindowEvent;
 import java.awt.font.TextAttribute;
-import java.io.File;
 import java.sql.SQLException;
 import java.text.NumberFormat;
-import java.util.*;
 import java.util.List;
+import java.util.*;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import static org.fast_food.user_interface.UserInterface.*;
@@ -58,14 +58,12 @@ public class OrderPage {
     }
 
     private void initialize() {
-        System.out.println("Initializing OrderPage...");
         this.frame = new JFrame();
         this.order = new Order(customer);
         this.addButtonsList = new ArrayList<>();
         this.removeButtonsList = new ArrayList<>();
         this.cardLayout = new CardLayout();
         this.menuPanel = createMenuPanel();
-        System.out.println("Components initialized.");
 
         OrderManagement.addOrder(order);
 
@@ -101,26 +99,26 @@ public class OrderPage {
     private JPanel createMenuPanel() {
         JPanel panel = new JPanel(cardLayout);
         JScrollPane classicBurgerPanel = new JScrollPane(createItemsPanel(Menu.getClassicBurgerList(), Menu.getClassicBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-//        JScrollPane gourmetBurgerPanel = new JScrollPane(createItemsPanel(Menu.getGourmetBurgerList(), Menu.getGourmetBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-//        JScrollPane spicyBurgerPanel = new JScrollPane(createItemsPanel(Menu.getSpicyBurgerList(), Menu.getSpicyBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-//        JScrollPane uniqueBurgerPanel = new JScrollPane(createItemsPanel(Menu.getUniqueFlavorBurgerList(), Menu.getUniqueFlavorBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-//        JScrollPane frenchFries = new JScrollPane(createItemsPanel(Menu.getFrenchFriesList(), Menu.getFrenchFriesImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-//        JScrollPane coldDrinks = new JScrollPane(createItemsPanel(Menu.getColdDrinkList(), Menu.getColdDrinksImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-//        JScrollPane hotDrinks = new JScrollPane(createItemsPanel(Menu.getHotDrinkList(), Menu.getHotDrinksImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-//        JScrollPane comboMeals = new JScrollPane(createItemsPanel(Menu.getComboMealsList(), Menu.getComboMealsImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-//        JScrollPane sideDishes = new JScrollPane(createItemsPanel(Menu.getSideDishList(), Menu.getSideDishesImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
-//        JScrollPane desserts = new JScrollPane(createItemsPanel(Menu.getDessertList(), Menu.getDessertsImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane gourmetBurgerPanel = new JScrollPane(createItemsPanel(Menu.getGourmetBurgerList(), Menu.getGourmetBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane spicyBurgerPanel = new JScrollPane(createItemsPanel(Menu.getSpicyBurgerList(), Menu.getSpicyBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane uniqueBurgerPanel = new JScrollPane(createItemsPanel(Menu.getUniqueFlavorBurgerList(), Menu.getUniqueFlavorBurgerImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane frenchFries = new JScrollPane(createItemsPanel(Menu.getFrenchFriesList(), Menu.getFrenchFriesImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane coldDrinks = new JScrollPane(createItemsPanel(Menu.getColdDrinkList(), Menu.getColdDrinksImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane hotDrinks = new JScrollPane(createItemsPanel(Menu.getHotDrinkList(), Menu.getHotDrinksImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane comboMeals = new JScrollPane(createItemsPanel(Menu.getComboMealsList(), Menu.getComboMealsImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane sideDishes = new JScrollPane(createItemsPanel(Menu.getSideDishList(), Menu.getSideDishesImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
+        JScrollPane desserts = new JScrollPane(createItemsPanel(Menu.getDessertList(), Menu.getDessertsImages()), JScrollPane.VERTICAL_SCROLLBAR_ALWAYS, JScrollPane.HORIZONTAL_SCROLLBAR_NEVER);
 
         panel.add(classicBurgerPanel, "classicBurgerPanel");
-//        panel.add(gourmetBurgerPanel, "gourmetBurgerPanel");
-//        panel.add(spicyBurgerPanel, "spicyBurgerPanel");
-//        panel.add(uniqueBurgerPanel, "uniqueBurgerPanel");
-//        panel.add(frenchFries, "frenchFries");
-//        panel.add(coldDrinks, "coldDrinks");
-//        panel.add(hotDrinks, "hotDrinks");
-//        panel.add(comboMeals, "comboMeals");
-//        panel.add(sideDishes, "sideDishes");
-//        panel.add(desserts, "desserts");
+        panel.add(gourmetBurgerPanel, "gourmetBurgerPanel");
+        panel.add(spicyBurgerPanel, "spicyBurgerPanel");
+        panel.add(uniqueBurgerPanel, "uniqueBurgerPanel");
+        panel.add(frenchFries, "frenchFries");
+        panel.add(coldDrinks, "coldDrinks");
+        panel.add(hotDrinks, "hotDrinks");
+        panel.add(comboMeals, "comboMeals");
+        panel.add(sideDishes, "sideDishes");
+        panel.add(desserts, "desserts");
         return panel;
     }
 
@@ -173,8 +171,7 @@ public class OrderPage {
     }
 
     private JPanel createItemsPanel(List<Product> productList, Map<String, ImageIcon> productImages) {
-        System.out.println("items panel creating...");
-        Set<String> productImagesList = productImages.keySet();
+        List<String> productImagesList = productImages.keySet().stream().sorted(new NaturalOrderComparator()).toList();
         final int columns = 2;
         final int rows = productList.size();
         int index = 0;
@@ -188,7 +185,6 @@ public class OrderPage {
             for (int j = 0; j < columns; j++) {
                 gridBagConstraints.gridx = j;
                 gridBagConstraints.gridy = i;
-                System.out.println(productImagesList.stream().toList().get(index));
                 panel.add(createItemContainer(productList.get(index), productImagesList.stream().toList().get(index)), gridBagConstraints);
                 index++;
 
@@ -202,7 +198,6 @@ public class OrderPage {
                 }
             }
         }
-        System.out.println("items panel successfully created");
         return panel;
     }
 

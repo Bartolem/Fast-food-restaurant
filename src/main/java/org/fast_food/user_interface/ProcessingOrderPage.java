@@ -32,7 +32,7 @@ public class ProcessingOrderPage {
         frame.getContentPane().setBackground(BACKGROUND_COLOR);
         frame.setDefaultCloseOperation(WindowConstants.DO_NOTHING_ON_CLOSE);
         frame.add(label, BorderLayout.NORTH);
-        frame.add(new JLabel(new ImageIcon("src/main/resources/burger_animation.gif")), BorderLayout.CENTER);
+        frame.add(new JLabel(new ImageIcon(ProcessingOrderPage.class.getClassLoader().getResource("burger_animation.gif"), BorderLayout.CENTER)));
         frame.add(progressBar, BorderLayout.SOUTH);
         frame.setResizable(false);
         frame.pack();
@@ -43,7 +43,7 @@ public class ProcessingOrderPage {
     private void simulateProgress() {
         SwingWorker<Void, Void> swingWorker = new SwingWorker<Void, Void>() {
             @Override
-            protected Void doInBackground() throws Exception {
+            protected Void doInBackground() {
                 Random random = new Random();
                 int progress = 0;
                 while (progress < 100) {

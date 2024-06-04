@@ -14,10 +14,10 @@ import static org.fast_food.user_interface.UserInterface.*;
 
 public class ProductDetailPage {
     private JFrame frame;
-    private final File image;
+    private final String image;
     private final Product product;
 
-    public ProductDetailPage(Product product, File image) {
+    public ProductDetailPage(Product product, String image) {
         this.product = product;
         this.image = image;
         initialize();
@@ -33,7 +33,7 @@ public class ProductDetailPage {
         frame.setResizable(false);
         frame.setLocationRelativeTo(null);
         frame.setLocationByPlatform(true);
-        frame.add(createImageLabel(image.getPath(), 400, 350), BorderLayout.CENTER);
+        frame.add(createImageLabel(image, 400, 350), BorderLayout.CENTER);
         frame.add(createProductDetailsPane(), BorderLayout.EAST);
         frame.pack();
     }

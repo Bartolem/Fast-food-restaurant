@@ -45,7 +45,7 @@ class CustomerTest {
     @Test
     void testSetLastNameWithEmptyString() {
         customer.setLastName("");
-        assertEquals(customer.getLastName(), "Michał");
+        assertEquals(customer.getLastName(), "Obraz");
     }
 
     @Test

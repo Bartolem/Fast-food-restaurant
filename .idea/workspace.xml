@@ -1,11 +1,33 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="ArtifactsWorkspaceSettings">
+    <artifacts-to-build>
+      <artifact name="Fast-food-restaurant:jar" />
+    </artifacts-to-build>
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
     <list default="true" id="83a9b51d-5eda-416a-9d6b-17fceab7521a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/libraries/MigLayout.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/menu/Menu.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/LoginPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/LoginPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/OrderPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/ProductDetailPage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/ProductDetailPage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/UserInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/fast_food/user_interface/UserInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/fast_food/customer/CustomerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/fast_food/customer/CustomerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/fast_food/order/OrderManagementTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/fast_food/order/OrderManagementTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/fast_food/order/OrderTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/org/fast_food/order/OrderTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/icon.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/logo.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,24 +40,40 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "associatedIndex": 5
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 5
+}</component>
   <component name="ProjectId" id="2hECid0ut8wYgGU253Nh4LyoBxp" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "implement-save-to-json",
-    "kotlin-language-version-configured": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in Fast-food-restaurant.executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Fast-food-restaurant [clean].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Fast-food-restaurant [compile].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Fast-food-restaurant [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Fast-food-restaurant [package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Fast-food-restaurant [test].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Fast-food-restaurant [validate].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.Fast-food-restaurant [verify].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Artifacts&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.5264368&quot;
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Projekty\Java Projects\Fast food ordering\src\main\resources\images" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="org.fast_food.Main" />
       <module name="Fast-food-restaurant" />
@@ -49,16 +87,27 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="java in Fast-food-restaurant" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Fast-food-restaurant" />
+      <option name="TEST_OBJECT" value="directory" />
+      <dir value="$PROJECT_DIR$/src/test/java" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.java in Fast-food-restaurant" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
+        <option value="jdk-1.8.0_402-corretto-1.8.0_402-4caba194b151-ae57be32" />
         <option value="jdk-21.0.2-openjdk-21.0.2-4caba194b151-4f524021" />
+        <option value="jdk-22-openjdk-22-3183f394aec4-bad0321e" />
       </set>
     </attachedChunks>
   </component>
@@ -72,5 +121,16 @@
       <updated>1717149980233</updated>
     </task>
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>

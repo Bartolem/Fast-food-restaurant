@@ -5,12 +5,17 @@ import org.fast_food.product.burger.ClassicBurger;
 import org.fast_food.product.burger.GourmetBurger;
 import org.fast_food.product.burger.SpicyBurger;
 import org.fast_food.product.burger.UniqueFlavorBurger;
+import org.fast_food.user_interface.UserInterface;
 
+import javax.swing.*;
+import java.awt.*;
 import java.io.File;
-import java.util.Arrays;
-import java.util.Comparator;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.net.URL;
+import java.util.*;
 import java.util.List;
-import java.util.Objects;
 
 public class Menu {
     private static final List<Product> CLASSIC_BURGER_LIST = List.of(ClassicBurger.values());
@@ -64,10 +69,40 @@ public class Menu {
         return DESSERT_LIST;
     }
 
-    public static List<File> getClassicBurgerImages() {
-        File[] images = new File("src/main/resources/images/burgers/classic").listFiles();
-        Arrays.sort(Objects.requireNonNull(images), new NaturalOrderComparator());
-        return List.of(images);
+    private static Map<String, ImageIcon> loadImages(String[] imageNames, String path) {
+        Map<String, ImageIcon> imageIconMap = new HashMap<>();
+        ClassLoader classLoader = Menu.class.getClassLoader();
+
+        Arrays.stream(imageNames).forEach(
+                name -> {
+                    try {
+                        // Load the image using the class loader
+                        String pathName = path + name;
+                        URL imgURL = classLoader.getResource(pathName);
+                        if (imgURL != null) {
+                            ImageIcon icon = new ImageIcon(imgURL);
+                            imageIconMap.put(pathName, icon);
+                        } else {
+                            System.err.println("Couldn't find file: " + pathName);
+                        }
+                    } catch (Exception e) {
+                        throw new RuntimeException(e.getMessage());
+                    }
+                }
+        );
+        return imageIconMap;
+    }
+
+    public static Map<String, ImageIcon> getClassicBurgerImages() {
+        String path = "images/burgers/classic/";
+        String[] imageNames = {
+                "classic_1.png", "classic_2.png", "classic_3.png", "classic_4.png",
+                "classic_5.png", "classic_6.png", "classic_7.png", "classic_8.png",
+                "classic_9.png", "classic_10.png", "classic_11.png", "classic_12.png",
+                "classic_13.png", "classic_14.png"
+        };
+
+        return loadImages(imageNames, path);
     }
 
     public static List<File> getGourmetBurgerImages() {

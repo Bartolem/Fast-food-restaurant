@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
 class OrderManagementTest {
-    Order order = new Order();
+    Order order = new Order(null);
 
     @Test
     void testGetOrders() {

@@ -1,0 +1,15 @@
+org\fast_food\product\burger\SpicyBurgerTest.class
+org\fast_food\order\OrderManagementTest.class
+org\fast_food\points_manager\PointsManagerTest.class
+org\fast_food\customer\CustomerTest.class
+org\fast_food\product\HotDrinkTest.class
+org\fast_food\order\OrderTest.class
+org\fast_food\product\burger\GourmetBurgerTest.class
+org\fast_food\product\DessertTest.class
+org\fast_food\product\FrenchFriesTest.class
+org\fast_food\product\burger\UniqueFlavorBurgerTest.class
+org\fast_food\product\ColdDrinkTest.class
+org\fast_food\customer\CustomerManagementTest.class
+org\fast_food\product\burger\ClassicBurgerTest.class
+org\fast_food\product\SideTest.class
+org\fast_food\product\ComboMealTest.class

@@ -44,7 +44,7 @@ public class LoginPage {
 
     protected JPanel createUpperPanel() {
         JPanel panel = new JPanel(new BorderLayout());
-        JLabel labelImage = createImageLabel("src/main/resources/logo.png", 350, 125);
+        JLabel labelImage = createImageLabel("images/logo.png", 350, 125);
         JLabel  label = new JLabel("Satisfy Your Hunger, Elevate Your Taste.");
 
         labelImage.setBorder(new EmptyBorder(20, 40, 10, 40));

@@ -3,6 +3,7 @@ package org.fast_food.user_interface;
 import org.fast_food.bill_receipt.BillReceiptGenerator;
 import org.fast_food.bill_receipt.BillReceiptWriter;
 import org.fast_food.order.Order;
+import org.fast_food.user_interface.order_page.OrderPage;
 
 import javax.swing.*;
 import java.awt.*;

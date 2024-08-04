@@ -1,6 +1,5 @@
 package org.fast_food.database_connection;
 
-import org.fast_food.authentication.PasswordHashingUtil;
 import org.fast_food.customer.Customer;
 import org.fast_food.customer.CustomerManagement;
 

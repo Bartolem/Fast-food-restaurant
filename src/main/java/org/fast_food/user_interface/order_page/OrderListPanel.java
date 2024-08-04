@@ -51,8 +51,8 @@ public class OrderListPanel extends JPanel {
     }
 
     private JTable createTable() {
-        JTable table = new JTable(OrderPage.getTableModel());
-        table.setRowSorter(new TableRowSorter<>(OrderPage.getTableModel()));
+        JTable table = new JTable(OrderPage.DEFAULT_TABLE_MODEL);
+        table.setRowSorter(new TableRowSorter<>(OrderPage.DEFAULT_TABLE_MODEL));
         table.setFont(new Font("Verdana", Font.PLAIN, 14));
         table.setRowHeight(25);
         table.getColumnModel().getColumn(0).setPreferredWidth(225);
@@ -188,7 +188,7 @@ public class OrderListPanel extends JPanel {
         OrderManagement.removeOrder(order);
 
         totalOrderPrice.setText(order.getFormattedTotalPrice());
-        OrderPage.getTableModel().setRowCount(0);
+        OrderPage.DEFAULT_TABLE_MODEL.setRowCount(0);
 
         OrderPage.disableButton(makeOrderButton);
         OrderPage.disableButton(cancelOrderButton);

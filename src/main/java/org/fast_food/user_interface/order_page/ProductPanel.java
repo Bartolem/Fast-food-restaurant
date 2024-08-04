@@ -38,7 +38,7 @@ public class ProductPanel extends JPanel {
             for (int j = 0; j < COLUMNS; j++) {
                 gridBagConstraints.gridx = j;
                 gridBagConstraints.gridy = i;
-                panel.add(new ItemContainer(order, productList.get(index), productImagesList.stream().toList().get(index), OrderPage.getTableModel(), orderListPanel).getPanel(), gridBagConstraints);
+                panel.add(new ItemContainer(order, productList.get(index), productImagesList.stream().toList().get(index), OrderPage.DEFAULT_TABLE_MODEL, orderListPanel).getPanel(), gridBagConstraints);
                 index++;
 
                 // Adds last element if the number of rows is odd
@@ -47,7 +47,7 @@ public class ProductPanel extends JPanel {
                         gridBagConstraints.gridx = 0;
                         gridBagConstraints.gridy = index;
                     }
-                    panel.add(new ItemContainer(order, productList.get(index), productImagesList.stream().toList().get(index), OrderPage.getTableModel(), orderListPanel).getPanel(), gridBagConstraints);
+                    panel.add(new ItemContainer(order, productList.get(index), productImagesList.stream().toList().get(index), OrderPage.DEFAULT_TABLE_MODEL, orderListPanel).getPanel(), gridBagConstraints);
                 }
             }
         }

@@ -15,8 +15,15 @@ import static org.fast_food.user_interface.UserInterface.ICON;
 import static org.fast_food.user_interface.UserInterface.TITLE;
 
 public class OrderPage {
-    public static Color PRIMARY_BACKGROUND_COLOR = new Color(255, 89, 60);
-    public static Color SECONDARY_BACKGROUND_COLOR = new Color(255, 194, 150);
+    public static final Color PRIMARY_BACKGROUND_COLOR = new Color(255, 89, 60);
+    public static final Color SECONDARY_BACKGROUND_COLOR = new Color(255, 194, 150);
+    public static final DefaultTableModel DEFAULT_TABLE_MODEL = new DefaultTableModel(new String[]{"Name", "Price", "Quantity"}, 0) {
+        //This causes all cells to be not editable
+        @Override
+        public boolean isCellEditable(int row, int column) {
+            return false;
+        }
+    };
     private JFrame frame;
     private final Customer customer;
 
@@ -63,16 +70,6 @@ public class OrderPage {
                 }
             }
         });
-    }
-
-    public static DefaultTableModel getTableModel() {
-        return new DefaultTableModel(new String[]{"Name", "Price", "Quantity"}, 0) {
-            //This causes all cells to be not editable
-            @Override
-            public boolean isCellEditable(int row, int column) {
-                return false;
-            }
-        };
     }
 
      public static void enableRemoveButton(JButton button) {

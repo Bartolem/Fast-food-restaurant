@@ -10,7 +10,7 @@ public class UserInterface {
     public static ImageIcon ICON = new ImageIcon(Objects.requireNonNull(UserInterface.class.getClassLoader().getResource("images/icon.png")));
     public static Color BUTTON_COLOR = new Color(121, 186, 253);
 
-    protected static JButton createButton(String text, int size) {
+    public static JButton createButton(String text, int size) {
         JButton button = new JButton(text);
         button.setFont(new Font("Verdana",Font.PLAIN, size));
         button.setForeground(Color.BLACK);
@@ -19,24 +19,24 @@ public class UserInterface {
         return button;
     }
 
-    protected static JTextField createTextField() {
+    public static JTextField createTextField() {
         return new JTextField(20);
     }
 
-    protected static JLabel createLabel(String text, String fontName, int fontStyle, int fontSize) {
+    public static JLabel createLabel(String text, String fontName, int fontStyle, int fontSize) {
         JLabel label = new JLabel(text);
         label.setForeground(Color.BLACK);
         label.setFont(new Font(fontName, fontStyle, fontSize));
         return label;
     }
 
-    protected static JLabel createLabel(String text, String fontName, int fontStyle, int fontSize, Color color) {
+    public static JLabel createLabel(String text, String fontName, int fontStyle, int fontSize, Color color) {
         JLabel label = createLabel(text, fontName, fontStyle, fontSize);
         label.setForeground(color);
         return label;
     }
 
-    protected static JLabel createImageLabel(String path, int width, int height) {
+    public static JLabel createImageLabel(String path, int width, int height) {
         try {
             // Load the image using the class loader
             URL imgURL = UserInterface.class.getClassLoader().getResource(convertPath(path));

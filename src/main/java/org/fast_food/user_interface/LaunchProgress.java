@@ -1,5 +1,7 @@
 package org.fast_food.user_interface;
 
+import org.fast_food.user_interface.order_page.OrderPage;
+
 import javax.swing.*;
 import java.awt.*;
 import java.sql.SQLException;

@@ -3,6 +3,7 @@ package org.fast_food.user_interface;
 import net.miginfocom.swing.MigLayout;
 import org.fast_food.authentication.Authenticator;
 import org.fast_food.customer.Customer;
+import org.fast_food.user_interface.order_page.OrderPage;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;

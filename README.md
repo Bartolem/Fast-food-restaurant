@@ -4,6 +4,7 @@ The Fast Food Ordering System is a Java-based application that simulates an orde
 ## Table of Contents
 * [Introduction](#introduction)
 * [Used technologies](#used-technologies)
+* [Dependencies](#dependencies)
 * [Description](#description)
 * [Features](#features)
 * [Architecture](#architecture)
@@ -19,8 +20,14 @@ Working on this project was a valuable learning experience. I deepened my unders
 * Java: The core programming language for the application.
 * Swing: Used for building the graphical user interface.
 * Maven: For project management and building.
+* JDBC: Java Database Connectivity for interacting with the PostgreSQL database.
 * PostgreSQL: Database for storing customer data, product information, and orders.
-* JUnit 5: For unit testing the application's components.
+
+## Dependencies
+The project uses several dependencies managed through Maven:
+* JDBC Driver: For PostgreSQL connectivity.
+* iText: For PDF generation.
+* JUnit: For unit testing the application's components.
 
 ## Description
 The system allows customers to view the menu, add products to their orders, apply discounts, manage their accounts, and process orders. The graphical user interface (GUI) is built using Swing, and the application includes features such as customer registration, login, and point management for discounts.

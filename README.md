@@ -1,5 +1,8 @@
 # Fast-Food Restaurant
-The Fast Food Ordering System is a Java-based application that simulates an ordering system for a fast-food restaurant. 
+The Fast Food Ordering System is a Java-based application that simulates an ordering system for a fast-food restaurant.
+<p align="center">
+  <img width="640" height="360" src="https://github.com/user-attachments/assets/23c57d85-155f-4750-8514-03daaa91914f">
+</p>
 
 ## Table of Contents
 * [Introduction](#introduction)
